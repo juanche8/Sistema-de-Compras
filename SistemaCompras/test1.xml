@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-ES">
+  <Title Text="Tablero de control" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>Origen de datos SQL 1</Name>
+      <Connection Name="centralmontagne_MontagneAdministracion_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="centralmontagne" />
+          <Parameter Name="database" Value="MontagneAdministracion" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="Gerencia" />
+          <Parameter Name="password" Value="interno.1660" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="Pedidos">
+        <Tables>
+          <Table Name="Pedidos" Meta="30|30|125|240" />
+          <Table Name="Sectores" Meta="185|30|125|100" />
+          <Table Name="EstadosPedido" Meta="340|170|125|80" />
+          <Relation Type="Inner" Parent="Pedidos" Nested="Sectores">
+            <KeyColumn Parent="Sector" Nested="IdSector" />
+          </Relation>
+          <Relation Type="Inner" Parent="Pedidos" Nested="EstadosPedido">
+            <KeyColumn Parent="Estado" Nested="IdEstado" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Pedidos" Name="FechaPedido" />
+          <Column Table="Pedidos" Name="Responsable" />
+          <Column Table="Sectores" Name="Sector" />
+          <Column Table="EstadosPedido" Name="Estado" Alias="EstadosPedido_Estado" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Origen de datos SQL 1">
+          <View Name="Pedidos">
+            <Field Name="FechaPedido" Type="DateTime" />
+            <Field Name="Responsable" Type="String" />
+            <Field Name="Sector" Type="String" />
+            <Field Name="EstadosPedido_Estado" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem1" Name="Tartas 1" DataSource="dashboardSqlDataSource1" DataMember="Pedidos">
+      <DataItems>
+        <Dimension DataMember="Responsable" UniqueName="DataItem0" />
+        <Measure DataMember="FechaPedido" SummaryType="Count" UniqueName="DataItem1" />
+      </DataItems>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem1" />
+      </Values>
+    </Pie>
+    <Chart ComponentName="chartDashboardItem1" Name="Gráfico 1" DataSource="dashboardSqlDataSource1" DataMember="Pedidos">
+      <DataItems>
+        <Dimension DataMember="FechaPedido" UniqueName="DataItem0" />
+        <Measure DataMember="FechaPedido" SummaryType="Count" UniqueName="DataItem2" />
+        <Dimension DataMember="FechaPedido" UniqueName="DataItem3" />
+        <Dimension DataMember="Sector" TopNEnabled="true" TopNMeasure="DataItem2" UniqueName="DataItem4" />
+      </DataItems>
+      <HiddenDimensions>
+        <Dimension UniqueName="DataItem0" />
+      </HiddenDimensions>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem3" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem4" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Panel 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem2" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Gauge ComponentName="gaugeDashboardItem1" Name="Indicador 1" DataSource="dashboardSqlDataSource1" DataMember="Pedidos">
+      <DataItems>
+        <Measure DataMember="Responsable" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="Sector" UniqueName="DataItem2" />
+        <Measure DataMember="FechaPedido" SummaryType="Count" UniqueName="DataItem3" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <GaugeElement>
+        <ActualValue UniqueName="DataItem0" />
+      </GaugeElement>
+      <GaugeElement>
+        <TargetValue UniqueName="DataItem3" />
+      </GaugeElement>
+    </Gauge>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="pieDashboardItem1" Weight="47.578040904198062" />
+      <LayoutGroup Orientation="Vertical" Weight="52.421959095801938">
+        <LayoutItem DashboardItem="chartDashboardItem1" Weight="52.421959095801938" />
+        <LayoutItem DashboardItem="gaugeDashboardItem1" Weight="52.421959095801938" />
+      </LayoutGroup>
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

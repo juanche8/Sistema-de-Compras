@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-ES">
+  <Title Text="Niveles de stock por sector" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>Origen de datos SQL 1</Name>
+      <Connection Name="centralmontagne_MontagneAdministracion_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="centralmontagne" />
+          <Parameter Name="database" Value="MontagneAdministracion" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="Gerencia" />
+          <Parameter Name="password" Value="interno.1660" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="Stock">
+        <Tables>
+          <Table Name="Stock" Meta="30|30|125|160" />
+          <Table Name="Productos" Meta="260|10|125|180" />
+          <Table Name="Sectores" Meta="220|260|125|100" />
+          <Relation Type="Inner" Parent="Stock" Nested="Productos">
+            <KeyColumn Parent="IdProducto" Nested="Id" />
+          </Relation>
+          <Relation Type="Inner" Parent="Stock" Nested="Sectores">
+            <KeyColumn Parent="DelSector" Nested="IdSector" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Stock" Name="StockMinimo" />
+          <Column Table="Stock" Name="Stock" />
+          <Column Table="Stock" Name="FechaModificacion" />
+          <Column Table="Stock" Name="IdProducto" />
+          <Column Table="Productos" Name="Producto" />
+          <Column Table="Sectores" Name="Sector" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Origen de datos SQL 1">
+          <View Name="Stock">
+            <Field Name="StockMinimo" Type="Decimal" />
+            <Field Name="Stock" Type="Decimal" />
+            <Field Name="FechaModificacion" Type="DateTime" />
+            <Field Name="IdProducto" Type="Int32" />
+            <Field Name="Producto" Type="String" />
+            <Field Name="Sector" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Gauge ComponentName="gaugeDashboardItem1" Name="Productos" DataSource="dashboardSqlDataSource1" DataMember="Stock">
+      <DataItems>
+        <Measure DataMember="StockMinimo" SummaryType="Max" UniqueName="DataItem1" />
+        <Dimension DataMember="Sector" SortByMeasure="DataItem2" UniqueName="DataItem0" />
+        <Dimension DataMember="Producto" SortByMeasure="DataItem1" UniqueName="DataItem3" />
+        <Measure DataMember="Stock" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem0" />
+        <SeriesDimension UniqueName="DataItem3" />
+      </SeriesDimensions>
+      <GaugeElement>
+        <ActualValue UniqueName="DataItem2" />
+        <TargetValue UniqueName="DataItem1" />
+        <DeltaOptions ResultIndicationMode="WarningIfLess" ResultIndicationThresholdType="Absolute" />
+      </GaugeElement>
+    </Gauge>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Filtrar stock por sector" DataSource="dashboardSqlDataSource1" DataMember="Stock">
+      <DataItems>
+        <Dimension DataMember="Sector" UniqueName="DataItem0" />
+        <Dimension DataMember="Producto" UniqueName="DataItem1" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+        <Dimension UniqueName="DataItem1" />
+      </FilterDimensions>
+    </TreeView>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="22.761596548004317" />
+      <LayoutItem DashboardItem="gaugeDashboardItem1" Weight="77.23840345199568" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>
