@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-ES">
+  <Title Text="Usuarios por sector" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>Origen de datos SQL 1</Name>
+      <Connection Name="centralmontagne_MontagneAdministracion_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="centralmontagne" />
+          <Parameter Name="database" Value="MontagneAdministracion" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="Gerencia" />
+          <Parameter Name="password" Value="interno.1660" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="UsuarioRol">
+        <Tables>
+          <Table Name="UsuarioRol" Meta="30|30|125|100" />
+          <Table Name="Usuarios" Meta="185|30|125|260" />
+          <Table Name="Sectores" Meta="340|30|125|100" />
+          <Relation Type="Inner" Parent="UsuarioRol" Nested="Usuarios">
+            <KeyColumn Parent="UsuarioId" Nested="UsuarioID" />
+          </Relation>
+          <Relation Type="Inner" Parent="Usuarios" Nested="Sectores">
+            <KeyColumn Parent="Area" Nested="IdSector" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="Usuarios" Name="Nombres" />
+          <Column Table="Usuarios" Name="Apellidos" />
+          <Column Table="Sectores" Name="Sector" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Origen de datos SQL 1">
+          <View Name="UsuarioRol">
+            <Field Name="Nombres" Type="String" />
+            <Field Name="Apellidos" Type="String" />
+            <Field Name="Sector" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Pie ComponentName="pieDashboardItem1" Name="Tartas 1" DataSource="dashboardSqlDataSource1" DataMember="UsuarioRol" PieType="Donut" LabelContentType="Argument" TooltipContentType="ArgumentAndPercent">
+      <ColoringOptions UseGlobalColors="false" />
+      <DataItems>
+        <Dimension DataMember="Apellidos" UniqueName="DataItem0" />
+        <Dimension DataMember="Nombres" UniqueName="DataItem1" />
+        <Dimension DataMember="Sector" UniqueName="DataItem3" />
+        <Measure DataMember="Sector" SummaryType="Count" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem3" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem2" />
+      </Values>
+    </Pie>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup>
+      <LayoutItem DashboardItem="pieDashboardItem1" Weight="0.25" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

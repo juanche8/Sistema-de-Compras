@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-ES">
+  <Title Text="Tablero de control" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>Origen de datos SQL 1</Name>
+      <Connection Name="centralmontagne_MontagneAdministracion_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="centralmontagne" />
+          <Parameter Name="database" Value="MontagneAdministracion" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="PedidosDetalles">
+        <Tables>
+          <Table Name="PedidosDetalles" Meta="30|30|125|200" />
+          <Table Name="Productos" Meta="350|10|125|180" />
+          <Table Name="Proveedores" Meta="190|40|125|340" />
+          <Relation Type="Inner" Parent="PedidosDetalles" Nested="Productos">
+            <KeyColumn Parent="IdProducto" Nested="Id" />
+          </Relation>
+          <Relation Type="Inner" Parent="PedidosDetalles" Nested="Proveedores">
+            <KeyColumn Parent="IdProveedor" Nested="IdProveedor" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="PedidosDetalles" Name="Cantidad" />
+          <Column Table="PedidosDetalles" Name="PrecioProducto" />
+          <Column Table="PedidosDetalles" Name="ODCEnviada" />
+          <Column Table="Productos" Name="Producto" />
+          <Column Table="Proveedores" Name="RazonSocial" />
+        </Columns>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Origen de datos SQL 1">
+          <View Name="PedidosDetalles">
+            <Field Name="Cantidad" Type="Decimal" />
+            <Field Name="PrecioProducto" Type="Decimal" />
+            <Field Name="ODCEnviada" Type="Int32" />
+            <Field Name="Producto" Type="String" />
+            <Field Name="RazonSocial" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Gastos por proveedor" DataSource="dashboardSqlDataSource1" DataMember="PedidosDetalles">
+      <DataItems>
+        <Dimension DataMember="RazonSocial" UniqueName="DataItem0" />
+        <Measure DataMember="Producto" SummaryType="Count" UniqueName="DataItem3" />
+        <Dimension DataMember="PrecioProducto" UniqueName="DataItem1">
+          <NumericFormat FormatType="Currency" IncludeGroupSeparator="true" CurrencyCultureName="es-AR" />
+        </Dimension>
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem1" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem0" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Panel 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem3" />
+            </Simple>
+          </Series>
+        </Pane>
+        <Pane Name="Panel 2" />
+      </Panes>
+    </Chart>
+    <RangeFilter ComponentName="rangeFilterDashboardItem1" Name="Filtro de Rango 1" DataSource="dashboardSqlDataSource1" DataMember="PedidosDetalles">
+      <DataItems>
+        <Measure DataMember="PrecioProducto" UniqueName="DataItem0" />
+        <Dimension DataMember="Cantidad" UniqueName="DataItem1" />
+      </DataItems>
+      <Argument UniqueName="DataItem1" />
+      <Series>
+        <Simple SeriesType="Line">
+          <Value UniqueName="DataItem0" />
+        </Simple>
+      </Series>
+    </RangeFilter>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutItem DashboardItem="chartDashboardItem1" Weight="50" />
+      <LayoutItem DashboardItem="rangeFilterDashboardItem1" Weight="50" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

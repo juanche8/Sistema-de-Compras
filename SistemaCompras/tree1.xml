@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard CurrencyCulture="es-ES">
+  <Title Text="Tablero de control" />
+  <DataSources>
+    <SqlDataSource ComponentName="dashboardSqlDataSource1">
+      <Name>Origen de datos SQL 1</Name>
+      <Connection Name="centralmontagne_MontagneAdministracion_Connection" ProviderKey="MSSqlServer">
+        <Parameters>
+          <Parameter Name="server" Value="centralmontagne" />
+          <Parameter Name="database" Value="MontagneAdministracion" />
+          <Parameter Name="useIntegratedSecurity" Value="False" />
+          <Parameter Name="read only" Value="1" />
+          <Parameter Name="generateConnectionHelper" Value="false" />
+          <Parameter Name="userid" Value="Gerencia" />
+          <Parameter Name="password" Value="interno.1660" />
+        </Parameters>
+      </Connection>
+      <Query Type="SelectQuery" Name="PedidosDetalles">
+        <Tables>
+          <Table Name="PedidosDetalles" Meta="30|30|125|200" />
+          <Table Name="Pedidos" Meta="185|30|125|240" />
+          <Table Name="Sectores" Meta="340|30|125|100" />
+          <Table Name="Productos" Meta="30|240|125|180" />
+          <Table Name="EstadosPedido" Meta="180|300|125|80" />
+          <Relation Type="Inner" Parent="PedidosDetalles" Nested="Pedidos">
+            <KeyColumn Parent="IdPedido" Nested="IdPedido" />
+          </Relation>
+          <Relation Type="Inner" Parent="Pedidos" Nested="Sectores">
+            <KeyColumn Parent="Sector" Nested="IdSector" />
+          </Relation>
+          <Relation Type="Inner" Parent="PedidosDetalles" Nested="Productos">
+            <KeyColumn Parent="IdProducto" Nested="Id" />
+          </Relation>
+          <Relation Type="Inner" Parent="Pedidos" Nested="EstadosPedido">
+            <KeyColumn Parent="Estado" Nested="IdEstado" />
+          </Relation>
+        </Tables>
+        <Columns>
+          <Column Table="PedidosDetalles" Name="Cantidad" />
+          <Column Table="Pedidos" Name="Responsable" />
+          <Column Table="Pedidos" Name="FechaPedido" />
+          <Column Table="Pedidos" Name="AutorizadoPor" />
+          <Column Table="Pedidos" Name="Urgente" />
+          <Column Table="Sectores" Name="Sector" Alias="Sectores_Sector" />
+          <Column Table="Productos" Name="Producto" />
+          <Column Table="EstadosPedido" Name="Estado" />
+        </Columns>
+        <Filter>[Pedidos.AutorizadoPor] Is Not Null</Filter>
+      </Query>
+      <ResultSchema>
+        <DataSet Name="Origen de datos SQL 1">
+          <View Name="PedidosDetalles">
+            <Field Name="Cantidad" Type="Decimal" />
+            <Field Name="Responsable" Type="String" />
+            <Field Name="FechaPedido" Type="DateTime" />
+            <Field Name="AutorizadoPor" Type="String" />
+            <Field Name="Urgente" Type="String" />
+            <Field Name="Sectores_Sector" Type="String" />
+            <Field Name="Producto" Type="String" />
+            <Field Name="Estado" Type="String" />
+          </View>
+        </DataSet>
+      </ResultSchema>
+      <ConnectionOptions CloseConnection="true" CommandTimeout="0" />
+    </SqlDataSource>
+  </DataSources>
+  <Items>
+    <Chart ComponentName="chartDashboardItem1" Name="Gráfico 1" ShowCaption="false" DataSource="dashboardSqlDataSource1" DataMember="PedidosDetalles">
+      <DataItems>
+        <Measure DataMember="Estado" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="AutorizadoPor" ColoringMode="Hue" SortByMeasure="DataItem0" UniqueName="DataItem1" />
+        <Dimension DataMember="Urgente" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Panes>
+        <Pane Name="Panel 1">
+          <Series>
+            <Simple>
+              <Value UniqueName="DataItem0" />
+            </Simple>
+          </Series>
+        </Pane>
+      </Panes>
+    </Chart>
+    <Pie ComponentName="pieDashboardItem1" Name="Tartas 1" ShowCaption="false" DataSource="dashboardSqlDataSource1" DataMember="PedidosDetalles">
+      <DataItems>
+        <Measure DataMember="AutorizadoPor" SummaryType="Count" UniqueName="DataItem0" />
+        <Dimension DataMember="Estado" UniqueName="DataItem1" />
+        <Dimension DataMember="Sectores_Sector" UniqueName="DataItem2" />
+      </DataItems>
+      <SeriesDimensions>
+        <SeriesDimension UniqueName="DataItem2" />
+      </SeriesDimensions>
+      <Arguments>
+        <Argument UniqueName="DataItem1" />
+      </Arguments>
+      <Values>
+        <Value UniqueName="DataItem0" />
+      </Values>
+    </Pie>
+    <TreeView ComponentName="treeViewDashboardItem1" Name="Seleccione para ordenar" DataSource="dashboardSqlDataSource1" DataMember="PedidosDetalles" FilterString="[DataItem0] Is Not Null">
+      <DataItems>
+        <Dimension DataMember="AutorizadoPor" UniqueName="DataItem0" />
+        <Dimension DataMember="Responsable" UniqueName="DataItem1" />
+        <Dimension DataMember="Urgente" UniqueName="DataItem2" />
+      </DataItems>
+      <FilterDimensions>
+        <Dimension UniqueName="DataItem0" />
+        <Dimension UniqueName="DataItem1" />
+        <Dimension UniqueName="DataItem2" />
+      </FilterDimensions>
+    </TreeView>
+  </Items>
+  <LayoutTree>
+    <LayoutGroup Orientation="Vertical">
+      <LayoutGroup Weight="40.2321083172147">
+        <LayoutItem DashboardItem="treeViewDashboardItem1" Weight="24.919093851132686" />
+        <LayoutItem DashboardItem="pieDashboardItem1" Weight="50.053937432578209" />
+      </LayoutGroup>
+      <LayoutItem DashboardItem="chartDashboardItem1" Weight="59.7678916827853" />
+    </LayoutGroup>
+  </LayoutTree>
+</Dashboard>

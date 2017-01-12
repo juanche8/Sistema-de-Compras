@@ -1,0 +1,56 @@
+C:\Users\juanyoris\Downloads\Release\firma.html
+C:\Users\juanyoris\Downloads\Release\SistemaCompras.exe.config
+C:\Users\juanyoris\Downloads\Release\SistemaCompras.exe
+C:\Users\juanyoris\Downloads\Release\SistemaCompras.pdb
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPresupuestos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.RpSolicitudCotizacion.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.Form1.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.diseñador.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.visor.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrBusca2r.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrCambioContrasenia.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.frimage.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrSimple.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.LoginForm1.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.Resources.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrMasterDetailOrdCompras.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPrincipalCompras.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrBajasMateriales.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrConsumo.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrStock.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrMasterDetailRecepciones.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrODC.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPivotPedidos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.RpODC.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrMonedas.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrMotivosBaja.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrProductos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrRubros.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrSectores.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrAgregarPrecio.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrAprobarODC.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrMasterDetailPedidos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPedidos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPedidosValorizados.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.RpListaAprobar.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrContactos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrListasPrecios.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrProveedores.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrProveedores2.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrActualizaciones.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrDatabase.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrObjetos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPermisos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrRoles.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrSeguridad.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrUsuarioPorRol.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrUsuarios.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrVerSeguridad.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.SplashScreen1.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.RpPedidos.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.XtraReport1.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.vbproj.GenerateResource.Cache
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.exe.licenses
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.exe
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.pdb
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.vbprojResolveAssemblyReference.cache
