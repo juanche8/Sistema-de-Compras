@@ -1,4 +1,4 @@
-# Sistema-de-Compras
+# Sistema de Compras 
 CRM (Sistema de Compras)
 
 Jerarquia de usuarios
@@ -22,3 +22,4 @@ Bloqueos de usuarios
 Manejo de base de datos a nivel del modulo "SEGURIDAD"
 
  . . .
+juanjosediazyoris@gmail.com
