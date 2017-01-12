@@ -200,7 +200,7 @@ Public Class FrPresupuestos
         End If
     End Sub
     Private Sub GridView1_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles GridView1.SelectionChanged
-       
+
     End Sub
 
     Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
@@ -208,7 +208,7 @@ Public Class FrPresupuestos
     End Sub
 
     Private Sub GridView1_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView1.RowClick
-         If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colProducto) Is Nothing Then
+        If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colProducto) Is Nothing Then
         Else
             Try
                 Dim leerimg = Session1.ExecuteScalar("Select ImagenUrl from PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
@@ -221,5 +221,7 @@ Public Class FrPresupuestos
             Catch ex As Exception
             End Try
         End If
+
     End Sub
+
 End Class

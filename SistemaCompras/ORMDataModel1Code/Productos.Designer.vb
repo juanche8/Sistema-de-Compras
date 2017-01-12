@@ -84,6 +84,16 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of String)("Presentacion", fPresentacion, value)
             End Set
         End Property
+        Dim fObservProducto As String
+        <Size(200)>
+        Public Property ObservProducto() As String
+            Get
+                Return fObservProducto
+            End Get
+            Set(ByVal value As String)
+                SetPropertyValue(Of String)("ObservProducto", fObservProducto, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

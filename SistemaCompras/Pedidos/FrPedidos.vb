@@ -229,7 +229,7 @@ Public Class FrPedidos
         Using O As New OpenFileDialog With {.Filter = "(Image Files)|*.jpg;*.png;*.bmp;*.gif;*.ico|Jpg, | *.jpg|Png, | *.png|Bmp, | *.bmp|Gif, | *.gif|Ico | *.ico", .Multiselect = False, .Title = "Select Image"}
             If O.ShowDialog = 1 Then
                 imagedir = O.FileName
-                dim imgserver = "\\192.168.189.26\c$\update\images\" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, coliddetalle) & ".jpg"
+                dim imgserver = "\\CENTRALMONTAGNE\softMtg\compras\images\" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, coliddetalle) & ".jpg"
                 My.Computer.FileSystem.CopyFile(imagedir, imgserver, FileIO.UIOption.AllDialogs, FileIO.UICancelOption.DoNothing)
                 ' Dim picture As Buffer 
                 PictureBox1.Image = Image.FromFile(imgserver)

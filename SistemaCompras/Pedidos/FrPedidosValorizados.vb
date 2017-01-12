@@ -133,6 +133,7 @@ Public Class FrPedidosValorizados
             GridView1.SetFocusedRowCellValue(colFechaAprobacion, Today)
             GridView1.SetFocusedRowCellValue(colObservaciones, obs)
             GridView1.UpdateCurrentRow()
+          
         End If
     End Sub
     Public Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
@@ -155,8 +156,6 @@ Public Class FrPedidosValorizados
             Dim consulta = GridView1.GetFocusedRowCellValue(colIdPedido)
             If consulta = 0 Then
             Else
-
-
                 Try
                     DetallePedido.CriteriaString = "IdPedido = " & consulta '& " And Sector = " & Sectorid
                     Dim direccion = Session1.ExecuteScalar("Select DireccionDeEnvio from Pedidos where IdPedido = " & GridView1.GetFocusedRowCellValue(colIdPedido))

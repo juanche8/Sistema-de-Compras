@@ -90,27 +90,27 @@ Public Class FrMasterDetailPedidos
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
         Try
             Dim consulta = GridView1.GetFocusedRowCellValue(colIdPedido)
-           
+
 
             If consulta = 0 Then
 
             Else
                 try
-                XpCollectionVistaDetalles.CriteriaString = "IdPedido = " & consulta '& " And Sector = " & Sectorid
-                Dim direccion = Session1.ExecuteScalar("Select DireccionDeEnvio from Pedidos where IdPedido = " & GridView1.GetFocusedRowCellValue(colIdPedido))
-                Dim direccionfisica = Session1.ExecuteScalar("Select Direccion from DireccionesEntrega where Id = " & direccion)
+                    XpCollectionVistaDetalles.CriteriaString = "IdPedido = " & consulta '& " And Sector = " & Sectorid
+                    Dim direccion = Session1.ExecuteScalar("Select DireccionDeEnvio from Pedidos where IdPedido = " & GridView1.GetFocusedRowCellValue(colIdPedido))
+                    Dim direccionfisica = Session1.ExecuteScalar("Select Direccion from DireccionesEntrega where Id = " & direccion)
                     If direccion <> 0 then
-                    dirlabel.Text = "Direccion de entrega: " & direccionfisica
-                        Else 
+                        dirlabel.Text = "Direccion de entrega: " & direccionfisica
+                    Else
                         dirlabel.Text = ""
                     End if
-                    If GridView1.GetFocusedRowCellValue(colResponsable) =  Responsable And GridView1.GetFocusedRowCellValue(colEstado) = 5 Then
+                    If GridView1.GetFocusedRowCellValue(colResponsable) = Responsable And GridView1.GetFocusedRowCellValue(colEstado) = 5 Then
                         SimpleButton2.Visible = true
-                        Else
-                        SimpleButton2.Visible= false
-                        End if
-                    Catch ex As Exception
-                    End try
+                    Else
+                        SimpleButton2.Visible = false
+                    End if
+                Catch ex As Exception
+                End try
             End If
         Catch exp As Exception
             MessageBox.Show(exp.Message, "Se produjo un error, consulte con soporte", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -166,9 +166,11 @@ Public Class FrMasterDetailPedidos
             GridView1.SetFocusedRowCellValue(colEstado, 6)
             GridView1.UpdateCurrentRow()
             MsgBox("El estado de tu pedido se ha cambiado a 'RECIBIDO'")
-                       Else
+        Else
             Return
-            End If
+        End If
 
     End Sub
+
+  
 End Class

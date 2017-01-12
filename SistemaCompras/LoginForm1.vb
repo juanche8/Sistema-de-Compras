@@ -86,13 +86,13 @@ Public Class LoginForm1
         Dim user As Integer = Session1.ExecuteScalar("select count(UsuarioID) from Usuarios where UsuarioID = '" & Usuario & "'")
        ' dim maquina1 as string = Session1.ExecuteNonQuery("select Maquina from Equipos where Maquina = '" & Environment.MachineName & "'")
              If user = 1 Then
-            exists = System.IO.File.Exists("\\192.168.189.26\c$\update\setup.exe")
+            exists = System.IO.File.Exists("\\CENTRALMONTAGNE\softMtg\compras\update\setup.exe")
             If exists = True And actualizo = 0 Then
                 If MsgBox("Existe una nueva version del sistema, deseas actualizar?", vbYesNo) = MsgBoxResult.Yes Then
 
                     Session1.ExecuteNonQuery("update Equipos set Actualizo = 1, Usuario = '" & Usuario & "' where NombreEquipo = '" & maquina & "'")
                     'Update [Usuarios] SET [Actualizo]='1' WHERE ([UsuarioID]='compras2')
-                    loPSI.FileName = "\\192.168.189.26\c$\update\setup.exe"
+                    loPSI.FileName = "\\CENTRALMONTAGNE\softMtg\compras\update\setup.exe"
                     Try
                         loProceso = Process.Start(loPSI)
 

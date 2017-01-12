@@ -96,7 +96,7 @@ Public Class FrODC
                         Sendmail("logger", "Informacion de Retiro", "mtgexpedicion@montagne.com.ar, deboramedina@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "C:\Reportes\ODCs\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
                         MsgBox("Se ha enviado el correo con la informacion del retiro", vbinformation)
                     End If
-                    Session1.ExecuteNonQuery("Update PedidosDetalles SET ODCEnviada = 1 where IdPedido =" & CInt(GridView2.GetFocusedRowCellValue(colIdPedido)) & "and IdProveedor = " & CInt(GridView2.GetFocusedRowCellValue(colIdProveedor)))
+                    Session1.ExecuteNonQuery("Update PedidosDetalles SET ODCEnviada = 1 where IdPedido =" & CInt(GridView3.GetFocusedRowCellValue(colIdPedido2)) & "and IdProveedor = " & CInt(GridView3.GetFocusedRowCellValue(colIdProveedor3)))
                     Session1.ExecuteNonQuery("Update Pedidos SET Estado = 5 where IdPedido =" & CInt(GridView2.GetFocusedRowCellValue(colIdPedido)))
 
                    Dim resultSet3 As SelectedData = Session1.ExecuteQuery("SELECT * from VistaODC where AproboMartin = 1 and ODCEnviada = 0")

@@ -22,7 +22,6 @@ Partial Class FrODC
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrODC))
         Dim DataViewProperty1 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
         Dim DataViewProperty2 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
@@ -141,7 +140,7 @@ Partial Class FrODC
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.XpDataView2 = New DevExpress.Xpo.XPDataView(Me.components)
+        Me.XpDataView2 = New DevExpress.Xpo.XPDataView()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -164,7 +163,7 @@ Partial Class FrODC
         Me.colAproboMartin = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.SplitContainerControl4 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
-        Me.XpDataView3 = New DevExpress.Xpo.XPDataView(Me.components)
+        Me.XpDataView3 = New DevExpress.Xpo.XPDataView()
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido2 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -186,7 +185,7 @@ Partial Class FrODC
         Me.colODCEnviada3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAproboMartin2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridControl4 = New DevExpress.XtraGrid.GridControl()
-        Me.XpDataView4 = New DevExpress.Xpo.XPDataView(Me.components)
+        Me.XpDataView4 = New DevExpress.Xpo.XPDataView()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido3 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -231,12 +230,12 @@ Partial Class FrODC
         Me.colAproboMartin1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
         Me.RepositoryItemGridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.XpDataView5 = New DevExpress.Xpo.XPDataView(Me.components)
-        Me.XpDataView1 = New DevExpress.Xpo.XPDataView(Me.components)
-        Me.PedidosDetalles = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.Pedidos = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.XpDataView5 = New DevExpress.Xpo.XPDataView()
+        Me.XpDataView1 = New DevExpress.Xpo.XPDataView()
+        Me.PedidosDetalles = New DevExpress.Xpo.XPCollection()
+        Me.Pedidos = New DevExpress.Xpo.XPCollection()
         Me.FormAssistant1 = New DevExpress.XtraBars.FormAssistant()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
         CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SplitContainerControl1.SuspendLayout
         CType(Me.fechaentrega.Properties.CalendarTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -352,7 +351,7 @@ Partial Class FrODC
         Me.cbopago.Location = New System.Drawing.Point(663, 21)
         Me.cbopago.Name = "cbopago"
         Me.cbopago.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cbopago.Properties.Items.AddRange(New Object() {"EFECTIVO CONTRA ENTREGA ", "CHEQUE A 15 DIAS CONTRA ENTREGA", "CHEQUE A 30 DIAS CONTRA ENTREGA", "CHEQUE A 40 DIAS CONTRA ENTREGA", "CHEQUE A 60 DIAS CONTRA ENTREGA", "TRANSFERENCIA ANTICIPADA", "TRANSFERENCIAS AL DIA", "A CONVENIR", "SE DEDUCE DE NC A FAVOR POR CAMBIO", "ENTREGA A 7 DÍAS DE RECEPCIÓN CON VALORES A 30", "CUENTA CORRIENTE (ENTREGA A 7 DÍAS DE RECEPCIÓN CON VALORES A 30)", "CHEQUE AL DÍA C/ENTREGA", "CHEQUE PROPIO A 30 DIAS", "CONDICION NEGOCIADA CON EL PROVEEDOR", "PRIMERA OPERACIÓN", "A 7 DÍAS DE RECEPCION CHEQUE A 30/45 DIAS FF", "A 7 DÍAS DE RECEPCION CHEQUE A 30/45/60 DIAS FF", "A 7 DÍAS DE RECEPCION CHEQUE A 30/60/90 DIAS FF", "ANTICIPO 50% - SALDO CON VALORES A 30 DIAS FF", "ANTICIPO 50% - SALDO CON CHEQUE AL DIA CONTRA ENTREGA"})
+        Me.cbopago.Properties.Items.AddRange(New Object() {"EFECTIVO CONTRA ENTREGA ", "CHEQUE A 10 DIAS CONTRA ENTREGA", "CHEQUE A 15 DIAS CONTRA ENTREGA", "CHEQUE A 30 DIAS CONTRA ENTREGA", "CHEQUE A 40 DIAS CONTRA ENTREGA", "CHEQUE A 60 DIAS CONTRA ENTREGA", "TRANSFERENCIA ANTICIPADA", "TRANSFERENCIAS AL DIA", "A CONVENIR", "SE DEDUCE DE NC A FAVOR POR CAMBIO", "ENTREGA A 7 DÍAS DE RECEPCIÓN CON VALORES A 30", "CUENTA CORRIENTE (ENTREGA A 7 DÍAS DE RECEPCIÓN CON VALORES A 30)", "CHEQUE AL DÍA C/ENTREGA", "CHEQUE PROPIO A 30 DIAS", "CONDICION NEGOCIADA CON EL PROVEEDOR", "PRIMERA OPERACIÓN", "A 7 DÍAS DE RECEPCION CHEQUE A 30/45 DIAS FF", "A 7 DÍAS DE RECEPCION CHEQUE A 30/45/60 DIAS FF", "A 7 DÍAS DE RECEPCION CHEQUE A 30/60/90 DIAS FF", "ANTICIPO 50% - SALDO CON VALORES A 30 DIAS FF", "ANTICIPO 50% - SALDO CON CHEQUE AL DIA CONTRA ENTREGA"})
         Me.cbopago.Size = New System.Drawing.Size(267, 20)
         Me.cbopago.TabIndex = 18
         Me.cbopago.Visible = false

@@ -90,12 +90,12 @@
         <elementListCompartment Id="7df2b59e-99c4-404b-9f1d-f09feec465ce" absoluteBounds="7.1400000000000006, 12.963382161458334, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
-    <xpObjectShape Id="38597043-b684-4bd2-8fb9-63022e161185" absoluteBounds="13.125, 0.75, 1.5, 2.524278971354164">
+    <xpObjectShape Id="38597043-b684-4bd2-8fb9-63022e161185" absoluteBounds="13.125, 0.75, 1.5, 2.7165804036458328">
       <xpObjectMoniker Id="32721cc8-b0e9-47a5-86f2-d483ff713e87" />
       <nestedChildShapes>
-        <elementListCompartment Id="5fce1f39-f444-4dd7-a7f9-5addd0c116bd" absoluteBounds="13.14, 1.0600000000000005, 1.4700000000000002, 1.5954996744791665" name="Fields" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="82548297-f700-4d7f-8c08-34a640e7df49" absoluteBounds="13.14, 2.6654996744791664, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
-        <elementListCompartment Id="26ed8a11-3850-4f6f-8d5c-70cf5284e3a7" absoluteBounds="13.14, 2.9248893229166661, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5fce1f39-f444-4dd7-a7f9-5addd0c116bd" absoluteBounds="13.14, 1.0600000000000005, 1.4700000000000002, 1.7878011067708333" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="82548297-f700-4d7f-8c08-34a640e7df49" absoluteBounds="13.14, 2.8578011067708329, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="26ed8a11-3850-4f6f-8d5c-70cf5284e3a7" absoluteBounds="13.14, 3.1171907552083327, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
     <xpObjectShape Id="38f6d952-c050-47e7-9764-81e1854ddbaa" absoluteBounds="1.6500000000000004, 5.2492811686197918, 1.5, 2.1396761067708354">

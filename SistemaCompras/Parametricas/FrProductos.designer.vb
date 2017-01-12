@@ -266,8 +266,9 @@
         '
         'colObservaciones
         '
+        Me.colObservaciones.Caption = "Observaciones"
         Me.colObservaciones.ColumnEdit = Me.RepositoryItemMemoEdit1
-        Me.colObservaciones.FieldName = "Observaciones"
+        Me.colObservaciones.FieldName = "ObservProducto"
         Me.colObservaciones.Name = "colObservaciones"
         Me.colObservaciones.Visible = true
         Me.colObservaciones.VisibleIndex = 6
