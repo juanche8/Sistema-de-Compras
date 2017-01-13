@@ -219,10 +219,10 @@ Public Class FrPedidosValorizados
         'GridView5.SetFocusedValue(idprov)
     End Sub
 
-    Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles SimpleButton6.Click
+    Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) 
         Dim querylinq As New XPQuery(Of Productos)(Session1)
 
-        FrAgregarPrecio.Show()
+        FrProductos.Show()
     End Sub
 
     Private Sub sbimprimir_Click(sender As Object, e As EventArgs) Handles imprimirtodos.Click
