@@ -49,6 +49,7 @@ Public Class FrPresupuestos
         If Cotiza = 1 Then
             Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null or Responsable = 'Daniela Bazaga'"
             PictureBox1.Visible = True
+            SimpleButton6.Visible = true
         End If
         Proveedores.CriteriaString = "Email  Is Not null"
         Proveedores.CriteriaString = "Rubro  Is Not null"
@@ -204,7 +205,9 @@ Public Class FrPresupuestos
     End Sub
 
     Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
-
+        If GridView1.RowCount >= 1 Then
+            SimpleButton6.Enabled = true
+        End If
     End Sub
 
     Private Sub GridView1_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView1.RowClick
@@ -224,4 +227,25 @@ Public Class FrPresupuestos
 
     End Sub
 
+    Private Sub PictureBox1_EditValueChanged(sender As Object, e As EventArgs) Handles PictureBox1.EditValueChanged
+
+    End Sub
+
+    Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles SimpleButton6.Click
+
+     
+        try
+            If GridView1.RowCount = 0 Then
+            Else
+
+                Dim prod = Session1.ExecuteScalar("Select Id from Productos where Producto = '" & GridView1.GetFocusedRowCellValue(colProducto)&"'")
+               ' Dim direccionfisica = Session1.ExecuteScalar("Select Direccion from DireccionesEntrega where Id = " & direccion)
+                Idprod= prod
+                
+            End if
+        Catch ex As Exception
+            
+        End try
+        FrProductos.Show()
+    End Sub
 End Class

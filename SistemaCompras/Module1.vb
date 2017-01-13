@@ -21,6 +21,7 @@ Module Module1
     Public producto As Integer
     Public Empresa As String
     Public Formadepago As string
+    Public Idprod As integer
     Public Function Sendmail(logfile As String, subject As String, provider As String, adjunto As String, cuerpo As String) As Boolean
         Dim mailer As New Smtp()
         ' Dim mail As New MailMessage()

@@ -27,9 +27,9 @@ Partial Public Class FrProductos
                 Rubros.CriteriaString = "Rubro = 'SISTEMAS' or  Rubro = 'POLIRUBRO' Or Rubro = 'ALIMENTACION'"
             End If
             gridView.AddNewRow()
-                gridView.ShowEditForm()
+            gridView.ShowEditForm()
 
-            End If
+        End If
         If e.Button.Properties.Caption = "EDITAR" Then
             If Sectorid = 3 Then
                 Rubros.CriteriaString = "Rubro = 'FERRETERIA' or  Rubro = 'POLIRUBRO' or Rubro = 'ALIMENTACION'"
@@ -75,16 +75,24 @@ Partial Public Class FrProductos
     End Sub
 
     Private Sub XtraForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Productos.Session = Session1
-        Rubros.Session = Session1
-        If Sectorid = 1 Then
-            Productos.CriteriaString = "Rubro = 'SISTEMAS'"
-        End If
-        If Sectorid = 3 Then
+        If Idprod = Nothing then
 
-            Productos.CriteriaString = "Rubro =  'SISTEMAS' or Rubro = 'FERRETERIA'"
-            '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
-        End If
+            Productos.Session = Session1
+            Rubros.Session = Session1
+            If Sectorid = 1 Then
+                Productos.CriteriaString = "Rubro = 'SISTEMAS'"
+            End If
+            If Sectorid = 3 Then
+
+                Productos.CriteriaString = "Rubro =  'SISTEMAS' or Rubro = 'FERRETERIA'"
+                '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
+            End If
+        else
+            Productos.Session = Session1
+            Rubros.Session = Session1
+            Productos.CriteriaString = "Id = "& Idprod
+        End if
+        Idprod = Nothing
     End Sub
 
 

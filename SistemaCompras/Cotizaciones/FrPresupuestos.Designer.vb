@@ -78,6 +78,7 @@ Partial Class FrPresupuestos
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PictureBox1 = New DevExpress.XtraEditors.ImageEdit()
+        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colSector1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -270,7 +271,7 @@ Partial Class FrPresupuestos
         Me.GridControl1.MainView = Me.GridView3
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit4, Me.RepositoryItemGridLookUpEdit5})
-        Me.GridControl1.Size = New System.Drawing.Size(1137, 334)
+        Me.GridControl1.Size = New System.Drawing.Size(1137, 326)
         Me.GridControl1.TabIndex = 3
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView2})
         '
@@ -702,10 +703,11 @@ Partial Class FrPresupuestos
         Me.SplitContainerControl2.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainerControl2.Panel1.Controls.Add(Me.GridControl1)
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
+        Me.SplitContainerControl2.Panel2.Controls.Add(Me.SimpleButton6)
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.GridControl2)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
         Me.SplitContainerControl2.Size = New System.Drawing.Size(1143, 409)
-        Me.SplitContainerControl2.SplitterPosition = 334
+        Me.SplitContainerControl2.SplitterPosition = 326
         Me.SplitContainerControl2.TabIndex = 4
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
         '
@@ -718,6 +720,19 @@ Partial Class FrPresupuestos
         Me.PictureBox1.Size = New System.Drawing.Size(238, 20)
         Me.PictureBox1.TabIndex = 21
         Me.PictureBox1.Visible = false
+        '
+        'SimpleButton6
+        '
+        Me.SimpleButton6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.SimpleButton6.Enabled = false
+        Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"),System.Drawing.Image)
+        Me.SimpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
+        Me.SimpleButton6.Location = New System.Drawing.Point(3, 46)
+        Me.SimpleButton6.Name = "SimpleButton6"
+        Me.SimpleButton6.Size = New System.Drawing.Size(127, 22)
+        Me.SimpleButton6.TabIndex = 22
+        Me.SimpleButton6.Text = "Editar producto"
+        Me.SimpleButton6.Visible = false
         '
         'GridControl2
         '
@@ -734,7 +749,7 @@ Partial Class FrPresupuestos
         Me.GridControl2.MainView = Me.GridView1
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit2})
-        Me.GridControl2.Size = New System.Drawing.Size(1137, 63)
+        Me.GridControl2.Size = New System.Drawing.Size(1137, 71)
         Me.GridControl2.TabIndex = 4
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView5})
         '
@@ -1104,4 +1119,5 @@ End Sub
     Friend WithEvents dirlabel As DevExpress.XtraEditors.LabelControl
     Friend WithEvents PictureBox1 As DevExpress.XtraEditors.ImageEdit
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
 End Class
