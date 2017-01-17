@@ -109,6 +109,15 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of String)("ImagenUrl", fImagenUrl, value)
             End Set
         End Property
+        Dim fCotizado As Integer
+        Public Property Cotizado() As Integer
+            Get
+                Return fCotizado
+            End Get
+            Set(ByVal value As Integer)
+                SetPropertyValue(Of Integer)("Cotizado", fCotizado, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

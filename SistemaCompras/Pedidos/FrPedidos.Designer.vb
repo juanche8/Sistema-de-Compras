@@ -184,7 +184,7 @@ Partial Class FrPedidos
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridSplitContainer1)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1017, 406)
-        Me.SplitContainerControl1.SplitterPosition = 165
+        Me.SplitContainerControl1.SplitterPosition = 166
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
@@ -636,7 +636,7 @@ Partial Class FrPedidos
         Me.GridSplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.GridSplitContainer1.Name = "GridSplitContainer1"
         Me.GridSplitContainer1.Panel1.Controls.Add(Me.GridControl1)
-        Me.GridSplitContainer1.Size = New System.Drawing.Size(1017, 235)
+        Me.GridSplitContainer1.Size = New System.Drawing.Size(1017, 234)
         Me.GridSplitContainer1.TabIndex = 0
         '
         'GridControl1
@@ -648,7 +648,7 @@ Partial Class FrPedidos
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemImageEdit1, Me.RepositoryItemPictureEdit1, Me.RepositoryItemPopupGalleryEdit1, Me.RepositoryItemImageEdit2, Me.RepositoryItemImageComboBox2, Me.RepositoryItemPictureEdit2, Me.RepositoryItemImagePopupContainerEdit1, Me.RepositoryItemImageEdit3})
-        Me.GridControl1.Size = New System.Drawing.Size(1017, 235)
+        Me.GridControl1.Size = New System.Drawing.Size(1017, 234)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '

@@ -32,12 +32,16 @@ Partial Public Class RpSolicitudCotizacion
         Dim ColumnExpression4 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
         Dim Column5 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
         Dim ColumnExpression5 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
+        Dim Column6 As DevExpress.DataAccess.Sql.Column = New DevExpress.DataAccess.Sql.Column()
+        Dim ColumnExpression6 As DevExpress.DataAccess.Sql.ColumnExpression = New DevExpress.DataAccess.Sql.ColumnExpression()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RpSolicitudCotizacion))
         Dim Code128Generator1 As DevExpress.XtraPrinting.BarCode.Code128Generator = New DevExpress.XtraPrinting.BarCode.Code128Generator()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand()
+        Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel5 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
         Me.TopMargin = New DevExpress.XtraReports.UI.TopMarginBand()
         Me.BottomMargin = New DevExpress.XtraReports.UI.BottomMarginBand()
         Me.SqlDataSource1 = New DevExpress.DataAccess.Sql.SqlDataSource(Me.components)
@@ -47,6 +51,9 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrLine1 = New DevExpress.XtraReports.UI.XRLine()
         Me.XrPageInfo1 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.ReportHeaderBand1 = New DevExpress.XtraReports.UI.ReportHeaderBand()
+        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel()
+        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrLabel9 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrPictureBox1 = New DevExpress.XtraReports.UI.XRPictureBox()
         Me.XrLine3 = New DevExpress.XtraReports.UI.XRLine()
@@ -54,15 +61,10 @@ Partial Public Class RpSolicitudCotizacion
         Me.FieldCaption = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.PageInfo = New DevExpress.XtraReports.UI.XRControlStyle()
         Me.DataField = New DevExpress.XtraReports.UI.XRControlStyle()
-        Me.XrLabel4 = New DevExpress.XtraReports.UI.XRLabel()
-        Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrCrossBandBox1 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrCrossBandLine1 = New DevExpress.XtraReports.UI.XRCrossBandLine()
-        Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel()
         Me.XrCrossBandLine2 = New DevExpress.XtraReports.UI.XRCrossBandLine()
         Me.XrCrossBandBox2 = New DevExpress.XtraReports.UI.XRCrossBandBox()
-        Me.XrLabel10 = New DevExpress.XtraReports.UI.XRLabel()
         Me.ReportFooter = New DevExpress.XtraReports.UI.ReportFooterBand()
         Me.XrPageInfo2 = New DevExpress.XtraReports.UI.XRPageInfo()
         Me.XrBarCode1 = New DevExpress.XtraReports.UI.XRBarCode()
@@ -76,6 +78,19 @@ Partial Public Class RpSolicitudCotizacion
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
+        '
+        'XrLabel12
+        '
+        Me.XrLabel12.Dpi = 100!
+        Me.XrLabel12.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(707.6671!, 3.143267!)
+        Me.XrLabel12.Name = "XrLabel12"
+        Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
+        Me.XrLabel12.SizeF = New System.Drawing.SizeF(114.6664!, 26.52598!)
+        Me.XrLabel12.StyleName = "FieldCaption"
+        Me.XrLabel12.StylePriority.UseForeColor = false
+        Me.XrLabel12.StylePriority.UseTextAlignment = false
+        Me.XrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrLabel6
         '
@@ -140,6 +155,19 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrLabel7.StylePriority.UseFont = false
         Me.XrLabel7.Text = "XrLabel7"
         '
+        'XrLabel8
+        '
+        Me.XrLabel8.Dpi = 100!
+        Me.XrLabel8.ForeColor = System.Drawing.Color.Black
+        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(826.3333!, 3.143267!)
+        Me.XrLabel8.Name = "XrLabel8"
+        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
+        Me.XrLabel8.SizeF = New System.Drawing.SizeF(111.6667!, 26.52597!)
+        Me.XrLabel8.StyleName = "FieldCaption"
+        Me.XrLabel8.StylePriority.UseForeColor = false
+        Me.XrLabel8.StylePriority.UseTextAlignment = false
+        Me.XrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
         'TopMargin
         '
         Me.TopMargin.Dpi = 100!
@@ -161,7 +189,7 @@ Partial Public Class RpSolicitudCotizacion
         Me.SqlDataSource1.ConnectionName = "centralmontagne_sistemaadministracion_Connection"
         Me.SqlDataSource1.Name = "SqlDataSource1"
         ColumnExpression1.ColumnName = "Producto"
-        Table1.MetaSerializable = "30|30|125|320"
+        Table1.MetaSerializable = "30|30|125|340"
         Table1.Name = "VistaPedidosDetalle"
         ColumnExpression1.Table = Table1
         Column1.Expression = ColumnExpression1
@@ -177,11 +205,15 @@ Partial Public Class RpSolicitudCotizacion
         ColumnExpression5.ColumnName = "IdPedido"
         ColumnExpression5.Table = Table1
         Column5.Expression = ColumnExpression5
+        ColumnExpression6.ColumnName = "IdDetalle"
+        ColumnExpression6.Table = Table1
+        Column6.Expression = ColumnExpression6
         SelectQuery1.Columns.Add(Column1)
         SelectQuery1.Columns.Add(Column2)
         SelectQuery1.Columns.Add(Column3)
         SelectQuery1.Columns.Add(Column4)
         SelectQuery1.Columns.Add(Column5)
+        SelectQuery1.Columns.Add(Column6)
         SelectQuery1.Name = "VistaPedidosDetalle"
         SelectQuery1.Tables.Add(Table1)
         Me.SqlDataSource1.Queries.AddRange(New DevExpress.DataAccess.Sql.SqlQuery() {SelectQuery1})
@@ -246,6 +278,38 @@ Partial Public Class RpSolicitudCotizacion
         Me.ReportHeaderBand1.HeightF = 122.5078!
         Me.ReportHeaderBand1.Name = "ReportHeaderBand1"
         Me.ReportHeaderBand1.StylePriority.UseBorderDashStyle = false
+        '
+        'XrLabel10
+        '
+        Me.XrLabel10.Dpi = 100!
+        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(12.08333!, 29.29169!)
+        Me.XrLabel10.Name = "XrLabel10"
+        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
+        Me.XrLabel10.SizeF = New System.Drawing.SizeF(372.8029!, 33.00001!)
+        Me.XrLabel10.StyleName = "Title"
+        Me.XrLabel10.StylePriority.UseTextAlignment = false
+        Me.XrLabel10.Text = "Solicitud de Cotizacion Nº - "
+        Me.XrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        '
+        'XrLabel11
+        '
+        Me.XrLabel11.Dpi = 100!
+        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(719.1249!, 100.2084!)
+        Me.XrLabel11.Name = "XrLabel11"
+        Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
+        Me.XrLabel11.SizeF = New System.Drawing.SizeF(107.2084!, 18!)
+        Me.XrLabel11.StyleName = "FieldCaption"
+        Me.XrLabel11.Text = "Precio Unidad"
+        '
+        'XrLabel4
+        '
+        Me.XrLabel4.Dpi = 100!
+        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(826.3333!, 100.2084!)
+        Me.XrLabel4.Name = "XrLabel4"
+        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
+        Me.XrLabel4.SizeF = New System.Drawing.SizeF(104.6666!, 18!)
+        Me.XrLabel4.StyleName = "FieldCaption"
+        Me.XrLabel4.Text = "Precio Total"
         '
         'XrLabel9
         '
@@ -317,29 +381,6 @@ Partial Public Class RpSolicitudCotizacion
         Me.DataField.Name = "DataField"
         Me.DataField.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         '
-        'XrLabel4
-        '
-        Me.XrLabel4.Dpi = 100!
-        Me.XrLabel4.LocationFloat = New DevExpress.Utils.PointFloat(826.3333!, 100.2084!)
-        Me.XrLabel4.Name = "XrLabel4"
-        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel4.SizeF = New System.Drawing.SizeF(104.6666!, 18!)
-        Me.XrLabel4.StyleName = "FieldCaption"
-        Me.XrLabel4.Text = "Precio Total"
-        '
-        'XrLabel8
-        '
-        Me.XrLabel8.Dpi = 100!
-        Me.XrLabel8.ForeColor = System.Drawing.Color.Black
-        Me.XrLabel8.LocationFloat = New DevExpress.Utils.PointFloat(826.3333!, 3.143267!)
-        Me.XrLabel8.Name = "XrLabel8"
-        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel8.SizeF = New System.Drawing.SizeF(111.6667!, 26.52597!)
-        Me.XrLabel8.StyleName = "FieldCaption"
-        Me.XrLabel8.StylePriority.UseForeColor = false
-        Me.XrLabel8.StylePriority.UseTextAlignment = false
-        Me.XrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
-        '
         'XrCrossBandBox1
         '
         Me.XrCrossBandBox1.BorderWidth = 2!
@@ -352,16 +393,6 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrCrossBandBox1.StartPointFloat = New DevExpress.Utils.PointFloat(10!, 0.5859532!)
         Me.XrCrossBandBox1.WidthF = 930.9999!
         '
-        'XrLabel11
-        '
-        Me.XrLabel11.Dpi = 100!
-        Me.XrLabel11.LocationFloat = New DevExpress.Utils.PointFloat(719.1249!, 100.2084!)
-        Me.XrLabel11.Name = "XrLabel11"
-        Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel11.SizeF = New System.Drawing.SizeF(107.2084!, 18!)
-        Me.XrLabel11.StyleName = "FieldCaption"
-        Me.XrLabel11.Text = "Precio Unidad"
-        '
         'XrCrossBandLine1
         '
         Me.XrCrossBandLine1.Dpi = 100!
@@ -372,19 +403,6 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrCrossBandLine1.StartBand = Me.Detail
         Me.XrCrossBandLine1.StartPointFloat = New DevExpress.Utils.PointFloat(822.3336!, 0.5859408!)
         Me.XrCrossBandLine1.WidthF = 1!
-        '
-        'XrLabel12
-        '
-        Me.XrLabel12.Dpi = 100!
-        Me.XrLabel12.ForeColor = System.Drawing.Color.Black
-        Me.XrLabel12.LocationFloat = New DevExpress.Utils.PointFloat(707.6671!, 3.143267!)
-        Me.XrLabel12.Name = "XrLabel12"
-        Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel12.SizeF = New System.Drawing.SizeF(114.6664!, 26.52598!)
-        Me.XrLabel12.StyleName = "FieldCaption"
-        Me.XrLabel12.StylePriority.UseForeColor = false
-        Me.XrLabel12.StylePriority.UseTextAlignment = false
-        Me.XrLabel12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'XrCrossBandLine2
         '
@@ -408,18 +426,6 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrCrossBandBox2.StartBand = Me.ReportHeaderBand1
         Me.XrCrossBandBox2.StartPointFloat = New DevExpress.Utils.PointFloat(0!, 0!)
         Me.XrCrossBandBox2.WidthF = 940.9999!
-        '
-        'XrLabel10
-        '
-        Me.XrLabel10.Dpi = 100!
-        Me.XrLabel10.LocationFloat = New DevExpress.Utils.PointFloat(12.08333!, 29.29169!)
-        Me.XrLabel10.Name = "XrLabel10"
-        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel10.SizeF = New System.Drawing.SizeF(372.8029!, 33.00001!)
-        Me.XrLabel10.StyleName = "Title"
-        Me.XrLabel10.StylePriority.UseTextAlignment = false
-        Me.XrLabel10.Text = "Solicitud de Cotizacion Nº - "
-        Me.XrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
         'ReportFooter
         '

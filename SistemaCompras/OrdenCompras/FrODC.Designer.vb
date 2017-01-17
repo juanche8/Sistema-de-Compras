@@ -22,6 +22,7 @@ Partial Class FrODC
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrODC))
         Dim DataViewProperty1 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
         Dim DataViewProperty2 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
@@ -140,7 +141,7 @@ Partial Class FrODC
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.XpDataView2 = New DevExpress.Xpo.XPDataView()
+        Me.XpDataView2 = New DevExpress.Xpo.XPDataView(Me.components)
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -163,7 +164,7 @@ Partial Class FrODC
         Me.colAproboMartin = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.SplitContainerControl4 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.GridControl3 = New DevExpress.XtraGrid.GridControl()
-        Me.XpDataView3 = New DevExpress.Xpo.XPDataView()
+        Me.XpDataView3 = New DevExpress.Xpo.XPDataView(Me.components)
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido2 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -185,7 +186,7 @@ Partial Class FrODC
         Me.colODCEnviada3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colAproboMartin2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridControl4 = New DevExpress.XtraGrid.GridControl()
-        Me.XpDataView4 = New DevExpress.Xpo.XPDataView()
+        Me.XpDataView4 = New DevExpress.Xpo.XPDataView(Me.components)
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido3 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -230,12 +231,12 @@ Partial Class FrODC
         Me.colAproboMartin1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
         Me.RepositoryItemGridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.XpDataView5 = New DevExpress.Xpo.XPDataView()
-        Me.XpDataView1 = New DevExpress.Xpo.XPDataView()
-        Me.PedidosDetalles = New DevExpress.Xpo.XPCollection()
-        Me.Pedidos = New DevExpress.Xpo.XPCollection()
+        Me.XpDataView5 = New DevExpress.Xpo.XPDataView(Me.components)
+        Me.XpDataView1 = New DevExpress.Xpo.XPDataView(Me.components)
+        Me.PedidosDetalles = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.Pedidos = New DevExpress.Xpo.XPCollection(Me.components)
         Me.FormAssistant1 = New DevExpress.XtraBars.FormAssistant()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SplitContainerControl1.SuspendLayout
         CType(Me.fechaentrega.Properties.CalendarTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
