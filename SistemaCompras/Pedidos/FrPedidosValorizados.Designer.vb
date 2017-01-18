@@ -84,6 +84,7 @@ Partial Class FrPedidosValorizados
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
         Me.dirlabel = New DevExpress.XtraEditors.LabelControl()
         Me.imprimirtodos = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl()
@@ -326,7 +327,7 @@ Partial Class FrPedidosValorizados
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemMemoEdit1, Me.RepositoryItemGridLookUpEdit3, Me.RepositoryItemSpinEdit1, Me.RepositoryItemMemoEdit2, Me.RepositoryItemSpinEdit2, Me.RepositoryItemPopupContainerEdit1, Me.RepositoryItemCheckEdit1, Me.RepositoryItemGridLookUpEdit10})
-        Me.GridControl1.Size = New System.Drawing.Size(965, 377)
+        Me.GridControl1.Size = New System.Drawing.Size(1235, 377)
         Me.GridControl1.TabIndex = 2
         Me.GridControl1.UseEmbeddedNavigator = true
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView2})
@@ -648,10 +649,9 @@ Partial Class FrPedidosValorizados
         '
         'SimpleButton3
         '
-        Me.SimpleButton3.Enabled = false
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"),System.Drawing.Image)
         Me.SimpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.SimpleButton3.Location = New System.Drawing.Point(813, 27)
+        Me.SimpleButton3.Location = New System.Drawing.Point(566, 27)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(67, 60)
         Me.SimpleButton3.TabIndex = 4
@@ -661,7 +661,7 @@ Partial Class FrPedidosValorizados
         '
         Me.SimpleButton4.Image = CType(resources.GetObject("SimpleButton4.Image"),System.Drawing.Image)
         Me.SimpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.SimpleButton4.Location = New System.Drawing.Point(886, 27)
+        Me.SimpleButton4.Location = New System.Drawing.Point(639, 27)
         Me.SimpleButton4.Name = "SimpleButton4"
         Me.SimpleButton4.Size = New System.Drawing.Size(67, 60)
         Me.SimpleButton4.TabIndex = 5
@@ -675,6 +675,7 @@ Partial Class FrPedidosValorizados
         Me.SplitContainerControl1.LookAndFeel.SkinName = "Money Twins"
         Me.SplitContainerControl1.LookAndFeel.UseDefaultLookAndFeel = false
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton6)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dirlabel)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton3)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton4)
@@ -688,10 +689,20 @@ Partial Class FrPedidosValorizados
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SimpleButton5)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(965, 458)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1235, 458)
         Me.SplitContainerControl1.SplitterPosition = 377
         Me.SplitContainerControl1.TabIndex = 6
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
+        '
+        'SimpleButton6
+        '
+        Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"),System.Drawing.Image)
+        Me.SimpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
+        Me.SimpleButton6.Location = New System.Drawing.Point(1094, 72)
+        Me.SimpleButton6.Name = "SimpleButton6"
+        Me.SimpleButton6.Size = New System.Drawing.Size(132, 27)
+        Me.SimpleButton6.TabIndex = 11
+        Me.SimpleButton6.Text = "Aprobacion manual"
         '
         'dirlabel
         '
@@ -702,11 +713,12 @@ Partial Class FrPedidosValorizados
         '
         'imprimirtodos
         '
+        Me.imprimirtodos.Enabled = false
         Me.imprimirtodos.Image = CType(resources.GetObject("imprimirtodos.Image"),System.Drawing.Image)
         Me.imprimirtodos.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.imprimirtodos.Location = New System.Drawing.Point(501, 27)
+        Me.imprimirtodos.Location = New System.Drawing.Point(910, 27)
         Me.imprimirtodos.Name = "imprimirtodos"
-        Me.imprimirtodos.Size = New System.Drawing.Size(168, 56)
+        Me.imprimirtodos.Size = New System.Drawing.Size(178, 45)
         Me.imprimirtodos.TabIndex = 9
         Me.imprimirtodos.Text = "Generar Reporte para Autorizar"
         Me.imprimirtodos.Visible = false
@@ -715,7 +727,7 @@ Partial Class FrPedidosValorizados
         '
         Me.LabelControl2.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.LabelControl2.Appearance.Options.UseBackColor = true
-        Me.LabelControl2.Location = New System.Drawing.Point(675, 31)
+        Me.LabelControl2.Location = New System.Drawing.Point(1094, 27)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(75, 13)
         Me.LabelControl2.TabIndex = 9
@@ -724,7 +736,8 @@ Partial Class FrPedidosValorizados
         '
         'ComboBoxEdit1
         '
-        Me.ComboBoxEdit1.Location = New System.Drawing.Point(675, 50)
+        Me.ComboBoxEdit1.Enabled = false
+        Me.ComboBoxEdit1.Location = New System.Drawing.Point(1094, 46)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez"})
@@ -763,7 +776,7 @@ Partial Class FrPedidosValorizados
         Me.GridControl2.MainView = Me.GridView5
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit6, Me.RepositoryItemGridLookUpEdit7, Me.RepositoryItemGridLookUpEdit4, Me.RepositoryItemGridLookUpEdit5, Me.RepositoryItemGridLookUpEdit8, Me.RepositoryItemGridLookUpEdit9})
-        Me.GridControl2.Size = New System.Drawing.Size(965, 75)
+        Me.GridControl2.Size = New System.Drawing.Size(1235, 75)
         Me.GridControl2.TabIndex = 1
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5, Me.GridView7})
         '
@@ -979,7 +992,7 @@ Partial Class FrPedidosValorizados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(965, 458)
+        Me.ClientSize = New System.Drawing.Size(1235, 458)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.LookAndFeel.SkinName = "Money Twins"
@@ -1129,4 +1142,5 @@ End Sub
     Friend WithEvents RepositoryItemGridLookUpEdit10View As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents dirlabel As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
 End Class

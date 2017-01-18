@@ -52,7 +52,7 @@ Public Class FrPresupuestos
         proyecto.Session = Session1
 
         If Cotiza = 1 Then
-            Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null or Responsable = 'Daniela Bazaga'"
+            Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null "
             PictureBox1.Visible = True
             SimpleButton6.Visible = true
             SimpleButton5.Visible = true

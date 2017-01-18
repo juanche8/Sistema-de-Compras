@@ -406,4 +406,8 @@ Public Class FrPrincipalCompras
     Private Sub TileItem27_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem27.ItemClick
         FrAprobarODC.show
     End Sub
+
+    Private Sub TileItem28_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem28.ItemClick
+        FrPedidosValorizados.show
+    End Sub
 End Class

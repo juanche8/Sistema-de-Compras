@@ -28,12 +28,12 @@ Public Class FrPedidos
         XpColProveedores.Session = Session1
         proyecto.Session = Session1
         direccionxp.Session = Session1
-        If Cotiza = 1 Then                                              ' si el permiso es diferente a 1 (seccionoficina) se establecen los labels
-            labelestado.Text = "Aprobado"
-            labelautor.Visible = True
-            comboautor.Visible = True
+        If Cotiza = 1 or Cotiza = 3 Then                                              ' si el permiso es diferente a 1 (seccionoficina) se establecen los labels
+            labelestado.Text = "Pendiente de Autorizacion"
+            'labelautor.Visible = True
+            'comboautor.Visible = True
         Else
-            labelestado.Text = "Pendiente de aprobacion"
+            labelestado.Text = "Pendiente de Aprobacion"
         End If
         '  Else
         ' labelestado.Text = "Aprobado"
@@ -66,10 +66,10 @@ Public Class FrPedidos
 
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            If labelestado.Text = "Aprobado" Then              ' si el label es aprobado, va a guardar en el campo estado el numero 2(APROBADO)
-                .Estado = "2"
+            If labelestado.Text = "Pendiente de Autorizacion" Then              ' si el label es "Pendiente de Autorizacion", va a guardar en el campo estado el numero 8("Pendiente de Autorizacion")
+                .Estado = "8"
             Else
-                .Estado = "7"                                  ' si no, guarda el 7, que por defecto es en espera de aprobacion.
+                .Estado = "7"                                  ' si no, guarda el 7, que por defecto es en espera de aprobacion. (por gerente de su dpto) para users nivel 1
             End If
             .Save()                                            ' guarda los objetos en la datastore     
         End With
@@ -94,10 +94,10 @@ Public Class FrPedidos
             MsgBox("Debes indicar la direccion de recepcion del pedido", vbOKOnly, "Sin Direccion de envio")
             Return
         End If
-        If Cotiza = 1 And comboautor.Text = "" Then
-            MsgBox("Debes estar autorizada para hacer esta solicitud.", vbInformation)
-            Return
-        End If
+        'If Cotiza = 1 And comboautor.Text = "" Then
+        '    MsgBox("Debes estar autorizada para hacer esta solicitud.", vbInformation)
+        '    Return
+        'End If
         For x = 0 To 0 'Step CheckedListBoxControl1.CheckedItems(CheckState.Checked)
             Try
                 Dim producto As String = Session1.ExecuteScalar("Select IdProducto from PedidosDetalles where IdProducto = 0")
@@ -118,7 +118,7 @@ Public Class FrPedidos
                         MsgBox("Ahora puede imprimir su pedido!", vbInformation)
                         SimpleButton1.Enabled = False
                         CheckEdit3.Enabled = False
-                        comboautor.Enabled = False
+                       ' comboautor.Enabled = False
                     End If
                 Else
                     MsgBox("Hay un item sin cantidad asignada.", vbInformation)
@@ -156,7 +156,7 @@ Public Class FrPedidos
             .AproboMartin = 0
 
             If Cotiza = 1 Then
-                .AutorizadoPor = comboautor.Text
+               ' .AutorizadoPor = comboautor.Text
                 .Fechaaprobacion = Now
             End If
 
