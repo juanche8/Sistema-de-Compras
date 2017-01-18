@@ -18,11 +18,12 @@ Public Class FrPrincipalCompras
         FrMonedas.Show()
     End Sub
     Private Sub TileItem2_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem2.ItemClick
-        FrProductos.Show()
+        Idprod = Nothing
+        FrProductos.show()
     End Sub
 
     Private Sub TileItem3_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem3.ItemClick
-        FrRubros.Show()
+        FrRubros.show()
     End Sub
 
     Private Sub TileItem4_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem4.ItemClick
@@ -72,7 +73,12 @@ Public Class FrPrincipalCompras
     End Sub
 
     Private Sub TileItem14_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem14.ItemClick
-        FrPresupuestos.Show()
+        Do
+
+            Dim frmpresupuestos As FrPresupuestos = New FrPresupuestos
+            frmpresupuestos.ShowDialog()
+        Loop While Back <> 0
+        'FrPresupuestos.Show()
     End Sub
 
     Private Sub TileItem15_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem15.ItemClick
@@ -112,7 +118,7 @@ Public Class FrPrincipalCompras
             MsgBox("Se ha inhabilitado tu cuenta temporalmente!", vbExclamation)
             LoginForm1.Show()
             Me.Hide()
-           
+
 
         End If
     End Sub
@@ -134,7 +140,7 @@ Public Class FrPrincipalCompras
             LabelControl1.Text = "Bienvenido, " & Responsable
             ' LabelControl4.Text = "Bienvenida, " & Responsable
         End If
-
+       
         If Cotiza = 0 Then
             PARAMETRICAS.Visible = False
             TileGroup3.Visible = False
@@ -170,6 +176,19 @@ Public Class FrPrincipalCompras
                 End If
             End If
 
+        End If
+         If Sectorid = 14 Then
+            PARAMETRICAS.Visible = False
+            Tileitem5.Visible = False
+            Tileitem8.Visible = False
+            CONSUMOS.Visible = False
+            TileItem16.Visible = False
+            TileItem25.Visible = False
+            PEDIDOS.Visible = False
+
+            TileItem27.Visible = true
+            TileItem28.Visible = true
+            Scale(0.5, 0.5)
         End If
         If Responsable = "Diaz Juan J" Then
             admbutton.Visible = True
@@ -377,10 +396,18 @@ Public Class FrPrincipalCompras
     End Sub
 
     Private Sub LabelControl1_Click(sender As Object, e As EventArgs) Handles LabelControl1.Click
-       MsgBox("Ver: " & System.Reflection. _
- Assembly.GetExecutingAssembly. _
- GetName.Version.Major & " Rev: "& System.Reflection. _
- Assembly.GetExecutingAssembly. _
- GetName.Version.Revision,, "VERSION")
+        MsgBox("Ver: " & System.Reflection. _
+  Assembly.GetExecutingAssembly. _
+  GetName.Version.Major & " Rev: " & System.Reflection. _
+  Assembly.GetExecutingAssembly. _
+  GetName.Version.Revision,, "VERSION")
+    End Sub
+
+    Private Sub TileItem27_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem27.ItemClick
+        FrAprobarODC.show
+    End Sub
+
+    Private Sub TileItem28_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem28.ItemClick
+        FrPedidosValorizados.show
     End Sub
 End Class

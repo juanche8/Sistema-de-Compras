@@ -83,33 +83,34 @@ Public Class FrODC
                 Formadepago = cbopago.text
                 report.FilterString = "IdPedido =" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3) & "and IdProveedor= " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdProveedor3)
                 report.CreateDocument()
-                report.ExportToPdf("C:\Reportes\ODCs\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf")
+                report.ExportToPdf("\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf" )
 
                 tool.Report.ShowPreviewDialog()
-                ' kfdg
+                ' HASTA ACA COMENTAR PARA VOLVER A CREAR LOS REPORTES
                 Try
                     Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colRazonSocial3) & "'").ToString
-                    Sendmail("logger", "Orden de Compra - " & Empresa, email1, "C:\Reportes\ODCs\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", "Estimado " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ", hemos recibido su cotización." & vbCrLf & "Debido a que estamos satisfechos con las condiciones, ésta ha sido seleccionada." & vbCrLf & "Como archivo adjunto se encuentra la Orden de Compra. " & vbCrLf & "Si tiene alguna inquietud o pregunta, por favor contactarnos." & vbCrLf & "Departamento de Compras " & Empresa & ".")
-                    
+                    Sendmail("logger", "Orden de Compra - " & Empresa, email1 &", mtgcompras@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", "Estimado " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ", hemos recibido su cotización." & vbCrLf & "Debido a que estamos satisfechos con las condiciones, ésta ha sido seleccionada." & vbCrLf & "Como archivo adjunto se encuentra la Orden de Compra. " & vbCrLf & "Si tiene alguna inquietud o pregunta, por favor contactarnos." & vbCrLf & "Departamento de Compras " & Empresa & ".")
+
                     MsgBox("El correo con la ORDEN DE COMPRA ha sido enviada al proveedor: " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ".", vbInformation)
                     If CheckEdit1.CheckState = 1 Then
-                        Sendmail("logger", "Informacion de Retiro", "mtgexpedicion@montagne.com.ar, deboramedina@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "C:\Reportes\ODCs\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
+                        Sendmail("logger", "Informacion de Retiro", "mtgexpedicion@montagne.com.ar, deboramedina@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
                         MsgBox("Se ha enviado el correo con la informacion del retiro", vbinformation)
                     End If
                     Session1.ExecuteNonQuery("Update PedidosDetalles SET ODCEnviada = 1 where IdPedido =" & CInt(GridView3.GetFocusedRowCellValue(colIdPedido2)) & "and IdProveedor = " & CInt(GridView3.GetFocusedRowCellValue(colIdProveedor3)))
                     Session1.ExecuteNonQuery("Update Pedidos SET Estado = 5 where IdPedido =" & CInt(GridView2.GetFocusedRowCellValue(colIdPedido)))
 
-                   Dim resultSet3 As SelectedData = Session1.ExecuteQuery("SELECT * from VistaODC where AproboMartin = 1 and ODCEnviada = 0")
+                    Dim resultSet3 As SelectedData = Session1.ExecuteQuery("SELECT * from VistaODC where AproboMartin = 1 and ODCEnviada = 0")
                     'XpDataView2.LoadData(resultSet1)
-                   ' XpDataView3.FilterString = "AproboMartin = 1 and ODCEnviada = 0 "
+                    ' XpDataView3.FilterString = "AproboMartin = 1 and ODCEnviada = 0 "
                     XpDataView3.LoadData(resultSet3)
-                   ' Pedidos.Reload()
+                    ' Pedidos.Reload()
                     ' Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
                     '  Close()
                     ' report.Dispose
                 catch ex As Exception
-                End try
-            Else
+                     End try
+                    'HASTA ACA COMENTAR
+                    Else
                 return
             End If
         End if

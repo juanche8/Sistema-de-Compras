@@ -68,10 +68,10 @@ Public Class LoginForm1
 
                 Hide()                                                          ' procede a esconder el form login
                 FrPrincipalCompras.show()
-                If Sectorid = 14 Then
-                    FrAprobarODC.show
-                    FrPrincipalCompras.Hide
-                End If
+                'If Sectorid = 14 Then
+                '    FrAprobarODC.show
+                '    FrPrincipalCompras.Hide
+                'End If
             End If
             'Reload(querylinq)
         Else                                                                ' si no se validan el usuario y contraseñas muestra el msgbox
@@ -84,8 +84,8 @@ Public Class LoginForm1
         dim maquina as string = Environment.MachineName
         Dim actualizo = Session1.ExecuteScalar("select Actualizo from Equipos where NombreEquipo= '" & maquina & "'")
         Dim user As Integer = Session1.ExecuteScalar("select count(UsuarioID) from Usuarios where UsuarioID = '" & Usuario & "'")
-       ' dim maquina1 as string = Session1.ExecuteNonQuery("select Maquina from Equipos where Maquina = '" & Environment.MachineName & "'")
-             If user = 1 Then
+        ' dim maquina1 as string = Session1.ExecuteNonQuery("select Maquina from Equipos where Maquina = '" & Environment.MachineName & "'")
+        If user = 1 Then
             exists = System.IO.File.Exists("\\CENTRALMONTAGNE\softMtg\compras\update\setup.exe")
             If exists = True And actualizo = 0 Then
                 If MsgBox("Existe una nueva version del sistema, deseas actualizar?", vbYesNo) = MsgBoxResult.Yes Then
@@ -109,7 +109,7 @@ Public Class LoginForm1
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         FrCambioContrasenia.ShowDialog()
-        
+
     End Sub
 
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

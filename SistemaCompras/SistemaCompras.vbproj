@@ -194,6 +194,12 @@
     <Import Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cotizaciones\FrNuevoItem.Designer.vb">
+      <DependentUpon>FrNuevoItem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizaciones\FrNuevoItem.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cotizaciones\FrPresupuestos.Designer.vb">
       <DependentUpon>FrPresupuestos.vb</DependentUpon>
     </Compile>
@@ -677,6 +683,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ZipArchive.vb" />
+    <EmbeddedResource Include="Cotizaciones\FrNuevoItem.resx">
+      <DependentUpon>FrNuevoItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cotizaciones\FrPresupuestos.resx">
       <DependentUpon>FrPresupuestos.vb</DependentUpon>
       <SubType>Designer</SubType>

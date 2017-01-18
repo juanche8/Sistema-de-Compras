@@ -23,7 +23,10 @@ Imports DevExpress.Data
 Public Class FrPresupuestos
     Dim ids As String
     Dim vec(500) As String
+    Dim consulta As integer
 
+    'Dim report As New RpSolicitudCotizacion()
+    'Dim tool As ReportPrintTool = New ReportPrintTool(report)
 
     Public Session1 As Session = XpoHelper.GetNewSession()
     Dim querylinq1 As New XPQuery(Of MontagneAdministracion.Pedidos)(Session1)
@@ -34,10 +37,11 @@ Public Class FrPresupuestos
     'Dim email = Session1.ExecuteScalar("Select from Proveedores WHERE Email = " & CheckedComboBoxEdit1.EditValue)
     ' Dim tool As ReportPrintTool = New ReportPrintTool(report)
 
-    Public Idpedido As Integer
+    'Public Idpedido As Integer
     Public Property RichEditControl1 As Object
 
     Private Sub FrPresupuestos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        XpCollection1.Session = Session1
         Pedidos.Session = Session1
         DetallePedido.Session = Session1
         Sectores.Session = Session1
@@ -46,13 +50,16 @@ Public Class FrPresupuestos
         Proveedores.Session = Session1
         vistadetallepedido.Session = Session1
         proyecto.Session = Session1
+
         If Cotiza = 1 Then
-            Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null or Responsable = 'Daniela Bazaga'"
+            Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null "
             PictureBox1.Visible = True
             SimpleButton6.Visible = true
+            SimpleButton5.Visible = true
         End If
         Proveedores.CriteriaString = "Email  Is Not null"
         Proveedores.CriteriaString = "Rubro  Is Not null"
+        Back = 0
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
@@ -99,7 +106,7 @@ Public Class FrPresupuestos
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
         Try
-            Dim consulta = GridView3.GetFocusedRowCellValue(colIdPedido)
+            consulta = GridView3.GetFocusedRowCellValue(colIdPedido)
             If consulta = 0 Then
             Else
                 Productos.CriteriaString = "IdPedido = " & consulta '& " And Sector = " & Sectorid
@@ -182,32 +189,19 @@ Public Class FrPresupuestos
             End If
         Next
     End Sub
-
-    Private Sub PopupContainerEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles PopupContainerEdit1.EditValueChanged
-
-    End Sub
-
-    Private Sub LabelControl1_Click(sender As Object, e As EventArgs) Handles LabelControl1.Click
-
-    End Sub
-
-    Private Sub PopupContainerControl1_Paint(sender As Object, e As PaintEventArgs) Handles PopupContainerControl1.Paint
-
-    End Sub
-
     Private Sub cboEmpresas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboEmpresas.SelectedIndexChanged
         If cboEmpresas.Text IsNot Nothing Then
             PopupContainerEdit1.Enabled = True
         End If
     End Sub
-    Private Sub GridView1_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles GridView1.SelectionChanged
-
-    End Sub
 
     Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
         If GridView1.RowCount >= 1 Then
             SimpleButton6.Enabled = true
+        Else
+            SimpleButton6.Enabled = false
         End If
+
     End Sub
 
     Private Sub GridView1_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView1.RowClick
@@ -226,26 +220,87 @@ Public Class FrPresupuestos
         End If
 
     End Sub
-
-    Private Sub PictureBox1_EditValueChanged(sender As Object, e As EventArgs) Handles PictureBox1.EditValueChanged
+    Private Sub FrPresupuestos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 
     End Sub
 
     Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles SimpleButton6.Click
-
-     
         try
             If GridView1.RowCount = 0 Then
             Else
+                Dim prod = Session1.ExecuteScalar("Select Id from Productos where Producto = '" & GridView1.GetFocusedRowCellValue(colProducto) & "'")
+                Idprod = prod
 
-                Dim prod = Session1.ExecuteScalar("Select Id from Productos where Producto = '" & GridView1.GetFocusedRowCellValue(colProducto)&"'")
-               ' Dim direccionfisica = Session1.ExecuteScalar("Select Direccion from DireccionesEntrega where Id = " & direccion)
-                Idprod= prod
-                
             End if
         Catch ex As Exception
-            
         End try
-        FrProductos.Show()
+        FrProductos.show()
+        Productos.Reload
+        GridView3.RefreshData
+        'Productos = Nothing
+        'Productos.Session = Session1
+        'Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
+        'Close()
+        'GridView3.MoveBy(IdPedido)
+    End Sub
+
+    Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
+        IdPedido = Session1.ExecuteScalar("Select IdPedido from Pedidos where IdPedido = " & GridView1.GetFocusedRowCellValue(colIdPedido))
+        FrNuevoItem.showdialog()
+        Productos.Reload
+        Refresh()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If GridView1.SelectedRowsCount = 1 Then
+
+            Dim pedido = Session1.ExecuteScalar("Select IdPedido from PedidosDetalles where IdPedido = " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido))
+            Dim item = Session1.ExecuteScalar("Select IdDetalle from PedidosDetalles where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, GridColumn3))
+            Dim report As New RpSolicitudCotizacion()
+            Dim tool As ReportPrintTool = New ReportPrintTool(report)
+            report.FilterString = "IdPedido = " & pedido & " and IdDetalle = " & item
+            report.CreateDocument
+            tool.report.ShowPreviewDialog()
+
+            ' Pedidos.Reload()
+            ' GridView2.CheckLoaded 
+            GridView1.ClearSelection
+        ElseIf GridView1.SelectedRowsCount > 1 Then
+            Dim x As IList = GridView1.GetSelectedRows().ToList
+            Dim stra As String
+            For s = 0 To x.Count - 1
+
+                Dim consulta = Session1.ExecuteScalar("Select IdDetalle from PedidosDetalles where IdDetalle = " & GridView1.GetRowCellValue(x.Item(s), GridColumn3))
+                stra = stra & " IdDetalle = " & consulta & " or "
+            Next
+            stra = Mid(stra, 1, Len(stra) - 3) 
+            Dim report As New RpSolicitudCotizacion()
+            Dim tool As ReportPrintTool = New ReportPrintTool(report)
+            report.FilterString = stra
+            report.ShowPreviewDialog()
+            Pedidos.Reload()
+        End If
+    End Sub
+
+    'Private Sub form_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles .KeyDown
+
+    '    If e.KeyData = Keys.F5 Then
+    '        Me.Refresh()
+    '    End If
+
+    'End Sub
+
+    Private Sub Button2_KeyDown(sender As Object, e As KeyEventArgs) Handles Button2.KeyDown
+        If e.KeyData = Keys.F5 Then
+            GridView1.UpdateCurrentRow()
+            Productos.Reload
+            GridView3.RefreshData
+            Refresh()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
     End Sub
 End Class

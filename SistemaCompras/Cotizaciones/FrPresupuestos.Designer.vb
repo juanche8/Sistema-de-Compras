@@ -61,6 +61,9 @@ Partial Class FrPresupuestos
         Me.DetallePedido = New DevExpress.Xpo.XPCollection(Me.components)
         Me.Productos = New DevExpress.Xpo.XPCollection(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton()
         Me.dirlabel = New DevExpress.XtraEditors.LabelControl()
         Me.cboEmpresas = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
@@ -98,6 +101,9 @@ Partial Class FrPresupuestos
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.RepositoryItemGridLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.RepositoryItemGridLookUpEdit7View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -151,6 +157,9 @@ Partial Class FrPresupuestos
         CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit7,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.XpCollection1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit7View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView5,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -271,7 +280,7 @@ Partial Class FrPresupuestos
         Me.GridControl1.MainView = Me.GridView3
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit4, Me.RepositoryItemGridLookUpEdit5})
-        Me.GridControl1.Size = New System.Drawing.Size(1137, 326)
+        Me.GridControl1.Size = New System.Drawing.Size(1137, 328)
         Me.GridControl1.TabIndex = 3
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView2})
         '
@@ -501,6 +510,7 @@ Partial Class FrPresupuestos
         '
         'Productos
         '
+        Me.Productos.CriteriaString = "[IdPedido] = -1"
         Me.Productos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.VistaPedidosDetalle)
         '
         'SplitContainerControl1
@@ -509,6 +519,9 @@ Partial Class FrPresupuestos
         Me.SplitContainerControl1.Horizontal = false
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.Button2)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.Button1)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton5)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dirlabel)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.cboEmpresas)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl5)
@@ -525,6 +538,34 @@ Partial Class FrPresupuestos
         Me.SplitContainerControl1.SplitterPosition = 70
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(556, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "actualizar"
+        Me.Button2.UseVisualStyleBackColor = true
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(409, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(113, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "generar reporte"
+        Me.Button1.UseVisualStyleBackColor = true
+        Me.Button1.Visible = false
+        '
+        'SimpleButton5
+        '
+        Me.SimpleButton5.Location = New System.Drawing.Point(1015, 17)
+        Me.SimpleButton5.Name = "SimpleButton5"
+        Me.SimpleButton5.Size = New System.Drawing.Size(90, 34)
+        Me.SimpleButton5.TabIndex = 21
+        Me.SimpleButton5.Text = "Modificar Pedido"
+        Me.SimpleButton5.Visible = false
         '
         'dirlabel
         '
@@ -707,7 +748,7 @@ Partial Class FrPresupuestos
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.GridControl2)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
         Me.SplitContainerControl2.Size = New System.Drawing.Size(1143, 409)
-        Me.SplitContainerControl2.SplitterPosition = 326
+        Me.SplitContainerControl2.SplitterPosition = 328
         Me.SplitContainerControl2.TabIndex = 4
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
         '
@@ -727,7 +768,7 @@ Partial Class FrPresupuestos
         Me.SimpleButton6.Enabled = false
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"),System.Drawing.Image)
         Me.SimpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
-        Me.SimpleButton6.Location = New System.Drawing.Point(3, 46)
+        Me.SimpleButton6.Location = New System.Drawing.Point(3, 45)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(127, 22)
         Me.SimpleButton6.TabIndex = 22
@@ -748,8 +789,8 @@ Partial Class FrPresupuestos
         Me.GridControl2.Location = New System.Drawing.Point(0, 0)
         Me.GridControl2.MainView = Me.GridView1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit2})
-        Me.GridControl2.Size = New System.Drawing.Size(1137, 71)
+        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemGridLookUpEdit7})
+        Me.GridControl2.Size = New System.Drawing.Size(1137, 69)
         Me.GridControl2.TabIndex = 4
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView5})
         '
@@ -764,8 +805,9 @@ Partial Class FrPresupuestos
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colSector1, Me.colFechaPedido1, Me.colResponsable1, Me.colEstado1, Me.colObservaciones2, Me.colFechaRecepcion1, Me.colCantidad1, Me.colObsb1, Me.colPrecioProducto, Me.colRazonSocial, Me.colNombreFantasia, Me.colProducto, Me.colIdPedido1, Me.colRow, Me.GridColumn3})
         Me.GridView1.GridControl = Me.GridControl2
         Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsBehavior.AllowIncrementalSearch = true
+        Me.GridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
         Me.GridView1.OptionsBehavior.Editable = false
+        Me.GridView1.OptionsBehavior.ReadOnly = true
         Me.GridView1.OptionsDetail.AllowExpandEmptyDetails = true
         Me.GridView1.OptionsDetail.AllowOnlyOneMasterRowExpanded = true
         Me.GridView1.OptionsEditForm.EditFormColumnCount = 1
@@ -776,6 +818,8 @@ Partial Class FrPresupuestos
         Me.GridView1.OptionsPrint.AllowMultilineHeaders = true
         Me.GridView1.OptionsPrint.PrintDetails = true
         Me.GridView1.OptionsPrint.PrintSelectedRowsOnly = true
+        Me.GridView1.OptionsSelection.MultiSelect = true
+        Me.GridView1.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CheckBoxRowSelect
         Me.GridView1.OptionsView.RowAutoHeight = true
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never
         Me.GridView1.OptionsView.ShowFooter = true
@@ -819,7 +863,7 @@ Partial Class FrPresupuestos
         Me.colCantidad1.FieldName = "Cantidad"
         Me.colCantidad1.Name = "colCantidad1"
         Me.colCantidad1.Visible = true
-        Me.colCantidad1.VisibleIndex = 1
+        Me.colCantidad1.VisibleIndex = 2
         Me.colCantidad1.Width = 83
         '
         'colObsb1
@@ -828,7 +872,7 @@ Partial Class FrPresupuestos
         Me.colObsb1.FieldName = "Obsb1"
         Me.colObsb1.Name = "colObsb1"
         Me.colObsb1.Visible = true
-        Me.colObsb1.VisibleIndex = 2
+        Me.colObsb1.VisibleIndex = 3
         Me.colObsb1.Width = 325
         '
         'colPrecioProducto
@@ -851,7 +895,7 @@ Partial Class FrPresupuestos
         Me.colProducto.FieldName = "Producto"
         Me.colProducto.Name = "colProducto"
         Me.colProducto.Visible = true
-        Me.colProducto.VisibleIndex = 0
+        Me.colProducto.VisibleIndex = 1
         Me.colProducto.Width = 287
         '
         'colIdPedido1
@@ -886,6 +930,27 @@ Partial Class FrPresupuestos
         Me.GridView4.Name = "GridView4"
         Me.GridView4.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.GridView4.OptionsView.ShowGroupPanel = false
+        '
+        'RepositoryItemGridLookUpEdit7
+        '
+        Me.RepositoryItemGridLookUpEdit7.AutoHeight = false
+        Me.RepositoryItemGridLookUpEdit7.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit7.DataSource = Me.XpCollection1
+        Me.RepositoryItemGridLookUpEdit7.DisplayMember = "Producto"
+        Me.RepositoryItemGridLookUpEdit7.Name = "RepositoryItemGridLookUpEdit7"
+        Me.RepositoryItemGridLookUpEdit7.ValueMember = "Producto"
+        Me.RepositoryItemGridLookUpEdit7.View = Me.RepositoryItemGridLookUpEdit7View
+        '
+        'XpCollection1
+        '
+        Me.XpCollection1.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Productos)
+        '
+        'RepositoryItemGridLookUpEdit7View
+        '
+        Me.RepositoryItemGridLookUpEdit7View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.RepositoryItemGridLookUpEdit7View.Name = "RepositoryItemGridLookUpEdit7View"
+        Me.RepositoryItemGridLookUpEdit7View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit7View.OptionsView.ShowGroupPanel = false
         '
         'GridView5
         '
@@ -1028,6 +1093,9 @@ Partial Class FrPresupuestos
         CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView4,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit7,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.XpCollection1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit7View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView5,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
@@ -1120,4 +1188,10 @@ End Sub
     Friend WithEvents PictureBox1 As DevExpress.XtraEditors.ImageEdit
     Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents RepositoryItemGridLookUpEdit7 As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
+    Friend WithEvents RepositoryItemGridLookUpEdit7View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
+    Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

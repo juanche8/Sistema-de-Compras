@@ -36,8 +36,8 @@ Public Class FrAprobarODC
 
     End Sub
     Private Sub FrAprobarODC_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Me.Dispose()
-        Application.Exit()
+        'Me.Dispose()
+        'Application.Exit()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click

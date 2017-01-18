@@ -1,4 +1,5 @@
-﻿Imports DevExpress.Xpo
+﻿Imports System.ComponentModel
+Imports DevExpress.Xpo
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
 
@@ -74,26 +75,26 @@ Partial Public Class FrProductos
 
     End Sub
 
-    Private Sub XtraForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If Idprod = Nothing then
+    'Private Sub XtraForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    If Idprod = Nothing then
 
-            Productos.Session = Session1
-            Rubros.Session = Session1
-            If Sectorid = 1 Then
-                Productos.CriteriaString = "Rubro = 'SISTEMAS'"
-            End If
-            If Sectorid = 3 Then
+    '        Productos.Session = Session1
+    '        Rubros.Session = Session1
+    '        If Sectorid = 1 Then
+    '            Productos.CriteriaString = "Rubro = 'SISTEMAS'"
+    '        End If
+    '        If Sectorid = 3 Then
 
-                Productos.CriteriaString = "Rubro =  'SISTEMAS' or Rubro = 'FERRETERIA'"
-                '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
-            End If
-        else
-            Productos.Session = Session1
-            Rubros.Session = Session1
-            Productos.CriteriaString = "Id = "& Idprod
-        End if
-        Idprod = Nothing
-    End Sub
+    '            Productos.CriteriaString = "Rubro =  'SISTEMAS' or Rubro = 'FERRETERIA'"
+    '            '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
+    '        End If
+    '    else
+    '        Productos.Session = Session1
+    '        Rubros.Session = Session1
+    '        Productos.CriteriaString = "Id = " & Idprod
+    '    End if
+    '    'Idprod = Nothing
+    'End Sub
 
 
     Private Sub GridViewShowingPopupEditForm(sender As Object, e As DevExpress.XtraGrid.Views.Grid.ShowingPopupEditFormEventArgs) Handles gridView.ShowingPopupEditForm
@@ -102,7 +103,8 @@ Partial Public Class FrProductos
 
 
     Private Sub FrProductos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-
+        Idprod = Nothing
+       
     End Sub
 
     Private Sub CheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit1.CheckedChanged
@@ -118,5 +120,32 @@ Partial Public Class FrProductos
                 '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
             End If
         End If
+    End Sub
+
+    Private Sub FrProductos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        
+    End Sub
+
+    Private Sub FrProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Idprod = Nothing then
+            
+            Productos.Session = Session1
+            Rubros.Session = Session1
+            Productos.reload
+            Rubros.reload
+            If Sectorid = 1 Then
+                Productos.CriteriaString = "Rubro = 'SISTEMAS'"
+            End If
+            If Sectorid = 3 Then
+
+                Productos.CriteriaString = "Rubro =  'SISTEMAS' or Rubro = 'FERRETERIA'"
+                '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
+            End If
+        else
+            Productos.Session = Session1
+            Rubros.Session = Session1
+            Productos.CriteriaString = "Id = " & Idprod
+        End if
+        'Idprod = Nothing
     End Sub
 End Class
