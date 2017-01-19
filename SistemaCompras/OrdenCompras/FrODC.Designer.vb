@@ -301,7 +301,7 @@ Partial Class FrODC
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1286, 503)
-        Me.SplitContainerControl1.SplitterPosition = 97
+        Me.SplitContainerControl1.SplitterPosition = 106
         Me.SplitContainerControl1.TabIndex = 4
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
@@ -341,7 +341,7 @@ Partial Class FrODC
         '
         'dirlabel
         '
-        Me.dirlabel.Location = New System.Drawing.Point(12, 48)
+        Me.dirlabel.Location = New System.Drawing.Point(12, 79)
         Me.dirlabel.Name = "dirlabel"
         Me.dirlabel.Size = New System.Drawing.Size(0, 13)
         Me.dirlabel.TabIndex = 19
@@ -389,7 +389,7 @@ Partial Class FrODC
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(204, 22)
+        Me.LabelControl1.Location = New System.Drawing.Point(12, 60)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(53, 13)
         Me.LabelControl1.TabIndex = 13
@@ -397,7 +397,7 @@ Partial Class FrODC
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(204, 3)
+        Me.LabelControl2.Location = New System.Drawing.Point(12, 41)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(30, 13)
         Me.LabelControl2.TabIndex = 12
@@ -423,7 +423,7 @@ Partial Class FrODC
         '
         Me.lblCUIT.Appearance.ForeColor = System.Drawing.Color.Maroon
         Me.lblCUIT.Appearance.Options.UseForeColor = true
-        Me.lblCUIT.Location = New System.Drawing.Point(270, 22)
+        Me.lblCUIT.Location = New System.Drawing.Point(78, 60)
         Me.lblCUIT.Name = "lblCUIT"
         Me.lblCUIT.Size = New System.Drawing.Size(3, 13)
         Me.lblCUIT.TabIndex = 9
@@ -433,7 +433,7 @@ Partial Class FrODC
         '
         Me.lblemail.Appearance.ForeColor = System.Drawing.Color.Maroon
         Me.lblemail.Appearance.Options.UseForeColor = true
-        Me.lblemail.Location = New System.Drawing.Point(270, 3)
+        Me.lblemail.Location = New System.Drawing.Point(78, 41)
         Me.lblemail.Name = "lblemail"
         Me.lblemail.Size = New System.Drawing.Size(3, 13)
         Me.lblemail.TabIndex = 8
@@ -465,7 +465,7 @@ Partial Class FrODC
         Me.SimpleButton1.Enabled = false
         Me.SimpleButton1.Image = CType(resources.GetObject("SimpleButton1.Image"),System.Drawing.Image)
         Me.SimpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight
-        Me.SimpleButton1.Location = New System.Drawing.Point(1165, 22)
+        Me.SimpleButton1.Location = New System.Drawing.Point(1165, 31)
         Me.SimpleButton1.Name = "SimpleButton1"
         Me.SimpleButton1.Size = New System.Drawing.Size(121, 38)
         Me.SimpleButton1.TabIndex = 5
@@ -503,7 +503,7 @@ Partial Class FrODC
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.MemoEdit1)
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.GridControl2)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(1286, 400)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(1286, 391)
         Me.SplitContainerControl2.SplitterPosition = 331
         Me.SplitContainerControl2.TabIndex = 1
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -518,7 +518,7 @@ Partial Class FrODC
         Me.SplitContainerControl3.Panel1.Text = "Panel1"
         Me.SplitContainerControl3.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl3.Panel2.Text = "Panel2"
-        Me.SplitContainerControl3.Size = New System.Drawing.Size(331, 400)
+        Me.SplitContainerControl3.Size = New System.Drawing.Size(331, 391)
         Me.SplitContainerControl3.SplitterPosition = 174
         Me.SplitContainerControl3.TabIndex = 1
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
@@ -694,7 +694,7 @@ Partial Class FrODC
         Me.SplitContainerControl4.Panel1.Text = "Panel1"
         Me.SplitContainerControl4.Panel2.Controls.Add(Me.GridControl4)
         Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(331, 220)
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(331, 211)
         Me.SplitContainerControl4.SplitterPosition = 171
         Me.SplitContainerControl4.TabIndex = 0
         Me.SplitContainerControl4.Text = "SplitContainerControl4"
@@ -868,7 +868,7 @@ Partial Class FrODC
         Me.GridControl4.Location = New System.Drawing.Point(0, 0)
         Me.GridControl4.MainView = Me.GridView4
         Me.GridControl4.Name = "GridControl4"
-        Me.GridControl4.Size = New System.Drawing.Size(331, 43)
+        Me.GridControl4.Size = New System.Drawing.Size(331, 34)
         Me.GridControl4.TabIndex = 1
         Me.GridControl4.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -1038,7 +1038,7 @@ Partial Class FrODC
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1})
-        Me.GridControl2.Size = New System.Drawing.Size(949, 400)
+        Me.GridControl2.Size = New System.Drawing.Size(949, 391)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '

@@ -68,10 +68,10 @@ Public Class LoginForm1
 
                 Hide()                                                          ' procede a esconder el form login
                 FrPrincipalCompras.show()
-                'If Sectorid = 14 Then
-                '    FrAprobarODC.show
-                '    FrPrincipalCompras.Hide
-                'End If
+                If Sectorid = 14 Then
+                    FrAprobarODC.show
+                    FrPrincipalCompras.Hide
+                End If
             End If
             'Reload(querylinq)
         Else                                                                ' si no se validan el usuario y contraseñas muestra el msgbox
@@ -120,6 +120,7 @@ Public Class LoginForm1
         'End If
         System.IO.Directory.CreateDirectory("c:\Reportes\Pedidos")
         System.IO.Directory.CreateDirectory("c:\Reportes\ODCs")
+        System.IO.Directory.CreateDirectory("c:\Reportes\Mis Pedidos")
 
     End Sub
 

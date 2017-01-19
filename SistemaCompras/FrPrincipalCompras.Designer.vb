@@ -842,7 +842,6 @@ Partial Class FrPrincipalCompras
         Me.TileControl1.Location = New System.Drawing.Point(0, 0)
         Me.TileControl1.MaxId = 34
         Me.TileControl1.Name = "TileControl1"
-        Me.TileControl1.Position = 390
         Me.TileControl1.Size = New System.Drawing.Size(899, 491)
         Me.TileControl1.TabIndex = 0
         Me.TileControl1.Text = "TileControl1"
@@ -904,10 +903,6 @@ Partial Class FrPrincipalCompras
         Me.SimpleButton2.Size = New System.Drawing.Size(40, 38)
         Me.SimpleButton2.TabIndex = 31
         Me.SimpleButton2.Visible = false
-        '
-        'DefaultLookAndFeel1
-        '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
         'LabelControl3
         '

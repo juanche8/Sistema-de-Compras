@@ -643,15 +643,12 @@ Partial Class FrPedidosValorizados
         Me.DetallePedido.DisplayableProperties = "IdProveedor"
         Me.DetallePedido.ObjectType = GetType(SistemaCompras.MontagneAdministracion.PedidosDetalles)
         '
-        'DefaultLookAndFeel1
-        '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
-        '
         'SimpleButton3
         '
+        Me.SimpleButton3.Enabled = false
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"),System.Drawing.Image)
         Me.SimpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.SimpleButton3.Location = New System.Drawing.Point(566, 27)
+        Me.SimpleButton3.Location = New System.Drawing.Point(877, 27)
         Me.SimpleButton3.Name = "SimpleButton3"
         Me.SimpleButton3.Size = New System.Drawing.Size(67, 60)
         Me.SimpleButton3.TabIndex = 4
@@ -661,7 +658,7 @@ Partial Class FrPedidosValorizados
         '
         Me.SimpleButton4.Image = CType(resources.GetObject("SimpleButton4.Image"),System.Drawing.Image)
         Me.SimpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.SimpleButton4.Location = New System.Drawing.Point(639, 27)
+        Me.SimpleButton4.Location = New System.Drawing.Point(950, 27)
         Me.SimpleButton4.Name = "SimpleButton4"
         Me.SimpleButton4.Size = New System.Drawing.Size(67, 60)
         Me.SimpleButton4.TabIndex = 5
@@ -703,6 +700,7 @@ Partial Class FrPedidosValorizados
         Me.SimpleButton6.Size = New System.Drawing.Size(132, 27)
         Me.SimpleButton6.TabIndex = 11
         Me.SimpleButton6.Text = "Aprobacion manual"
+        Me.SimpleButton6.Visible = false
         '
         'dirlabel
         '
@@ -716,9 +714,9 @@ Partial Class FrPedidosValorizados
         Me.imprimirtodos.Enabled = false
         Me.imprimirtodos.Image = CType(resources.GetObject("imprimirtodos.Image"),System.Drawing.Image)
         Me.imprimirtodos.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.imprimirtodos.Location = New System.Drawing.Point(910, 27)
+        Me.imprimirtodos.Location = New System.Drawing.Point(544, 27)
         Me.imprimirtodos.Name = "imprimirtodos"
-        Me.imprimirtodos.Size = New System.Drawing.Size(178, 45)
+        Me.imprimirtodos.Size = New System.Drawing.Size(178, 60)
         Me.imprimirtodos.TabIndex = 9
         Me.imprimirtodos.Text = "Generar Reporte para Autorizar"
         Me.imprimirtodos.Visible = false
@@ -727,7 +725,7 @@ Partial Class FrPedidosValorizados
         '
         Me.LabelControl2.Appearance.BackColor = System.Drawing.Color.Transparent
         Me.LabelControl2.Appearance.Options.UseBackColor = true
-        Me.LabelControl2.Location = New System.Drawing.Point(1094, 27)
+        Me.LabelControl2.Location = New System.Drawing.Point(728, 27)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(75, 13)
         Me.LabelControl2.TabIndex = 9
@@ -737,10 +735,11 @@ Partial Class FrPedidosValorizados
         'ComboBoxEdit1
         '
         Me.ComboBoxEdit1.Enabled = false
-        Me.ComboBoxEdit1.Location = New System.Drawing.Point(1094, 46)
+        Me.ComboBoxEdit1.Location = New System.Drawing.Point(728, 46)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez"})
+        Me.ComboBoxEdit1.Properties.DropDownRows = 10
+        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Alejandro Goral", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez", "Omar Martin", "Claudia Quiroga", "Gustavo Fernandez"})
         Me.ComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ComboBoxEdit1.Size = New System.Drawing.Size(132, 20)
         Me.ComboBoxEdit1.TabIndex = 8

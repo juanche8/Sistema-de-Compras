@@ -53,5 +53,4 @@ C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.exe.licenses
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.exe
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.pdb
-C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.vbprojResolveAssemblyReference.cache
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrNuevoItem.resources
