@@ -547,6 +547,7 @@ Partial Class FrPresupuestos
         Me.Button2.TabIndex = 23
         Me.Button2.Text = "actualizar"
         Me.Button2.UseVisualStyleBackColor = true
+        Me.Button2.Visible = false
         '
         'Button1
         '
@@ -1032,10 +1033,6 @@ Partial Class FrPresupuestos
         Me.GridColumn22.Visible = true
         Me.GridColumn22.VisibleIndex = 2
         Me.GridColumn22.Width = 328
-        '
-        'DefaultLookAndFeel1
-        '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
         'FrPresupuestos
         '

@@ -24,10 +24,16 @@ Public Class FrAprobarODC
         Try
             Empresa = ""
             Formadepago = ""
-            report.FilterString = "IdPedido =" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido)
-            report.CreateDocument()
-            ' report.ExportToPdf("C:\Reportes\ODCs\" + Empresa + " - " + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdPedido).ToString + ".pdf")
-            tool.Report.ShowPreviewDialog()
+            If gridview3.SelectedRowsCount = 0 Then
+                MsgBox(Responsable & ", por favor selecciona un pedido para Ver.", vbInformation)
+                exit sub
+            else
+
+                report.FilterString = "IdPedido =" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido)
+                report.CreateDocument()
+                ' report.ExportToPdf("C:\Reportes\ODCs\" + Empresa + " - " + GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdPedido).ToString + ".pdf")
+                tool.Report.ShowPreviewDialog()
+            End If
         Catch ex As Exception
         End Try
     End Sub
@@ -36,51 +42,59 @@ Public Class FrAprobarODC
 
     End Sub
     Private Sub FrAprobarODC_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        'Me.Dispose()
-        'Application.Exit()
+        Me.Dispose()
+        Application.Exit()
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        If MsgBox("Deseas CANCELAR los pedidos seleccionados?", vbYesNo) = vbYes Then
-            If GridView3.SelectedRowsCount = 1 Then
-                Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 2 where IdPedido = " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido))
-                ' report.FilterString = "IdPedido = " & consulta & " And Sector = " & Sectorid
-                'tool.Report.ShowPreviewDialog()
-                XpCollection1.Reload()
+        If gridview3.SelectedRowsCount = 0 Then
+            MsgBox("Debes seleccionar un pedido para Cancelar.", vbInformation)
+            else
+            If MsgBox("Deseas CANCELAR los pedidos seleccionados?", vbYesNo) = vbYes Then
+                If GridView3.SelectedRowsCount = 1 Then
+                    Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 2 where IdPedido = " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido))
+                    ' report.FilterString = "IdPedido = " & consulta & " And Sector = " & Sectorid
+                    'tool.Report.ShowPreviewDialog()
+                    XpCollection1.Reload()
 
-            ElseIf GridView3.SelectedRowsCount > 1 Then
-                Dim x As IList = GridView3.GetSelectedRows().ToList
-                For s = 0 To x.Count - 1
-                    Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 2 where IdPedido = " & GridView3.GetRowCellValue(x.Item(s), colIdPedido))
-                Next
-                XpCollection1.Reload()
+                ElseIf GridView3.SelectedRowsCount > 1 Then
+                    Dim x As IList = GridView3.GetSelectedRows().ToList
+                    For s = 0 To x.Count - 1
+                        Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 2 where IdPedido = " & GridView3.GetRowCellValue(x.Item(s), colIdPedido))
+                    Next
+                    XpCollection1.Reload()
+                End If
+
+            else
+                return
             End If
-
-        else
-            return
         End If
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
-        If MsgBox("Deseas Aprobar los pedidos seleccionados?", vbYesNo) = vbYes Then
-            If GridView3.SelectedRowsCount = 1 Then
-                Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 1 where IdPedido = " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido))
-                ' report.FilterString = "IdPedido = " & consulta & " And Sector = " & Sectorid
-                'tool.Report.ShowPreviewDialog()
-                XpCollection1.Reload()
-
-            ElseIf GridView3.SelectedRowsCount > 1 Then
-                Dim x As IList = GridView3.GetSelectedRows().ToList
-                For s = 0 To x.Count - 1
-                    Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 1 where IdPedido = " & GridView3.GetRowCellValue(x.Item(s), colIdPedido))
-                Next
-                XpCollection1.Reload()
-            End If
-
+        If gridview3.SelectedRowsCount = 0 Then
+            MsgBox("Debes seleccionar al menos una orden para aprobar", vbInformation)
         else
-            return
-        End If
 
+            If MsgBox("Deseas Aprobar los pedidos seleccionados?", vbYesNo) = vbYes Then
+                If GridView3.SelectedRowsCount = 1 Then
+                    Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 1 where IdPedido = " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido))
+                    ' report.FilterString = "IdPedido = " & consulta & " And Sector = " & Sectorid
+                    'tool.Report.ShowPreviewDialog()
+                    XpCollection1.Reload()
+
+                ElseIf GridView3.SelectedRowsCount > 1 Then
+                    Dim x As IList = GridView3.GetSelectedRows().ToList
+                    For s = 0 To x.Count - 1
+                        Dim consulta = Session1.ExecuteScalar("Update TotalODC SET AproboMartin = 1 where IdPedido = " & GridView3.GetRowCellValue(x.Item(s), colIdPedido))
+                    Next
+                    XpCollection1.Reload()
+                End If
+
+            else
+                return
+            End If
+        End If
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click

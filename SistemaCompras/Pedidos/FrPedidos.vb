@@ -28,12 +28,12 @@ Public Class FrPedidos
         XpColProveedores.Session = Session1
         proyecto.Session = Session1
         direccionxp.Session = Session1
-        If Cotiza = 1 or Cotiza = 3 Then                                              ' si el permiso es diferente a 1 (seccionoficina) se establecen los labels
-            labelestado.Text = "Pendiente de Autorizacion"
-            'labelautor.Visible = True
-            'comboautor.Visible = True
+        If Cotiza = 1 Then                                              ' si el permiso es diferente a 1 (seccionoficina) se establecen los labels
+            labelestado.Text = "Aprobado"
+            labelautor.Visible = True
+            comboautor.Visible = True
         Else
-            labelestado.Text = "Pendiente de Aprobacion"
+            labelestado.Text = "Pendiente de aprobacion"
         End If
         '  Else
         ' labelestado.Text = "Aprobado"
@@ -66,10 +66,10 @@ Public Class FrPedidos
 
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-            If labelestado.Text = "Pendiente de Autorizacion" Then              ' si el label es "Pendiente de Autorizacion", va a guardar en el campo estado el numero 8("Pendiente de Autorizacion")
-                .Estado = "8"
+            If labelestado.Text = "Aprobado" Then              ' si el label es aprobado, va a guardar en el campo estado el numero 2(APROBADO)
+                .Estado = "2"
             Else
-                .Estado = "7"                                  ' si no, guarda el 7, que por defecto es en espera de aprobacion. (por gerente de su dpto) para users nivel 1
+                .Estado = "7"                                  ' si no, guarda el 7, que por defecto es en espera de aprobacion.
             End If
             .Save()                                            ' guarda los objetos en la datastore     
         End With
@@ -94,10 +94,10 @@ Public Class FrPedidos
             MsgBox("Debes indicar la direccion de recepcion del pedido", vbOKOnly, "Sin Direccion de envio")
             Return
         End If
-        'If Cotiza = 1 And comboautor.Text = "" Then
-        '    MsgBox("Debes estar autorizada para hacer esta solicitud.", vbInformation)
-        '    Return
-        'End If
+        If Cotiza = 1 And comboautor.Text = "" Then
+            MsgBox("Debes estar autorizada para hacer esta solicitud.", vbInformation)
+            Return
+        End If
         For x = 0 To 0 'Step CheckedListBoxControl1.CheckedItems(CheckState.Checked)
             Try
                 Dim producto As String = Session1.ExecuteScalar("Select IdProducto from PedidosDetalles where IdProducto = 0")
@@ -113,16 +113,18 @@ Public Class FrPedidos
 
                 If cantidad Is Nothing Then
                     If MsgBox("Seguro que desea finalizar el pedido?", vbYesNo, "Finalizar pedido?") = vbYes Then
-                        Botonimprimir.Enabled = True
+                        'Botonimprimir.Enabled = True
                         GridControl1.Enabled = False
-                        MsgBox("Ahora puede imprimir su pedido!", vbInformation)
+                        'MsgBox("Ahora puede imprimir su pedido!", vbInformation)
                         SimpleButton1.Enabled = False
                         CheckEdit3.Enabled = False
-                       ' comboautor.Enabled = False
+                        ' comboautor.Enabled = False
                     End If
                 Else
                     MsgBox("Hay un item sin cantidad asignada.", vbInformation)
+                    
                     GridView1.RefreshData()
+                    return
                 End If
                 If CheckEdit3.CheckState = CheckState.Unchecked Then
                     GridLookUpEdit1View.GetFocusedRowCellValue(1)
@@ -130,18 +132,10 @@ Public Class FrPedidos
             Catch ex As Exception
             End Try
         Next
-    End Sub
-    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
-        FrProductos.Show()
-    End Sub
-    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
-        '  MsgBox(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
-        Dim del = Session1.ExecuteNonQuery("DELETE From PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
-        'Pedido = Pedido(del)2"
-        GridView1.RefreshData()
-        GridView1.DeleteSelectedRows()
-    End Sub
-    Private Sub BotonimprimirClick(sender As Object, e As EventArgs) Handles Botonimprimir.Click
+
+        '' desde aca la unificacion de los dos botones
+
+
         Dim querylinq1 As New XPQuery(Of MontagneAdministracion.Pedidos)(Session1)
         Dim aq = New MontagneAdministracion.Pedidos(Session1) 'selecciona la tabla pedidos a la session1
         With op
@@ -156,12 +150,13 @@ Public Class FrPedidos
             .AproboMartin = 0
 
             If Cotiza = 1 Then
-               ' .AutorizadoPor = comboautor.Text
+                .AutorizadoPor = comboautor.Text
                 .Fechaaprobacion = Now
             End If
 
             If CheckEdit3.CheckState = CheckState.Unchecked Then
                 .Proyecto = 1
+                CheckEdit3.Text = "Stock"
             Else
                 .Proyecto = GridLookUpEdit1View.GetFocusedRowCellValue(colIdProyecto)
             End If
@@ -182,12 +177,77 @@ Public Class FrPedidos
             .Save()
 
         End With
-        report.FilterString = "IdPedido =" & nped           ' se hace el filterstring con el IDPEDIDO de la tabla, y traigo el campo Pedido cargado en el load
-        tool.Report.ShowPreviewDialog()                        ' luego muestro el preview del reporte
-        SimpleButton1.Enabled = True
-        Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
-        Close()
+        report.FilterString = "IdPedido =" & nped
+        report.CreateDocument()
+        report.ExportToPdf("c:\Reportes\Mis Pedidos\" & nped & " - "& CheckEdit3.text +" - "+ Responsable+".pdf" )
+        If MsgBox(Responsable & ", Deseas imprimir el Pedido?", vbQuestion + vbYesNo) = vbYes
+            report.FilterString = "IdPedido =" & nped           ' se hace el filterstring con el IDPEDIDO de la tabla, y traigo el campo Pedido cargado en el load
+            tool.Report.ShowPreviewDialog()                        ' luego muestro el preview del reporte
+            SimpleButton1.Enabled = True
+            Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
+            Close()
+        Else
+            Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
+            Close()
+        End If
     End Sub
+    Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
+        FrProductos.Show()
+    End Sub
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        '  MsgBox(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
+        Dim del = Session1.ExecuteNonQuery("DELETE From PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
+        'Pedido = Pedido(del)2"
+        GridView1.RefreshData()
+        GridView1.DeleteSelectedRows()
+    End Sub
+    'Private Sub BotonimprimirClick(sender As Object, e As EventArgs) Handles Botonimprimir.Click
+    '    Dim querylinq1 As New XPQuery(Of MontagneAdministracion.Pedidos)(Session1)
+    '    Dim aq = New MontagneAdministracion.Pedidos(Session1) 'selecciona la tabla pedidos a la session1
+    '    With op
+    '        '.IdPedido = GridView1.GetRowCellValue(0, colIdPedido)
+    '        ' .Sector = Sectorid                                'se asignan los datos a los campos de la tabla pedidos desde el control correspondiente
+    '        '.FechaPedido = Labelfechapedido.Text
+    '        '.Responsable = Labelresponsable.Text
+    '        .Observaciones = memobserv.Text
+    '        .FechaRecepcion = fechaentrega.DateTime
+    '        .urgente = prioridad.Text
+    '        .DireccionDeEnvio = combodirecc.EditValue
+    '        .AproboMartin = 0
+
+    '        If Cotiza = 1 Then
+    '            .AutorizadoPor = comboautor.Text
+    '            .Fechaaprobacion = Now
+    '        End If
+
+    '        If CheckEdit3.CheckState = CheckState.Unchecked Then
+    '            .Proyecto = 1
+    '        Else
+    '            .Proyecto = GridLookUpEdit1View.GetFocusedRowCellValue(colIdProyecto)
+    '        End If
+    '        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '        'If nped = nped Then
+    '        '    .IdPedido = nped
+    '        'Else
+    '        '    .IdPedido = nped + 1
+
+    '        'End If
+
+    '        '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+    '        'If labelestado.Text = "Aprobado" Then              ' si el label es aprobado, va a guardar en el campo estado el numero 2(APROBADO)
+    '        '    .Estado = "2"
+    '        'Else
+    '        '    .Estado = "7"                                  ' si no, guarda el 7, que por defecto es en espera de aprobacion.
+    '        'End If
+    '        .Save()
+
+    '    End With
+    '    report.FilterString = "IdPedido =" & nped           ' se hace el filterstring con el IDPEDIDO de la tabla, y traigo el campo Pedido cargado en el load
+    '    tool.Report.ShowPreviewDialog()                        ' luego muestro el preview del reporte
+    '    SimpleButton1.Enabled = True
+    '    Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
+    '    Close()
+    'End Sub
     Private Sub FrPedidos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing ' advierte que pierde datos si no imprime, si acepta, se borran los registros de los pedidos seleccionados en la grid de la bdd
         If SimpleButton1.Enabled = False And Botonimprimir.Enabled = True Then
             If MsgBox("Debes imprimir el Comprobante para guardar los datos del pedido. ¿Desesas salir?", vbYesNo, "Atencion!") = vbNo Then
@@ -226,7 +286,7 @@ Public Class FrPedidos
     End Sub
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         picturebox1.image = nothing
-        Using O As New OpenFileDialog With {.Filter = "(Image Files)|*.jpg;*.png;*.bmp;*.gif;*.ico|Jpg, | *.jpg|Png, | *.png|Bmp, | *.bmp|Gif, | *.gif|Ico | *.ico", .Multiselect = False, .Title = "Select Image"}
+        Using O As New OpenFileDialog With {.Filter = "(Image Files)|*.jpg;*.png;*.bmp;*.gif;*.ico|Jpg, | *.jpg|Png, | *.png|Bmp, | *.bmp|Gif, | *.gif|Ico | *.ico", .Multiselect = False, .Title = "Selecciona una imagen para cargar al Producto"}
             If O.ShowDialog = 1 Then
                 imagedir = O.FileName
                 dim imgserver = "\\CENTRALMONTAGNE\softMtg\compras\images\" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, coliddetalle) & ".jpg"
@@ -387,20 +447,24 @@ Public Class FrPedidos
         'Dim guardarimg = Session1.ExecuteNonQuery("update PedidosDetalles set ImagenUrl ='" & imgserver & "' Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
     End Sub
     Private Sub GridView1_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles GridView1.SelectionChanged
-        If gridview1.GetRowCellValue(gridview1.FocusedRowHandle , colIdDetalle) is nothing Then
-            SimpleButton2.Enabled= false
-            else
-        Try
+        If gridview1.GetRowCellValue(gridview1.FocusedRowHandle, colIdDetalle) is nothing Then
+            SimpleButton2.Enabled = false
+        else
+            Try
                 SimpleButton2.Enabled = true
-            Dim leerimg = Session1.ExecuteScalar("Select ImagenUrl from PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
-            If leerimg IsNot nothing Then
-                'SimpleButton3.Visible = True
-                PictureBox1.Image = Image.FromFile(leerimg)
-                    Else
+                Dim leerimg = Session1.ExecuteScalar("Select ImagenUrl from PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
+                If leerimg IsNot nothing Then
+                    'SimpleButton3.Visible = True
+                    PictureBox1.Image = Image.FromFile(leerimg)
+                Else
                     PictureBox1.Image = Nothing
-            End If
-        Catch ex As Exception
-        End Try
-            end if
+                End If
+            Catch ex As Exception
+            End Try
+        end if
+    End Sub
+
+    Private Sub Botonimprimir_Click(sender As Object, e As EventArgs) Handles Botonimprimir.Click
+
     End Sub
 End Class

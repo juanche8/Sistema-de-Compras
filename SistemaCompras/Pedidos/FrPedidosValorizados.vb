@@ -29,11 +29,11 @@ Public Class FrPedidosValorizados
         listadeprecios.Session = Session1
         Dim resultSet As SelectedData = Session1.ExecuteQuery("SELECT * from Vistalistaprecios")
         XpDataView1.LoadData(resultSet)
-        If Cotiza = 10 Then
-            Pedidos.CriteriaString = "Estado = 8"
-            SimpleButton3.Enabled = true
-            SimpleButton6.Visible = false
-        End If
+        'If Cotiza = 10 Then
+        '    Pedidos.CriteriaString = "Estado = 8"
+        '    SimpleButton3.Enabled = true
+        '    SimpleButton6.Visible = false
+        'End If
         If Cotiza = 3 Then
             Pedidos.CriteriaString = ("Estado = 7" & " And Sector = " & Sectorid)
             ComboBoxEdit1.Visible = True
@@ -43,7 +43,7 @@ Public Class FrPedidosValorizados
             colTotal.Visible = False
             colIdproveedor.Visible = False
             imprimirtodos.Visible = True
-            imprimirtodos.Enabled = false
+            'imprimirtodos.Enabled = false
 
         ElseIf Cotiza = 1 Then
             Pedidos.CriteriaString = "Estado = 1 and AutorizadoPor is not null"
@@ -136,22 +136,24 @@ Public Class FrPedidosValorizados
             MsgBox("Selecciona una fila para aprobar.")
         Else
 
-            If Cotiza = 10 Then 'martin
+            'If Cotiza = 10 Then 'martin
 
-                GridView1.SetFocusedRowCellValue(colAutorizadoPor, Responsable)
-                GridView1.SetFocusedRowCellValue(colEstado, 2)
-                GridView1.SetFocusedRowCellValue(colFechaAprobacion, Today)
-                GridView1.SetFocusedRowCellValue(colObservaciones, obs)
-                GridView1.UpdateCurrentRow()
-                Exit sub
-            End If
-            GridView1.SetFocusedRowCellValue(colEstado, 8)
-            GridView1.SetFocusedRowCellValue(colAutorizadoPor, Responsable)
+            '    GridView1.SetFocusedRowCellValue(colAutorizadoPor, Responsable)
+            '    GridView1.SetFocusedRowCellValue(colEstado, 2)
+            '    GridView1.SetFocusedRowCellValue(colFechaAprobacion, Today)
+            '    GridView1.SetFocusedRowCellValue(colObservaciones, obs)
+            '    GridView1.UpdateCurrentRow()
+            '    Exit sub
+            'End If
+            GridView1.SetFocusedRowCellValue(colEstado, 2)
+            GridView1.SetFocusedRowCellValue(colAutorizadoPor, ComboBoxEdit1.Text)
             GridView1.SetFocusedRowCellValue(colFechaAprobacion, Today)
             GridView1.SetFocusedRowCellValue(colObservaciones, obs)
             GridView1.UpdateCurrentRow()
+            ComboBoxEdit1.Text = ""
+            ComboBoxEdit1.Enabled = false
+                    End If
 
-        End If
     End Sub
     Public Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
 
@@ -167,7 +169,7 @@ Public Class FrPedidosValorizados
         If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colEstado) = 3 Then
             imprimirtodos.Enabled = False
         Else
-            'imprimirtodos.Enabled = True
+            imprimirtodos.Enabled = True
         End If
         Try
             Dim consulta = GridView1.GetFocusedRowCellValue(colIdPedido)
@@ -224,10 +226,11 @@ Public Class FrPedidosValorizados
     End Sub
     Private Sub ComboBoxEdit1_TextChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.TextChanged
         If ComboBoxEdit1.Text = "" Then
-            SimpleButton6.Enabled = False
+            SimpleButton3.Enabled = False
         Else
-            SimpleButton6.Enabled = True
+            SimpleButton3.Enabled = True
         End If
+        
     End Sub
 
     Private Sub GridControl2_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles GridControl2.Validating
@@ -273,31 +276,31 @@ Public Class FrPedidosValorizados
         DetallePedido.reload
     End Sub
 
-    Private Sub SimpleButton6_Click_1(sender As Object, e As EventArgs) Handles SimpleButton6.Click
-        If GridView1.SelectedRowsCount = 0 Then
-            MsgBox("Selecciona una fila para iniciar el proceso de aprobacion manual", vbinformation)
-        else
+    'Private Sub SimpleButton6_Click_1(sender As Object, e As EventArgs) Handles SimpleButton6.Click
+    '    If GridView1.SelectedRowsCount = 0 Then
+    '        MsgBox("Selecciona una fila para iniciar el proceso de aprobacion manual", vbinformation)
+    '    else
 
-            simplebutton6.Enabled = False
-            imprimirtodos.Enabled = True
-            comboboxedit1.Enabled = false
-            If ComboBoxEdit1.Text <> "" Then
-                If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdPedido) Is Nothing Then
-                    MsgBox("Selecciona una fila para aprobar.")
-                Else
-                    GridView1.SetFocusedRowCellValue(colEstado, 2)
-                    GridView1.SetFocusedRowCellValue(colAutorizadoPor, "Manual por " + ComboBoxEdit1.Text)
-                    GridView1.SetFocusedRowCellValue(colFechaAprobacion, Today)
-                    GridView1.SetFocusedRowCellValue(colObservaciones, obs)
-                    GridView1.UpdateCurrentRow()
+    '        simplebutton6.Enabled = False
+    '        imprimirtodos.Enabled = True
+    '        comboboxedit1.Enabled = false
+    '        If ComboBoxEdit1.Text <> "" Then
+    '            If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdPedido) Is Nothing Then
+    '                MsgBox("Selecciona una fila para aprobar.")
+    '            Else
+    '                GridView1.SetFocusedRowCellValue(colEstado, 2)
+    '                GridView1.SetFocusedRowCellValue(colAutorizadoPor, "Manual por " + ComboBoxEdit1.Text)
+    '                GridView1.SetFocusedRowCellValue(colFechaAprobacion, Today)
+    '                GridView1.SetFocusedRowCellValue(colObservaciones, obs)
+    '                GridView1.UpdateCurrentRow()
 
-                    comboboxedit1.enabled = false
-                    comboboxedit1.text = ""
-                    imprimirtodos.Enabled = false
-                    SimpleButton6.Enabled = true
-                    GridView1.UpdateCurrentRow()
-                End If
-            End If
-        End If
-    End Sub
+    '                comboboxedit1.enabled = false
+    '                comboboxedit1.text = ""
+    '                imprimirtodos.Enabled = false
+    '                SimpleButton6.Enabled = true
+    '                GridView1.UpdateCurrentRow()
+    '            End If
+    '        End If
+    '    End If
+    'End Sub
 End Class

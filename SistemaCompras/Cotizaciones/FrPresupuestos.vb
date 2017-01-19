@@ -22,7 +22,7 @@ Imports DevExpress.Data
 
 Public Class FrPresupuestos
     Dim ids As String
-    Dim vec(500) As String
+    Dim vec(500) As String''d
     Dim consulta As integer
 
     'Dim report As New RpSolicitudCotizacion()
@@ -204,7 +204,7 @@ Public Class FrPresupuestos
 
     End Sub
 
-    Private Sub GridView1_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView1.RowClick
+    Private Sub GridView1_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView1.RowClick 'Carga la imagen del query que apunta al servidor
         If GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colProducto) Is Nothing Then
         Else
             Try
@@ -251,7 +251,7 @@ Public Class FrPresupuestos
         Refresh()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click '>>> boton que genera la solicitud de cotizacion por items seleccionados <<<
 
         If GridView1.SelectedRowsCount = 1 Then
 

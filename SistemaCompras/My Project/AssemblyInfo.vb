@@ -10,7 +10,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyConfiguration("")>
 <Assembly: AssemblyCompany("Montagne")>
 <Assembly: AssemblyProduct("Sistema de Compras")>
-<Assembly: AssemblyCopyright("Copyright Montagne Outdoors S.A. ©  2016")>
+<Assembly: AssemblyCopyright("Copyright Montagne Outdoors S.A. ©  2017")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
 
@@ -32,5 +32,5 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 ' [assembly: AssemblyVersion("1.0.*")]
-<Assembly: AssemblyVersion("4.2.1.1")>
+<Assembly: AssemblyVersion("5.0.1.1")>
 <Assembly: AssemblyFileVersion("2.2.0.0")>
