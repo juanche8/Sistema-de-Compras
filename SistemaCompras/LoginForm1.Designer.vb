@@ -28,7 +28,6 @@ Partial Class LoginForm1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm1))
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
@@ -38,7 +37,7 @@ Partial Class LoginForm1
         Me.Username = New DevExpress.XtraEditors.TextEdit()
         Me.Password = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel()
         CType(Me.LogoPictureBox,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Username.Properties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Password.Properties,System.ComponentModel.ISupportInitialize).BeginInit

@@ -57,6 +57,10 @@ Public Class FrPresupuestos
             SimpleButton6.Visible = true
             SimpleButton5.Visible = true
         End If
+        If Responsable = "Martin Pais" Then
+            Pedidos.CriteriaString ="Estado = 2 and AutorizadoPor is not null"
+            PictureBox1.Visible=  true
+        End If
         Proveedores.CriteriaString = "Email  Is Not null"
         Proveedores.CriteriaString = "Rubro  Is Not null"
         Back = 0

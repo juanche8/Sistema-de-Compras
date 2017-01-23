@@ -19,11 +19,10 @@ Partial Class FrPedidos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrPedidos))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PictureBox1 = New DevExpress.XtraEditors.ImageEdit()
-        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
@@ -36,7 +35,7 @@ Partial Class FrPedidos
         Me.comboautor = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.FlyoutPanel1 = New DevExpress.Utils.FlyoutPanel()
         Me.TextEdit1 = New DevExpress.XtraEditors.GridLookUpEdit()
-        Me.proyecto = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.proyecto = New DevExpress.Xpo.XPCollection()
         Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colIdProyecto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNombreProyecto = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -64,19 +63,19 @@ Partial Class FrPedidos
         Me.imagurgente = New DevExpress.XtraEditors.PictureEdit()
         Me.CheckEdit2 = New DevExpress.XtraEditors.CheckEdit()
         Me.combodirecc = New DevExpress.XtraEditors.GridLookUpEdit()
-        Me.direccionxp = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.direccionxp = New DevExpress.Xpo.XPCollection()
         Me.GridLookUpEdit2View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colId = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colDireccion = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridSplitContainer1 = New DevExpress.XtraGrid.GridSplitContainer()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.XpColDatosPedido = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.XpColDatosPedido = New DevExpress.Xpo.XPCollection()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colIdDetalle = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdProducto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
-        Me.XpColProductos = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.XpColProductos = New DevExpress.Xpo.XPCollection()
         Me.RepositoryItemGridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colCantidad = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemSpinEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
@@ -92,12 +91,12 @@ Partial Class FrPedidos
         Me.RepositoryItemPictureEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
         Me.RepositoryItemImagePopupContainerEdit1 = New DevExpress.XtraCharts.Designer.Native.RepositoryItemImagePopupContainerEdit()
         Me.RepositoryItemImageEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemImageEdit()
-        Me.XpColDetallePedido = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.XpColSectores = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.XpColUsuario = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.XpColProveedores = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.XpColEstado = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.XpInstantFeedbackSource1 = New DevExpress.Xpo.XPInstantFeedbackSource(Me.components)
+        Me.XpColDetallePedido = New DevExpress.Xpo.XPCollection()
+        Me.XpColSectores = New DevExpress.Xpo.XPCollection()
+        Me.XpColUsuario = New DevExpress.Xpo.XPCollection()
+        Me.XpColProveedores = New DevExpress.Xpo.XPCollection()
+        Me.XpColEstado = New DevExpress.Xpo.XPCollection()
+        Me.XpInstantFeedbackSource1 = New DevExpress.Xpo.XPInstantFeedbackSource()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SplitContainerControl1.SuspendLayout
@@ -356,7 +355,7 @@ Partial Class FrPedidos
         Me.CheckEdit3.Location = New System.Drawing.Point(366, 84)
         Me.CheckEdit3.MenuManager = Me.BarManager1
         Me.CheckEdit3.Name = "CheckEdit3"
-        Me.CheckEdit3.Properties.Caption = "Proyecto:"
+        Me.CheckEdit3.Properties.Caption = "Proyecto"
         Me.CheckEdit3.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.CheckEdit3.Size = New System.Drawing.Size(189, 19)
         Me.CheckEdit3.TabIndex = 24
