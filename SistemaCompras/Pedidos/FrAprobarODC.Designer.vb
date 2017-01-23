@@ -74,6 +74,7 @@ Partial Class FrAprobarODC
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
+        Me.VisorPedidosSinCotizar = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.GridView2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit3,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -464,12 +465,12 @@ Partial Class FrAprobarODC
         '
         Me.verorden.Image = CType(resources.GetObject("verorden.Image"),System.Drawing.Image)
         Me.verorden.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight
-        Me.verorden.Location = New System.Drawing.Point(677, 38)
+        Me.verorden.Location = New System.Drawing.Point(579, 38)
         Me.verorden.Name = "verorden"
         Me.verorden.Size = New System.Drawing.Size(101, 38)
         Me.verorden.TabIndex = 21
         Me.verorden.Text = "Ver Orden"
-        Me.verorden.ToolTip = "Envía la orden por correo electrónico"
+        Me.verorden.ToolTip = "Ver ODC seleccionada"
         '
         'SimpleButton1
         '
@@ -480,7 +481,7 @@ Partial Class FrAprobarODC
         Me.SimpleButton1.Size = New System.Drawing.Size(101, 38)
         Me.SimpleButton1.TabIndex = 22
         Me.SimpleButton1.Text = "Aprobar"
-        Me.SimpleButton1.ToolTip = "Envía la orden por correo electrónico"
+        Me.SimpleButton1.ToolTip = "Aprueba esta Orden de Compra"
         '
         'SimpleButton2
         '
@@ -491,7 +492,7 @@ Partial Class FrAprobarODC
         Me.SimpleButton2.Size = New System.Drawing.Size(101, 38)
         Me.SimpleButton2.TabIndex = 23
         Me.SimpleButton2.Text = "Anular"
-        Me.SimpleButton2.ToolTip = "Envía la orden por correo electrónico"
+        Me.SimpleButton2.ToolTip = "Anula esta Orden"
         '
         'colproyecto
         '
@@ -544,13 +545,27 @@ Partial Class FrAprobarODC
         Me.SimpleButton3.Size = New System.Drawing.Size(72, 56)
         Me.SimpleButton3.TabIndex = 24
         Me.SimpleButton3.Text = "Actualizar"
-        Me.SimpleButton3.ToolTip = "Envía la orden por correo electrónico"
+        Me.SimpleButton3.ToolTip = "Actualiza para ver si hay nuevos pedidos"
+        '
+        'VisorPedidosSinCotizar
+        '
+        Me.VisorPedidosSinCotizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.VisorPedidosSinCotizar.Image = CType(resources.GetObject("VisorPedidosSinCotizar.Image"),System.Drawing.Image)
+        Me.VisorPedidosSinCotizar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleRight
+        Me.VisorPedidosSinCotizar.Location = New System.Drawing.Point(198, 365)
+        Me.VisorPedidosSinCotizar.Name = "VisorPedidosSinCotizar"
+        Me.VisorPedidosSinCotizar.Size = New System.Drawing.Size(192, 32)
+        Me.VisorPedidosSinCotizar.TabIndex = 25
+        Me.VisorPedidosSinCotizar.Text = "Monitorear tareas de Compras"
+        Me.VisorPedidosSinCotizar.ToolTip = "Verifica las tareas pendientes del Sector Compras"
+        Me.VisorPedidosSinCotizar.Visible = false
         '
         'FrAprobarODC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1084, 397)
+        Me.Controls.Add(Me.VisorPedidosSinCotizar)
         Me.Controls.Add(Me.SimpleButton3)
         Me.Controls.Add(Me.SimpleButton2)
         Me.Controls.Add(Me.SimpleButton1)
@@ -634,4 +649,5 @@ End Sub
     Friend WithEvents coltotal1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colRow As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents VisorPedidosSinCotizar As DevExpress.XtraEditors.SimpleButton
 End Class

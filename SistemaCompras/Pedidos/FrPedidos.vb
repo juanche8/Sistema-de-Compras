@@ -122,7 +122,7 @@ Public Class FrPedidos
                     End If
                 Else
                     MsgBox("Hay un item sin cantidad asignada.", vbInformation)
-                    
+
                     GridView1.RefreshData()
                     return
                 End If
@@ -179,17 +179,20 @@ Public Class FrPedidos
         End With
         report.FilterString = "IdPedido =" & nped
         report.CreateDocument()
-        report.ExportToPdf("c:\Reportes\Mis Pedidos\" & nped & " - "& CheckEdit3.text +" - "+ Responsable+".pdf" )
+        report.ExportToPdf("c:\Reportes\Mis Pedidos\" & nped & " - " & CheckEdit3.text + " - " + Responsable + ".pdf")
         If MsgBox(Responsable & ", Deseas imprimir el Pedido?", vbQuestion + vbYesNo) = vbYes
             report.FilterString = "IdPedido =" & nped           ' se hace el filterstring con el IDPEDIDO de la tabla, y traigo el campo Pedido cargado en el load
             tool.Report.ShowPreviewDialog()                        ' luego muestro el preview del reporte
             SimpleButton1.Enabled = True
-            Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
-            Close()
+            'Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
+            'Close()
+            Labelnumeropedido.Text = "1"
         Else
-            Back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
-            Close()
+            
+            Labelnumeropedido.Text = "1"
         End If
+        back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
+            Close()
     End Sub
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         FrProductos.Show()
@@ -273,16 +276,19 @@ Public Class FrPedidos
         End If
     End Sub
     Private Sub FrPedidos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        If SimpleButton1.Enabled = True And Botonimprimir.Enabled = False Then
-            If MsgBox("No se ha terminado el proceso de Solicitud de Materiales. ¿Desesas salir?", vbYesNo, "Atencion!") = vbNo Then
-                e.Cancel = True
-            Else
+
+        
+            If Labelnumeropedido.text = "1" Then
+
+            else
+
                 Dim del = Session1.ExecuteNonQuery("DELETE From PedidosDetalles Where IdPedido = " & Labelnumeropedido.Text)
                 Dim del1 = Session1.ExecuteNonQuery("DELETE From Pedidos Where IdPedido = " & Labelnumeropedido.Text)
                 e.Cancel = False
             End If
+        
 
-        End If
+
     End Sub
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
         picturebox1.image = nothing

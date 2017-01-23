@@ -83,24 +83,24 @@ Public Class FrODC
                 Formadepago = cbopago.text
                 report.FilterString = "IdPedido =" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3) & "and IdProveedor= " & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdProveedor3)
                 report.CreateDocument()
-                report.ExportToPdf("\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf" )
+                report.ExportTopdf("\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf")
 
                 tool.Report.ShowPreviewDialog()
                 ' HASTA ACA COMENTAR PARA VOLVER A CREAR LOS REPORTES
                 Try
                     Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colRazonSocial3) & "'").ToString
-                    Sendmail("logger", "Orden de Compra - " & Empresa, email1 &", mtgcompras@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", "Estimado " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ", hemos recibido su cotización." & vbCrLf & "Debido a que estamos satisfechos con las condiciones, ésta ha sido seleccionada." & vbCrLf & "Como archivo adjunto se encuentra la Orden de Compra. " & vbCrLf & "Si tiene alguna inquietud o pregunta, por favor contactarnos." & vbCrLf & "Departamento de Compras " & Empresa & ".")
+                    Sendmail("logger", "Orden de Compra - " & Empresa, email1 & ", mtgcompras@montagne.com.ar, mtgcompras2@montange.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", "Estimado " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ", hemos recibido su cotización." & vbCrLf & "Debido a que estamos satisfechos con las condiciones, ésta ha sido seleccionada." & vbCrLf & "Como archivo adjunto se encuentra la Orden de Compra. " & vbCrLf & "Si tiene alguna inquietud o pregunta, por favor contactarnos." & vbCrLf & "Departamento de Compras " & Empresa & ".")
 
                     MsgBox("El correo con la ORDEN DE COMPRA ha sido enviada al proveedor: " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ".", vbInformation)
                     If CheckEdit1.CheckState = 1 Then
-                        Sendmail("logger", "Informacion de Retiro", "mtgexpedicion@montagne.com.ar, deboramedina@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
+                        Sendmail("logger", "Informacion de Retiro", "mtgexpedicion@montagne.com.ar, deboramedina@montagne.com.ar, tatyanamatiushenko@montagne.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
                         MsgBox("Se ha enviado el correo con la informacion del retiro", vbinformation)
                     End If
                     Session1.ExecuteNonQuery("Update PedidosDetalles SET ODCEnviada = 1 where IdPedido =" & CInt(GridView3.GetFocusedRowCellValue(colIdPedido2)) & "and IdProveedor = " & CInt(GridView3.GetFocusedRowCellValue(colIdProveedor3)))
-                    Session1.ExecuteNonQuery("Update Pedidos SET Estado = 5 where IdPedido =" & CInt(GridView2.GetFocusedRowCellValue(colIdPedido)))
+                    Session1.ExecuteNonQuery("Update Pedidos SET Estado = 5 where IdPedido =" & CInt(GridView2.GetFocusedRowCellValue(colIdPedido)))  'pendiente
 
                     Dim resultSet3 As SelectedData = Session1.ExecuteQuery("SELECT * from VistaODC where AproboMartin = 1 and ODCEnviada = 0")
-                    'XpDataView2.LoadData(resultSet1)
+                    'XpDataView2.LoadData(resultSet1)                      "SELECT * from VistaODC where AproboMartin = 1 and ODCEnviada = 0"
                     ' XpDataView3.FilterString = "AproboMartin = 1 and ODCEnviada = 0 "
                     XpDataView3.LoadData(resultSet3)
                     ' Pedidos.Reload()
@@ -108,9 +108,9 @@ Public Class FrODC
                     '  Close()
                     ' report.Dispose
                 catch ex As Exception
-                     End try
-                    'HASTA ACA COMENTAR
-                    Else
+                End try
+                'HASTA ACA COMENTAR
+            Else
                 return
             End If
         End if
@@ -123,18 +123,15 @@ Public Class FrODC
         cbopago.Enabled = False
         cboEmpresas.Enabled = false
         SimpleButton1.Enabled = false
+        CheckEdit1.CheckState = 0
     End Sub
 
     Private Sub cboEmpresas_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles cboEmpresas.SelectedIndexChanged
-
-
         If cboEmpresas.Text IsNot Nothing Then
-
             cbopago.Enabled = true
         Else
             cbopago.Enabled = false
         End If
-
     End Sub
 
     Private Sub cbopago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbopago.SelectedIndexChanged
@@ -147,7 +144,6 @@ Public Class FrODC
 
 
     Private Sub FrODC_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-
         If Sectorid = 14 then
             Me.Dispose()
             Application.Exit()
@@ -155,10 +151,8 @@ Public Class FrODC
     End Sub
 
     Private Sub GridControl3_Click_1(sender As Object, e As EventArgs) Handles GridControl3.Click
-
         'GridControl2.DataSource = Nothing
         GridControl2.DataSource = XpDataView3
-            
         'GridControl2.MainView.PopulateColumns()
         try
             If GridView3.RowCount = 0 Then
@@ -173,9 +167,7 @@ Public Class FrODC
                 End if
             End if
         Catch ex As Exception
-
         End try
-
         lblCUIT.Text = GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colCUIT_CUIL)
         lbldomicilio.Text = GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colDomicilio)
         lblemail.Text = GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colEmail)
@@ -186,23 +178,21 @@ Public Class FrODC
         End If
         GridControl2.Enabled = true
         If gridview3.RowCount = 0 Then
-            else
-        
+        else
             Dim consulta = GridView3.GetFocusedRowCellValue(colIdPedido2)
-        XpDataView5.FilterString = "IdPedido = " &consulta
-            End If
+            XpDataView5.FilterString = "IdPedido = " & consulta
+        End If
         ' MsgBox(GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdPedido1))
         ' GridView2.FindFilterText = GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdPedido1).ToString
     End Sub
 
     Private Sub GridControl4_Click_1(sender As Object, e As EventArgs) Handles GridControl4.Click
-       ' GridControl2.DataSource = Nothing
+        ' GridControl2.DataSource = Nothing
         GridControl2.DataSource = XpDataView4
         ' GridControl2.MainView.PopulateColumns()
         try
             If GridView4.RowCount = 0 Then
             Else
-
                 Dim direccion = Session1.ExecuteScalar("Select DireccionDeEnvio from Pedidos where IdPedido = " & GridView4.GetFocusedRowCellValue(colIdPedido))
                 Dim direccionfisica = Session1.ExecuteScalar("Select Direccion from DireccionesEntrega where Id = " & direccion)
                 If direccion <> 0 then
@@ -212,15 +202,12 @@ Public Class FrODC
                 End if
             End if
         Catch ex As Exception
-
         End try
-
         lblCUIT.Text = GridView4.GetRowCellValue(GridView4.FocusedRowHandle, colCUIT_CUIL)
         lbldomicilio.Text = GridView4.GetRowCellValue(GridView4.FocusedRowHandle, colDomicilio)
         lblemail.Text = GridView4.GetRowCellValue(GridView4.FocusedRowHandle, colEmail)
         lbllocalidad.Text = GridView4.GetRowCellValue(GridView4.FocusedRowHandle, colLocalidad)
         ' XpDataView4 = XpDataView2
-
         cboEmpresas.Enabled = false
         GridControl2.Enabled = false
         SimpleButton1.Enabled = false
@@ -239,7 +226,6 @@ Public Class FrODC
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub fechaentrega_EditValueChanged(sender As Object, e As EventArgs) Handles fechaentrega.EditValueChanged
@@ -249,8 +235,8 @@ Public Class FrODC
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-         Empresa = cboEmpresas.text.ToUpper
-                Formadepago = cbopago.text
+        Empresa = cboEmpresas.text.ToUpper
+        Formadepago = cbopago.text
         If CheckEdit1.CheckState = 1 Then
             Sendmail("logger", "Informacion de Retiro", "juanyoris@montagne.com.ar", "C:\Reportes\ODCs\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
         End If

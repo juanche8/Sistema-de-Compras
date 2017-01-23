@@ -769,7 +769,7 @@ Partial Class FrPresupuestos
         Me.SimpleButton6.Enabled = false
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"),System.Drawing.Image)
         Me.SimpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
-        Me.SimpleButton6.Location = New System.Drawing.Point(3, 45)
+        Me.SimpleButton6.Location = New System.Drawing.Point(3, 46)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(127, 22)
         Me.SimpleButton6.TabIndex = 22

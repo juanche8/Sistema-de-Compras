@@ -12,11 +12,12 @@ Public Class FrAprobarODC
 
 
     Private Sub FrAprobarODC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Text = "Aprobar Ordenes de Compras - " & Responsable.ToUpper
         XpCollection1.Session = Session1
         'verorden.Visible = true
         ' XpDataView2.FilterString = "AproboMartin = 0"
         XpCollection1.CriteriaString = "AproboMartin = 0"
+        If Responsable = "Martin Pais" Then VisorPedidosSinCotizar.Visible =true
 
     End Sub
 
@@ -99,5 +100,9 @@ Public Class FrAprobarODC
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
         XpCollection1.Reload()
+    End Sub
+
+    Private Sub VisorPedidosSinCotizar_Click(sender As Object, e As EventArgs) Handles VisorPedidosSinCotizar.Click
+        FrPresupuestos.show
     End Sub
 End Class

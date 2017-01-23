@@ -503,7 +503,7 @@ Partial Class FrODC
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.MemoEdit1)
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.GridControl2)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(1286, 391)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(1286, 392)
         Me.SplitContainerControl2.SplitterPosition = 331
         Me.SplitContainerControl2.TabIndex = 1
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -518,7 +518,7 @@ Partial Class FrODC
         Me.SplitContainerControl3.Panel1.Text = "Panel1"
         Me.SplitContainerControl3.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl3.Panel2.Text = "Panel2"
-        Me.SplitContainerControl3.Size = New System.Drawing.Size(331, 391)
+        Me.SplitContainerControl3.Size = New System.Drawing.Size(331, 392)
         Me.SplitContainerControl3.SplitterPosition = 174
         Me.SplitContainerControl3.TabIndex = 1
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
@@ -694,7 +694,7 @@ Partial Class FrODC
         Me.SplitContainerControl4.Panel1.Text = "Panel1"
         Me.SplitContainerControl4.Panel2.Controls.Add(Me.GridControl4)
         Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(331, 211)
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(331, 213)
         Me.SplitContainerControl4.SplitterPosition = 171
         Me.SplitContainerControl4.TabIndex = 0
         Me.SplitContainerControl4.Text = "SplitContainerControl4"
@@ -868,7 +868,7 @@ Partial Class FrODC
         Me.GridControl4.Location = New System.Drawing.Point(0, 0)
         Me.GridControl4.MainView = Me.GridView4
         Me.GridControl4.Name = "GridControl4"
-        Me.GridControl4.Size = New System.Drawing.Size(331, 34)
+        Me.GridControl4.Size = New System.Drawing.Size(331, 37)
         Me.GridControl4.TabIndex = 1
         Me.GridControl4.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView4})
         '
@@ -1038,7 +1038,7 @@ Partial Class FrODC
         Me.GridControl2.MainView = Me.GridView2
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1})
-        Me.GridControl2.Size = New System.Drawing.Size(949, 391)
+        Me.GridControl2.Size = New System.Drawing.Size(950, 392)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
         '
@@ -1272,10 +1272,6 @@ Partial Class FrODC
         'Pedidos
         '
         Me.Pedidos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Pedidos)
-        '
-        'DefaultLookAndFeel1
-        '
-        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
         'FrODC
         '
