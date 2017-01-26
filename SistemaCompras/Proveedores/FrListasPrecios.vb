@@ -80,6 +80,7 @@ Partial Public Class FrListasPrecios
         Productos.Session = Session1
         Proveedores.Session = Session1
         Monedas.Session = Session1
+        impuestos.session = session1
         Productos.CriteriaString = "Rubro <> 'TELAS' or  Rubro <> 'AVIOS'"
 
         gridView.AddNewRow()

@@ -361,7 +361,8 @@ Public Class FrPrincipalCompras
     End Sub
 
     Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
-        frimage.Show()
+      visor.show
+        
     End Sub
 
     Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles helpbutton.Click
@@ -411,3 +412,6 @@ Public Class FrPrincipalCompras
         FrPedidosValorizados.show
     End Sub
 End Class
+
+
+'Juanjosediazyoris@gmail.com

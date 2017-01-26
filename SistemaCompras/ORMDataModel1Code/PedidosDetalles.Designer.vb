@@ -118,6 +118,24 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of Integer)("Cotizado", fCotizado, value)
             End Set
         End Property
+        Dim fIva As Decimal
+        Public Property Iva() As Decimal
+            Get
+                Return fIva
+            End Get
+            Set(ByVal value As Decimal)
+                SetPropertyValue(Of Decimal)("Iva", fIva, value)
+            End Set
+        End Property
+        Dim fTotal As Decimal
+        Public Property Total() As Decimal
+            Get
+                Return fTotal
+            End Get
+            Set(ByVal value As Decimal)
+                SetPropertyValue(Of Decimal)("Total", fTotal, value)
+            End Set
+        End Property
     End Class
 
 End Namespace
