@@ -4,8 +4,10 @@ Public Class visor
 
     Dim direct = Application.StartupPath & "\Dashboards"
     Private Sub visor_load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+         
         Cargacombo()
+
+
     End Sub
 
     Private Sub Cargacombo()

@@ -100,14 +100,18 @@ Partial Class FrPedidosValorizados
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colCantidad1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObservaciones1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPrecioProducto = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemGridLookUpEdit8 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
-        Me.PreciosProductos = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.RepositoryItemGridLookUpEdit8View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colIdProveedor1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit9 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.PreciosProductos = New DevExpress.Xpo.XPCollection(Me.components)
         Me.RepositoryItemGridLookUpEdit9View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colPrecioProducto = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemGridLookUpEdit8 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.RepositoryItemGridLookUpEdit8View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemGridLookUpEdit11 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.RepositoryItemGridLookUpEdit11View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
         Me.GridView6 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RepositoryItemGridLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
@@ -116,6 +120,7 @@ Partial Class FrPedidosValorizados
         Me.proveedor = New DevExpress.Xpo.XPCollection(Me.components)
         Me.RepositoryItemGridLookUpEdit5View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridView7 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.impuestos = New DevExpress.Xpo.XPCollection(Me.components)
         Me.listadeprecios = New DevExpress.Xpo.XPCollection(Me.components)
         CType(Me.GridView2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit3,System.ComponentModel.ISupportInitialize).BeginInit
@@ -154,11 +159,13 @@ Partial Class FrPedidosValorizados
         CType(Me.GridView5,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit6,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RepositoryItemGridLookUpEdit8,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PreciosProductos,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RepositoryItemGridLookUpEdit8View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit9,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PreciosProductos,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit9View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit8,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit8View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit11,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit11View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit7,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView6,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit4,System.ComponentModel.ISupportInitialize).BeginInit
@@ -167,6 +174,7 @@ Partial Class FrPedidosValorizados
         CType(Me.proveedor,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit5View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView7,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.impuestos,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.listadeprecios,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -639,8 +647,7 @@ Partial Class FrPedidosValorizados
         '
         'DetallePedido
         '
-        Me.DetallePedido.CriteriaString = "[IdPedido] = -1"
-        Me.DetallePedido.DisplayableProperties = "IdProveedor"
+        Me.DetallePedido.CriteriaString = "[IdDetalle] = -1"
         Me.DetallePedido.ObjectType = GetType(SistemaCompras.MontagneAdministracion.PedidosDetalles)
         '
         'SimpleButton3
@@ -774,24 +781,26 @@ Partial Class FrPedidosValorizados
         Me.GridControl2.Location = New System.Drawing.Point(0, 0)
         Me.GridControl2.MainView = Me.GridView5
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit6, Me.RepositoryItemGridLookUpEdit7, Me.RepositoryItemGridLookUpEdit4, Me.RepositoryItemGridLookUpEdit5, Me.RepositoryItemGridLookUpEdit8, Me.RepositoryItemGridLookUpEdit9})
+        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit6, Me.RepositoryItemGridLookUpEdit7, Me.RepositoryItemGridLookUpEdit4, Me.RepositoryItemGridLookUpEdit5, Me.RepositoryItemGridLookUpEdit8, Me.RepositoryItemGridLookUpEdit9, Me.RepositoryItemGridLookUpEdit11})
         Me.GridControl2.Size = New System.Drawing.Size(1235, 75)
         Me.GridControl2.TabIndex = 1
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5, Me.GridView7})
         '
         'GridView5
         '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdDetalle1, Me.colIdPedido1, Me.colIdProducto1, Me.colCantidad1, Me.colObservaciones1, Me.colPrecioProducto, Me.colIdProveedor1, Me.GridColumn3})
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdDetalle1, Me.colIdPedido1, Me.colIdProducto1, Me.colCantidad1, Me.colObservaciones1, Me.colIdProveedor1, Me.colPrecioProducto, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5})
         Me.GridView5.GridControl = Me.GridControl2
         Me.GridView5.Name = "GridView5"
         Me.GridView5.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace
         Me.GridView5.OptionsBehavior.ReadOnly = true
+        Me.GridView5.OptionsEditForm.EditFormColumnCount = 4
         Me.GridView5.OptionsLayout.Columns.AddNewColumns = false
         Me.GridView5.OptionsMenu.EnableColumnMenu = false
         Me.GridView5.OptionsSelection.ShowCheckBoxSelectorInGroupRow = DevExpress.Utils.DefaultBoolean.[False]
         Me.GridView5.OptionsView.RowAutoHeight = true
         Me.GridView5.OptionsView.ShowFooter = true
         Me.GridView5.OptionsView.ShowGroupPanel = false
+        Me.GridView5.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colIdProducto1, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colIdDetalle1
         '
@@ -813,7 +822,7 @@ Partial Class FrPedidosValorizados
         Me.colIdProducto1.OptionsColumn.ReadOnly = true
         Me.colIdProducto1.Visible = true
         Me.colIdProducto1.VisibleIndex = 0
-        Me.colIdProducto1.Width = 244
+        Me.colIdProducto1.Width = 230
         '
         'RepositoryItemGridLookUpEdit6
         '
@@ -839,7 +848,7 @@ Partial Class FrPedidosValorizados
         Me.colCantidad1.Name = "colCantidad1"
         Me.colCantidad1.Visible = true
         Me.colCantidad1.VisibleIndex = 1
-        Me.colCantidad1.Width = 36
+        Me.colCantidad1.Width = 42
         '
         'colObservaciones1
         '
@@ -848,39 +857,7 @@ Partial Class FrPedidosValorizados
         Me.colObservaciones1.Name = "colObservaciones1"
         Me.colObservaciones1.Visible = true
         Me.colObservaciones1.VisibleIndex = 2
-        Me.colObservaciones1.Width = 197
-        '
-        'colPrecioProducto
-        '
-        Me.colPrecioProducto.ColumnEdit = Me.RepositoryItemGridLookUpEdit8
-        Me.colPrecioProducto.FieldName = "PrecioProducto"
-        Me.colPrecioProducto.Name = "colPrecioProducto"
-        Me.colPrecioProducto.Visible = true
-        Me.colPrecioProducto.VisibleIndex = 3
-        Me.colPrecioProducto.Width = 71
-        '
-        'RepositoryItemGridLookUpEdit8
-        '
-        Me.RepositoryItemGridLookUpEdit8.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemGridLookUpEdit8.DataSource = Me.PreciosProductos
-        Me.RepositoryItemGridLookUpEdit8.DisplayMember = "PrecioUnitario"
-        Me.RepositoryItemGridLookUpEdit8.Name = "RepositoryItemGridLookUpEdit8"
-        Me.RepositoryItemGridLookUpEdit8.ValueMember = "PrecioUnitario"
-        Me.RepositoryItemGridLookUpEdit8.View = Me.RepositoryItemGridLookUpEdit8View
-        '
-        'PreciosProductos
-        '
-        Me.PreciosProductos.CriteriaString = "[Producto] = [Producto]"
-        Me.PreciosProductos.DisplayableProperties = "RazonSocial;Producto;PrecioUnitario;Marca;FechaModificacion;IdProveedor"
-        Me.PreciosProductos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.VistaProductos)
-        '
-        'RepositoryItemGridLookUpEdit8View
-        '
-        Me.RepositoryItemGridLookUpEdit8View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.RepositoryItemGridLookUpEdit8View.Name = "RepositoryItemGridLookUpEdit8View"
-        Me.RepositoryItemGridLookUpEdit8View.OptionsFind.FindNullPrompt = ""
-        Me.RepositoryItemGridLookUpEdit8View.OptionsSelection.EnableAppearanceFocusedCell = false
-        Me.RepositoryItemGridLookUpEdit8View.OptionsView.ShowGroupPanel = false
+        Me.colObservaciones1.Width = 179
         '
         'colIdProveedor1
         '
@@ -889,8 +866,8 @@ Partial Class FrPedidosValorizados
         Me.colIdProveedor1.FieldName = "IdProveedor"
         Me.colIdProveedor1.Name = "colIdProveedor1"
         Me.colIdProveedor1.Visible = true
-        Me.colIdProveedor1.VisibleIndex = 4
-        Me.colIdProveedor1.Width = 334
+        Me.colIdProveedor1.VisibleIndex = 3
+        Me.colIdProveedor1.Width = 271
         '
         'RepositoryItemGridLookUpEdit9
         '
@@ -902,6 +879,11 @@ Partial Class FrPedidosValorizados
         Me.RepositoryItemGridLookUpEdit9.ValueMember = "IdProveedor"
         Me.RepositoryItemGridLookUpEdit9.View = Me.RepositoryItemGridLookUpEdit9View
         '
+        'PreciosProductos
+        '
+        Me.PreciosProductos.CriteriaString = "[Producto] = [Producto]"
+        Me.PreciosProductos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.VistaProductos)
+        '
         'RepositoryItemGridLookUpEdit9View
         '
         Me.RepositoryItemGridLookUpEdit9View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
@@ -909,9 +891,34 @@ Partial Class FrPedidosValorizados
         Me.RepositoryItemGridLookUpEdit9View.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.RepositoryItemGridLookUpEdit9View.OptionsView.ShowGroupPanel = false
         '
+        'colPrecioProducto
+        '
+        Me.colPrecioProducto.ColumnEdit = Me.RepositoryItemGridLookUpEdit8
+        Me.colPrecioProducto.FieldName = "PrecioProducto"
+        Me.colPrecioProducto.Name = "colPrecioProducto"
+        Me.colPrecioProducto.Visible = true
+        Me.colPrecioProducto.VisibleIndex = 4
+        '
+        'RepositoryItemGridLookUpEdit8
+        '
+        Me.RepositoryItemGridLookUpEdit8.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit8.DataSource = Me.PreciosProductos
+        Me.RepositoryItemGridLookUpEdit8.DisplayMember = "PrecioUnitario"
+        Me.RepositoryItemGridLookUpEdit8.Name = "RepositoryItemGridLookUpEdit8"
+        Me.RepositoryItemGridLookUpEdit8.ValueMember = "PrecioUnitario"
+        Me.RepositoryItemGridLookUpEdit8.View = Me.RepositoryItemGridLookUpEdit8View
+        '
+        'RepositoryItemGridLookUpEdit8View
+        '
+        Me.RepositoryItemGridLookUpEdit8View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.RepositoryItemGridLookUpEdit8View.Name = "RepositoryItemGridLookUpEdit8View"
+        Me.RepositoryItemGridLookUpEdit8View.OptionsFind.FindNullPrompt = ""
+        Me.RepositoryItemGridLookUpEdit8View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit8View.OptionsView.ShowGroupPanel = false
+        '
         'GridColumn3
         '
-        Me.GridColumn3.Caption = "TOTAL"
+        Me.GridColumn3.Caption = "SUBTOTAL"
         Me.GridColumn3.FieldName = "GridColumn3"
         Me.GridColumn3.Name = "GridColumn3"
         Me.GridColumn3.OptionsColumn.AllowEdit = false
@@ -921,7 +928,50 @@ Partial Class FrPedidosValorizados
         Me.GridColumn3.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn3.Visible = true
         Me.GridColumn3.VisibleIndex = 5
-        Me.GridColumn3.Width = 102
+        Me.GridColumn3.Width = 107
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "IVA"
+        Me.GridColumn4.ColumnEdit = Me.RepositoryItemGridLookUpEdit11
+        Me.GridColumn4.FieldName = "Iva"
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
+        Me.GridColumn4.Visible = true
+        Me.GridColumn4.VisibleIndex = 6
+        Me.GridColumn4.Width = 78
+        '
+        'RepositoryItemGridLookUpEdit11
+        '
+        Me.RepositoryItemGridLookUpEdit11.AutoHeight = false
+        Me.RepositoryItemGridLookUpEdit11.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit11.DataSource = Me.PreciosProductos
+        Me.RepositoryItemGridLookUpEdit11.DisplayMember = "Iva"
+        Me.RepositoryItemGridLookUpEdit11.Name = "RepositoryItemGridLookUpEdit11"
+        Me.RepositoryItemGridLookUpEdit11.ReadOnly = true
+        Me.RepositoryItemGridLookUpEdit11.ValueMember = "Iva"
+        Me.RepositoryItemGridLookUpEdit11.View = Me.RepositoryItemGridLookUpEdit11View
+        '
+        'RepositoryItemGridLookUpEdit11View
+        '
+        Me.RepositoryItemGridLookUpEdit11View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.RepositoryItemGridLookUpEdit11View.Name = "RepositoryItemGridLookUpEdit11View"
+        Me.RepositoryItemGridLookUpEdit11View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit11View.OptionsView.ShowGroupPanel = false
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "TOTAL"
+        Me.GridColumn5.FieldName = "GridColumn5"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.OptionsColumn.AllowEdit = false
+        Me.GridColumn5.OptionsColumn.AllowFocus = false
+        Me.GridColumn5.OptionsColumn.ReadOnly = true
+        Me.GridColumn5.UnboundExpression = "Round([GridColumn3] * [Iva], 2)"
+        Me.GridColumn5.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
+        Me.GridColumn5.Visible = true
+        Me.GridColumn5.VisibleIndex = 7
+        Me.GridColumn5.Width = 89
         '
         'RepositoryItemGridLookUpEdit7
         '
@@ -983,6 +1033,10 @@ Partial Class FrPedidosValorizados
         Me.GridView7.Name = "GridView7"
         Me.GridView7.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never
         '
+        'impuestos
+        '
+        Me.impuestos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Impuestos)
+        '
         'listadeprecios
         '
         Me.listadeprecios.ObjectType = GetType(SistemaCompras.MontagneAdministracion.ListasPrecios)
@@ -1037,11 +1091,13 @@ Partial Class FrPedidosValorizados
         CType(Me.GridView5,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit6,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView4,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RepositoryItemGridLookUpEdit8,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.PreciosProductos,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RepositoryItemGridLookUpEdit8View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit9,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PreciosProductos,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit9View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit8,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit8View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit11,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit11View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit7,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView6,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit4,System.ComponentModel.ISupportInitialize).EndInit
@@ -1050,6 +1106,7 @@ Partial Class FrPedidosValorizados
         CType(Me.proveedor,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit5View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView7,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.impuestos,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.listadeprecios,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
@@ -1142,4 +1199,9 @@ End Sub
     Friend WithEvents dirlabel As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemGridLookUpEdit11 As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
+    Friend WithEvents RepositoryItemGridLookUpEdit11View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents impuestos As DevExpress.Xpo.XPCollection
 End Class

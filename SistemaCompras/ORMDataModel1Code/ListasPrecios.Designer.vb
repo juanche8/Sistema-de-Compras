@@ -98,6 +98,15 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of Integer)("Moneda", fMoneda, value)
             End Set
         End Property
+        Dim fIva As Decimal
+        Public Property Iva() As Decimal
+            Get
+                Return fIva
+            End Get
+            Set(ByVal value As Decimal)
+                SetPropertyValue(Of Decimal)("Iva", fIva, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

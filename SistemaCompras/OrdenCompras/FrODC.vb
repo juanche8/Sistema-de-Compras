@@ -89,7 +89,7 @@ Public Class FrODC
                 ' HASTA ACA COMENTAR PARA VOLVER A CREAR LOS REPORTES
                 Try
                     Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colRazonSocial3) & "'").ToString
-                    Sendmail("logger", "Orden de Compra - " & Empresa, email1 & ", mtgcompras@montagne.com.ar, mtgcompras2@montange.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", "Estimado " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ", hemos recibido su cotización." & vbCrLf & "Debido a que estamos satisfechos con las condiciones, ésta ha sido seleccionada." & vbCrLf & "Como archivo adjunto se encuentra la Orden de Compra. " & vbCrLf & "Si tiene alguna inquietud o pregunta, por favor contactarnos." & vbCrLf & "Departamento de Compras " & Empresa & ".")
+                    Sendmail("logger", "Orden de Compra - " & Empresa, email1 & ", mtgcompras@montagne.com.ar, mtgcompras2@montagne.com.ar", "\\CENTRALMONTAGNE\softMtg\compras\Reportes\" + Empresa + " - " + GridView3.GetFocusedRowCellValue(colRazonSocial3) + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", "Estimado " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ", hemos recibido su cotización." & vbCrLf & "Debido a que estamos satisfechos con las condiciones, ésta ha sido seleccionada." & vbCrLf & "Como archivo adjunto se encuentra la Orden de Compra. " & vbCrLf & "Si tiene alguna inquietud o pregunta, por favor contactarnos." & vbCrLf & "Departamento de Compras " & Empresa & ".")
 
                     MsgBox("El correo con la ORDEN DE COMPRA ha sido enviada al proveedor: " + GridView3.GetRowCellDisplayText(GridView3.FocusedRowHandle, colRazonSocial3) + ".", vbInformation)
                     If CheckEdit1.CheckState = 1 Then
@@ -240,6 +240,10 @@ Public Class FrODC
         If CheckEdit1.CheckState = 1 Then
             Sendmail("logger", "Informacion de Retiro", "juanyoris@montagne.com.ar", "C:\Reportes\ODCs\" + Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido3).ToString + ".pdf", TextEdit1.Text & vbCrLf & "Con fecha de retiro: " & fechaentrega.text)
         End If
+    End Sub
+
+    Private Sub verorden_Click(sender As Object, e As EventArgs) Handles verorden.Click
+
     End Sub
 
     'Private Sub verorden_Click(sender As Object, e As EventArgs) Handles verorden.Click

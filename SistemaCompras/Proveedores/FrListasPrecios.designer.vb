@@ -52,6 +52,10 @@
         Me.Monedas = New DevExpress.Xpo.XPCollection(Me.components)
         Me.RepositoryItemGridLookUpEdit3View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colObservaciones = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemGridLookUpEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.impuestos = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.RepositoryItemGridLookUpEdit4View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.RepositoryItemRatingControl1 = New DevExpress.XtraEditors.Repository.RepositoryItemRatingControl()
         Me.LayoutView1 = New DevExpress.XtraGrid.Views.Layout.LayoutView()
         Me.LayoutViewCard1 = New DevExpress.XtraGrid.Views.Layout.LayoutViewCard()
@@ -80,6 +84,9 @@
         CType(Me.RepositoryItemGridLookUpEdit3,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Monedas,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit3View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.impuestos,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit4View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemRatingControl1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutViewCard1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -124,7 +131,7 @@
         Me.gridControl.Location = New System.Drawing.Point(40, 34)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2, Me.RepositoryItemSpinEdit3, Me.RepositoryItemDateEdit1, Me.RepositoryItemGridLookUpEdit3, Me.RepositoryItemRatingControl1})
+        Me.gridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemSpinEdit1, Me.RepositoryItemSpinEdit2, Me.RepositoryItemSpinEdit3, Me.RepositoryItemDateEdit1, Me.RepositoryItemGridLookUpEdit3, Me.RepositoryItemRatingControl1, Me.RepositoryItemGridLookUpEdit4})
         Me.gridControl.Size = New System.Drawing.Size(985, 330)
         Me.gridControl.TabIndex = 2
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView, Me.LayoutView1})
@@ -135,7 +142,7 @@
         '
         'gridView
         '
-        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdLista, Me.GridColumn1, Me.GridColumn3, Me.colPrecioBase, Me.colPrecioUnitario, Me.colDescuento, Me.colFechaModificacion, Me.colMoneda, Me.colObservaciones})
+        Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdLista, Me.GridColumn1, Me.GridColumn3, Me.colPrecioBase, Me.colPrecioUnitario, Me.colDescuento, Me.colFechaModificacion, Me.colMoneda, Me.colObservaciones, Me.GridColumn2})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
         Me.gridView.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
@@ -269,7 +276,7 @@
         Me.colDescuento.FieldName = "Descuento"
         Me.colDescuento.Name = "colDescuento"
         Me.colDescuento.Visible = true
-        Me.colDescuento.VisibleIndex = 4
+        Me.colDescuento.VisibleIndex = 5
         Me.colDescuento.Width = 76
         '
         'RepositoryItemSpinEdit3
@@ -285,7 +292,7 @@
         Me.colFechaModificacion.FieldName = "FechaModificacion"
         Me.colFechaModificacion.Name = "colFechaModificacion"
         Me.colFechaModificacion.Visible = true
-        Me.colFechaModificacion.VisibleIndex = 5
+        Me.colFechaModificacion.VisibleIndex = 6
         Me.colFechaModificacion.Width = 109
         '
         'RepositoryItemDateEdit1
@@ -301,7 +308,7 @@
         Me.colMoneda.FieldName = "Moneda"
         Me.colMoneda.Name = "colMoneda"
         Me.colMoneda.Visible = true
-        Me.colMoneda.VisibleIndex = 6
+        Me.colMoneda.VisibleIndex = 7
         Me.colMoneda.Width = 68
         '
         'RepositoryItemGridLookUpEdit3
@@ -333,8 +340,38 @@
         Me.colObservaciones.FieldName = "Observaciones"
         Me.colObservaciones.Name = "colObservaciones"
         Me.colObservaciones.Visible = true
-        Me.colObservaciones.VisibleIndex = 7
+        Me.colObservaciones.VisibleIndex = 8
         Me.colObservaciones.Width = 175
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "IVA"
+        Me.GridColumn2.ColumnEdit = Me.RepositoryItemGridLookUpEdit4
+        Me.GridColumn2.FieldName = "Iva"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = true
+        Me.GridColumn2.VisibleIndex = 4
+        '
+        'RepositoryItemGridLookUpEdit4
+        '
+        Me.RepositoryItemGridLookUpEdit4.AutoHeight = false
+        Me.RepositoryItemGridLookUpEdit4.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit4.DataSource = Me.impuestos
+        Me.RepositoryItemGridLookUpEdit4.DisplayMember = "IVA"
+        Me.RepositoryItemGridLookUpEdit4.Name = "RepositoryItemGridLookUpEdit4"
+        Me.RepositoryItemGridLookUpEdit4.ValueMember = "Multiplo"
+        Me.RepositoryItemGridLookUpEdit4.View = Me.RepositoryItemGridLookUpEdit4View
+        '
+        'impuestos
+        '
+        Me.impuestos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Impuestos)
+        '
+        'RepositoryItemGridLookUpEdit4View
+        '
+        Me.RepositoryItemGridLookUpEdit4View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.RepositoryItemGridLookUpEdit4View.Name = "RepositoryItemGridLookUpEdit4View"
+        Me.RepositoryItemGridLookUpEdit4View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit4View.OptionsView.ShowGroupPanel = false
         '
         'RepositoryItemRatingControl1
         '
@@ -450,6 +487,9 @@
         CType(Me.RepositoryItemGridLookUpEdit3,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Monedas,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit3View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit4,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.impuestos,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit4View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemRatingControl1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutView1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutViewCard1,System.ComponentModel.ISupportInitialize).EndInit
@@ -498,4 +538,8 @@ End Sub
     Friend WithEvents Monedas As DevExpress.Xpo.XPCollection
     Friend WithEvents RepositoryItemGridLookUpEdit3View As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents RepositoryItemRatingControl1 As DevExpress.XtraEditors.Repository.RepositoryItemRatingControl
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemGridLookUpEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
+    Friend WithEvents RepositoryItemGridLookUpEdit4View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents impuestos As DevExpress.Xpo.XPCollection
 End Class

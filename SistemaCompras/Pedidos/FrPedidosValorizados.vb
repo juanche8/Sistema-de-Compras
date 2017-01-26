@@ -27,6 +27,7 @@ Public Class FrPedidosValorizados
         PreciosProductos.Session = Session1
         proveedor.Session = Session1
         listadeprecios.Session = Session1
+        impuestos.Session = session1
         Dim resultSet As SelectedData = Session1.ExecuteQuery("SELECT * from Vistalistaprecios")
         XpDataView1.LoadData(resultSet)
         'If Cotiza = 10 Then
@@ -53,7 +54,8 @@ Public Class FrPedidosValorizados
             SimpleButton6.Visible = false
 
         End If
-        GridView5.Columns("GridColumn3").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GridColumn3", "<Color=red>TOTAL</color>={0}")
+        GridView5.Columns("GridColumn3").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GridColumn3", "<Color=red>SUBTOTAL</color>={0}")
+        GridView5.Columns("GridColumn5").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GridColumn5", "<Color=red>TOTAL</color>={0}")
     End Sub
     Private Sub GridControl1_EmbeddedNavigator_ButtonClick(sender As Object, e As DevExpress.XtraEditors.NavigatorButtonClickEventArgs) Handles GridControl1.EmbeddedNavigator.ButtonClick
         If Not GridControl1.FocusedView.IsDetailView Then
@@ -152,7 +154,7 @@ Public Class FrPedidosValorizados
             GridView1.UpdateCurrentRow()
             ComboBoxEdit1.Text = ""
             ComboBoxEdit1.Enabled = false
-                    End If
+        End If
 
     End Sub
     Public Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
@@ -223,6 +225,7 @@ Public Class FrPedidosValorizados
     End Sub
     Private Sub SimpleButton5_Click(sender As Object, e As EventArgs) Handles SimpleButton5.Click
         FrListasPrecios.Show()
+        
     End Sub
     Private Sub ComboBoxEdit1_TextChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.TextChanged
         If ComboBoxEdit1.Text = "" Then
@@ -230,7 +233,7 @@ Public Class FrPedidosValorizados
         Else
             SimpleButton3.Enabled = True
         End If
-        
+
     End Sub
 
     Private Sub GridControl2_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles GridControl2.Validating
@@ -274,6 +277,10 @@ Public Class FrPedidosValorizados
     Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
         Session1.ExecuteNonQuery("insert into PedidosDetalles (IdPedido, IdProducto, Cantidad) values (" & GridView1.GetFocusedRowCellValue(colidpedido) & ",'6764' ,'1')")
         DetallePedido.reload
+    End Sub
+
+    Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
+        PreciosProductos.Reload
     End Sub
 
     'Private Sub SimpleButton6_Click_1(sender As Object, e As EventArgs) Handles SimpleButton6.Click

@@ -35,6 +35,7 @@ Public Class FrPedidos
         Else
             labelestado.Text = "Pendiente de aprobacion"
         End If
+        
         '  Else
         ' labelestado.Text = "Aprobado"
         '  End If
@@ -188,11 +189,11 @@ Public Class FrPedidos
             'Close()
             Labelnumeropedido.Text = "1"
         Else
-            
+
             Labelnumeropedido.Text = "1"
         End If
         back = 1                                               ' estos dos ultimos son para cerrar y reabrir el formulario para actualizarlo
-            Close()
+        Close()
     End Sub
     Private Sub BarButtonItem1_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem1.ItemClick
         FrProductos.Show()
@@ -277,16 +278,16 @@ Public Class FrPedidos
     End Sub
     Private Sub FrPedidos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 
-        
-            If Labelnumeropedido.text = "1" Then
 
-            else
+        If Labelnumeropedido.text = "1" Then
 
-                Dim del = Session1.ExecuteNonQuery("DELETE From PedidosDetalles Where IdPedido = " & Labelnumeropedido.Text)
-                Dim del1 = Session1.ExecuteNonQuery("DELETE From Pedidos Where IdPedido = " & Labelnumeropedido.Text)
-                e.Cancel = False
-            End If
-        
+        else
+
+            Dim del = Session1.ExecuteNonQuery("DELETE From PedidosDetalles Where IdPedido = " & Labelnumeropedido.Text)
+            Dim del1 = Session1.ExecuteNonQuery("DELETE From Pedidos Where IdPedido = " & Labelnumeropedido.Text)
+            e.Cancel = False
+        End If
+
 
 
     End Sub

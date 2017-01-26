@@ -81,6 +81,24 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of Integer)("IdProveedor", fIdProveedor, value)
             End Set
         End Property
+        Dim fIva As Decimal
+        Public Property Iva() As Decimal
+            Get
+                Return fIva
+            End Get
+            Set(ByVal value As Decimal)
+                SetPropertyValue(Of Decimal)("Iva", fIva, value)
+            End Set
+        End Property
+        Dim fIdProducto As Integer
+        Public Property IdProducto() As Integer
+            Get
+                Return fIdProducto
+            End Get
+            Set(ByVal value As Integer)
+                SetPropertyValue(Of Integer)("IdProducto", fIdProducto, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

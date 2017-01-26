@@ -123,8 +123,4 @@ Public Class LoginForm1
         System.IO.Directory.CreateDirectory("c:\Reportes\Mis Pedidos")
 
     End Sub
-
-    Private Sub LabelControl1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class

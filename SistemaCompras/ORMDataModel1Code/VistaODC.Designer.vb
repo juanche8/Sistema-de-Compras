@@ -195,6 +195,24 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of Integer)("AproboMartin", fAproboMartin, value)
             End Set
         End Property
+        Dim fIvaFactor As Decimal
+        Public Property IvaFactor() As Decimal
+            Get
+                Return fIvaFactor
+            End Get
+            Set(ByVal value As Decimal)
+                SetPropertyValue(Of Decimal)("IvaFactor", fIvaFactor, value)
+            End Set
+        End Property
+        Dim fIvaPorcentual As Decimal
+        Public Property IvaPorcentual() As Decimal
+            Get
+                Return fIvaPorcentual
+            End Get
+            Set(ByVal value As Decimal)
+                SetPropertyValue(Of Decimal)("IvaPorcentual", fIvaPorcentual, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

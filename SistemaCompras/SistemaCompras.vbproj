@@ -362,6 +362,10 @@
       <DependentUpon>EstadosPedido.vb</DependentUpon>
     </Compile>
     <Compile Include="ORMDataModel1Code\EstadosPedido.vb" />
+    <Compile Include="ORMDataModel1Code\Impuestos.Designer.vb">
+      <DependentUpon>Impuestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Impuestos.vb" />
     <Compile Include="ORMDataModel1Code\ListasPrecios.Designer.vb">
       <DependentUpon>ListasPrecios.vb</DependentUpon>
     </Compile>
