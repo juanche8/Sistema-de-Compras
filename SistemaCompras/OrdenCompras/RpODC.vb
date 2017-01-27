@@ -80,11 +80,11 @@ Public Class RpODC
     Private Sub XrLabel38_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles XrLabel38.BeforePrint
         Dim subtotal As decimal
         Try
-            Dim iva = XrLabel9.Text.TrimEnd("%")
+            Dim iva = XrLabel9.Text.TrimEnd("%")            'Le corta el "%"al label del porcentaje para que quede solo Numeros y poder hacer los calculos
             If iva = "" Then                                'Se calculan aca los items que no tengan iva marcado
                 XrLabel38.Text = XrLabel19.text
-                subtotal = XrLabel19.Text.TrimStart("$")
-                subtotal2 = subtotal + subtotal2
+                subtotal = XrLabel19.Text.TrimStart("$")    'Le corta el "%"al label del porcentaje para que quede solo Numeros y poder hacer los calculos
+                subtotal2 = subtotal + subtotal2            'Sumatoria de los totales que no tengan impuestos
                 Exit sub
             End If
             Dim flag = 0
@@ -95,16 +95,16 @@ Public Class RpODC
             If flag = 1 Then
 
             End If
-            subtotal = XrLabel19.Text.TrimStart("$")
-            subtotal2 = subtotal + subtotal2
-            importe = subtotal * iva / 100
-            If XrLabel9.Text.Contains("10,5") Then
+            subtotal = XrLabel19.Text.TrimStart("$")        'Le corta el "%"al label del porcentaje para que quede solo Numeros y poder hacer los calculos
+            subtotal2 = subtotal + subtotal2                'Suma todos los datos que lleva la variable Subtotal con el anterior subtotal2
+            importe = subtotal * iva / 100                  'Variable importe (excedente) es el subtotal por el impuesto entre 100
+            If XrLabel9.Text.Contains("10,5") Then          'Pregunta si el iva es 10,5 para guardar en la variable importe10 el 10,5% con el ciclo for
                 importe10 = importe + importe10
             Else
-                importe21 = importe + importe21
+                importe21 = importe + importe21             'Si no, lo guarda en 21.
             End If
-            Dim total = subtotal + importe
-            XrLabel38.Text = "$" & total
+            Dim total = subtotal + importe                  'Total es la suma del subtotal mas importe
+            XrLabel38.Text = "$" & total                    'Y se muestra en el label 38 todo el total.
         Catch ex As Exception
         End Try
     End Sub
@@ -129,6 +129,6 @@ Public Class RpODC
 
     Private Sub XrLabel21_AfterPrint(sender As Object, e As EventArgs) Handles XrLabel21.AfterPrint
         '  dim subtotal2 = Val(XrLabel21.Text.TrimStart("Subtotal: $"))
-        XrLabel20.Text = "TOTAL  $" & Math.Round(subtotal2 + importe10 + importe21, 2)
+        XrLabel20.Text = "TOTAL  $" & Math.Round(subtotal2 + importe10 + importe21, 2)  'Obliga a dos decimales el total general
     End Sub
 End Class

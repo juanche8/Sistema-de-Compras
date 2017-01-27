@@ -95,6 +95,11 @@ Public Class FrPedidos
             MsgBox("Debes indicar la direccion de recepcion del pedido", vbOKOnly, "Sin Direccion de envio")
             Return
         End If
+        If TextEdit1.Text = "" Then
+            MsgBox("Debes ingresar la sucursal")
+            Me.Focus
+            return
+        End If
         If Cotiza = 1 And comboautor.Text = "" Then
             MsgBox("Debes estar autorizada para hacer esta solicitud.", vbInformation)
             Return
@@ -118,7 +123,7 @@ Public Class FrPedidos
                         GridControl1.Enabled = False
                         'MsgBox("Ahora puede imprimir su pedido!", vbInformation)
                         SimpleButton1.Enabled = False
-                        CheckEdit3.Enabled = False
+                      '  CheckEdit3.Enabled = False
                         ' comboautor.Enabled = False
                     End If
                 Else
@@ -127,9 +132,9 @@ Public Class FrPedidos
                     GridView1.RefreshData()
                     return
                 End If
-                If CheckEdit3.CheckState = CheckState.Unchecked Then
-                    GridLookUpEdit1View.GetFocusedRowCellValue(1)
-                End If
+                'If CheckEdit3.CheckState = CheckState.Unchecked Then
+                '    GridLookUpEdit1View.GetFocusedRowCellValue(1)
+                'End If
             Catch ex As Exception
             End Try
         Next
@@ -155,12 +160,12 @@ Public Class FrPedidos
                 .Fechaaprobacion = Now
             End If
 
-            If CheckEdit3.CheckState = CheckState.Unchecked Then
-                .Proyecto = 1
-                CheckEdit3.Text = "Stock"
-            Else
+            'If CheckEdit3.CheckState = CheckState.Unchecked Then
+            '    .Proyecto = 1
+            '    CheckEdit3.Text = "Stock"
+            'Else
                 .Proyecto = GridLookUpEdit1View.GetFocusedRowCellValue(colIdProyecto)
-            End If
+            'End If
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             'If nped = nped Then
             '    .IdPedido = nped
@@ -180,7 +185,7 @@ Public Class FrPedidos
         End With
         report.FilterString = "IdPedido =" & nped
         report.CreateDocument()
-        report.ExportToPdf("c:\Reportes\Mis Pedidos\" & nped & " - " & CheckEdit3.text + " - " + Responsable + ".pdf")
+        report.ExportToPdf("c:\Reportes\Mis Pedidos\" & nped & " - " & TextEdit1.text + " - " + Responsable + ".pdf")
         If MsgBox(Responsable & ", Deseas imprimir el Pedido?", vbQuestion + vbYesNo) = vbYes
             report.FilterString = "IdPedido =" & nped           ' se hace el filterstring con el IDPEDIDO de la tabla, y traigo el campo Pedido cargado en el load
             tool.Report.ShowPreviewDialog()                        ' luego muestro el preview del reporte
@@ -402,12 +407,12 @@ Public Class FrPedidos
     End Sub
 
 
-    Private Sub CheckEdit3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit3.CheckedChanged
+    Private Sub CheckEdit3_CheckedChanged(sender As Object, e As EventArgs) 
 
-        FlyoutPanel1.ShowPopup()
-        If TextEdit1.Text <> "" Then
-            CheckEdit3.Text = TextEdit1.Text
-        End If
+       'FlyoutPanel1.ShowPopup()
+       ' If TextEdit1.Text <> "" Then 
+          '  CheckEdit3.Text = TextEdit1.Text
+        'End If
     End Sub
 
     Private Sub TextEdit1_Click(sender As Object, e As EventArgs) Handles TextEdit1.Click
@@ -415,7 +420,7 @@ Public Class FrPedidos
     End Sub
 
     Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit1.EditValueChanged
-        CheckEdit3.Text = TextEdit1.Text
+     '   CheckEdit3.Text = TextEdit1.Text
     End Sub
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click

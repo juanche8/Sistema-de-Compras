@@ -22,7 +22,7 @@ Partial Class FrPedidos
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrPedidos))
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.PictureBox1 = New DevExpress.XtraEditors.ImageEdit()
+        Me.TextEdit1 = New DevExpress.XtraEditors.GridLookUpEdit()
         Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar3 = New DevExpress.XtraBars.Bar()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
@@ -31,16 +31,15 @@ Partial Class FrPedidos
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
-        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
-        Me.labelautor = New DevExpress.XtraEditors.LabelControl()
-        Me.comboautor = New DevExpress.XtraEditors.ComboBoxEdit()
-        Me.FlyoutPanel1 = New DevExpress.Utils.FlyoutPanel()
-        Me.TextEdit1 = New DevExpress.XtraEditors.GridLookUpEdit()
         Me.proyecto = New DevExpress.Xpo.XPCollection(Me.components)
         Me.GridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colIdProyecto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colNombreProyecto = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.CheckEdit3 = New DevExpress.XtraEditors.CheckEdit()
+        Me.PictureBox1 = New DevExpress.XtraEditors.ImageEdit()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.labelautor = New DevExpress.XtraEditors.LabelControl()
+        Me.comboautor = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.FlyoutPanel1 = New DevExpress.Utils.FlyoutPanel()
         Me.CheckEdit1 = New DevExpress.XtraEditors.CheckEdit()
         Me.prioridad = New DevExpress.XtraEditors.LabelControl()
         Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
@@ -101,15 +100,13 @@ Partial Class FrPedidos
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SplitContainerControl1.SuspendLayout
-        CType(Me.PictureBox1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BarManager1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.comboautor.Properties,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FlyoutPanel1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.FlyoutPanel1.SuspendLayout
         CType(Me.TextEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BarManager1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.proyecto,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridLookUpEdit1View,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.CheckEdit3.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.PictureBox1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.comboautor.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.FlyoutPanel1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.CheckEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.fechaentrega.Properties.CalendarTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.fechaentrega.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -150,12 +147,12 @@ Partial Class FrPedidos
         Me.SplitContainerControl1.Horizontal = false
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.TextEdit1)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl8)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.labelautor)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.comboautor)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.FlyoutPanel1)
-        Me.SplitContainerControl1.Panel1.Controls.Add(Me.CheckEdit3)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.CheckEdit1)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.prioridad)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.LabelControl9)
@@ -184,19 +181,23 @@ Partial Class FrPedidos
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GridSplitContainer1)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
         Me.SplitContainerControl1.Size = New System.Drawing.Size(1017, 405)
-        Me.SplitContainerControl1.SplitterPosition = 166
+        Me.SplitContainerControl1.SplitterPosition = 169
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
-        'PictureBox1
+        'TextEdit1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(91, 140)
-        Me.PictureBox1.MenuManager = Me.BarManager1
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.PictureBox1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
-        Me.PictureBox1.Size = New System.Drawing.Size(238, 20)
-        Me.PictureBox1.TabIndex = 0
+        Me.TextEdit1.Location = New System.Drawing.Point(365, 137)
+        Me.TextEdit1.MenuManager = Me.BarManager1
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.TextEdit1.Properties.DataSource = Me.proyecto
+        Me.TextEdit1.Properties.DisplayMember = "NombreProyecto"
+        Me.TextEdit1.Properties.NullText = ""
+        Me.TextEdit1.Properties.ValueMember = "IdProyecto"
+        Me.TextEdit1.Properties.View = Me.GridLookUpEdit1View
+        Me.TextEdit1.Size = New System.Drawing.Size(189, 20)
+        Me.TextEdit1.TabIndex = 0
         '
         'BarManager1
         '
@@ -263,6 +264,45 @@ Partial Class FrPedidos
         Me.barDockControlRight.Location = New System.Drawing.Point(1017, 0)
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 405)
         '
+        'proyecto
+        '
+        Me.proyecto.DisplayableProperties = "IdProyecto;NombreProyecto"
+        Me.proyecto.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Proyectos)
+        '
+        'GridLookUpEdit1View
+        '
+        Me.GridLookUpEdit1View.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdProyecto, Me.colNombreProyecto})
+        Me.GridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.GridLookUpEdit1View.Name = "GridLookUpEdit1View"
+        Me.GridLookUpEdit1View.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
+        Me.GridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.GridLookUpEdit1View.OptionsView.ShowGroupPanel = false
+        '
+        'colIdProyecto
+        '
+        Me.colIdProyecto.FieldName = "IdProyecto"
+        Me.colIdProyecto.Name = "colIdProyecto"
+        Me.colIdProyecto.OptionsColumn.AllowEdit = false
+        Me.colIdProyecto.Width = 70
+        '
+        'colNombreProyecto
+        '
+        Me.colNombreProyecto.FieldName = "NombreProyecto"
+        Me.colNombreProyecto.Name = "colNombreProyecto"
+        Me.colNombreProyecto.Visible = true
+        Me.colNombreProyecto.VisibleIndex = 0
+        Me.colNombreProyecto.Width = 1002
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(113, 137)
+        Me.PictureBox1.MenuManager = Me.BarManager1
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.PictureBox1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze
+        Me.PictureBox1.Size = New System.Drawing.Size(238, 20)
+        Me.PictureBox1.TabIndex = 0
+        '
         'LabelControl8
         '
         Me.LabelControl8.Location = New System.Drawing.Point(12, 109)
@@ -295,71 +335,15 @@ Partial Class FrPedidos
         '
         'FlyoutPanel1
         '
-        Me.FlyoutPanel1.Controls.Add(Me.TextEdit1)
-        Me.FlyoutPanel1.Location = New System.Drawing.Point(365, 137)
+        Me.FlyoutPanel1.Location = New System.Drawing.Point(560, 191)
         Me.FlyoutPanel1.Name = "FlyoutPanel1"
         Me.FlyoutPanel1.Options.CloseOnOuterClick = true
         Me.FlyoutPanel1.OptionsButtonPanel.ButtonPanelContentAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.FlyoutPanel1.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Bottom
         Me.FlyoutPanel1.OptionsButtonPanel.ShowButtonPanel = true
-        Me.FlyoutPanel1.OwnerControl = Me.CheckEdit3
         Me.FlyoutPanel1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 30)
         Me.FlyoutPanel1.Size = New System.Drawing.Size(189, 28)
         Me.FlyoutPanel1.TabIndex = 0
-        '
-        'TextEdit1
-        '
-        Me.TextEdit1.Location = New System.Drawing.Point(3, 3)
-        Me.TextEdit1.MenuManager = Me.BarManager1
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.TextEdit1.Properties.DataSource = Me.proyecto
-        Me.TextEdit1.Properties.DisplayMember = "NombreProyecto"
-        Me.TextEdit1.Properties.NullText = ""
-        Me.TextEdit1.Properties.ValueMember = "IdProyecto"
-        Me.TextEdit1.Properties.View = Me.GridLookUpEdit1View
-        Me.TextEdit1.Size = New System.Drawing.Size(183, 20)
-        Me.TextEdit1.TabIndex = 0
-        '
-        'proyecto
-        '
-        Me.proyecto.DisplayableProperties = "IdProyecto;NombreProyecto"
-        Me.proyecto.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Proyectos)
-        '
-        'GridLookUpEdit1View
-        '
-        Me.GridLookUpEdit1View.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdProyecto, Me.colNombreProyecto})
-        Me.GridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
-        Me.GridLookUpEdit1View.Name = "GridLookUpEdit1View"
-        Me.GridLookUpEdit1View.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
-        Me.GridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false
-        Me.GridLookUpEdit1View.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
-        Me.GridLookUpEdit1View.OptionsView.ShowGroupPanel = false
-        '
-        'colIdProyecto
-        '
-        Me.colIdProyecto.FieldName = "IdProyecto"
-        Me.colIdProyecto.Name = "colIdProyecto"
-        Me.colIdProyecto.OptionsColumn.AllowEdit = false
-        Me.colIdProyecto.Width = 70
-        '
-        'colNombreProyecto
-        '
-        Me.colNombreProyecto.FieldName = "NombreProyecto"
-        Me.colNombreProyecto.Name = "colNombreProyecto"
-        Me.colNombreProyecto.Visible = true
-        Me.colNombreProyecto.VisibleIndex = 0
-        Me.colNombreProyecto.Width = 1002
-        '
-        'CheckEdit3
-        '
-        Me.CheckEdit3.Location = New System.Drawing.Point(366, 84)
-        Me.CheckEdit3.MenuManager = Me.BarManager1
-        Me.CheckEdit3.Name = "CheckEdit3"
-        Me.CheckEdit3.Properties.Caption = "Proyecto"
-        Me.CheckEdit3.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
-        Me.CheckEdit3.Size = New System.Drawing.Size(189, 19)
-        Me.CheckEdit3.TabIndex = 24
         '
         'CheckEdit1
         '
@@ -395,7 +379,7 @@ Partial Class FrPedidos
         '
         Me.SimpleButton2.Enabled = false
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"),System.Drawing.Image)
-        Me.SimpleButton2.Location = New System.Drawing.Point(12, 135)
+        Me.SimpleButton2.Location = New System.Drawing.Point(12, 132)
         Me.SimpleButton2.Name = "SimpleButton2"
         Me.SimpleButton2.Size = New System.Drawing.Size(38, 29)
         Me.SimpleButton2.TabIndex = 18
@@ -637,7 +621,7 @@ Partial Class FrPedidos
         Me.GridSplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.GridSplitContainer1.Name = "GridSplitContainer1"
         Me.GridSplitContainer1.Panel1.Controls.Add(Me.GridControl1)
-        Me.GridSplitContainer1.Size = New System.Drawing.Size(1017, 233)
+        Me.GridSplitContainer1.Size = New System.Drawing.Size(1017, 230)
         Me.GridSplitContainer1.TabIndex = 0
         '
         'GridControl1
@@ -649,7 +633,7 @@ Partial Class FrPedidos
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemImageEdit1, Me.RepositoryItemPictureEdit1, Me.RepositoryItemPopupGalleryEdit1, Me.RepositoryItemImageEdit2, Me.RepositoryItemImageComboBox2, Me.RepositoryItemPictureEdit2, Me.RepositoryItemImagePopupContainerEdit1, Me.RepositoryItemImageEdit3})
-        Me.GridControl1.Size = New System.Drawing.Size(1017, 233)
+        Me.GridControl1.Size = New System.Drawing.Size(1017, 230)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -856,15 +840,13 @@ Partial Class FrPedidos
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).EndInit
         Me.SplitContainerControl1.ResumeLayout(false)
-        CType(Me.PictureBox1.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.BarManager1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.comboautor.Properties,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.FlyoutPanel1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.FlyoutPanel1.ResumeLayout(false)
         CType(Me.TextEdit1.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BarManager1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.proyecto,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridLookUpEdit1View,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.CheckEdit3.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.PictureBox1.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.comboautor.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.FlyoutPanel1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.CheckEdit1.Properties,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.fechaentrega.Properties.CalendarTimeProperties,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.fechaentrega.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -959,7 +941,6 @@ End Sub
     Friend WithEvents RepositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
     Friend WithEvents RepositoryItemPopupGalleryEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPopupGalleryEdit
     Friend WithEvents CheckEdit2 As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents CheckEdit3 As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents FlyoutPanel1 As DevExpress.Utils.FlyoutPanel
     Friend WithEvents proyecto As DevExpress.Xpo.XPCollection
     Friend WithEvents TextEdit1 As DevExpress.XtraEditors.GridLookUpEdit
