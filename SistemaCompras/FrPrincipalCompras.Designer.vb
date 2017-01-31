@@ -904,6 +904,10 @@ Partial Class FrPrincipalCompras
         Me.SimpleButton2.TabIndex = 31
         Me.SimpleButton2.Visible = false
         '
+        'DefaultLookAndFeel1
+        '
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
+        '
         'LabelControl3
         '
         Me.LabelControl3.Appearance.Font = New System.Drawing.Font("Trebuchet MS", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))

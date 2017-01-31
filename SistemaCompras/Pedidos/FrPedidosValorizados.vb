@@ -38,7 +38,7 @@ Public Class FrPedidosValorizados
         If Cotiza = 3 Then
             Pedidos.CriteriaString = ("Estado = 7" & " And Sector = " & Sectorid)
             ComboBoxEdit1.Visible = True
-            ComboBoxEdit1.Enabled = false
+            'ComboBoxEdit1.Enabled = false
             LabelControl2.Visible = True
             colPrecio.Visible = False
             colTotal.Visible = False
@@ -153,7 +153,7 @@ Public Class FrPedidosValorizados
             GridView1.SetFocusedRowCellValue(colObservaciones, obs)
             GridView1.UpdateCurrentRow()
             ComboBoxEdit1.Text = ""
-            ComboBoxEdit1.Enabled = false
+            'ComboBoxEdit1.Enabled = false
         End If
 
     End Sub
@@ -268,8 +268,8 @@ Public Class FrPedidosValorizados
             tool.Report.ShowPreviewDialog()
             Pedidos.Reload()
         End If
-        ComboBoxEdit1.Enabled = true
-
+        'ComboBoxEdit1.Enabled = true
+        
     End Sub
     Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
         Session1.ExecuteNonQuery("insert into PedidosDetalles (IdPedido, IdProducto, Cantidad) values (" & GridView1.GetFocusedRowCellValue(colidpedido) & ",'6764' ,'1')")
@@ -303,6 +303,7 @@ Public Class FrPedidosValorizados
             Dim filtro = GridView5.GetFocusedRowCellDisplayText(colIdProducto1)
             PreciosProductos.CriteriaString = "Producto like '" & filtro & "'"
         Catch exp As Exception
+            
             MessageBox.Show(exp.Message, "Se produjo un error, consulte con soporte", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
     End Sub
@@ -312,6 +313,10 @@ Public Class FrPedidosValorizados
     End Sub
 
     Private Sub GridView5_MouseLeave(sender As Object, e As EventArgs) Handles GridView5.MouseLeave
+
+    End Sub
+
+    Private Sub SimpleButton6_Click_1(sender As Object, e As EventArgs) Handles SimpleButton6.Click
 
     End Sub
 

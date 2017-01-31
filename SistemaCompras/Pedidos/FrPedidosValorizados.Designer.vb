@@ -657,7 +657,6 @@ Partial Class FrPedidosValorizados
         '
         'SimpleButton3
         '
-        Me.SimpleButton3.Enabled = false
         Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"),System.Drawing.Image)
         Me.SimpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
         Me.SimpleButton3.Location = New System.Drawing.Point(877, 27)
@@ -746,7 +745,6 @@ Partial Class FrPedidosValorizados
         '
         'ComboBoxEdit1
         '
-        Me.ComboBoxEdit1.Enabled = false
         Me.ComboBoxEdit1.Location = New System.Drawing.Point(728, 46)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})

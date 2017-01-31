@@ -39,6 +39,7 @@ Partial Class LoginForm1
         Me.Password = New DevExpress.XtraEditors.TextEdit()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.AlertControl1 = New DevExpress.XtraBars.Alerter.AlertControl(Me.components)
         CType(Me.LogoPictureBox,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Username.Properties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Password.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -149,4 +150,5 @@ End Sub
     Friend WithEvents Password As DevExpress.XtraEditors.TextEdit
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
+    Friend WithEvents AlertControl1 As DevExpress.XtraBars.Alerter.AlertControl
 End Class
