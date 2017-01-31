@@ -26,6 +26,9 @@ Public Class FrMasterDetailPedidos
         If Sectorid <> 5 Then
             XpCollectionVistaDetalles2.CriteriaString = "Sector = " & Sectorid
             'XpCollectionVistaDetalles2.CriteriaString = "Estado <= 3 "
+            If Responsable = "Paulo Gregoretti" Then
+                 XpCollectionVistaDetalles2.CriteriaString = "Sector = 12 or Sector = 3 or Sector = 13" 
+            End If
             If Cotiza = 0 Then
                 XpCollectionVistaDetalles2.CriteriaString = "Responsable like '" & Responsable & "%'"
             Else
@@ -142,6 +145,7 @@ Public Class FrMasterDetailPedidos
             Dim urgente As String = view.GetRowCellDisplayText(e.RowHandle, view.Columns("Urgente"))
             If urgente = "Urgente" Then
                 e.Appearance.BackColor = Color.Red
+                e.Appearance.BackColor2= Color.salmon
                 e.Appearance.ForeColor = Color.White
             Else
             End If

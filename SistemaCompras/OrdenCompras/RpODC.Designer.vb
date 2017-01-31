@@ -862,7 +862,7 @@ Partial Public Class RpODC
         '
         'XrLabel29
         '
-        Me.XrLabel29.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "VistaODC.NombreProyecto", "Proyecto:{0}")})
+        Me.XrLabel29.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "VistaODC.NombreProyecto", "Sucursal: {0}")})
         Me.XrLabel29.Dpi = 100!
         Me.XrLabel29.LocationFloat = New DevExpress.Utils.PointFloat(2.083333!, 120.3519!)
         Me.XrLabel29.Name = "XrLabel29"

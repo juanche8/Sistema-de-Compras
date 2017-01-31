@@ -22,7 +22,7 @@ Imports DevExpress.Data
 
 Public Class FrPresupuestos
     Dim ids As String
-    Dim vec(500) As String''d
+    Dim vec(500) As String ''d
     Dim consulta As integer
 
     'Dim report As New RpSolicitudCotizacion()
@@ -58,8 +58,8 @@ Public Class FrPresupuestos
             SimpleButton5.Visible = true
         End If
         If Responsable = "Martin Pais" Then
-            Pedidos.CriteriaString ="Estado = 2 and AutorizadoPor is not null"
-            PictureBox1.Visible=  true
+            Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null"
+            PictureBox1.Visible = true
         End If
         Proveedores.CriteriaString = "Email  Is Not null"
         Proveedores.CriteriaString = "Rubro  Is Not null"
@@ -141,6 +141,10 @@ Public Class FrPresupuestos
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         PopupContainerEdit1.Text = ""
         Empresa = cboEmpresas.Text.ToUpper
+       ' Dim telfInterno As String
+        Dim firma As string
+         If Empresa.Contains("MONTAGNE") then firma = "MONTAGNE OUTDOORS SA" & vbCrLf & "DPTO DE COMPRAS" & vbCrLf & "4773-0091 INT 1650" else firma = ""
+      '  If Empresa.Contains("MONTAGNE") Then telfInterno = "4773-0091 INT 1650" Else telfInterno = ""
         If CheckedListBoxControl1.CheckedItemsCount = Nothing Then
             MsgBox("Debes seleccionar al menos un proveedor para enviar el correo.")
         Else
@@ -166,8 +170,19 @@ Public Class FrPresupuestos
             For t = 0 To CheckedListBoxControl1.CheckedIndices.Count - 1
                 Dim m = CheckedListBoxControl1.CheckedIndices.Item(t)
                 vec(t) = CheckedListBoxControl1.GetItemText(m).ToString
-                Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
-                Sendmail("logger", "Solicitud de cotizacion - " & Empresa, email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Saludos " + vec(t) + ", por favor cotizar los siguientes productos mostrados en el adjunto de este correo." & vbCrLf & "Departamento de Compras " & Empresa & ".")
+
+                '''Variable para mostrar nombreFantasia ,  desde aca son las modificaciones
+                Dim nombrefantasia As String = Session1.ExecuteScalar("Select NombreFantasia from Proveedores where RazonSocial = '" & vec(t) & "'")
+                If nombrefantasia Is Nothing Then
+                    Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
+                    Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Buenas tardes Estimado " & vec(t) & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
+                else
+                    ''' Hasta aca las modificaciones
+                    ''' 
+                    ' MsgBox(nombrefantasia)
+                    Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
+                    Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Buenas tardes Estimado " & nombrefantasia & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
+                End If
             Next
             If CheckedListBoxControl1.CheckedItemsCount = Nothing Then
                 MsgBox("El proveedor que seleccionaste no poseia Email registrado, no se envio el correo!", vbInformation, "Atencion!")
@@ -176,7 +191,7 @@ Public Class FrPresupuestos
                 '  SplashScreenManager.CloseForm()
                 MsgBox("El correo electronico ha sido enviado a los proveedores seleccionados", vbInformation, "Envio Exitoso")
                 GridView3.SetFocusedRowCellValue(colEstado, 1)
-                GridView3.UpdateCurrentRow()
+                'GridView3.UpdateCurrentRow()
             End If
         End If
         PopupContainerEdit1.Text = ""
@@ -214,6 +229,31 @@ Public Class FrPresupuestos
             Try
                 Dim leerimg = Session1.ExecuteScalar("Select ImagenUrl from PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
                 If leerimg IsNot Nothing Then
+                    '' testcode
+                    'PictureBox1.ToolTip = "Saludos, aca podras encontrar la imagen del producto en caso de ser cargada"
+                    'PictureBox1.Text = "Aca podras encontrar las imagenes cargadas al producto."
+                    'leerimg = Image.FromHbitmap("https://www.google.com.ar")
+                    'leerimg = Image.FromHbitmap("https://www.montagneoutdoors.com.ar")
+                    ''se podra cargar una imagen uri en los controles correspondientes de cada formulario.
+                    'IIf (leerimg <> nothing, Image.FromFile(leerimg),Image.FromFile(leerimg))
+                    'dim a = IIf(PictureBox1.Text.Length > 100,"large","small")
+                 
+                    'IIf (a <> b, "false","true")
+                    'leerimg = Image.FromStream(Stream.Null)
+                    'Dim camera As New ToolTip 
+                    'If CameraMenuItemVisibility.Always = False Then
+                    '    InputBox("Estas seguro que deseas confirmar la transferencia al grid de la camara con su visibilidad validada en que nunca esta visible?",)
+
+                    'End If
+                    'If Me.BackgroundImageLayout = ImageLayout.Stretch Then
+                    '    Me.BackgroundImageLayout = ImageLayout.Center
+                    'Else
+                    '    Me.BackgroundImageLayout = ImageLayout.Stretch
+
+                    'End If
+                    'leerimg = Image.FromStream(leerimg)
+
+                    '' testcode
                     'SimpleButton3.Visible = True
                     PictureBox1.Image = Image.FromFile(leerimg)
                 Else
@@ -278,7 +318,7 @@ Public Class FrPresupuestos
                 Dim consulta = Session1.ExecuteScalar("Select IdDetalle from PedidosDetalles where IdDetalle = " & GridView1.GetRowCellValue(x.Item(s), GridColumn3))
                 stra = stra & " IdDetalle = " & consulta & " or "
             Next
-            stra = Mid(stra, 1, Len(stra) - 3) 
+            stra = Mid(stra, 1, Len(stra) - 3)
             Dim report As New RpSolicitudCotizacion()
             Dim tool As ReportPrintTool = New ReportPrintTool(report)
             report.FilterString = stra

@@ -2,6 +2,7 @@
 Imports DevExpress.Xpo.DB
 Imports SistemaCompras.MontagneAdministracion.Sectores
 Imports SistemaCompras.MontagneAdministracion
+Imports DevExpress.XtraBars.Alerter
 Public Class LoginForm1
 
     Public Session1 As Session = XpoHelper.GetNewSession()
@@ -121,6 +122,9 @@ Public Class LoginForm1
         System.IO.Directory.CreateDirectory("c:\Reportes\Pedidos")
         System.IO.Directory.CreateDirectory("c:\Reportes\ODCs")
         System.IO.Directory.CreateDirectory("c:\Reportes\Mis Pedidos")
-
+       ' dim a As AlertInfo = New AlertInfo( "Informacion de Version", Application.ProductName & " Ver: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Major & " Rev: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Revision)
+    
+        'AlertControl1.show(me,a)
+        
     End Sub
 End Class
