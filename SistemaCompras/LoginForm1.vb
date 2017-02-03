@@ -3,6 +3,8 @@ Imports DevExpress.Xpo.DB
 Imports SistemaCompras.MontagneAdministracion.Sectores
 Imports SistemaCompras.MontagneAdministracion
 Imports DevExpress.XtraBars.Alerter
+'Imports System.IO
+
 Public Class LoginForm1
 
     Public Session1 As Session = XpoHelper.GetNewSession()
@@ -13,33 +15,14 @@ Public Class LoginForm1
     End Sub
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-
-        'If Environment.MachineName = "DESKTOP-TKS6FT6" Then
-        '    Try
-
-        '        Dim autoCreationOption As DB.AutoCreateOption
-        '        Dim conn As String = MSSqlConnectionProvider.GetConnectionString("centralmontagne", "Gerencia", "interno.1660", "asd")
-        '        XpoDefault.GetDataLayer(conn, autoCreationOption)
-        '    Catch ex As Exception
-
-        '    End Try
-        'Else
-        '    Try
-        '        Dim autoCreationOption As DB.AutoCreateOption
-        '        Dim conn As String = MSSqlConnectionProvider.GetConnectionString("centralmontagne", "Gerencia", "interno.1660", "dhg")
-        '        XpoDefault.GetDataLayer(conn, autoCreationOption)
-        '    Catch ex As Exception
-
-        '    End Try
-        'End If
         Dim querylinq As New XPQuery(Of Usuarios)(Session1)
         Dim querylinq1 As New XPQuery(Of Conectados)(Session1)
         Dim querylinq2 As New XPQuery(Of Pedidos)(Session1)
         Dim querylinq3 As New XPQuery(Of Sectores)(Session1)
-        dim querylinq4 as new xpquery(of Equipos)(Session1)
+        Dim querylinq4 As New XPQuery(Of Equipos)(Session1)
         ' Dim actualizo As Integer
         Dim list = From o In querylinq Where o.UsuarioID = Username.Text And o.Contraseña = Password.Text Select o  ' Declara y asigna espacio de almacenamiento para una o varias variables.
-        Dim count As Integer = list.count()
+        Dim count As Integer = list.Count()
         Dim flag = 0
         If count > 0 Then                                                ' si count es mayor a 0 entonces 
             Usuario = Username.Text                                      ' toma el usuario del textbox usuario para validar, al igual que la contraseña
@@ -52,7 +35,7 @@ Public Class LoginForm1
             'habilitado = list.First.Habilitado
             Dim inhabilitado = Session1.ExecuteScalar("select Habilitado from Usuarios where UsuarioID = '" & Usuario & "'")
             If inhabilitado = 0 Then
-                MsgBox("Temporalmente estas inhabilitado", vbinformation)
+                MsgBox("Temporalmente estas inhabilitado", vbInformation)
                 Return
             Else
                 Dim num = (From o In querylinq1 Where o.Login = Usuario And o.Equipo = Environment.MachineName Select o.Login).Count
@@ -62,15 +45,15 @@ Public Class LoginForm1
                     conect.Login = Usuario
                     conect.Equipo = Environment.MachineName
                     conect.Ultimaconexion = Now
-                    conect.save()
+                    conect.Save()
                 Else
                     Dim res = Session1.ExecuteNonQuery("insert into Conectados (Equipo, UltimaConexion, Login) values ('" & Environment.MachineName & "', '" & Now & "', '" & Usuario & "')")
                 End If
 
                 Hide()                                                          ' procede a esconder el form login
-                FrPrincipalCompras.show()
+                FrPrincipalCompras.Show()
                 If Sectorid = 14 Then
-                    FrAprobarODC.show
+                    FrAprobarODC.Show
                     FrPrincipalCompras.Hide
                 End If
             End If
@@ -78,11 +61,11 @@ Public Class LoginForm1
         Else                                                                ' si no se validan el usuario y contraseñas muestra el msgbox
             MsgBox("Usuario o Contraseña incorrectas")
             Password.SelectionStart = 0
-            Password.SelectionLength = Password.text.length
+            Password.SelectionLength = Password.Text.Length
             '  Return
         End If
         Dim exists As Boolean
-        dim maquina as string = Environment.MachineName
+        Dim maquina As String = Environment.MachineName
         Dim actualizo = Session1.ExecuteScalar("select Actualizo from Equipos where NombreEquipo= '" & maquina & "'")
         Dim user As Integer = Session1.ExecuteScalar("select count(UsuarioID) from Usuarios where UsuarioID = '" & Usuario & "'")
         ' dim maquina1 as string = Session1.ExecuteNonQuery("select Maquina from Equipos where Maquina = '" & Environment.MachineName & "'")
@@ -110,7 +93,14 @@ Public Class LoginForm1
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         FrCambioContrasenia.ShowDialog()
+        'Dim filepath As String
+        'filepath = "C:\Reportes\a\"
 
+        'Dim count As Integer = Directory.GetFiles(filepath, "*.xlsx", SearchOption.TopDirectoryOnly).Length
+
+        'If count >= 1 Then
+        '    MsgBox ("More than 1 file has been found")
+        'End If
     End Sub
 
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -122,9 +112,9 @@ Public Class LoginForm1
         System.IO.Directory.CreateDirectory("c:\Reportes\Pedidos")
         System.IO.Directory.CreateDirectory("c:\Reportes\ODCs")
         System.IO.Directory.CreateDirectory("c:\Reportes\Mis Pedidos")
-       ' dim a As AlertInfo = New AlertInfo( "Informacion de Version", Application.ProductName & " Ver: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Major & " Rev: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Revision)
-    
+        ' dim a As AlertInfo = New AlertInfo( "Informacion de Version", Application.ProductName & " Ver: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Major & " Rev: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Revision)
+
         'AlertControl1.show(me,a)
-        
+
     End Sub
 End Class

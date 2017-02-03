@@ -3,6 +3,7 @@ Imports DevExpress.Xpo
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
 
+
 Partial Public Class FrProductos
     Inherits XtraForm
 
@@ -11,6 +12,23 @@ Partial Public Class FrProductos
         InitializeComponent()
 
     End Sub
+    'Sub valida_letras()
+    '    Dim StrValido As String
+    '    Dim Ini_Tecla As String
+    '    Dim Tecla As String
+
+    '    StrValido = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚ1234567890/()@." + Chr(32)
+    '    Ini_Tecla = Tecla
+    '    Tecla = Asc(UCase(Chr(Tecla)))
+    '    If Tecla > 26 Then
+    '        If InStr(StrValido, Chr(Tecla)) = 0 Then
+    '            Tecla = 0
+    '        Else
+    '            Tecla = Ini_Tecla
+    '        End If
+    '    End If
+
+    'End Sub
     Private Sub WindowsUIButtonPanelButtonClick(ByVal sender As Object, ByVal e As DevExpress.XtraBars.Docking2010.ButtonEventArgs) Handles windowsUIButtonPanel.ButtonClick
 
         If e.Button.Properties.Caption = "AGREGAR" Then
@@ -104,7 +122,7 @@ Partial Public Class FrProductos
 
     Private Sub FrProductos_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Idprod = Nothing
-       
+
     End Sub
 
     Private Sub CheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit1.CheckedChanged
@@ -123,12 +141,12 @@ Partial Public Class FrProductos
     End Sub
 
     Private Sub FrProductos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        
+
     End Sub
 
     Private Sub FrProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Idprod = Nothing then
-            
+
             Productos.Session = Session1
             Rubros.Session = Session1
             Productos.reload

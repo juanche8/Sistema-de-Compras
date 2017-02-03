@@ -15,8 +15,9 @@ Public Class FrPedidosValorizados
     Dim report As New RpPedidos()
     Dim tool As ReportPrintTool = New ReportPrintTool(report)
     Dim resultSet As SelectedData = Session1.ExecuteQuery("SELECT * from Vistalistaprecios")
-
+    
     Dim obs As String
+   
     Private Sub FrMasterDetailPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Pedidos.Session = Session1
         proyecto.Session = Session1
@@ -54,8 +55,10 @@ Public Class FrPedidosValorizados
             SimpleButton6.Visible = false
 
         End If
+       
         GridView5.Columns("GridColumn3").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GridColumn3", "<Color=red>SUBTOTAL</color>={0}")
         GridView5.Columns("GridColumn5").Summary.Add(DevExpress.Data.SummaryItemType.Sum, "GridColumn5", "<Color=red>TOTAL</color>={0}")
+
     End Sub
     Private Sub GridControl1_EmbeddedNavigator_ButtonClick(sender As Object, e As DevExpress.XtraEditors.NavigatorButtonClickEventArgs) Handles GridControl1.EmbeddedNavigator.ButtonClick
         If Not GridControl1.FocusedView.IsDetailView Then
@@ -196,7 +199,7 @@ Public Class FrPedidosValorizados
     End Sub
 
     Private Sub GridView5_RowcellClick(sender As Object, e As RowClickEventArgs) Handles GridView5.RowCellClick
-       
+
     End Sub
     Private Sub GridView1_RowStyle(sender As Object, e As RowStyleEventArgs) Handles GridView1.RowStyle
         Dim view As GridView = sender
@@ -209,7 +212,7 @@ Public Class FrPedidosValorizados
             Dim urgente As String = view.GetRowCellDisplayText(e.RowHandle, view.Columns("Urgente"))
             If urgente = "Urgente" Then
                 e.Appearance.BackColor = Color.Red
-                e.Appearance.BackColor2= Color.salmon
+                e.Appearance.BackColor2 = Color.salmon
                 e.Appearance.ForeColor = Color.White
             Else
 
@@ -226,9 +229,9 @@ Public Class FrPedidosValorizados
         Else
             SimpleButton3.Enabled = True
         End If
-        
+
         '' borrar desde aca
-       
+
 
         ' hasta aca
     End Sub
@@ -269,7 +272,7 @@ Public Class FrPedidosValorizados
             Pedidos.Reload()
         End If
         'ComboBoxEdit1.Enabled = true
-        
+
     End Sub
     Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
         Session1.ExecuteNonQuery("insert into PedidosDetalles (IdPedido, IdProducto, Cantidad) values (" & GridView1.GetFocusedRowCellValue(colidpedido) & ",'6764' ,'1')")
@@ -277,7 +280,8 @@ Public Class FrPedidosValorizados
     End Sub
 
     Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
-       
+        
+        
         'dim a = GridView5.GetFocusedRowCellValue(GridColumn3)             
         ' GridView5.SetFocusedRowCellValue(GridColumn5,a)
         'If GridView5.GetFocusedRowCellValue(GridColumn4) = "0" Then
@@ -285,13 +289,13 @@ Public Class FrPedidosValorizados
         '    GridView5.SetFocusedRowCellValue(GridColumn5, a)
         'End If
         'PreciosProductos.CriteriaString = "" 
-         PreciosProductos.Reload
+        PreciosProductos.Reload
         impuestos.reload
     End Sub
 
 
     Private Sub GridView5_ShowingPopupEditForm(sender As Object, e As ShowingPopupEditFormEventArgs) Handles GridView5.ShowingPopupEditForm
-       
+        
     End Sub
 
     Private Sub GridView5_ShownEditor(sender As Object, e As EventArgs) Handles GridView5.ShownEditor
@@ -299,17 +303,17 @@ Public Class FrPedidosValorizados
     End Sub
 
     Private Sub GridView5_EditFormShowing(sender As Object, e As EditFormShowingEventArgs) Handles GridView5.EditFormShowing
-          Try
+        Try
             Dim filtro = GridView5.GetFocusedRowCellDisplayText(colIdProducto1)
             PreciosProductos.CriteriaString = "Producto like '" & filtro & "'"
         Catch exp As Exception
-            
+
             MessageBox.Show(exp.Message, "Se produjo un error, consulte con soporte", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Try
     End Sub
 
     Private Sub GridView5_MouseMove(sender As Object, e As MouseEventArgs) Handles GridView5.MouseMove
-        
+
     End Sub
 
     Private Sub GridView5_MouseLeave(sender As Object, e As EventArgs) Handles GridView5.MouseLeave
@@ -318,6 +322,34 @@ Public Class FrPedidosValorizados
 
     Private Sub SimpleButton6_Click_1(sender As Object, e As EventArgs) Handles SimpleButton6.Click
 
+    End Sub
+
+    'Private Sub GridView5_RowClick(sender As Object, e As RowClickEventArgs) Handles GridView5.RowClick
+    '     If GridView5.CloseEditForm = True Then
+    '        Dim a = GridView5.GetFocusedRowCellValue(GridColumn5).ToString.Replace(",",".")
+    '  '  MsgBox (a)
+    '    Session1.ExecuteNonQuery("update PedidosDetalles set Total = "& a &"  Where IdDetalle = "& GridView5.GetFocusedRowCellValue(colIdDetalle1))
+    '    a= Nothing
+    '    End If
+    'End Sub
+
+    Private Sub GridView5_CellValueChanged(sender As Object, e As CellValueChangedEventArgs) Handles GridView5.CellValueChanged
+      If GridView5.CloseEditForm = True Then
+            
+            Dim a = GridView5.GetFocusedRowCellValue(GridColumn5).ToString.Replace(",",".")
+      '  MsgBox (a)
+        Session1.ExecuteNonQuery("update PedidosDetalles set Total = "& a &"  Where IdDetalle = "& GridView5.GetFocusedRowCellValue(colIdDetalle1))
+        a= Nothing
+        End If
+           
+    End Sub
+
+    Private Sub GridView5_MasterRowCollapsed(sender As Object, e As CustomMasterRowEventArgs) Handles GridView5.MasterRowCollapsed
+     
+    End Sub
+
+    Private Sub GridView5_DoubleClick(sender As Object, e As EventArgs) Handles GridView5.DoubleClick
+           
     End Sub
 
     'Private Sub SimpleButton6_Click_1(sender As Object, e As EventArgs) Handles SimpleButton6.Click

@@ -88,7 +88,7 @@ Public Class RpODC
                 Exit sub
             End If
             Dim flag = 0
-            Dim num = XrLabel1.Text 
+            Dim num = XrLabel1.Text
             IF Num = "COSTO DE ENVIO" Then
                 flag = 1
             End If
@@ -130,5 +130,15 @@ Public Class RpODC
     Private Sub XrLabel21_AfterPrint(sender As Object, e As EventArgs) Handles XrLabel21.AfterPrint
         '  dim subtotal2 = Val(XrLabel21.Text.TrimStart("Subtotal: $"))
         XrLabel20.Text = "TOTAL  $" & Math.Round(subtotal2 + importe10 + importe21, 2)  'Obliga a dos decimales el total general
+         importe10 = Nothing
+         importe21 = Nothing
+         importe = Nothing
+         totalfinal = Nothing
+         subtotal2 = Nothing
+    End sub
+
+    Private Sub XrLabel21_Disposed(sender As Object, e As EventArgs) Handles XrLabel21.Disposed
+        
+        
     End Sub
 End Class

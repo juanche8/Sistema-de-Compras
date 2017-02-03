@@ -21,8 +21,24 @@ Public NotInheritable Class XpoHelper
     Public Shared Function GetDataLayer(ByVal autoCreationOption As DB.AutoCreateOption) As IDataLayer
 
         Try
-            Dim conn As String = MSSqlConnectionProvider.GetConnectionString("centralmontagne", "Gerencia", "interno.1660", "montagneadministracion") 'montagneadministracion
-            Return XpoDefault.GetDataLayer(conn, autoCreationOption)
+            If Environment.MachineName = "DESKTOP-TKS6FT6" or Environment.MachineName = "WK10SISTEMAS4" Then
+                dim a = InputBox("", "Oficial o Test?", "Test",, 1)
+                If a = "Test" then
+                    MsgBox("Conectado a " & a)
+                    Dim conn1 As String = MSSqlConnectionProvider.GetConnectionString("centralmontagne", "Gerencia", "interno.1660", "ComprasTest") 'montagneadministracion
+                    Return XpoDefault.GetDataLayer(conn1, autoCreationOption)
+
+                Else
+                    MsgBox("Conectado al oficial")
+                    Dim conn2 As String = MSSqlConnectionProvider.GetConnectionString("centralmontagne", "Gerencia", "interno.1660", "montagneadministracion") 'montagneadministracion
+                    Return XpoDefault.GetDataLayer(conn2, autoCreationOption)
+                end if
+            Else
+                Dim conn As String = MSSqlConnectionProvider.GetConnectionString("centralmontagne", "Gerencia", "interno.1660", "montagneadministracion") 'montagneadministracion
+                Return XpoDefault.GetDataLayer(conn, autoCreationOption)
+            End If
+
+
         Catch ex As Exception
 
         End Try
@@ -33,7 +49,8 @@ Public NotInheritable Class XpoHelper
         Get
             If fDataLayer Is Nothing Then
                 SyncLock lockObject
-                    If Thread.VolatileRead(fDataLayer) Is Nothing Then
+                    If Thread.VolatileRead(fDataLayer) Is Nothing Then  ''' comment
+                        ''' nmbr3
                         Thread.VolatileWrite(fDataLayer, GetDataLayer(Pedido))
                     End If
                 End SyncLock

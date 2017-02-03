@@ -19,7 +19,9 @@ Public Class FrPedidos
     ' selecciona y asigna el ultimo idpedido de la tabla pedidos
     Dim report As New RpPedidos()                                                 ' lineas para habilitar la asignacion de datos e impresion del reporte 
     Dim tool As ReportPrintTool = New ReportPrintTool(report)
+   
     Private Sub FrPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+     
         XpColDatosPedido.Session = Session1                                   ' se le asignan los xpcolection a la sesion iniciada (session1)
         XpColDetallePedido.Session = Session1
         XpColUsuario.Session = Session1
@@ -35,7 +37,10 @@ Public Class FrPedidos
         Else
             labelestado.Text = "Pendiente de aprobacion"
         End If
-        
+        If Cotiza = 3 Then
+            GridLookUpEdit1View.OptionsBehavior.AllowAddRows = true
+            GridLookUpEdit1View.OptionsView.NewItemRowPosition = 2
+        End if
         '  Else
         ' labelestado.Text = "Aprobado"
         '  End If
@@ -85,6 +90,8 @@ Public Class FrPedidos
         GridView1.SetRowCellValue(e.RowHandle, "Sector", Sector)
         GridView1.SetRowCellValue(e.RowHandle, "Responsable", Responsable)
         GridView1.SetRowCellValue(e.RowHandle, "IdPedido", nped)
+        'dim obs = GridView1.GetFocusedRowCellDisplayText(colObservaciones).ToString.ToUpper
+        'GridView1.SetRowCellValue(e.rowhandle, colObservaciones, obs )
     End Sub
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click       'Verifica si el usuario tiene elementos seleccionados en la grilla
         If GridView1.RowCount = 1 Then
@@ -123,7 +130,7 @@ Public Class FrPedidos
                         GridControl1.Enabled = False
                         'MsgBox("Ahora puede imprimir su pedido!", vbInformation)
                         SimpleButton1.Enabled = False
-                      '  CheckEdit3.Enabled = False
+                        '  CheckEdit3.Enabled = False
                         ' comboautor.Enabled = False
                     End If
                 Else
@@ -149,14 +156,14 @@ Public Class FrPedidos
             ' .Sector = Sectorid                                'se asignan los datos a los campos de la tabla pedidos desde el control correspondiente
             '.FechaPedido = Labelfechapedido.Text
             '.Responsable = Labelresponsable.Text
-            .Observaciones = memobserv.Text
+            .Observaciones = memobserv.Text.ToUpper
             .FechaRecepcion = fechaentrega.DateTime
-            .urgente = prioridad.Text
+            .urgente = prioridad.Text.ToUpper
             .DireccionDeEnvio = combodirecc.EditValue
             .AproboMartin = 0
 
             If Cotiza = 1 Then
-                .AutorizadoPor = comboautor.Text
+                .AutorizadoPor = comboautor.Text.ToUpper
                 .Fechaaprobacion = Now
             End If
 
@@ -164,7 +171,7 @@ Public Class FrPedidos
             '    .Proyecto = 1
             '    CheckEdit3.Text = "Stock"
             'Else
-                .Proyecto = GridLookUpEdit1View.GetFocusedRowCellValue(colIdProyecto)
+            .Proyecto = GridLookUpEdit1View.GetFocusedRowCellValue(colIdProyecto)
             'End If
             '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
             'If nped = nped Then
@@ -407,11 +414,11 @@ Public Class FrPedidos
     End Sub
 
 
-    Private Sub CheckEdit3_CheckedChanged(sender As Object, e As EventArgs) 
+    Private Sub CheckEdit3_CheckedChanged(sender As Object, e As EventArgs)
 
-       'FlyoutPanel1.ShowPopup()
-       ' If TextEdit1.Text <> "" Then 
-          '  CheckEdit3.Text = TextEdit1.Text
+        'FlyoutPanel1.ShowPopup()
+        ' If TextEdit1.Text <> "" Then 
+        '  CheckEdit3.Text = TextEdit1.Text
         'End If
     End Sub
 
@@ -420,7 +427,7 @@ Public Class FrPedidos
     End Sub
 
     Private Sub TextEdit1_EditValueChanged(sender As Object, e As EventArgs) Handles TextEdit1.EditValueChanged
-     '   CheckEdit3.Text = TextEdit1.Text
+        '   CheckEdit3.Text = TextEdit1.Text
     End Sub
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
@@ -478,5 +485,19 @@ Public Class FrPedidos
 
     Private Sub Botonimprimir_Click(sender As Object, e As EventArgs) Handles Botonimprimir.Click
 
+    End Sub
+
+    Private Sub GridControl1_Leave(sender As Object, e As EventArgs) Handles GridControl1.Leave
+               
+
+    End Sub
+
+    Private Sub GridControl1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GridControl1.KeyPress
+        '   Dim KeyAscii As Integer
+        'KeyAscii = Asc(StrConv(Chr(KeyAscii), vbUpperCase)) 
+    End Sub
+
+    Private Sub FrPedidos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
+     
     End Sub
 End Class
