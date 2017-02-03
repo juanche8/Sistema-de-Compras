@@ -16,7 +16,7 @@ Public Class FrAprobarODC
         XpCollection1.Session = Session1
         'verorden.Visible = true
         ' XpDataView2.FilterString = "AproboMartin = 0"
-        XpCollection1.CriteriaString = "AproboMartin = 0"
+        XpCollection1.CriteriaString = "AproboMartin = 0 and total > 1"
         If Responsable = "Martin Pais" Then VisorPedidosSinCotizar.Visible =true
 
     End Sub

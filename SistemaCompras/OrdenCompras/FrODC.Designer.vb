@@ -1081,12 +1081,16 @@ Partial Class FrODC
         Me.colIdPedido1.Name = "colIdPedido1"
         Me.colIdPedido1.Visible = true
         Me.colIdPedido1.VisibleIndex = 0
-        Me.colIdPedido1.Width = 50
+        Me.colIdPedido1.Width = 59
         '
         'colObservaciones1
         '
+        Me.colObservaciones1.Caption = "Observaciones"
         Me.colObservaciones1.FieldName = "Observaciones"
         Me.colObservaciones1.Name = "colObservaciones1"
+        Me.colObservaciones1.Visible = true
+        Me.colObservaciones1.VisibleIndex = 2
+        Me.colObservaciones1.Width = 138
         '
         'colIdProducto1
         '
@@ -1124,15 +1128,13 @@ Partial Class FrODC
         Me.colProducto1.Name = "colProducto1"
         Me.colProducto1.Visible = true
         Me.colProducto1.VisibleIndex = 1
-        Me.colProducto1.Width = 209
+        Me.colProducto1.Width = 247
         '
         'colobs11
         '
         Me.colobs11.Caption = "Observaciones"
         Me.colobs11.FieldName = "obs1"
         Me.colobs11.Name = "colobs11"
-        Me.colobs11.Visible = true
-        Me.colobs11.VisibleIndex = 2
         Me.colobs11.Width = 219
         '
         'colCUIT_CUIL1
@@ -1151,7 +1153,7 @@ Partial Class FrODC
         Me.colCantidad1.Name = "colCantidad1"
         Me.colCantidad1.Visible = true
         Me.colCantidad1.VisibleIndex = 3
-        Me.colCantidad1.Width = 78
+        Me.colCantidad1.Width = 68
         '
         'colPrecioProducto1
         '
@@ -1159,7 +1161,7 @@ Partial Class FrODC
         Me.colPrecioProducto1.Name = "colPrecioProducto1"
         Me.colPrecioProducto1.Visible = true
         Me.colPrecioProducto1.VisibleIndex = 4
-        Me.colPrecioProducto1.Width = 91
+        Me.colPrecioProducto1.Width = 83
         '
         'colTotalProducto1
         '
@@ -1167,7 +1169,7 @@ Partial Class FrODC
         Me.colTotalProducto1.Name = "colTotalProducto1"
         Me.colTotalProducto1.Visible = true
         Me.colTotalProducto1.VisibleIndex = 5
-        Me.colTotalProducto1.Width = 124
+        Me.colTotalProducto1.Width = 107
         '
         'colEstado1
         '
@@ -1191,18 +1193,18 @@ Partial Class FrODC
         Me.GridColumn1.Name = "GridColumn1"
         Me.GridColumn1.Visible = true
         Me.GridColumn1.VisibleIndex = 6
-        Me.GridColumn1.Width = 56
+        Me.GridColumn1.Width = 74
         '
         'GridColumn2
         '
         Me.GridColumn2.Caption = "TOTAL"
         Me.GridColumn2.FieldName = "GridColumn2"
         Me.GridColumn2.Name = "GridColumn2"
-        Me.GridColumn2.UnboundExpression = "Round([TotalProducto] * [IvaFactor], 2)"
+        Me.GridColumn2.UnboundExpression = "Iif([IvaFactor] <> 0, Round([TotalProducto] * [IvaFactor], 2), [TotalProducto])"
         Me.GridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn2.Visible = true
         Me.GridColumn2.VisibleIndex = 7
-        Me.GridColumn2.Width = 103
+        Me.GridColumn2.Width = 154
         '
         'RepositoryItemGridLookUpEdit1
         '

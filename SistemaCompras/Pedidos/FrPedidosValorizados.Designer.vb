@@ -972,7 +972,7 @@ Partial Class FrPedidosValorizados
         Me.GridColumn5.OptionsColumn.AllowEdit = false
         Me.GridColumn5.OptionsColumn.AllowFocus = false
         Me.GridColumn5.OptionsColumn.ReadOnly = true
-        Me.GridColumn5.UnboundExpression = "Round([GridColumn3] + [GridColumn6], 2)"
+        Me.GridColumn5.UnboundExpression = "Iif([Iva] <> 0, Round([GridColumn3] * [Iva], 2), [GridColumn3])"
         Me.GridColumn5.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn5.Visible = true
         Me.GridColumn5.VisibleIndex = 5
@@ -987,7 +987,7 @@ Partial Class FrPedidosValorizados
         Me.GridColumn6.OptionsColumn.AllowFocus = false
         Me.GridColumn6.OptionsColumn.ReadOnly = true
         Me.GridColumn6.OptionsEditForm.Visible = DevExpress.Utils.DefaultBoolean.[True]
-        Me.GridColumn6.UnboundExpression = "Round([GridColumn3] * [Iva] / 10, 2)"
+        Me.GridColumn6.UnboundExpression = "Round([GridColumn5] - [GridColumn3], 2)"
         Me.GridColumn6.UnboundType = DevExpress.Data.UnboundColumnType.[Decimal]
         Me.GridColumn6.Width = 66
         '

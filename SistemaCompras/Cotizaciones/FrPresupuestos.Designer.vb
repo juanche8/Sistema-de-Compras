@@ -769,7 +769,7 @@ Partial Class FrPresupuestos
         Me.SimpleButton6.Enabled = false
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"),System.Drawing.Image)
         Me.SimpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
-        Me.SimpleButton6.Location = New System.Drawing.Point(3, 46)
+        Me.SimpleButton6.Location = New System.Drawing.Point(3, 47)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(127, 22)
         Me.SimpleButton6.TabIndex = 22
@@ -1033,6 +1033,10 @@ Partial Class FrPresupuestos
         Me.GridColumn22.Visible = true
         Me.GridColumn22.VisibleIndex = 2
         Me.GridColumn22.Width = 328
+        '
+        'DefaultLookAndFeel1
+        '
+        Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
         'FrPresupuestos
         '

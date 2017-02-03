@@ -83,11 +83,11 @@ Public Class FrMasterDetailPedidos
         'End If
 
 
-        'If colIdPedido1.ToString = TextEdit1.Text Then
-        '    MsgBox("no se encuentra pedido")
-        'Else GridView5.GetDetailView(rowHandle:=1, relationIndex:=1)
+        ''''''''If colIdPedido1.ToString = TextEdit1.Text Then
+        ''''''''    MsgBox("no se encuentra pedido")
+        ''''''''Else GridView5.GetDetailView(rowHandle:=1, relationIndex:=1)
 
-        'End If
+        ''''''''End If
     End Sub
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click

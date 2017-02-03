@@ -94,6 +94,7 @@ Public Class FrPresupuestos
             '    PopupContainerEdit1.Text = PopupContainerEdit1.Text & vec(nn) & ", "
             'Next
             'PopupContainerEdit1.Text = Mid(PopupContainerEdit1.Text, 1, Len(PopupContainerEdit1.Text) - 2)
+            'vbnet resources.com.asus(template)<tostring>(template)
         End If
     End Sub
 
@@ -143,7 +144,7 @@ Public Class FrPresupuestos
         Empresa = cboEmpresas.Text.ToUpper
        ' Dim telfInterno As String
         Dim firma As string
-         If Empresa.Contains("MONTAGNE") then firma = "MONTAGNE OUTDOORS SA" & vbCrLf & "DPTO DE COMPRAS" & vbCrLf & "4773-0091 INT 1650" else firma = ""
+         If Empresa.Contains("MONTAGNE") then firma = "MONTAGNE OUTDOORS SA" & vbCrLf & "DPTO DE COMPRAS" & vbCrLf & "4773-0091 INT 1650" else firma = "DPTO DE COMPRAS " + Empresa
       '  If Empresa.Contains("MONTAGNE") Then telfInterno = "4773-0091 INT 1650" Else telfInterno = ""
         If CheckedListBoxControl1.CheckedItemsCount = Nothing Then
             MsgBox("Debes seleccionar al menos un proveedor para enviar el correo.")
@@ -178,8 +179,11 @@ Public Class FrPresupuestos
                     Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Buenas tardes Estimado " & vec(t) & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
                 else
                     ''' Hasta aca las modificaciones
-                    ''' 
-                    ' MsgBox(nombrefantasia)
+                    ''' se deben ingresar los registros desde la base de datos en la tabla de pedidos para poder cotizar los insumos o los materiales
+                    ''' a utilizar en la fecha seleccionada
+                    ''' en caso de no poseer registro alguno de los detalles de pedido, este elimina el idPedido que le corresponde.
+                    ''' para futuros cambios se debe eliminar la variable "nombrefantasia" y la condicion else de este segmento
+                    ''' MsgBox(nombrefantasia)
                     Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
                     Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Buenas tardes Estimado " & nombrefantasia & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
                 End If
@@ -191,7 +195,7 @@ Public Class FrPresupuestos
                 '  SplashScreenManager.CloseForm()
                 MsgBox("El correo electronico ha sido enviado a los proveedores seleccionados", vbInformation, "Envio Exitoso")
                 GridView3.SetFocusedRowCellValue(colEstado, 1)
-                'GridView3.UpdateCurrentRow()
+                GridView3.UpdateCurrentRow()
             End If
         End If
         PopupContainerEdit1.Text = ""
