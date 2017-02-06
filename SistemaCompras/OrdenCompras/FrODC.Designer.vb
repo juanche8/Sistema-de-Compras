@@ -24,106 +24,127 @@ Partial Class FrODC
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrODC))
-        Dim DataViewProperty1 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty2 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty3 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty4 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty5 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty6 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty7 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty8 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty9 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty10 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty11 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty12 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty13 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty14 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty15 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty16 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty17 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty18 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty19 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty20 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty21 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty22 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty23 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty24 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty25 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty26 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty27 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty28 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty29 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty30 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty31 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty32 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty33 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty34 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty35 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty36 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty37 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty38 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty39 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty40 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty41 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty42 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty43 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty44 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty45 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty46 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty47 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty48 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty49 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty50 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty51 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty52 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty53 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty54 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty55 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty56 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty57 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty58 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty59 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty60 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty61 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty62 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty63 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty64 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty65 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty66 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty67 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty68 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty69 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty70 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty71 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty72 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty73 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty74 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty75 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty76 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty77 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty78 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty79 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty80 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty81 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty82 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty83 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty84 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty85 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty86 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty87 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty88 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty89 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty90 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty91 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty92 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty93 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty94 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty95 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty96 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty97 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty98 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty99 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
-        Dim DataViewProperty100 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty122 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty123 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty124 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty125 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty126 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty127 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty128 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty129 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty130 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty131 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty132 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty133 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty134 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty135 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty136 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty137 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty138 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty139 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty140 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty141 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty142 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty143 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty144 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty145 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty146 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty147 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty148 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty149 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty150 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty151 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty152 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty153 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty154 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty155 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty156 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty157 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty158 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty159 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty160 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty161 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty162 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty163 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty164 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty165 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty166 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty167 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty168 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty169 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty170 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty171 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty172 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty173 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty174 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty175 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty176 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty177 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty178 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty179 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty180 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty181 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty182 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty183 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty184 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty185 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty186 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty187 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty188 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty189 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty190 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty191 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty192 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty193 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty194 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty195 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty196 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty197 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty198 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty199 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty200 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty201 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty202 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty203 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty204 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty205 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty206 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty207 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty208 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty209 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty210 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty211 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty212 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty213 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty214 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty215 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty216 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty217 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty218 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty219 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty220 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty221 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty222 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty223 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty224 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty225 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty226 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty227 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty228 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty229 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty230 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty231 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty232 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty233 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty234 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty235 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty236 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty237 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty238 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty239 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty240 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty241 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
+        Dim DataViewProperty242 As DevExpress.Xpo.DataViewProperty = New DevExpress.Xpo.DataViewProperty()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.fechaentrega = New DevExpress.XtraEditors.DateEdit()
@@ -215,6 +236,7 @@ Partial Class FrODC
         Me.colAproboMartin3 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
+        Me.XpDataView6 = New DevExpress.Xpo.XPDataView(Me.components)
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colRow1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdPedido1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -270,6 +292,7 @@ Partial Class FrODC
         CType(Me.GridView4,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.MemoEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridControl2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.XpDataView6,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).BeginInit
@@ -544,49 +567,49 @@ Partial Class FrODC
         '
         'XpDataView2
         '
-        DataViewProperty1.Name = "Row"
-        DataViewProperty1.ValueType = GetType(Long)
-        DataViewProperty2.Name = "IdPedido"
-        DataViewProperty2.ValueType = GetType(Integer)
-        DataViewProperty3.Name = "Observaciones"
-        DataViewProperty3.ValueType = GetType(String)
-        DataViewProperty4.Name = "IdProducto"
-        DataViewProperty4.ValueType = GetType(Integer)
-        DataViewProperty5.Name = "IdProveedor"
-        DataViewProperty5.ValueType = GetType(Integer)
-        DataViewProperty6.Name = "RazonSocial"
-        DataViewProperty6.ValueType = GetType(String)
-        DataViewProperty7.Name = "Domicilio"
-        DataViewProperty7.ValueType = GetType(String)
-        DataViewProperty8.Name = "Localidad"
-        DataViewProperty8.ValueType = GetType(String)
-        DataViewProperty9.Name = "Email"
-        DataViewProperty9.ValueType = GetType(String)
-        DataViewProperty10.Name = "Producto"
-        DataViewProperty10.ValueType = GetType(String)
-        DataViewProperty11.Name = "obs1"
-        DataViewProperty11.ValueType = GetType(String)
-        DataViewProperty12.Name = "CUIT_CUIL"
-        DataViewProperty12.ValueType = GetType(String)
-        DataViewProperty13.Name = "Urgente"
-        DataViewProperty13.ValueType = GetType(String)
-        DataViewProperty14.Name = "Cantidad"
-        DataViewProperty14.ValueType = GetType(Decimal)
-        DataViewProperty15.Name = "PrecioProducto"
-        DataViewProperty15.ValueType = GetType(Decimal)
-        DataViewProperty16.Name = "TotalProducto"
-        DataViewProperty16.ValueType = GetType(Decimal)
-        DataViewProperty17.Name = "Estado"
-        DataViewProperty17.ValueType = GetType(Integer)
-        DataViewProperty18.Name = "ODCEnviada"
-        DataViewProperty18.ValueType = GetType(Integer)
-        DataViewProperty19.Name = "AproboMartin"
-        DataViewProperty19.ValueType = GetType(Integer)
-        DataViewProperty20.Name = "IvaFactor"
-        DataViewProperty20.ValueType = GetType(Decimal)
-        DataViewProperty21.Name = "IvaPorcentual"
-        DataViewProperty21.ValueType = GetType(Decimal)
-        Me.XpDataView2.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty1, DataViewProperty2, DataViewProperty3, DataViewProperty4, DataViewProperty5, DataViewProperty6, DataViewProperty7, DataViewProperty8, DataViewProperty9, DataViewProperty10, DataViewProperty11, DataViewProperty12, DataViewProperty13, DataViewProperty14, DataViewProperty15, DataViewProperty16, DataViewProperty17, DataViewProperty18, DataViewProperty19, DataViewProperty20, DataViewProperty21})
+        DataViewProperty122.Name = "Row"
+        DataViewProperty122.ValueType = GetType(Long)
+        DataViewProperty123.Name = "IdPedido"
+        DataViewProperty123.ValueType = GetType(Integer)
+        DataViewProperty124.Name = "Observaciones"
+        DataViewProperty124.ValueType = GetType(String)
+        DataViewProperty125.Name = "IdProducto"
+        DataViewProperty125.ValueType = GetType(Integer)
+        DataViewProperty126.Name = "IdProveedor"
+        DataViewProperty126.ValueType = GetType(Integer)
+        DataViewProperty127.Name = "RazonSocial"
+        DataViewProperty127.ValueType = GetType(String)
+        DataViewProperty128.Name = "Domicilio"
+        DataViewProperty128.ValueType = GetType(String)
+        DataViewProperty129.Name = "Localidad"
+        DataViewProperty129.ValueType = GetType(String)
+        DataViewProperty130.Name = "Email"
+        DataViewProperty130.ValueType = GetType(String)
+        DataViewProperty131.Name = "Producto"
+        DataViewProperty131.ValueType = GetType(String)
+        DataViewProperty132.Name = "obs1"
+        DataViewProperty132.ValueType = GetType(String)
+        DataViewProperty133.Name = "CUIT_CUIL"
+        DataViewProperty133.ValueType = GetType(String)
+        DataViewProperty134.Name = "Urgente"
+        DataViewProperty134.ValueType = GetType(String)
+        DataViewProperty135.Name = "Cantidad"
+        DataViewProperty135.ValueType = GetType(Decimal)
+        DataViewProperty136.Name = "PrecioProducto"
+        DataViewProperty136.ValueType = GetType(Decimal)
+        DataViewProperty137.Name = "TotalProducto"
+        DataViewProperty137.ValueType = GetType(Decimal)
+        DataViewProperty138.Name = "Estado"
+        DataViewProperty138.ValueType = GetType(Integer)
+        DataViewProperty139.Name = "ODCEnviada"
+        DataViewProperty139.ValueType = GetType(Integer)
+        DataViewProperty140.Name = "AproboMartin"
+        DataViewProperty140.ValueType = GetType(Integer)
+        DataViewProperty141.Name = "IvaFactor"
+        DataViewProperty141.ValueType = GetType(Decimal)
+        DataViewProperty142.Name = "IvaPorcentual"
+        DataViewProperty142.ValueType = GetType(Decimal)
+        Me.XpDataView2.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty122, DataViewProperty123, DataViewProperty124, DataViewProperty125, DataViewProperty126, DataViewProperty127, DataViewProperty128, DataViewProperty129, DataViewProperty130, DataViewProperty131, DataViewProperty132, DataViewProperty133, DataViewProperty134, DataViewProperty135, DataViewProperty136, DataViewProperty137, DataViewProperty138, DataViewProperty139, DataViewProperty140, DataViewProperty141, DataViewProperty142})
         '
         'GridView1
         '
@@ -724,57 +747,58 @@ Partial Class FrODC
         '
         'XpDataView3
         '
-        Me.XpDataView3.FilterString = "[IdProducto] = [IdProducto]"
-        DataViewProperty22.Name = "Row"
-        DataViewProperty22.ValueType = GetType(Long)
-        DataViewProperty23.Name = "IdPedido"
-        DataViewProperty23.ValueType = GetType(Integer)
-        DataViewProperty24.Name = "Observaciones"
-        DataViewProperty24.ValueType = GetType(String)
-        DataViewProperty25.Name = "IdProducto"
-        DataViewProperty25.ValueType = GetType(Integer)
-        DataViewProperty26.Name = "IdProveedor"
-        DataViewProperty26.ValueType = GetType(Integer)
-        DataViewProperty27.Name = "RazonSocial"
-        DataViewProperty27.ValueType = GetType(String)
-        DataViewProperty28.Name = "Domicilio"
-        DataViewProperty28.ValueType = GetType(String)
-        DataViewProperty29.Name = "Localidad"
-        DataViewProperty29.ValueType = GetType(String)
-        DataViewProperty30.Name = "Email"
-        DataViewProperty30.ValueType = GetType(String)
-        DataViewProperty31.Name = "Producto"
-        DataViewProperty31.ValueType = GetType(String)
-        DataViewProperty32.Name = "obs1"
-        DataViewProperty32.ValueType = GetType(String)
-        DataViewProperty33.Name = "CUIT_CUIL"
-        DataViewProperty33.ValueType = GetType(String)
-        DataViewProperty34.Name = "Urgente"
-        DataViewProperty34.ValueType = GetType(String)
-        DataViewProperty35.Name = "Cantidad"
-        DataViewProperty35.ValueType = GetType(Decimal)
-        DataViewProperty36.Name = "PrecioProducto"
-        DataViewProperty36.ValueType = GetType(Decimal)
-        DataViewProperty37.Name = "TotalProducto"
-        DataViewProperty37.ValueType = GetType(Decimal)
-        DataViewProperty38.Name = "Estado"
-        DataViewProperty38.ValueType = GetType(Integer)
-        DataViewProperty39.Name = "ODCEnviada"
-        DataViewProperty39.ValueType = GetType(Integer)
-        DataViewProperty40.Name = "AproboMartin"
-        DataViewProperty40.ValueType = GetType(Integer)
-        DataViewProperty41.Name = "IvaFactor"
-        DataViewProperty41.ValueType = GetType(Decimal)
-        DataViewProperty42.Name = "IvaPorcentual"
-        DataViewProperty42.ValueType = GetType(Decimal)
-        Me.XpDataView3.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty22, DataViewProperty23, DataViewProperty24, DataViewProperty25, DataViewProperty26, DataViewProperty27, DataViewProperty28, DataViewProperty29, DataViewProperty30, DataViewProperty31, DataViewProperty32, DataViewProperty33, DataViewProperty34, DataViewProperty35, DataViewProperty36, DataViewProperty37, DataViewProperty38, DataViewProperty39, DataViewProperty40, DataViewProperty41, DataViewProperty42})
+        DataViewProperty143.Name = "Row"
+        DataViewProperty143.ValueType = GetType(Long)
+        DataViewProperty144.Name = "IdPedido"
+        DataViewProperty144.ValueType = GetType(Integer)
+        DataViewProperty145.Name = "Observaciones"
+        DataViewProperty145.ValueType = GetType(String)
+        DataViewProperty146.Name = "IdProducto"
+        DataViewProperty146.ValueType = GetType(Integer)
+        DataViewProperty147.Name = "IdProveedor"
+        DataViewProperty147.ValueType = GetType(Integer)
+        DataViewProperty148.Name = "RazonSocial"
+        DataViewProperty148.ValueType = GetType(String)
+        DataViewProperty149.Name = "Domicilio"
+        DataViewProperty149.ValueType = GetType(String)
+        DataViewProperty150.Name = "Localidad"
+        DataViewProperty150.ValueType = GetType(String)
+        DataViewProperty151.Name = "Email"
+        DataViewProperty151.ValueType = GetType(String)
+        DataViewProperty152.Name = "Producto"
+        DataViewProperty152.ValueType = GetType(String)
+        DataViewProperty153.Name = "obs1"
+        DataViewProperty153.ValueType = GetType(String)
+        DataViewProperty154.Name = "CUIT_CUIL"
+        DataViewProperty154.ValueType = GetType(String)
+        DataViewProperty155.Name = "Urgente"
+        DataViewProperty155.ValueType = GetType(String)
+        DataViewProperty156.Name = "Cantidad"
+        DataViewProperty156.ValueType = GetType(Decimal)
+        DataViewProperty157.Name = "PrecioProducto"
+        DataViewProperty157.ValueType = GetType(Decimal)
+        DataViewProperty158.Name = "TotalProducto"
+        DataViewProperty158.ValueType = GetType(Decimal)
+        DataViewProperty159.Name = "Estado"
+        DataViewProperty159.ValueType = GetType(Integer)
+        DataViewProperty160.Name = "ODCEnviada"
+        DataViewProperty160.ValueType = GetType(Integer)
+        DataViewProperty161.Name = "AproboMartin"
+        DataViewProperty161.ValueType = GetType(Integer)
+        DataViewProperty162.Name = "IvaFactor"
+        DataViewProperty162.ValueType = GetType(Decimal)
+        DataViewProperty163.Name = "IvaPorcentual"
+        DataViewProperty163.ValueType = GetType(Decimal)
+        Me.XpDataView3.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty143, DataViewProperty144, DataViewProperty145, DataViewProperty146, DataViewProperty147, DataViewProperty148, DataViewProperty149, DataViewProperty150, DataViewProperty151, DataViewProperty152, DataViewProperty153, DataViewProperty154, DataViewProperty155, DataViewProperty156, DataViewProperty157, DataViewProperty158, DataViewProperty159, DataViewProperty160, DataViewProperty161, DataViewProperty162, DataViewProperty163})
         '
         'GridView3
         '
         Me.GridView3.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colRow2, Me.colIdPedido2, Me.colObservaciones2, Me.colIdProducto3, Me.colIdProveedor3, Me.colRazonSocial3, Me.colDomicilio3, Me.colLocalidad3, Me.colEmail3, Me.colProducto3, Me.colobs13, Me.colCUIT_CUIL3, Me.colUrgente3, Me.colCantidad3, Me.colPrecioProducto3, Me.colTotalProducto3, Me.colEstado3, Me.colODCEnviada3, Me.colAproboMartin2})
         Me.GridView3.GridControl = Me.GridControl3
+        Me.GridView3.GroupCount = 1
         Me.GridView3.Name = "GridView3"
         Me.GridView3.OptionsBehavior.Editable = false
+        Me.GridView3.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colIdPedido2, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colRow2
         '
@@ -809,7 +833,7 @@ Partial Class FrODC
         Me.colRazonSocial3.FieldName = "RazonSocial"
         Me.colRazonSocial3.Name = "colRazonSocial3"
         Me.colRazonSocial3.Visible = true
-        Me.colRazonSocial3.VisibleIndex = 1
+        Me.colRazonSocial3.VisibleIndex = 0
         Me.colRazonSocial3.Width = 258
         '
         'colDomicilio3
@@ -890,49 +914,49 @@ Partial Class FrODC
         '
         'XpDataView4
         '
-        DataViewProperty43.Name = "Row"
-        DataViewProperty43.ValueType = GetType(Long)
-        DataViewProperty44.Name = "IdPedido"
-        DataViewProperty44.ValueType = GetType(Integer)
-        DataViewProperty45.Name = "Observaciones"
-        DataViewProperty45.ValueType = GetType(String)
-        DataViewProperty46.Name = "IdProducto"
-        DataViewProperty46.ValueType = GetType(Integer)
-        DataViewProperty47.Name = "IdProveedor"
-        DataViewProperty47.ValueType = GetType(Integer)
-        DataViewProperty48.Name = "RazonSocial"
-        DataViewProperty48.ValueType = GetType(String)
-        DataViewProperty49.Name = "Domicilio"
-        DataViewProperty49.ValueType = GetType(String)
-        DataViewProperty50.Name = "Localidad"
-        DataViewProperty50.ValueType = GetType(String)
-        DataViewProperty51.Name = "Email"
-        DataViewProperty51.ValueType = GetType(String)
-        DataViewProperty52.Name = "Producto"
-        DataViewProperty52.ValueType = GetType(String)
-        DataViewProperty53.Name = "obs1"
-        DataViewProperty53.ValueType = GetType(String)
-        DataViewProperty54.Name = "CUIT_CUIL"
-        DataViewProperty54.ValueType = GetType(String)
-        DataViewProperty55.Name = "Urgente"
-        DataViewProperty55.ValueType = GetType(String)
-        DataViewProperty56.Name = "Cantidad"
-        DataViewProperty56.ValueType = GetType(Decimal)
-        DataViewProperty57.Name = "PrecioProducto"
-        DataViewProperty57.ValueType = GetType(Decimal)
-        DataViewProperty58.Name = "TotalProducto"
-        DataViewProperty58.ValueType = GetType(Decimal)
-        DataViewProperty59.Name = "Estado"
-        DataViewProperty59.ValueType = GetType(Integer)
-        DataViewProperty60.Name = "ODCEnviada"
-        DataViewProperty60.ValueType = GetType(Integer)
-        DataViewProperty61.Name = "AproboMartin"
-        DataViewProperty61.ValueType = GetType(Integer)
-        DataViewProperty62.Name = "IvaFactor"
-        DataViewProperty62.ValueType = GetType(Decimal)
-        DataViewProperty63.Name = "IvaPorcentual"
-        DataViewProperty63.ValueType = GetType(Decimal)
-        Me.XpDataView4.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty43, DataViewProperty44, DataViewProperty45, DataViewProperty46, DataViewProperty47, DataViewProperty48, DataViewProperty49, DataViewProperty50, DataViewProperty51, DataViewProperty52, DataViewProperty53, DataViewProperty54, DataViewProperty55, DataViewProperty56, DataViewProperty57, DataViewProperty58, DataViewProperty59, DataViewProperty60, DataViewProperty61, DataViewProperty62, DataViewProperty63})
+        DataViewProperty164.Name = "Row"
+        DataViewProperty164.ValueType = GetType(Long)
+        DataViewProperty165.Name = "IdPedido"
+        DataViewProperty165.ValueType = GetType(Integer)
+        DataViewProperty166.Name = "Observaciones"
+        DataViewProperty166.ValueType = GetType(String)
+        DataViewProperty167.Name = "IdProducto"
+        DataViewProperty167.ValueType = GetType(Integer)
+        DataViewProperty168.Name = "IdProveedor"
+        DataViewProperty168.ValueType = GetType(Integer)
+        DataViewProperty169.Name = "RazonSocial"
+        DataViewProperty169.ValueType = GetType(String)
+        DataViewProperty170.Name = "Domicilio"
+        DataViewProperty170.ValueType = GetType(String)
+        DataViewProperty171.Name = "Localidad"
+        DataViewProperty171.ValueType = GetType(String)
+        DataViewProperty172.Name = "Email"
+        DataViewProperty172.ValueType = GetType(String)
+        DataViewProperty173.Name = "Producto"
+        DataViewProperty173.ValueType = GetType(String)
+        DataViewProperty174.Name = "obs1"
+        DataViewProperty174.ValueType = GetType(String)
+        DataViewProperty175.Name = "CUIT_CUIL"
+        DataViewProperty175.ValueType = GetType(String)
+        DataViewProperty176.Name = "Urgente"
+        DataViewProperty176.ValueType = GetType(String)
+        DataViewProperty177.Name = "Cantidad"
+        DataViewProperty177.ValueType = GetType(Decimal)
+        DataViewProperty178.Name = "PrecioProducto"
+        DataViewProperty178.ValueType = GetType(Decimal)
+        DataViewProperty179.Name = "TotalProducto"
+        DataViewProperty179.ValueType = GetType(Decimal)
+        DataViewProperty180.Name = "Estado"
+        DataViewProperty180.ValueType = GetType(Integer)
+        DataViewProperty181.Name = "ODCEnviada"
+        DataViewProperty181.ValueType = GetType(Integer)
+        DataViewProperty182.Name = "AproboMartin"
+        DataViewProperty182.ValueType = GetType(Integer)
+        DataViewProperty183.Name = "IvaFactor"
+        DataViewProperty183.ValueType = GetType(Decimal)
+        DataViewProperty184.Name = "IvaPorcentual"
+        DataViewProperty184.ValueType = GetType(Decimal)
+        Me.XpDataView4.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty164, DataViewProperty165, DataViewProperty166, DataViewProperty167, DataViewProperty168, DataViewProperty169, DataViewProperty170, DataViewProperty171, DataViewProperty172, DataViewProperty173, DataViewProperty174, DataViewProperty175, DataViewProperty176, DataViewProperty177, DataViewProperty178, DataViewProperty179, DataViewProperty180, DataViewProperty181, DataViewProperty182, DataViewProperty183, DataViewProperty184})
         '
         'GridView4
         '
@@ -1051,7 +1075,7 @@ Partial Class FrODC
         '
         'GridControl2
         '
-        Me.GridControl2.DataSource = Me.XpDataView3
+        Me.GridControl2.DataSource = Me.XpDataView6
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl2.Enabled = false
         Me.GridControl2.Location = New System.Drawing.Point(0, 0)
@@ -1061,6 +1085,53 @@ Partial Class FrODC
         Me.GridControl2.Size = New System.Drawing.Size(949, 391)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'XpDataView6
+        '
+        Me.XpDataView6.FilterString = "[IdPedido] = -1"
+        DataViewProperty185.Name = "Row"
+        DataViewProperty185.ValueType = GetType(Long)
+        DataViewProperty186.Name = "IdPedido"
+        DataViewProperty186.ValueType = GetType(Integer)
+        DataViewProperty187.Name = "Observaciones"
+        DataViewProperty187.ValueType = GetType(String)
+        DataViewProperty188.Name = "IdProducto"
+        DataViewProperty188.ValueType = GetType(Integer)
+        DataViewProperty189.Name = "IdProveedor"
+        DataViewProperty189.ValueType = GetType(Integer)
+        DataViewProperty190.Name = "RazonSocial"
+        DataViewProperty190.ValueType = GetType(String)
+        DataViewProperty191.Name = "Domicilio"
+        DataViewProperty191.ValueType = GetType(String)
+        DataViewProperty192.Name = "Localidad"
+        DataViewProperty192.ValueType = GetType(String)
+        DataViewProperty193.Name = "Email"
+        DataViewProperty193.ValueType = GetType(String)
+        DataViewProperty194.Name = "Producto"
+        DataViewProperty194.ValueType = GetType(String)
+        DataViewProperty195.Name = "obs1"
+        DataViewProperty195.ValueType = GetType(String)
+        DataViewProperty196.Name = "CUIT_CUIL"
+        DataViewProperty196.ValueType = GetType(String)
+        DataViewProperty197.Name = "Urgente"
+        DataViewProperty197.ValueType = GetType(String)
+        DataViewProperty198.Name = "Cantidad"
+        DataViewProperty198.ValueType = GetType(Decimal)
+        DataViewProperty199.Name = "PrecioProducto"
+        DataViewProperty199.ValueType = GetType(Decimal)
+        DataViewProperty200.Name = "TotalProducto"
+        DataViewProperty200.ValueType = GetType(Decimal)
+        DataViewProperty201.Name = "Estado"
+        DataViewProperty201.ValueType = GetType(Integer)
+        DataViewProperty202.Name = "ODCEnviada"
+        DataViewProperty202.ValueType = GetType(Integer)
+        DataViewProperty203.Name = "AproboMartin"
+        DataViewProperty203.ValueType = GetType(Integer)
+        DataViewProperty204.Name = "IvaFactor"
+        DataViewProperty204.ValueType = GetType(Decimal)
+        DataViewProperty205.Name = "IvaPorcentual"
+        DataViewProperty205.ValueType = GetType(Decimal)
+        Me.XpDataView6.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty185, DataViewProperty186, DataViewProperty187, DataViewProperty188, DataViewProperty189, DataViewProperty190, DataViewProperty191, DataViewProperty192, DataViewProperty193, DataViewProperty194, DataViewProperty195, DataViewProperty196, DataViewProperty197, DataViewProperty198, DataViewProperty199, DataViewProperty200, DataViewProperty201, DataViewProperty202, DataViewProperty203, DataViewProperty204, DataViewProperty205})
         '
         'GridView2
         '
@@ -1227,86 +1298,86 @@ Partial Class FrODC
         'XpDataView5
         '
         Me.XpDataView5.FilterString = "[IdPedido] = -1"
-        DataViewProperty64.Name = "Row"
-        DataViewProperty64.ValueType = GetType(Long)
-        DataViewProperty65.Name = "IdPedido"
-        DataViewProperty65.ValueType = GetType(Integer)
-        DataViewProperty66.Name = "Observaciones"
-        DataViewProperty66.ValueType = GetType(String)
-        DataViewProperty67.Name = "IdProducto"
-        DataViewProperty67.ValueType = GetType(Integer)
-        DataViewProperty68.Name = "IdProveedor"
-        DataViewProperty68.ValueType = GetType(Integer)
-        DataViewProperty69.Name = "RazonSocial"
-        DataViewProperty69.ValueType = GetType(String)
-        DataViewProperty70.Name = "Domicilio"
-        DataViewProperty70.ValueType = GetType(String)
-        DataViewProperty71.Name = "Localidad"
-        DataViewProperty71.ValueType = GetType(String)
-        DataViewProperty72.Name = "Email"
-        DataViewProperty72.ValueType = GetType(String)
-        DataViewProperty73.Name = "Producto"
-        DataViewProperty73.ValueType = GetType(String)
-        DataViewProperty74.Name = "obs1"
-        DataViewProperty74.ValueType = GetType(String)
-        DataViewProperty75.Name = "CUIT_CUIL"
-        DataViewProperty75.ValueType = GetType(String)
-        DataViewProperty76.Name = "Urgente"
-        DataViewProperty76.ValueType = GetType(String)
-        DataViewProperty77.Name = "Cantidad"
-        DataViewProperty77.ValueType = GetType(Decimal)
-        DataViewProperty78.Name = "PrecioProducto"
-        DataViewProperty78.ValueType = GetType(Decimal)
-        DataViewProperty79.Name = "TotalProducto"
-        DataViewProperty79.ValueType = GetType(Decimal)
-        DataViewProperty80.Name = "Estado"
-        DataViewProperty80.ValueType = GetType(Integer)
-        DataViewProperty81.Name = "ODCEnviada"
-        DataViewProperty81.ValueType = GetType(Integer)
-        DataViewProperty82.Name = "AproboMartin"
-        DataViewProperty82.ValueType = GetType(Integer)
-        Me.XpDataView5.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty64, DataViewProperty65, DataViewProperty66, DataViewProperty67, DataViewProperty68, DataViewProperty69, DataViewProperty70, DataViewProperty71, DataViewProperty72, DataViewProperty73, DataViewProperty74, DataViewProperty75, DataViewProperty76, DataViewProperty77, DataViewProperty78, DataViewProperty79, DataViewProperty80, DataViewProperty81, DataViewProperty82})
+        DataViewProperty206.Name = "Row"
+        DataViewProperty206.ValueType = GetType(Long)
+        DataViewProperty207.Name = "IdPedido"
+        DataViewProperty207.ValueType = GetType(Integer)
+        DataViewProperty208.Name = "Observaciones"
+        DataViewProperty208.ValueType = GetType(String)
+        DataViewProperty209.Name = "IdProducto"
+        DataViewProperty209.ValueType = GetType(Integer)
+        DataViewProperty210.Name = "IdProveedor"
+        DataViewProperty210.ValueType = GetType(Integer)
+        DataViewProperty211.Name = "RazonSocial"
+        DataViewProperty211.ValueType = GetType(String)
+        DataViewProperty212.Name = "Domicilio"
+        DataViewProperty212.ValueType = GetType(String)
+        DataViewProperty213.Name = "Localidad"
+        DataViewProperty213.ValueType = GetType(String)
+        DataViewProperty214.Name = "Email"
+        DataViewProperty214.ValueType = GetType(String)
+        DataViewProperty215.Name = "Producto"
+        DataViewProperty215.ValueType = GetType(String)
+        DataViewProperty216.Name = "obs1"
+        DataViewProperty216.ValueType = GetType(String)
+        DataViewProperty217.Name = "CUIT_CUIL"
+        DataViewProperty217.ValueType = GetType(String)
+        DataViewProperty218.Name = "Urgente"
+        DataViewProperty218.ValueType = GetType(String)
+        DataViewProperty219.Name = "Cantidad"
+        DataViewProperty219.ValueType = GetType(Decimal)
+        DataViewProperty220.Name = "PrecioProducto"
+        DataViewProperty220.ValueType = GetType(Decimal)
+        DataViewProperty221.Name = "TotalProducto"
+        DataViewProperty221.ValueType = GetType(Decimal)
+        DataViewProperty222.Name = "Estado"
+        DataViewProperty222.ValueType = GetType(Integer)
+        DataViewProperty223.Name = "ODCEnviada"
+        DataViewProperty223.ValueType = GetType(Integer)
+        DataViewProperty224.Name = "AproboMartin"
+        DataViewProperty224.ValueType = GetType(Integer)
+        Me.XpDataView5.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty206, DataViewProperty207, DataViewProperty208, DataViewProperty209, DataViewProperty210, DataViewProperty211, DataViewProperty212, DataViewProperty213, DataViewProperty214, DataViewProperty215, DataViewProperty216, DataViewProperty217, DataViewProperty218, DataViewProperty219, DataViewProperty220, DataViewProperty221, DataViewProperty222, DataViewProperty223, DataViewProperty224})
         '
         'XpDataView1
         '
         Me.XpDataView1.FilterString = "[ODCEnviada] Is Null"
-        DataViewProperty83.Name = "Row"
-        DataViewProperty83.ValueType = GetType(Long)
-        DataViewProperty84.Name = "IdPedido"
-        DataViewProperty84.ValueType = GetType(Integer)
-        DataViewProperty85.Name = "Observaciones"
-        DataViewProperty85.ValueType = GetType(String)
-        DataViewProperty86.Name = "IdProducto"
-        DataViewProperty86.ValueType = GetType(Integer)
-        DataViewProperty87.Name = "IdProveedor"
-        DataViewProperty87.ValueType = GetType(Integer)
-        DataViewProperty88.Name = "RazonSocial"
-        DataViewProperty88.ValueType = GetType(String)
-        DataViewProperty89.Name = "Domicilio"
-        DataViewProperty89.ValueType = GetType(String)
-        DataViewProperty90.Name = "Localidad"
-        DataViewProperty90.ValueType = GetType(String)
-        DataViewProperty91.Name = "Email"
-        DataViewProperty91.ValueType = GetType(String)
-        DataViewProperty92.Name = "Producto"
-        DataViewProperty92.ValueType = GetType(String)
-        DataViewProperty93.Name = "obs1"
-        DataViewProperty93.ValueType = GetType(String)
-        DataViewProperty94.Name = "CUIT_CUIL"
-        DataViewProperty94.ValueType = GetType(String)
-        DataViewProperty95.Name = "Urgente"
-        DataViewProperty95.ValueType = GetType(String)
-        DataViewProperty96.Name = "Cantidad"
-        DataViewProperty96.ValueType = GetType(Decimal)
-        DataViewProperty97.Name = "PrecioProducto"
-        DataViewProperty97.ValueType = GetType(Decimal)
-        DataViewProperty98.Name = "TotalProducto"
-        DataViewProperty98.ValueType = GetType(Decimal)
-        DataViewProperty99.Name = "Estado"
-        DataViewProperty99.ValueType = GetType(Integer)
-        DataViewProperty100.Name = "ODCEnviada"
-        DataViewProperty100.ValueType = GetType(Integer)
-        Me.XpDataView1.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty83, DataViewProperty84, DataViewProperty85, DataViewProperty86, DataViewProperty87, DataViewProperty88, DataViewProperty89, DataViewProperty90, DataViewProperty91, DataViewProperty92, DataViewProperty93, DataViewProperty94, DataViewProperty95, DataViewProperty96, DataViewProperty97, DataViewProperty98, DataViewProperty99, DataViewProperty100})
+        DataViewProperty225.Name = "Row"
+        DataViewProperty225.ValueType = GetType(Long)
+        DataViewProperty226.Name = "IdPedido"
+        DataViewProperty226.ValueType = GetType(Integer)
+        DataViewProperty227.Name = "Observaciones"
+        DataViewProperty227.ValueType = GetType(String)
+        DataViewProperty228.Name = "IdProducto"
+        DataViewProperty228.ValueType = GetType(Integer)
+        DataViewProperty229.Name = "IdProveedor"
+        DataViewProperty229.ValueType = GetType(Integer)
+        DataViewProperty230.Name = "RazonSocial"
+        DataViewProperty230.ValueType = GetType(String)
+        DataViewProperty231.Name = "Domicilio"
+        DataViewProperty231.ValueType = GetType(String)
+        DataViewProperty232.Name = "Localidad"
+        DataViewProperty232.ValueType = GetType(String)
+        DataViewProperty233.Name = "Email"
+        DataViewProperty233.ValueType = GetType(String)
+        DataViewProperty234.Name = "Producto"
+        DataViewProperty234.ValueType = GetType(String)
+        DataViewProperty235.Name = "obs1"
+        DataViewProperty235.ValueType = GetType(String)
+        DataViewProperty236.Name = "CUIT_CUIL"
+        DataViewProperty236.ValueType = GetType(String)
+        DataViewProperty237.Name = "Urgente"
+        DataViewProperty237.ValueType = GetType(String)
+        DataViewProperty238.Name = "Cantidad"
+        DataViewProperty238.ValueType = GetType(Decimal)
+        DataViewProperty239.Name = "PrecioProducto"
+        DataViewProperty239.ValueType = GetType(Decimal)
+        DataViewProperty240.Name = "TotalProducto"
+        DataViewProperty240.ValueType = GetType(Decimal)
+        DataViewProperty241.Name = "Estado"
+        DataViewProperty241.ValueType = GetType(Integer)
+        DataViewProperty242.Name = "ODCEnviada"
+        DataViewProperty242.ValueType = GetType(Integer)
+        Me.XpDataView1.Properties.AddRange(New DevExpress.Xpo.DataViewProperty() {DataViewProperty225, DataViewProperty226, DataViewProperty227, DataViewProperty228, DataViewProperty229, DataViewProperty230, DataViewProperty231, DataViewProperty232, DataViewProperty233, DataViewProperty234, DataViewProperty235, DataViewProperty236, DataViewProperty237, DataViewProperty238, DataViewProperty239, DataViewProperty240, DataViewProperty241, DataViewProperty242})
         '
         'PedidosDetalles
         '
@@ -1355,6 +1426,7 @@ Partial Class FrODC
         CType(Me.GridView4,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.MemoEdit1.Properties,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridControl2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.XpDataView6,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).EndInit
@@ -1487,4 +1559,5 @@ End Sub
     Friend WithEvents colAproboMartin1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents XpDataView6 As DevExpress.Xpo.XPDataView
 End Class

@@ -56,6 +56,7 @@
         Me.windowsUIButtonPanel = New DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel()
         Me.FormAssistant1 = New DevExpress.XtraBars.FormAssistant()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
+        Me.RepositoryItemTextEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         CType(Me.layoutControl,System.ComponentModel.ISupportInitialize).BeginInit
         Me.layoutControl.SuspendLayout
         CType(Me.CheckEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -76,6 +77,7 @@
         CType(Me.itemLabel,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.itemGrid,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutControlItem1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'layoutControl
@@ -124,7 +126,7 @@
         Me.gridControl.Location = New System.Drawing.Point(40, 57)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemMemoEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemMemoEdit2, Me.RepositoryItemGridLookUpEdit1})
+        Me.gridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemMemoEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemMemoEdit2, Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemTextEdit4})
         Me.gridControl.Size = New System.Drawing.Size(988, 307)
         Me.gridControl.TabIndex = 2
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView, Me.LayoutView1})
@@ -201,6 +203,7 @@
         '
         'colSubrubro
         '
+        Me.colSubrubro.ColumnEdit = Me.RepositoryItemTextEdit4
         Me.colSubrubro.FieldName = "Subrubro"
         Me.colSubrubro.Name = "colSubrubro"
         Me.colSubrubro.Visible = true
@@ -232,6 +235,7 @@
         'RepositoryItemTextEdit2
         '
         Me.RepositoryItemTextEdit2.AutoHeight = false
+        Me.RepositoryItemTextEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemTextEdit2.MaxLength = 80
         Me.RepositoryItemTextEdit2.Name = "RepositoryItemTextEdit2"
         '
@@ -247,6 +251,7 @@
         'RepositoryItemTextEdit3
         '
         Me.RepositoryItemTextEdit3.AutoHeight = false
+        Me.RepositoryItemTextEdit3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemTextEdit3.MaxLength = 80
         Me.RepositoryItemTextEdit3.Name = "RepositoryItemTextEdit3"
         '
@@ -261,6 +266,7 @@
         '
         'RepositoryItemMemoEdit2
         '
+        Me.RepositoryItemMemoEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemMemoEdit2.MaxLength = 250
         Me.RepositoryItemMemoEdit2.Name = "RepositoryItemMemoEdit2"
         '
@@ -276,6 +282,7 @@
         '
         'RepositoryItemMemoEdit1
         '
+        Me.RepositoryItemMemoEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemMemoEdit1.Name = "RepositoryItemMemoEdit1"
         '
         'LayoutView1
@@ -366,6 +373,12 @@
         '
         Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
+        'RepositoryItemTextEdit4
+        '
+        Me.RepositoryItemTextEdit4.AutoHeight = false
+        Me.RepositoryItemTextEdit4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit4.Name = "RepositoryItemTextEdit4"
+        '
         'FrProductos
         '
         Me.Appearance.BackColor = System.Drawing.Color.White
@@ -397,6 +410,7 @@
         CType(Me.itemLabel,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.itemGrid,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutControlItem1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -434,4 +448,5 @@ End Sub
     Friend WithEvents RepositoryItemMemoEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit
     Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents RepositoryItemTextEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
 End Class

@@ -833,6 +833,7 @@ Partial Class FrPedidosValorizados
         '
         Me.RepositoryItemGridLookUpEdit6.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit6.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemGridLookUpEdit6.DataSource = Me.Productos
         Me.RepositoryItemGridLookUpEdit6.DisplayMember = "Producto"
         Me.RepositoryItemGridLookUpEdit6.Name = "RepositoryItemGridLookUpEdit6"
@@ -878,6 +879,7 @@ Partial Class FrPedidosValorizados
         '
         Me.RepositoryItemGridLookUpEdit9.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit9.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemGridLookUpEdit9.DataSource = Me.PreciosProductos
         Me.RepositoryItemGridLookUpEdit9.DisplayMember = "RazonSocial"
         Me.RepositoryItemGridLookUpEdit9.Name = "RepositoryItemGridLookUpEdit9"

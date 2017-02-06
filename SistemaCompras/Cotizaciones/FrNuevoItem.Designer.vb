@@ -63,6 +63,7 @@ Partial Class FrNuevoItem
         Me.LayoutControlGroup7 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlGroup8 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.XpColProductos,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemSpinEdit1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -89,6 +90,7 @@ Partial Class FrNuevoItem
         CType(Me.LayoutControlGroup7,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutControlGroup8,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutControlItem2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'RepositoryItemGridLookUpEdit1
@@ -224,7 +226,7 @@ Partial Class FrNuevoItem
         Me.GridControl1.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit2})
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemTextEdit1})
         Me.GridControl1.Size = New System.Drawing.Size(1042, 304)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -278,6 +280,7 @@ Partial Class FrNuevoItem
         '
         Me.RepositoryItemGridLookUpEdit2.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemGridLookUpEdit2.DataSource = Me.XpColProductos
         Me.RepositoryItemGridLookUpEdit2.DisplayMember = "Producto"
         Me.RepositoryItemGridLookUpEdit2.Name = "RepositoryItemGridLookUpEdit2"
@@ -302,6 +305,7 @@ Partial Class FrNuevoItem
         '
         'colObservaciones
         '
+        Me.colObservaciones.ColumnEdit = Me.RepositoryItemTextEdit1
         Me.colObservaciones.FieldName = "Observaciones"
         Me.colObservaciones.Name = "colObservaciones"
         Me.colObservaciones.Visible = true
@@ -434,6 +438,12 @@ Partial Class FrNuevoItem
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(0, 0)
         Me.LayoutControlItem2.TextVisible = false
         '
+        'RepositoryItemTextEdit1
+        '
+        Me.RepositoryItemTextEdit1.AutoHeight = false
+        Me.RepositoryItemTextEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
+        '
         'FrNuevoItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -474,6 +484,7 @@ Partial Class FrNuevoItem
         CType(Me.LayoutControlGroup7,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutControlGroup8,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutControlItem2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -517,4 +528,5 @@ End Sub
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents RepositoryItemGridLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
     Friend WithEvents RepositoryItemGridLookUpEdit2View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents RepositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
 End Class

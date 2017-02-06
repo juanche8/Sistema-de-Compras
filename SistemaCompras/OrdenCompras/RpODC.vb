@@ -117,10 +117,12 @@ Public Class RpODC
 
     Private Sub XrLabel39_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles XrLabel39.BeforePrint
         XrLabel39.Text = "IVA 10.5%   $" & importe10
+        importe10 = Nothing
     End Sub
 
     Private Sub XrLabel40_BeforePrint(sender As Object, e As Printing.PrintEventArgs) Handles XrLabel40.BeforePrint
         XrLabel40.Text = "IVA 21,00%   $" & importe21
+        importe21 = Nothing
     End Sub
 
     Private Sub XrLabel41_BeforePrint(sender As Object, e As Printing.PrintEventArgs)
@@ -128,17 +130,21 @@ Public Class RpODC
     End Sub
 
     Private Sub XrLabel21_AfterPrint(sender As Object, e As EventArgs) Handles XrLabel21.AfterPrint
-        '  dim subtotal2 = Val(XrLabel21.Text.TrimStart("Subtotal: $"))
-        XrLabel20.Text = "TOTAL  $" & Math.Round(subtotal2 + importe10 + importe21, 2)  'Obliga a dos decimales el total general
-         importe10 = Nothing
-         importe21 = Nothing
-         importe = Nothing
-         totalfinal = Nothing
-         subtotal2 = Nothing
+        '  dim subtotal2 = Val(XrLabel21.Text.TrimStart("Subtotal: $"))ç
+        If Moneda = 2 then
+            XrLabel20.Text = "TOTAL USD: " & Math.Round(subtotal2 + importe10 + importe21, 2)  'Obliga a dos decimales el total general
+        Else
+            XrLabel20.Text = "TOTAL $: " & Math.Round(subtotal2 + importe10 + importe21, 2)  'Obliga a dos decimales el total general
+        End if
+        
+        
+        importe = Nothing
+        totalfinal = Nothing
+        subtotal2 = Nothing
     End sub
 
     Private Sub XrLabel21_Disposed(sender As Object, e As EventArgs) Handles XrLabel21.Disposed
-        
-        
+
+
     End Sub
 End Class

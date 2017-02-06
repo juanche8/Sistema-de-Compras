@@ -2,16 +2,19 @@
 Imports DevExpress.Xpo
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
+Imports DevExpress.XtraGrid.Views.Grid
+
 
 
 Partial Public Class FrProductos
     Inherits XtraForm
-
+   
     Public Session1 As Session = XpoHelper.GetNewSession()
     Public Sub New()
         InitializeComponent()
 
     End Sub
+    
     'Sub valida_letras()
     '    Dim StrValido As String
     '    Dim Ini_Tecla As String
@@ -165,5 +168,13 @@ Partial Public Class FrProductos
             Productos.CriteriaString = "Id = " & Idprod
         End if
         'Idprod = Nothing
+    End Sub
+
+    Private Sub gridControl_KeyPress(sender As Object, e As KeyPressEventArgs) Handles gridControl.KeyPress
+        
+    End Sub
+
+    Private Sub gridView_EditFormShowing(sender As Object, e As DevExpress.XtraGrid.Views.Grid.EditFormShowingEventArgs) Handles gridView.EditFormShowing
+
     End Sub
 End Class

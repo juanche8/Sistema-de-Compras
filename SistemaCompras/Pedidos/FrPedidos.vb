@@ -19,9 +19,9 @@ Public Class FrPedidos
     ' selecciona y asigna el ultimo idpedido de la tabla pedidos
     Dim report As New RpPedidos()                                                 ' lineas para habilitar la asignacion de datos e impresion del reporte 
     Dim tool As ReportPrintTool = New ReportPrintTool(report)
-   
+
     Private Sub FrPedidos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-     
+
         XpColDatosPedido.Session = Session1                                   ' se le asignan los xpcolection a la sesion iniciada (session1)
         XpColDetallePedido.Session = Session1
         XpColUsuario.Session = Session1
@@ -156,7 +156,7 @@ Public Class FrPedidos
             ' .Sector = Sectorid                                'se asignan los datos a los campos de la tabla pedidos desde el control correspondiente
             '.FechaPedido = Labelfechapedido.Text
             '.Responsable = Labelresponsable.Text
-            .Observaciones = memobserv.Text.ToUpper
+            .Observaciones = memobserv.Text
             .FechaRecepcion = fechaentrega.DateTime
             .urgente = prioridad.Text.ToUpper
             .DireccionDeEnvio = combodirecc.EditValue
@@ -483,21 +483,18 @@ Public Class FrPedidos
         end if
     End Sub
 
-    Private Sub Botonimprimir_Click(sender As Object, e As EventArgs) Handles Botonimprimir.Click
 
-    End Sub
 
-    Private Sub GridControl1_Leave(sender As Object, e As EventArgs) Handles GridControl1.Leave
-               
-
-    End Sub
 
     Private Sub GridControl1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GridControl1.KeyPress
-        '   Dim KeyAscii As Integer
-        'KeyAscii = Asc(StrConv(Chr(KeyAscii), vbUpperCase)) 
+
     End Sub
 
-    Private Sub FrPedidos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
+    Private Sub GridView1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles GridView1.KeyPress
+
+    End Sub
+
+    Private Sub GridView1_GotFocus(sender As Object, e As EventArgs) Handles GridView1.GotFocus
      
     End Sub
 End Class
