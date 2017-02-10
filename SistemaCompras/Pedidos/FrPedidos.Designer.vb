@@ -80,6 +80,7 @@ Partial Class FrPedidos
         Me.colCantidad = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemSpinEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit()
         Me.colObservaciones = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.colPrecioProducto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colIdProveedor = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
@@ -125,6 +126,7 @@ Partial Class FrPedidos
         CType(Me.XpColProductos,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemSpinEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemImageComboBox1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemImageEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemPictureEdit1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -453,6 +455,7 @@ Partial Class FrPedidos
         Me.memobserv.Name = "memobserv"
         Me.memobserv.Properties.Appearance.Font = New System.Drawing.Font("Arial", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.memobserv.Properties.Appearance.Options.UseFont = true
+        Me.memobserv.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.memobserv.Size = New System.Drawing.Size(189, 46)
         Me.memobserv.TabIndex = 11
         '
@@ -632,7 +635,7 @@ Partial Class FrPedidos
         Me.GridControl1.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemImageEdit1, Me.RepositoryItemPictureEdit1, Me.RepositoryItemPopupGalleryEdit1, Me.RepositoryItemImageEdit2, Me.RepositoryItemImageComboBox2, Me.RepositoryItemPictureEdit2, Me.RepositoryItemImagePopupContainerEdit1, Me.RepositoryItemImageEdit3})
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemSpinEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemImageEdit1, Me.RepositoryItemPictureEdit1, Me.RepositoryItemPopupGalleryEdit1, Me.RepositoryItemImageEdit2, Me.RepositoryItemImageComboBox2, Me.RepositoryItemPictureEdit2, Me.RepositoryItemImagePopupContainerEdit1, Me.RepositoryItemImageEdit3, Me.RepositoryItemTextEdit1})
         Me.GridControl1.Size = New System.Drawing.Size(1017, 231)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -690,6 +693,7 @@ Partial Class FrPedidos
         Me.RepositoryItemGridLookUpEdit1.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit1.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         Me.RepositoryItemGridLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemGridLookUpEdit1.DataSource = Me.XpColProductos
         Me.RepositoryItemGridLookUpEdit1.DisplayMember = "Producto"
         Me.RepositoryItemGridLookUpEdit1.Name = "RepositoryItemGridLookUpEdit1"
@@ -698,6 +702,7 @@ Partial Class FrPedidos
         '
         'XpColProductos
         '
+        Me.XpColProductos.DisplayableProperties = "This;Id;Rubro;Subrubro;Producto;Marca;Presentacion;ObservProducto"
         Me.XpColProductos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Productos)
         '
         'RepositoryItemGridLookUpEdit1View
@@ -723,18 +728,26 @@ Partial Class FrPedidos
         '
         Me.RepositoryItemSpinEdit1.AutoHeight = false
         Me.RepositoryItemSpinEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemSpinEdit1.IsFloatValue = false
+        Me.RepositoryItemSpinEdit1.Mask.EditMask = "N00"
         Me.RepositoryItemSpinEdit1.MaxValue = New Decimal(New Integer() {99999, 0, 0, 0})
         Me.RepositoryItemSpinEdit1.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
         Me.RepositoryItemSpinEdit1.Name = "RepositoryItemSpinEdit1"
         '
         'colObservaciones
         '
+        Me.colObservaciones.ColumnEdit = Me.RepositoryItemTextEdit1
         Me.colObservaciones.FieldName = "Observaciones"
         Me.colObservaciones.Name = "colObservaciones"
-        Me.colObservaciones.UnboundExpression = "Upper([Observaciones])"
         Me.colObservaciones.Visible = true
         Me.colObservaciones.VisibleIndex = 2
         Me.colObservaciones.Width = 355
+        '
+        'RepositoryItemTextEdit1
+        '
+        Me.RepositoryItemTextEdit1.AutoHeight = false
+        Me.RepositoryItemTextEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
         '
         'colPrecioProducto
         '
@@ -866,6 +879,7 @@ Partial Class FrPedidos
         CType(Me.XpColProductos,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemSpinEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemImageComboBox1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemImageEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemPictureEdit1,System.ComponentModel.ISupportInitialize).EndInit
@@ -962,4 +976,5 @@ End Sub
     Friend WithEvents RepositoryItemImagePopupContainerEdit1 As DevExpress.XtraCharts.Designer.Native.RepositoryItemImagePopupContainerEdit
     Friend WithEvents RepositoryItemImageEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemImageEdit
     Friend WithEvents PictureBox1 As DevExpress.XtraEditors.ImageEdit
+    Friend WithEvents RepositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
 End Class

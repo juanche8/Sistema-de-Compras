@@ -52,6 +52,7 @@
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.layoutControlGroup = New DevExpress.XtraLayout.LayoutControlGroup()
+        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.itemGrid = New DevExpress.XtraLayout.LayoutControlItem()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -98,47 +99,52 @@
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.LayoutControlGroup1 = New DevExpress.XtraLayout.LayoutControlGroup()
-        CType(Me.Proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Rubros, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Paises, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TabFormDefaultManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.layoutControlGroup, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.itemGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemMemoExEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemTextEdit6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemHyperLinkEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemHyperLinkEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemMemoExEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutViewCard1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.layoutControl, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.layoutControl.SuspendLayout()
-        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TabFormDefaultManager2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.RepositoryItemTextEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemTextEdit8 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemTextEdit9 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        CType(Me.Proveedores,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Rubros,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Paises,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TabFormDefaultManager1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.layoutControlGroup,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.LayoutControlGroup1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.itemGrid,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemDateEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemMemoExEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit6,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemHyperLinkEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemHyperLinkEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemMemoExEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemComboBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.LayoutView1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.LayoutViewCard1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.layoutControl,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.layoutControl.SuspendLayout
+        CType(Me.XpCollection1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TabFormDefaultManager2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit7,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit8,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit9,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'Proveedores
         '
-        Me.Proveedores.DisplayableProperties = "IdProveedor;CUIT_CUIL;RazonSocial;NombreFantasia;FechaAlta;Telefonos;Domicilio;Lo" &
+        Me.Proveedores.DisplayableProperties = "IdProveedor;CUIT_CUIL;RazonSocial;NombreFantasia;FechaAlta;Telefonos;Domicilio;Lo"& _ 
     "calidad;CP;Provincia;Pais;Email;PaginaWeb;Observaciones;Rubro"
         Me.Proveedores.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Proveedores)
         '
@@ -154,25 +160,25 @@
         '
         'windowsUIButtonPanel
         '
-        Me.windowsUIButtonPanel.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(130, Byte), Integer))
+        Me.windowsUIButtonPanel.AppearanceButton.Hovered.BackColor = System.Drawing.Color.FromArgb(CType(CType(130,Byte),Integer), CType(CType(130,Byte),Integer), CType(CType(130,Byte),Integer))
         Me.windowsUIButtonPanel.AppearanceButton.Hovered.FontSizeDelta = -1
-        Me.windowsUIButtonPanel.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(CType(CType(130, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(130, Byte), Integer))
-        Me.windowsUIButtonPanel.AppearanceButton.Hovered.Options.UseBackColor = True
-        Me.windowsUIButtonPanel.AppearanceButton.Hovered.Options.UseFont = True
-        Me.windowsUIButtonPanel.AppearanceButton.Hovered.Options.UseForeColor = True
+        Me.windowsUIButtonPanel.AppearanceButton.Hovered.ForeColor = System.Drawing.Color.FromArgb(CType(CType(130,Byte),Integer), CType(CType(130,Byte),Integer), CType(CType(130,Byte),Integer))
+        Me.windowsUIButtonPanel.AppearanceButton.Hovered.Options.UseBackColor = true
+        Me.windowsUIButtonPanel.AppearanceButton.Hovered.Options.UseFont = true
+        Me.windowsUIButtonPanel.AppearanceButton.Hovered.Options.UseForeColor = true
         Me.windowsUIButtonPanel.AppearanceButton.Normal.FontSizeDelta = -1
-        Me.windowsUIButtonPanel.AppearanceButton.Normal.Options.UseFont = True
-        Me.windowsUIButtonPanel.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(159, Byte), Integer))
+        Me.windowsUIButtonPanel.AppearanceButton.Normal.Options.UseFont = true
+        Me.windowsUIButtonPanel.AppearanceButton.Pressed.BackColor = System.Drawing.Color.FromArgb(CType(CType(159,Byte),Integer), CType(CType(159,Byte),Integer), CType(CType(159,Byte),Integer))
         Me.windowsUIButtonPanel.AppearanceButton.Pressed.FontSizeDelta = -1
-        Me.windowsUIButtonPanel.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(159, Byte), Integer), CType(CType(159, Byte), Integer), CType(CType(159, Byte), Integer))
-        Me.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseBackColor = True
-        Me.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseFont = True
-        Me.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseForeColor = True
+        Me.windowsUIButtonPanel.AppearanceButton.Pressed.ForeColor = System.Drawing.Color.FromArgb(CType(CType(159,Byte),Integer), CType(CType(159,Byte),Integer), CType(CType(159,Byte),Integer))
+        Me.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseBackColor = true
+        Me.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseFont = true
+        Me.windowsUIButtonPanel.AppearanceButton.Pressed.Options.UseForeColor = true
         Me.windowsUIButtonPanel.BackColor = System.Drawing.SystemColors.GrayText
-        Me.windowsUIButtonPanel.Buttons.AddRange(New DevExpress.XtraEditors.ButtonPanel.IBaseButton() {New DevExpress.XtraBars.Docking2010.WindowsUIButton("AGREGAR", CType(resources.GetObject("windowsUIButtonPanel.Buttons"), System.Drawing.Image), "New;Size32x32;GrayScaled", -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permiite agregar un nuevo registro", True, -1, True, Nothing, True, False, True, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("EDITAR", "Edit;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permite modificar el registro seleccionado", True, -1, True, Nothing, True, False, True, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("ELIMINAR", "Edit/Delete;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permite eliminar el registro seleccionado", True, -1, True, Nothing, True, False, False, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("RECARGAR", "Refresh;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permite recargar la grilla para visualizar datos  que puedan haber sido agregados" &
-                    "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "por otros usuarios", True, -1, True, Nothing, True, False, True, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("CANCELAR", CType(resources.GetObject("windowsUIButtonPanel.Buttons1"), System.Drawing.Image), -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", True, -1, True, Nothing, True, False, False, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("QUITAR FILTROS", CType(resources.GetObject("windowsUIButtonPanel.Buttons2"), System.Drawing.Image), -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Limpia los filtros de selección", True, -1, True, Nothing, True, False, True, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUISeparator(), New DevExpress.XtraBars.Docking2010.WindowsUIButton("CAMBIAR VISTA", CType(resources.GetObject("windowsUIButtonPanel.Buttons3"), System.Drawing.Image), -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Cambia entre Vista Grilla y Ficha", True, -1, True, Nothing, True, False, True, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("IMPRIMIR", "Preview;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Muestra el panel de impresión y exportación", True, -1, True, Nothing, True, False, True, Nothing, Nothing, -1, False, False), New DevExpress.XtraBars.Docking2010.WindowsUIButton("CONTACTOS", CType(resources.GetObject("windowsUIButtonPanel.Buttons4"), System.Drawing.Image)), New DevExpress.XtraBars.Docking2010.WindowsUIButton("LISTAS DE PRECIOS", CType(resources.GetObject("windowsUIButtonPanel.Buttons5"), System.Drawing.Image))})
+        Me.windowsUIButtonPanel.Buttons.AddRange(New DevExpress.XtraEditors.ButtonPanel.IBaseButton() {New DevExpress.XtraBars.Docking2010.WindowsUIButton("AGREGAR", CType(resources.GetObject("windowsUIButtonPanel.Buttons"),System.Drawing.Image), "New;Size32x32;GrayScaled", -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permiite agregar un nuevo registro", true, -1, true, Nothing, true, false, true, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("EDITAR", "Edit;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permite modificar el registro seleccionado", true, -1, true, Nothing, true, false, true, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("ELIMINAR", "Edit/Delete;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permite eliminar el registro seleccionado", true, -1, true, Nothing, true, false, false, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("RECARGAR", "Refresh;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Permite recargar la grilla para visualizar datos  que puedan haber sido agregados"& _ 
+                    ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"por otros usuarios", true, -1, true, Nothing, true, false, true, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("CANCELAR", CType(resources.GetObject("windowsUIButtonPanel.Buttons1"),System.Drawing.Image), -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", true, -1, true, Nothing, true, false, false, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("QUITAR FILTROS", CType(resources.GetObject("windowsUIButtonPanel.Buttons2"),System.Drawing.Image), -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Limpia los filtros de selección", true, -1, true, Nothing, true, false, true, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUISeparator(), New DevExpress.XtraBars.Docking2010.WindowsUIButton("CAMBIAR VISTA", CType(resources.GetObject("windowsUIButtonPanel.Buttons3"),System.Drawing.Image), -1, DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Cambia entre Vista Grilla y Ficha", true, -1, true, Nothing, true, false, true, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("IMPRIMIR", "Preview;Size32x32;GrayScaled", DevExpress.XtraBars.Docking2010.ImageLocation.[Default], DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "Muestra el panel de impresión y exportación", true, -1, true, Nothing, true, false, true, Nothing, Nothing, -1, false, false), New DevExpress.XtraBars.Docking2010.WindowsUIButton("CONTACTOS", CType(resources.GetObject("windowsUIButtonPanel.Buttons4"),System.Drawing.Image)), New DevExpress.XtraBars.Docking2010.WindowsUIButton("LISTAS DE PRECIOS", CType(resources.GetObject("windowsUIButtonPanel.Buttons5"),System.Drawing.Image))})
         Me.windowsUIButtonPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.windowsUIButtonPanel.EnableImageTransparency = True
+        Me.windowsUIButtonPanel.EnableImageTransparency = true
         Me.windowsUIButtonPanel.ForeColor = System.Drawing.Color.White
         Me.windowsUIButtonPanel.Location = New System.Drawing.Point(0, 361)
         Me.windowsUIButtonPanel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
@@ -182,7 +188,7 @@
         Me.windowsUIButtonPanel.Size = New System.Drawing.Size(1115, 60)
         Me.windowsUIButtonPanel.TabIndex = 5
         Me.windowsUIButtonPanel.Text = "windowsUIButtonPanel"
-        Me.windowsUIButtonPanel.UseButtonBackgroundImages = False
+        Me.windowsUIButtonPanel.UseButtonBackgroundImages = false
         '
         'DefaultLookAndFeel1
         '
@@ -198,7 +204,7 @@
         Me.colRazonSocial.Caption = "Razón Social"
         Me.colRazonSocial.FieldName = "RazonSocial"
         Me.colRazonSocial.Name = "colRazonSocial"
-        Me.colRazonSocial.Visible = True
+        Me.colRazonSocial.Visible = true
         Me.colRazonSocial.VisibleIndex = 0
         Me.colRazonSocial.Width = 219
         '
@@ -207,7 +213,7 @@
         Me.colNombreFantasia.Caption = "Nombre Fantasía"
         Me.colNombreFantasia.FieldName = "NombreFantasia"
         Me.colNombreFantasia.Name = "colNombreFantasia"
-        Me.colNombreFantasia.Visible = True
+        Me.colNombreFantasia.Visible = true
         Me.colNombreFantasia.VisibleIndex = 1
         Me.colNombreFantasia.Width = 223
         '
@@ -215,7 +221,7 @@
         '
         Me.colCUIT_CUIL.FieldName = "CUIT_CUIL"
         Me.colCUIT_CUIL.Name = "colCUIT_CUIL"
-        Me.colCUIT_CUIL.Visible = True
+        Me.colCUIT_CUIL.Visible = true
         Me.colCUIT_CUIL.VisibleIndex = 3
         Me.colCUIT_CUIL.Width = 72
         '
@@ -230,7 +236,7 @@
         '
         Me.colRubro.FieldName = "Rubro"
         Me.colRubro.Name = "colRubro"
-        Me.colRubro.Visible = True
+        Me.colRubro.Visible = true
         Me.colRubro.VisibleIndex = 2
         Me.colRubro.Width = 108
         '
@@ -238,7 +244,7 @@
         '
         Me.colTelefonos.FieldName = "Telefonos"
         Me.colTelefonos.Name = "colTelefonos"
-        Me.colTelefonos.Visible = True
+        Me.colTelefonos.Visible = true
         Me.colTelefonos.VisibleIndex = 4
         Me.colTelefonos.Width = 238
         '
@@ -283,7 +289,7 @@
         '
         Me.colEmail.FieldName = "Email"
         Me.colEmail.Name = "colEmail"
-        Me.colEmail.Visible = True
+        Me.colEmail.Visible = true
         Me.colEmail.VisibleIndex = 5
         Me.colEmail.Width = 166
         '
@@ -312,28 +318,28 @@
         '
         'barDockControlTop
         '
-        Me.barDockControlTop.CausesValidation = False
+        Me.barDockControlTop.CausesValidation = false
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlTop.Size = New System.Drawing.Size(1115, 0)
         '
         'barDockControlBottom
         '
-        Me.barDockControlBottom.CausesValidation = False
+        Me.barDockControlBottom.CausesValidation = false
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.barDockControlBottom.Location = New System.Drawing.Point(0, 421)
         Me.barDockControlBottom.Size = New System.Drawing.Size(1115, 0)
         '
         'barDockControlLeft
         '
-        Me.barDockControlLeft.CausesValidation = False
+        Me.barDockControlLeft.CausesValidation = false
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlLeft.Size = New System.Drawing.Size(0, 421)
         '
         'barDockControlRight
         '
-        Me.barDockControlRight.CausesValidation = False
+        Me.barDockControlRight.CausesValidation = false
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(1115, 0)
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 421)
@@ -341,13 +347,20 @@
         'layoutControlGroup
         '
         Me.layoutControlGroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.layoutControlGroup.GroupBordersVisible = False
+        Me.layoutControlGroup.GroupBordersVisible = false
         Me.layoutControlGroup.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlGroup1})
         Me.layoutControlGroup.Location = New System.Drawing.Point(0, 0)
         Me.layoutControlGroup.Name = "Root"
         Me.layoutControlGroup.Padding = New DevExpress.XtraLayout.Utils.Padding(40, 40, 0, 0)
         Me.layoutControlGroup.Size = New System.Drawing.Size(1110, 361)
-        Me.layoutControlGroup.TextVisible = False
+        Me.layoutControlGroup.TextVisible = false
+        '
+        'LayoutControlGroup1
+        '
+        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.itemGrid})
+        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
+        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
+        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1030, 361)
         '
         'itemGrid
         '
@@ -358,7 +371,7 @@
         Me.itemGrid.Padding = New DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0)
         Me.itemGrid.Size = New System.Drawing.Size(1004, 315)
         Me.itemGrid.TextSize = New System.Drawing.Size(0, 0)
-        Me.itemGrid.TextVisible = False
+        Me.itemGrid.TextVisible = false
         '
         'GridControl1
         '
@@ -366,7 +379,7 @@
         Me.GridControl1.Location = New System.Drawing.Point(53, 33)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemDateEdit1, Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemMemoExEdit1, Me.RepositoryItemTextEdit4, Me.RepositoryItemTextEdit5, Me.RepositoryItemTextEdit6, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemGridLookUpEdit3, Me.RepositoryItemHyperLinkEdit1, Me.RepositoryItemHyperLinkEdit2, Me.RepositoryItemMemoExEdit2, Me.RepositoryItemComboBox1})
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemDateEdit1, Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemMemoExEdit1, Me.RepositoryItemTextEdit4, Me.RepositoryItemTextEdit5, Me.RepositoryItemTextEdit6, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemGridLookUpEdit3, Me.RepositoryItemHyperLinkEdit1, Me.RepositoryItemHyperLinkEdit2, Me.RepositoryItemMemoExEdit2, Me.RepositoryItemComboBox1, Me.RepositoryItemTextEdit7, Me.RepositoryItemTextEdit8, Me.RepositoryItemTextEdit9})
         Me.GridControl1.Size = New System.Drawing.Size(1004, 315)
         Me.GridControl1.TabIndex = 2
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.LayoutView1, Me.GridView5})
@@ -377,144 +390,147 @@
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
-        Me.GridView1.OptionsCustomization.CustomizationFormSearchBoxVisible = True
+        Me.GridView1.OptionsCustomization.CustomizationFormSearchBoxVisible = true
         Me.GridView1.OptionsEditForm.EditFormColumnCount = 1
-        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsFind.AlwaysVisible = true
         Me.GridView1.OptionsFind.FindNullPrompt = "Ingrese el texto a buscar"
-        Me.GridView1.OptionsMenu.EnableColumnMenu = False
-        Me.GridView1.OptionsNavigation.AutoFocusNewRow = True
-        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = True
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsMenu.EnableColumnMenu = false
+        Me.GridView1.OptionsNavigation.AutoFocusNewRow = true
+        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = true
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.GridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
-        Me.GridView1.OptionsView.ShowAutoFilterRow = True
-        Me.GridView1.OptionsView.ShowChildrenInGroupPanel = True
+        Me.GridView1.OptionsView.ShowAutoFilterRow = true
+        Me.GridView1.OptionsView.ShowChildrenInGroupPanel = true
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
-        Me.GridView1.OptionsView.ShowFooter = True
-        Me.GridView1.OptionsView.ShowIndicator = False
+        Me.GridView1.OptionsView.ShowFooter = true
+        Me.GridView1.OptionsView.ShowIndicator = false
         Me.GridView1.ViewCaption = "Gridview1"
         '
         'colIdProveedor1
         '
         Me.colIdProveedor1.FieldName = "IdProveedor"
         Me.colIdProveedor1.Name = "colIdProveedor1"
-        Me.colIdProveedor1.Visible = True
+        Me.colIdProveedor1.Visible = true
         Me.colIdProveedor1.VisibleIndex = 0
         '
         'colCUIT_CUIL1
         '
         Me.colCUIT_CUIL1.FieldName = "CUIT_CUIL"
         Me.colCUIT_CUIL1.Name = "colCUIT_CUIL1"
-        Me.colCUIT_CUIL1.Visible = True
+        Me.colCUIT_CUIL1.Visible = true
         Me.colCUIT_CUIL1.VisibleIndex = 1
         '
         'colRazonSocial1
         '
+        Me.colRazonSocial1.ColumnEdit = Me.RepositoryItemTextEdit7
         Me.colRazonSocial1.FieldName = "RazonSocial"
         Me.colRazonSocial1.Name = "colRazonSocial1"
-        Me.colRazonSocial1.Visible = True
+        Me.colRazonSocial1.Visible = true
         Me.colRazonSocial1.VisibleIndex = 2
         '
         'colNombreFantasia1
         '
+        Me.colNombreFantasia1.ColumnEdit = Me.RepositoryItemTextEdit8
         Me.colNombreFantasia1.FieldName = "NombreFantasia"
         Me.colNombreFantasia1.Name = "colNombreFantasia1"
-        Me.colNombreFantasia1.Visible = True
+        Me.colNombreFantasia1.Visible = true
         Me.colNombreFantasia1.VisibleIndex = 3
         '
         'colFechaAlta1
         '
         Me.colFechaAlta1.FieldName = "FechaAlta"
         Me.colFechaAlta1.Name = "colFechaAlta1"
-        Me.colFechaAlta1.Visible = True
+        Me.colFechaAlta1.Visible = true
         Me.colFechaAlta1.VisibleIndex = 4
         '
         'colTelefonos1
         '
         Me.colTelefonos1.FieldName = "Telefonos"
         Me.colTelefonos1.Name = "colTelefonos1"
-        Me.colTelefonos1.Visible = True
+        Me.colTelefonos1.Visible = true
         Me.colTelefonos1.VisibleIndex = 5
         '
         'colDomicilio1
         '
         Me.colDomicilio1.FieldName = "Domicilio"
         Me.colDomicilio1.Name = "colDomicilio1"
-        Me.colDomicilio1.Visible = True
+        Me.colDomicilio1.Visible = true
         Me.colDomicilio1.VisibleIndex = 6
         '
         'colLocalidad1
         '
         Me.colLocalidad1.FieldName = "Localidad"
         Me.colLocalidad1.Name = "colLocalidad1"
-        Me.colLocalidad1.Visible = True
+        Me.colLocalidad1.Visible = true
         Me.colLocalidad1.VisibleIndex = 7
         '
         'colCP1
         '
         Me.colCP1.FieldName = "CP"
         Me.colCP1.Name = "colCP1"
-        Me.colCP1.Visible = True
+        Me.colCP1.Visible = true
         Me.colCP1.VisibleIndex = 8
         '
         'colProvincia1
         '
         Me.colProvincia1.FieldName = "Provincia"
         Me.colProvincia1.Name = "colProvincia1"
-        Me.colProvincia1.Visible = True
+        Me.colProvincia1.Visible = true
         Me.colProvincia1.VisibleIndex = 9
         '
         'colPais1
         '
         Me.colPais1.FieldName = "Pais"
         Me.colPais1.Name = "colPais1"
-        Me.colPais1.Visible = True
+        Me.colPais1.Visible = true
         Me.colPais1.VisibleIndex = 10
         '
         'colEmail1
         '
+        Me.colEmail1.ColumnEdit = Me.RepositoryItemTextEdit9
         Me.colEmail1.FieldName = "Email"
         Me.colEmail1.Name = "colEmail1"
-        Me.colEmail1.Visible = True
+        Me.colEmail1.Visible = true
         Me.colEmail1.VisibleIndex = 11
         '
         'colPaginaWeb1
         '
         Me.colPaginaWeb1.FieldName = "PaginaWeb"
         Me.colPaginaWeb1.Name = "colPaginaWeb1"
-        Me.colPaginaWeb1.Visible = True
+        Me.colPaginaWeb1.Visible = true
         Me.colPaginaWeb1.VisibleIndex = 12
         '
         'colObservaciones1
         '
         Me.colObservaciones1.FieldName = "Observaciones"
         Me.colObservaciones1.Name = "colObservaciones1"
-        Me.colObservaciones1.Visible = True
+        Me.colObservaciones1.Visible = true
         Me.colObservaciones1.VisibleIndex = 13
         '
         'colRubro1
         '
         Me.colRubro1.FieldName = "Rubro"
         Me.colRubro1.Name = "colRubro1"
-        Me.colRubro1.Visible = True
+        Me.colRubro1.Visible = true
         Me.colRubro1.VisibleIndex = 14
         '
         'RepositoryItemTextEdit1
         '
-        Me.RepositoryItemTextEdit1.AutoHeight = False
+        Me.RepositoryItemTextEdit1.AutoHeight = false
         Me.RepositoryItemTextEdit1.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemTextEdit1.MaxLength = 80
         Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
         '
         'RepositoryItemTextEdit2
         '
-        Me.RepositoryItemTextEdit2.AutoHeight = False
+        Me.RepositoryItemTextEdit2.AutoHeight = false
         Me.RepositoryItemTextEdit2.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemTextEdit2.MaxLength = 80
         Me.RepositoryItemTextEdit2.Name = "RepositoryItemTextEdit2"
         '
         'RepositoryItemTextEdit3
         '
-        Me.RepositoryItemTextEdit3.AutoHeight = False
+        Me.RepositoryItemTextEdit3.AutoHeight = false
         Me.RepositoryItemTextEdit3.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemTextEdit3.Mask.EditMask = "99-99999999-9"
         Me.RepositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Simple
@@ -523,7 +539,7 @@
         '
         'RepositoryItemDateEdit1
         '
-        Me.RepositoryItemDateEdit1.AutoHeight = False
+        Me.RepositoryItemDateEdit1.AutoHeight = false
         Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit1.CalendarTimeProperties.LookAndFeel.SkinName = "Money Twins"
@@ -531,7 +547,7 @@
         '
         'RepositoryItemGridLookUpEdit1
         '
-        Me.RepositoryItemGridLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemGridLookUpEdit1.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemGridLookUpEdit1.DisplayMember = "Rubro"
         Me.RepositoryItemGridLookUpEdit1.LookAndFeel.SkinName = "Money Twins"
@@ -544,12 +560,12 @@
         '
         Me.GridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView2.Name = "GridView2"
-        Me.GridView2.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView2.OptionsView.ShowGroupPanel = False
+        Me.GridView2.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.GridView2.OptionsView.ShowGroupPanel = false
         '
         'RepositoryItemMemoExEdit1
         '
-        Me.RepositoryItemMemoExEdit1.AutoHeight = False
+        Me.RepositoryItemMemoExEdit1.AutoHeight = false
         Me.RepositoryItemMemoExEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemMemoExEdit1.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemMemoExEdit1.MaxLength = 200
@@ -557,28 +573,28 @@
         '
         'RepositoryItemTextEdit4
         '
-        Me.RepositoryItemTextEdit4.AutoHeight = False
+        Me.RepositoryItemTextEdit4.AutoHeight = false
         Me.RepositoryItemTextEdit4.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemTextEdit4.MaxLength = 150
         Me.RepositoryItemTextEdit4.Name = "RepositoryItemTextEdit4"
         '
         'RepositoryItemTextEdit5
         '
-        Me.RepositoryItemTextEdit5.AutoHeight = False
+        Me.RepositoryItemTextEdit5.AutoHeight = false
         Me.RepositoryItemTextEdit5.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemTextEdit5.MaxLength = 80
         Me.RepositoryItemTextEdit5.Name = "RepositoryItemTextEdit5"
         '
         'RepositoryItemTextEdit6
         '
-        Me.RepositoryItemTextEdit6.AutoHeight = False
+        Me.RepositoryItemTextEdit6.AutoHeight = false
         Me.RepositoryItemTextEdit6.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemTextEdit6.MaxLength = 13
         Me.RepositoryItemTextEdit6.Name = "RepositoryItemTextEdit6"
         '
         'RepositoryItemGridLookUpEdit2
         '
-        Me.RepositoryItemGridLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemGridLookUpEdit2.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemGridLookUpEdit2.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemGridLookUpEdit2.Name = "RepositoryItemGridLookUpEdit2"
@@ -588,12 +604,12 @@
         '
         Me.GridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView3.Name = "GridView3"
-        Me.GridView3.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView3.OptionsView.ShowGroupPanel = False
+        Me.GridView3.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.GridView3.OptionsView.ShowGroupPanel = false
         '
         'RepositoryItemGridLookUpEdit3
         '
-        Me.RepositoryItemGridLookUpEdit3.AutoHeight = False
+        Me.RepositoryItemGridLookUpEdit3.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit3.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemGridLookUpEdit3.DisplayMember = "Pais"
         Me.RepositoryItemGridLookUpEdit3.LookAndFeel.SkinName = "Money Twins"
@@ -606,32 +622,32 @@
         '
         Me.GridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView4.Name = "GridView4"
-        Me.GridView4.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.GridView4.OptionsView.ShowGroupPanel = False
+        Me.GridView4.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.GridView4.OptionsView.ShowGroupPanel = false
         '
         'RepositoryItemHyperLinkEdit1
         '
-        Me.RepositoryItemHyperLinkEdit1.AutoHeight = False
+        Me.RepositoryItemHyperLinkEdit1.AutoHeight = false
         Me.RepositoryItemHyperLinkEdit1.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemHyperLinkEdit1.MaxLength = 40
         Me.RepositoryItemHyperLinkEdit1.Name = "RepositoryItemHyperLinkEdit1"
         '
         'RepositoryItemHyperLinkEdit2
         '
-        Me.RepositoryItemHyperLinkEdit2.AutoHeight = False
+        Me.RepositoryItemHyperLinkEdit2.AutoHeight = false
         Me.RepositoryItemHyperLinkEdit2.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemHyperLinkEdit2.Name = "RepositoryItemHyperLinkEdit2"
         '
         'RepositoryItemMemoExEdit2
         '
-        Me.RepositoryItemMemoExEdit2.AutoHeight = False
+        Me.RepositoryItemMemoExEdit2.AutoHeight = false
         Me.RepositoryItemMemoExEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemMemoExEdit2.LookAndFeel.SkinName = "Money Twins"
         Me.RepositoryItemMemoExEdit2.Name = "RepositoryItemMemoExEdit2"
         '
         'RepositoryItemComboBox1
         '
-        Me.RepositoryItemComboBox1.AutoHeight = False
+        Me.RepositoryItemComboBox1.AutoHeight = false
         Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego, Antártida e Islas del Atlántico Sur", "Tucumán"})
         Me.RepositoryItemComboBox1.LookAndFeel.SkinName = "Money Twins"
@@ -656,7 +672,7 @@
         '
         'layoutControl
         '
-        Me.layoutControl.AllowCustomization = False
+        Me.layoutControl.AllowCustomization = false
         Me.layoutControl.Controls.Add(Me.GridControl1)
         Me.layoutControl.Dock = System.Windows.Forms.DockStyle.Left
         Me.layoutControl.Location = New System.Drawing.Point(0, 0)
@@ -668,7 +684,7 @@
         '
         'XpCollection1
         '
-        Me.XpCollection1.DisplayableProperties = "IdProveedor;CUIT_CUIL;RazonSocial;NombreFantasia;FechaAlta;Telefonos;Domicilio;Lo" &
+        Me.XpCollection1.DisplayableProperties = "IdProveedor;CUIT_CUIL;RazonSocial;NombreFantasia;FechaAlta;Telefonos;Domicilio;Lo"& _ 
     "calidad;CP;Provincia;Pais;Email;PaginaWeb;Observaciones;Rubro"
         '
         'TabFormDefaultManager2
@@ -682,44 +698,55 @@
         '
         'BarDockControl1
         '
-        Me.BarDockControl1.CausesValidation = False
+        Me.BarDockControl1.CausesValidation = false
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Size = New System.Drawing.Size(1115, 0)
         '
         'BarDockControl2
         '
-        Me.BarDockControl2.CausesValidation = False
+        Me.BarDockControl2.CausesValidation = false
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BarDockControl2.Location = New System.Drawing.Point(0, 421)
         Me.BarDockControl2.Size = New System.Drawing.Size(1115, 0)
         '
         'BarDockControl3
         '
-        Me.BarDockControl3.CausesValidation = False
+        Me.BarDockControl3.CausesValidation = false
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl3.Size = New System.Drawing.Size(0, 421)
         '
         'BarDockControl4
         '
-        Me.BarDockControl4.CausesValidation = False
+        Me.BarDockControl4.CausesValidation = false
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
         Me.BarDockControl4.Location = New System.Drawing.Point(1115, 0)
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 421)
         '
-        'LayoutControlGroup1
+        'RepositoryItemTextEdit7
         '
-        Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.itemGrid})
-        Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-        Me.LayoutControlGroup1.Size = New System.Drawing.Size(1030, 361)
+        Me.RepositoryItemTextEdit7.AutoHeight = false
+        Me.RepositoryItemTextEdit7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit7.Name = "RepositoryItemTextEdit7"
+        '
+        'RepositoryItemTextEdit8
+        '
+        Me.RepositoryItemTextEdit8.AutoHeight = false
+        Me.RepositoryItemTextEdit8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit8.Name = "RepositoryItemTextEdit8"
+        '
+        'RepositoryItemTextEdit9
+        '
+        Me.RepositoryItemTextEdit9.AutoHeight = false
+        Me.RepositoryItemTextEdit9.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.RepositoryItemTextEdit9.Name = "RepositoryItemTextEdit9"
         '
         'FrProveedores
         '
         Me.Appearance.BackColor = System.Drawing.Color.White
-        Me.Appearance.Options.UseBackColor = True
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.Appearance.Options.UseBackColor = true
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1115, 421)
         Me.Controls.Add(Me.layoutControl)
@@ -733,47 +760,50 @@
         Me.Controls.Add(Me.BarDockControl2)
         Me.Controls.Add(Me.BarDockControl1)
         Me.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.None
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "FrProveedores"
-        CType(Me.Proveedores, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Rubros, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Paises, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TabFormDefaultManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.layoutControlGroup, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.itemGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemDateEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemMemoExEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemTextEdit6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemHyperLinkEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemHyperLinkEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemMemoExEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutViewCard1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.layoutControl, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.layoutControl.ResumeLayout(False)
-        CType(Me.XpCollection1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TabFormDefaultManager2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.Proveedores,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Rubros,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Paises,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TabFormDefaultManager1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.layoutControlGroup,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.LayoutControlGroup1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.itemGrid,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit3,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemDateEdit1.CalendarTimeProperties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemDateEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemMemoExEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit5,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit6,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView3,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit3,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView4,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemHyperLinkEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemHyperLinkEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemMemoExEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemComboBox1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.LayoutView1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.LayoutViewCard1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView5,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.layoutControl,System.ComponentModel.ISupportInitialize).EndInit
+        Me.layoutControl.ResumeLayout(false)
+        CType(Me.XpCollection1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TabFormDefaultManager2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit7,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit8,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit9,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
 
 #End Region
     Private WithEvents windowsUIButtonPanel As DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel
@@ -850,4 +880,7 @@
     Friend WithEvents BarDockControl3 As DevExpress.XtraBars.BarDockControl
     Friend WithEvents BarDockControl4 As DevExpress.XtraBars.BarDockControl
     Friend WithEvents LayoutControlGroup1 As DevExpress.XtraLayout.LayoutControlGroup
+    Friend WithEvents RepositoryItemTextEdit7 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents RepositoryItemTextEdit8 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents RepositoryItemTextEdit9 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
 End Class

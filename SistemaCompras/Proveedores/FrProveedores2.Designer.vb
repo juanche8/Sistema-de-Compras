@@ -79,17 +79,25 @@ Partial Class FrProveedores2
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.WorkspaceManager1 = New DevExpress.Utils.WorkspaceManager()
-        CType(Me.Proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Paises, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Rubros, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemGridLookUpEdit2View, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
+        Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemTextEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemTextEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemTextEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        CType(Me.Proveedores,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Paises,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Rubros,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit2View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.BarManager1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SuspendLayout
         '
         'Proveedores
         '
@@ -109,7 +117,7 @@ Partial Class FrProveedores2
         '
         Me.colIdProveedor.FieldName = "IdProveedor"
         Me.colIdProveedor.Name = "colIdProveedor"
-        Me.colIdProveedor.Visible = True
+        Me.colIdProveedor.Visible = true
         Me.colIdProveedor.VisibleIndex = 0
         Me.colIdProveedor.Width = 40
         '
@@ -117,7 +125,7 @@ Partial Class FrProveedores2
         '
         Me.colCUIT_CUIL.FieldName = "CUIT_CUIL"
         Me.colCUIT_CUIL.Name = "colCUIT_CUIL"
-        Me.colCUIT_CUIL.Visible = True
+        Me.colCUIT_CUIL.Visible = true
         Me.colCUIT_CUIL.VisibleIndex = 1
         Me.colCUIT_CUIL.Width = 85
         '
@@ -125,7 +133,7 @@ Partial Class FrProveedores2
         '
         Me.colRazonSocial.FieldName = "RazonSocial"
         Me.colRazonSocial.Name = "colRazonSocial"
-        Me.colRazonSocial.Visible = True
+        Me.colRazonSocial.Visible = true
         Me.colRazonSocial.VisibleIndex = 2
         Me.colRazonSocial.Width = 116
         '
@@ -133,7 +141,7 @@ Partial Class FrProveedores2
         '
         Me.colNombreFantasia.FieldName = "NombreFantasia"
         Me.colNombreFantasia.Name = "colNombreFantasia"
-        Me.colNombreFantasia.Visible = True
+        Me.colNombreFantasia.Visible = true
         Me.colNombreFantasia.VisibleIndex = 3
         Me.colNombreFantasia.Width = 93
         '
@@ -141,7 +149,7 @@ Partial Class FrProveedores2
         '
         Me.colFechaAlta.FieldName = "FechaAlta"
         Me.colFechaAlta.Name = "colFechaAlta"
-        Me.colFechaAlta.Visible = True
+        Me.colFechaAlta.Visible = true
         Me.colFechaAlta.VisibleIndex = 13
         Me.colFechaAlta.Width = 58
         '
@@ -149,7 +157,7 @@ Partial Class FrProveedores2
         '
         Me.colTelefonos.FieldName = "Telefonos"
         Me.colTelefonos.Name = "colTelefonos"
-        Me.colTelefonos.Visible = True
+        Me.colTelefonos.Visible = true
         Me.colTelefonos.VisibleIndex = 7
         Me.colTelefonos.Width = 82
         '
@@ -157,7 +165,7 @@ Partial Class FrProveedores2
         '
         Me.colDomicilio.FieldName = "Domicilio"
         Me.colDomicilio.Name = "colDomicilio"
-        Me.colDomicilio.Visible = True
+        Me.colDomicilio.Visible = true
         Me.colDomicilio.VisibleIndex = 8
         Me.colDomicilio.Width = 82
         '
@@ -165,7 +173,7 @@ Partial Class FrProveedores2
         '
         Me.colLocalidad.FieldName = "Localidad"
         Me.colLocalidad.Name = "colLocalidad"
-        Me.colLocalidad.Visible = True
+        Me.colLocalidad.Visible = true
         Me.colLocalidad.VisibleIndex = 5
         Me.colLocalidad.Width = 83
         '
@@ -179,7 +187,7 @@ Partial Class FrProveedores2
         '
         Me.colProvincia.FieldName = "Provincia"
         Me.colProvincia.Name = "colProvincia"
-        Me.colProvincia.Visible = True
+        Me.colProvincia.Visible = true
         Me.colProvincia.VisibleIndex = 9
         Me.colProvincia.Width = 79
         '
@@ -187,7 +195,7 @@ Partial Class FrProveedores2
         '
         Me.colPais.FieldName = "Pais"
         Me.colPais.Name = "colPais"
-        Me.colPais.Visible = True
+        Me.colPais.Visible = true
         Me.colPais.VisibleIndex = 12
         Me.colPais.Width = 36
         '
@@ -195,7 +203,7 @@ Partial Class FrProveedores2
         '
         Me.colEmail.FieldName = "Email"
         Me.colEmail.Name = "colEmail"
-        Me.colEmail.Visible = True
+        Me.colEmail.Visible = true
         Me.colEmail.VisibleIndex = 6
         Me.colEmail.Width = 78
         '
@@ -203,7 +211,7 @@ Partial Class FrProveedores2
         '
         Me.colPaginaWeb.FieldName = "PaginaWeb"
         Me.colPaginaWeb.Name = "colPaginaWeb"
-        Me.colPaginaWeb.Visible = True
+        Me.colPaginaWeb.Visible = true
         Me.colPaginaWeb.VisibleIndex = 10
         Me.colPaginaWeb.Width = 67
         '
@@ -211,7 +219,7 @@ Partial Class FrProveedores2
         '
         Me.colObservaciones.FieldName = "Observaciones"
         Me.colObservaciones.Name = "colObservaciones"
-        Me.colObservaciones.Visible = True
+        Me.colObservaciones.Visible = true
         Me.colObservaciones.VisibleIndex = 11
         Me.colObservaciones.Width = 66
         '
@@ -219,7 +227,7 @@ Partial Class FrProveedores2
         '
         Me.colRubro.FieldName = "Rubro"
         Me.colRubro.Name = "colRubro"
-        Me.colRubro.Visible = True
+        Me.colRubro.Visible = true
         Me.colRubro.VisibleIndex = 4
         Me.colRubro.Width = 106
         '
@@ -235,7 +243,7 @@ Partial Class FrProveedores2
         Me.GridControl1.LookAndFeel.SkinName = "Money Twins"
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit2})
+        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemTextEdit4})
         Me.GridControl1.Size = New System.Drawing.Size(1045, 295)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
@@ -246,28 +254,28 @@ Partial Class FrProveedores2
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
-        Me.GridView1.OptionsCustomization.CustomizationFormSearchBoxVisible = True
+        Me.GridView1.OptionsCustomization.CustomizationFormSearchBoxVisible = true
         Me.GridView1.OptionsEditForm.EditFormColumnCount = 2
-        Me.GridView1.OptionsFind.AlwaysVisible = True
+        Me.GridView1.OptionsFind.AlwaysVisible = true
         Me.GridView1.OptionsFind.FindNullPrompt = "Ingrese el texto a buscar..."
-        Me.GridView1.OptionsMenu.EnableColumnMenu = False
-        Me.GridView1.OptionsNavigation.AutoFocusNewRow = True
-        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = True
-        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = False
+        Me.GridView1.OptionsMenu.EnableColumnMenu = false
+        Me.GridView1.OptionsNavigation.AutoFocusNewRow = true
+        Me.GridView1.OptionsNavigation.EnterMoveNextColumn = true
+        Me.GridView1.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.GridView1.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button
-        Me.GridView1.OptionsView.RowAutoHeight = True
-        Me.GridView1.OptionsView.ShowAutoFilterRow = True
-        Me.GridView1.OptionsView.ShowChildrenInGroupPanel = True
-        Me.GridView1.OptionsView.ShowFooter = True
-        Me.GridView1.OptionsView.ShowIndicator = False
+        Me.GridView1.OptionsView.RowAutoHeight = true
+        Me.GridView1.OptionsView.ShowAutoFilterRow = true
+        Me.GridView1.OptionsView.ShowChildrenInGroupPanel = true
+        Me.GridView1.OptionsView.ShowFooter = true
+        Me.GridView1.OptionsView.ShowIndicator = false
         '
         'colIdProveedor1
         '
         Me.colIdProveedor1.Caption = "ID"
         Me.colIdProveedor1.FieldName = "IdProveedor"
         Me.colIdProveedor1.Name = "colIdProveedor1"
-        Me.colIdProveedor1.OptionsColumn.FixedWidth = True
-        Me.colIdProveedor1.Visible = True
+        Me.colIdProveedor1.OptionsColumn.FixedWidth = true
+        Me.colIdProveedor1.Visible = true
         Me.colIdProveedor1.VisibleIndex = 0
         Me.colIdProveedor1.Width = 37
         '
@@ -275,23 +283,25 @@ Partial Class FrProveedores2
         '
         Me.colCUIT_CUIL1.FieldName = "CUIT_CUIL"
         Me.colCUIT_CUIL1.Name = "colCUIT_CUIL1"
-        Me.colCUIT_CUIL1.Visible = True
+        Me.colCUIT_CUIL1.Visible = true
         Me.colCUIT_CUIL1.VisibleIndex = 1
         Me.colCUIT_CUIL1.Width = 89
         '
         'colRazonSocial1
         '
+        Me.colRazonSocial1.ColumnEdit = Me.RepositoryItemTextEdit1
         Me.colRazonSocial1.FieldName = "RazonSocial"
         Me.colRazonSocial1.Name = "colRazonSocial1"
-        Me.colRazonSocial1.Visible = True
+        Me.colRazonSocial1.Visible = true
         Me.colRazonSocial1.VisibleIndex = 2
         Me.colRazonSocial1.Width = 139
         '
         'colNombreFantasia1
         '
+        Me.colNombreFantasia1.ColumnEdit = Me.RepositoryItemTextEdit2
         Me.colNombreFantasia1.FieldName = "NombreFantasia"
         Me.colNombreFantasia1.Name = "colNombreFantasia1"
-        Me.colNombreFantasia1.Visible = True
+        Me.colNombreFantasia1.Visible = true
         Me.colNombreFantasia1.VisibleIndex = 3
         Me.colNombreFantasia1.Width = 120
         '
@@ -299,7 +309,7 @@ Partial Class FrProveedores2
         '
         Me.colFechaAlta1.FieldName = "FechaAlta"
         Me.colFechaAlta1.Name = "colFechaAlta1"
-        Me.colFechaAlta1.Visible = True
+        Me.colFechaAlta1.Visible = true
         Me.colFechaAlta1.VisibleIndex = 12
         Me.colFechaAlta1.Width = 111
         '
@@ -307,7 +317,7 @@ Partial Class FrProveedores2
         '
         Me.colTelefonos1.FieldName = "Telefonos"
         Me.colTelefonos1.Name = "colTelefonos1"
-        Me.colTelefonos1.Visible = True
+        Me.colTelefonos1.Visible = true
         Me.colTelefonos1.VisibleIndex = 5
         Me.colTelefonos1.Width = 78
         '
@@ -315,7 +325,7 @@ Partial Class FrProveedores2
         '
         Me.colDomicilio1.FieldName = "Domicilio"
         Me.colDomicilio1.Name = "colDomicilio1"
-        Me.colDomicilio1.Visible = True
+        Me.colDomicilio1.Visible = true
         Me.colDomicilio1.VisibleIndex = 10
         Me.colDomicilio1.Width = 58
         '
@@ -323,7 +333,7 @@ Partial Class FrProveedores2
         '
         Me.colLocalidad1.FieldName = "Localidad"
         Me.colLocalidad1.Name = "colLocalidad1"
-        Me.colLocalidad1.Visible = True
+        Me.colLocalidad1.Visible = true
         Me.colLocalidad1.VisibleIndex = 9
         Me.colLocalidad1.Width = 77
         '
@@ -331,7 +341,7 @@ Partial Class FrProveedores2
         '
         Me.colCP1.FieldName = "CP"
         Me.colCP1.Name = "colCP1"
-        Me.colCP1.Visible = True
+        Me.colCP1.Visible = true
         Me.colCP1.VisibleIndex = 11
         Me.colCP1.Width = 58
         '
@@ -339,7 +349,7 @@ Partial Class FrProveedores2
         '
         Me.colProvincia1.FieldName = "Provincia"
         Me.colProvincia1.Name = "colProvincia1"
-        Me.colProvincia1.Visible = True
+        Me.colProvincia1.Visible = true
         Me.colProvincia1.VisibleIndex = 8
         Me.colProvincia1.Width = 68
         '
@@ -347,15 +357,16 @@ Partial Class FrProveedores2
         '
         Me.colPais1.FieldName = "Pais"
         Me.colPais1.Name = "colPais1"
-        Me.colPais1.Visible = True
+        Me.colPais1.Visible = true
         Me.colPais1.VisibleIndex = 7
         Me.colPais1.Width = 82
         '
         'colEmail1
         '
+        Me.colEmail1.ColumnEdit = Me.RepositoryItemTextEdit3
         Me.colEmail1.FieldName = "Email"
         Me.colEmail1.Name = "colEmail1"
-        Me.colEmail1.Visible = True
+        Me.colEmail1.Visible = true
         Me.colEmail1.VisibleIndex = 6
         Me.colEmail1.Width = 107
         '
@@ -373,15 +384,16 @@ Partial Class FrProveedores2
         '
         'colRubro1
         '
+        Me.colRubro1.ColumnEdit = Me.RepositoryItemTextEdit4
         Me.colRubro1.FieldName = "Rubro"
         Me.colRubro1.Name = "colRubro1"
-        Me.colRubro1.Visible = True
+        Me.colRubro1.Visible = true
         Me.colRubro1.VisibleIndex = 4
         Me.colRubro1.Width = 121
         '
         'RepositoryItemGridLookUpEdit1
         '
-        Me.RepositoryItemGridLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemGridLookUpEdit1.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemGridLookUpEdit1.DataSource = Me.Paises
         Me.RepositoryItemGridLookUpEdit1.DisplayMember = "Pais"
@@ -393,12 +405,12 @@ Partial Class FrProveedores2
         '
         Me.RepositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.RepositoryItemGridLookUpEdit1View.Name = "RepositoryItemGridLookUpEdit1View"
-        Me.RepositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.RepositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = False
+        Me.RepositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false
         '
         'RepositoryItemGridLookUpEdit2
         '
-        Me.RepositoryItemGridLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemGridLookUpEdit2.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemGridLookUpEdit2.DataSource = Me.Rubros
         Me.RepositoryItemGridLookUpEdit2.DisplayMember = "Rubro"
@@ -410,8 +422,8 @@ Partial Class FrProveedores2
         '
         Me.RepositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.RepositoryItemGridLookUpEdit2View.Name = "RepositoryItemGridLookUpEdit2View"
-        Me.RepositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = False
-        Me.RepositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = False
+        Me.RepositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false
         '
         'BarManager1
         '
@@ -433,9 +445,9 @@ Partial Class FrProveedores2
         Me.Bar3.DockRow = 0
         Me.Bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom
         Me.Bar3.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem1), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem2), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem5), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem6), New DevExpress.XtraBars.LinkPersistInfo(Me.BarButtonItem7)})
-        Me.Bar3.OptionsBar.AllowQuickCustomization = False
-        Me.Bar3.OptionsBar.DrawDragBorder = False
-        Me.Bar3.OptionsBar.UseWholeRow = True
+        Me.Bar3.OptionsBar.AllowQuickCustomization = false
+        Me.Bar3.OptionsBar.DrawDragBorder = false
+        Me.Bar3.OptionsBar.UseWholeRow = true
         Me.Bar3.Text = "Status bar"
         '
         'BarButtonItem1
@@ -482,28 +494,28 @@ Partial Class FrProveedores2
         '
         'barDockControlTop
         '
-        Me.barDockControlTop.CausesValidation = False
+        Me.barDockControlTop.CausesValidation = false
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlTop.Size = New System.Drawing.Size(1045, 0)
         '
         'barDockControlBottom
         '
-        Me.barDockControlBottom.CausesValidation = False
+        Me.barDockControlBottom.CausesValidation = false
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.barDockControlBottom.Location = New System.Drawing.Point(0, 295)
         Me.barDockControlBottom.Size = New System.Drawing.Size(1045, 24)
         '
         'barDockControlLeft
         '
-        Me.barDockControlLeft.CausesValidation = False
+        Me.barDockControlLeft.CausesValidation = false
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 0)
         Me.barDockControlLeft.Size = New System.Drawing.Size(0, 295)
         '
         'barDockControlRight
         '
-        Me.barDockControlRight.CausesValidation = False
+        Me.barDockControlRight.CausesValidation = false
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(1045, 0)
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 295)
@@ -513,34 +525,62 @@ Partial Class FrProveedores2
         Me.WorkspaceManager1.TargetControl = Me
         Me.WorkspaceManager1.TransitionType = PushTransition1
         '
+        'RepositoryItemTextEdit1
+        '
+        Me.RepositoryItemTextEdit1.AutoHeight = false
+        Me.RepositoryItemTextEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit1.Name = "RepositoryItemTextEdit1"
+        '
+        'RepositoryItemTextEdit2
+        '
+        Me.RepositoryItemTextEdit2.AutoHeight = false
+        Me.RepositoryItemTextEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit2.Name = "RepositoryItemTextEdit2"
+        '
+        'RepositoryItemTextEdit3
+        '
+        Me.RepositoryItemTextEdit3.AutoHeight = false
+        Me.RepositoryItemTextEdit3.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
+        Me.RepositoryItemTextEdit3.Name = "RepositoryItemTextEdit3"
+        '
+        'RepositoryItemTextEdit4
+        '
+        Me.RepositoryItemTextEdit4.AutoHeight = false
+        Me.RepositoryItemTextEdit4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit4.Name = "RepositoryItemTextEdit4"
+        '
         'FrProveedores2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSize = True
+        Me.AutoSize = true
         Me.ClientSize = New System.Drawing.Size(1045, 319)
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.barDockControlLeft)
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "FrProveedores2"
         Me.Text = "PROVEEDORES"
-        CType(Me.Proveedores, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Paises, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Rubros, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemGridLookUpEdit2View, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.Proveedores,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Paises,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Rubros,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit2View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.BarManager1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit3,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents Proveedores As DevExpress.Xpo.XPCollection
     Friend WithEvents Paises As DevExpress.Xpo.XPCollection
     Friend WithEvents Rubros As DevExpress.Xpo.XPCollection
@@ -595,4 +635,8 @@ Partial Class FrProveedores2
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents WorkspaceManager1 As DevExpress.Utils.WorkspaceManager
+    Friend WithEvents RepositoryItemTextEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents RepositoryItemTextEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents RepositoryItemTextEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents RepositoryItemTextEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
 End Class

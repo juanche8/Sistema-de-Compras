@@ -168,7 +168,7 @@ Partial Public Class RpODC
         Me.XrLabel38.StylePriority.UseTextAlignment = false
         XrSummary1.Func = DevExpress.XtraReports.UI.SummaryFunc.Custom
         Me.XrLabel38.Summary = XrSummary1
-        Me.XrLabel38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        Me.XrLabel38.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight
         '
         'XrLabel9
         '
@@ -178,6 +178,8 @@ Partial Public Class RpODC
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         Me.XrLabel9.SizeF = New System.Drawing.SizeF(53.75!, 23!)
+        Me.XrLabel9.StylePriority.UseTextAlignment = false
+        Me.XrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'XrLabel2
         '
@@ -216,6 +218,8 @@ Partial Public Class RpODC
         Me.XrLabel19.Name = "XrLabel19"
         Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         Me.XrLabel19.SizeF = New System.Drawing.SizeF(89.71277!, 23!)
+        Me.XrLabel19.StylePriority.UseTextAlignment = false
+        Me.XrLabel19.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'XrLabel33
         '
@@ -239,7 +243,7 @@ Partial Public Class RpODC
         '
         Me.TopMargin.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.RFTEXTUREBANNER, Me.FIRELANDBANNER, Me.XrLabel17, Me.XrLabel26, Me.XrLabel23, Me.XrLabel22, Me.XrPictureBox1})
         Me.TopMargin.Dpi = 100!
-        Me.TopMargin.HeightF = 174.9168!
+        Me.TopMargin.HeightF = 179.2502!
         Me.TopMargin.Name = "TopMargin"
         Me.TopMargin.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100!)
         Me.TopMargin.StylePriority.UseTextAlignment = false
@@ -250,7 +254,7 @@ Partial Public Class RpODC
         Me.RFTEXTUREBANNER.AutoWidth = true
         Me.RFTEXTUREBANNER.Dpi = 100!
         Me.RFTEXTUREBANNER.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.RFTEXTUREBANNER.LocationFloat = New DevExpress.Utils.PointFloat(22.91671!, 93.66671!)
+        Me.RFTEXTUREBANNER.LocationFloat = New DevExpress.Utils.PointFloat(10.04186!, 93.66671!)
         Me.RFTEXTUREBANNER.Multiline = true
         Me.RFTEXTUREBANNER.Name = "RFTEXTUREBANNER"
         Me.RFTEXTUREBANNER.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
@@ -266,7 +270,7 @@ Partial Public Class RpODC
         Me.FIRELANDBANNER.AutoWidth = true
         Me.FIRELANDBANNER.Dpi = 100!
         Me.FIRELANDBANNER.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.FIRELANDBANNER.LocationFloat = New DevExpress.Utils.PointFloat(22.91671!, 93.66671!)
+        Me.FIRELANDBANNER.LocationFloat = New DevExpress.Utils.PointFloat(10.04186!, 98.54173!)
         Me.FIRELANDBANNER.Multiline = true
         Me.FIRELANDBANNER.Name = "FIRELANDBANNER"
         Me.FIRELANDBANNER.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
@@ -282,14 +286,14 @@ Partial Public Class RpODC
         Me.XrLabel17.AutoWidth = true
         Me.XrLabel17.Dpi = 100!
         Me.XrLabel17.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(37.50002!, 93.66671!)
+        Me.XrLabel17.LocationFloat = New DevExpress.Utils.PointFloat(0!, 93.66671!)
         Me.XrLabel17.Multiline = true
         Me.XrLabel17.Name = "XrLabel17"
         Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel17.SizeF = New System.Drawing.SizeF(214.5833!, 57.7084!)
+        Me.XrLabel17.SizeF = New System.Drawing.SizeF(248.5781!, 57.7084!)
         Me.XrLabel17.StylePriority.UseFont = false
         Me.XrLabel17.StylePriority.UseTextAlignment = false
-        Me.XrLabel17.Text = "RANAWEL S.A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Valentin Virasero 1865 - C1414CDO  Buenos Aires"
+        Me.XrLabel17.Text = "RANAWEL S.A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Valentín Virasoro 1867 "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"C1414CDO - Buenos Aires"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"33-71069024-9"
         Me.XrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrLabel17.Visible = false
         '
@@ -308,7 +312,7 @@ Partial Public Class RpODC
         Me.XrLabel23.AutoWidth = true
         Me.XrLabel23.Dpi = 100!
         Me.XrLabel23.Font = New System.Drawing.Font("Times New Roman", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(22.91671!, 93.66671!)
+        Me.XrLabel23.LocationFloat = New DevExpress.Utils.PointFloat(10.04186!, 93.66671!)
         Me.XrLabel23.Multiline = true
         Me.XrLabel23.Name = "XrLabel23"
         Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
@@ -623,7 +627,7 @@ Partial Public Class RpODC
         '
         Me.XrLabel16.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "VistaODC.Email")})
         Me.XrLabel16.Dpi = 100!
-        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(95.45862!, 60.05469!)
+        Me.XrLabel16.LocationFloat = New DevExpress.Utils.PointFloat(95.45854!, 57.21796!)
         Me.XrLabel16.Name = "XrLabel16"
         Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         Me.XrLabel16.SizeF = New System.Drawing.SizeF(221.2499!, 14.78365!)
@@ -960,7 +964,7 @@ Partial Public Class RpODC
         Me.DataMember = "VistaODC"
         Me.DataSource = Me.SqlDataSource1
         Me.FormattingRuleSheet.AddRange(New DevExpress.XtraReports.UI.FormattingRule() {Me.FormattingRule1})
-        Me.Margins = New System.Drawing.Printing.Margins(100, 99, 175, 115)
+        Me.Margins = New System.Drawing.Printing.Margins(100, 99, 179, 115)
         Me.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic
         Me.ScriptsSource = ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Private Sub XrLabel38_BeforePrint(ByVal sender As Object, ByVal e As System.Dra"& _ 
     "wing.Printing.PrintEventArgs)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"End Sub"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)

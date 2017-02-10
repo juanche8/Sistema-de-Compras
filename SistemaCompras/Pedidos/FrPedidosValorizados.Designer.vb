@@ -748,8 +748,8 @@ Partial Class FrPedidosValorizados
         Me.ComboBoxEdit1.Location = New System.Drawing.Point(728, 46)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit1.Properties.DropDownRows = 10
-        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Alejandro Goral", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez", "Omar Martin", "Claudia Quiroga", "Gustavo Fernandez"})
+        Me.ComboBoxEdit1.Properties.DropDownRows = 11
+        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Alejandro Goral", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez", "Omar Martin", "Claudia Quiroga", "Gustavo Fernandez", "Adriana Feas"})
         Me.ComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ComboBoxEdit1.Size = New System.Drawing.Size(132, 20)
         Me.ComboBoxEdit1.TabIndex = 8
@@ -833,6 +833,7 @@ Partial Class FrPedidosValorizados
         '
         Me.RepositoryItemGridLookUpEdit6.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit6.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemGridLookUpEdit6.DataSource = Me.Productos
         Me.RepositoryItemGridLookUpEdit6.DisplayMember = "Producto"
         Me.RepositoryItemGridLookUpEdit6.Name = "RepositoryItemGridLookUpEdit6"
@@ -878,6 +879,7 @@ Partial Class FrPedidosValorizados
         '
         Me.RepositoryItemGridLookUpEdit9.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit9.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemGridLookUpEdit9.DataSource = Me.PreciosProductos
         Me.RepositoryItemGridLookUpEdit9.DisplayMember = "RazonSocial"
         Me.RepositoryItemGridLookUpEdit9.Name = "RepositoryItemGridLookUpEdit9"
