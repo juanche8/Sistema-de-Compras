@@ -748,8 +748,8 @@ Partial Class FrPedidosValorizados
         Me.ComboBoxEdit1.Location = New System.Drawing.Point(728, 46)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.ComboBoxEdit1.Properties.DropDownRows = 10
-        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Alejandro Goral", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez", "Omar Martin", "Claudia Quiroga", "Gustavo Fernandez"})
+        Me.ComboBoxEdit1.Properties.DropDownRows = 11
+        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"", "Martin Pais", "Monica Lattarulo", "Alejandro Goral", "Paulo Gregoretti", "Ariel Ferrari", "Roxana Fernandez", "Omar Martin", "Claudia Quiroga", "Gustavo Fernandez", "Adriana Feas"})
         Me.ComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
         Me.ComboBoxEdit1.Size = New System.Drawing.Size(132, 20)
         Me.ComboBoxEdit1.TabIndex = 8

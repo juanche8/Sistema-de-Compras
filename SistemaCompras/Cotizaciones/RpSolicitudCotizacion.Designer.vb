@@ -74,7 +74,7 @@ Partial Public Class RpSolicitudCotizacion
         '
         Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel12, Me.XrLabel6, Me.XrLabel5, Me.XrLabel7, Me.XrLabel8})
         Me.Detail.Dpi = 100!
-        Me.Detail.HeightF = 33.10157!
+        Me.Detail.HeightF = 34.89584!
         Me.Detail.Name = "Detail"
         Me.Detail.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100!)
         Me.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
@@ -100,7 +100,7 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrLabel6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "VistaPedidosDetalle.Obsb1")})
         Me.XrLabel6.Dpi = 100!
         Me.XrLabel6.Font = New System.Drawing.Font("Times New Roman", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(303.0236!, 2.66926!)
+        Me.XrLabel6.LocationFloat = New DevExpress.Utils.PointFloat(314.2218!, 2.669266!)
         Me.XrLabel6.Multiline = true
         Me.XrLabel6.Name = "XrLabel6"
         Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
@@ -122,7 +122,7 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "VistaPedidosDetalle.Cantidad", "{0:#}")})
         Me.XrLabel5.Dpi = 100!
         Me.XrLabel5.Font = New System.Drawing.Font("Times New Roman", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(222.3568!, 2.669263!)
+        Me.XrLabel5.LocationFloat = New DevExpress.Utils.PointFloat(233.5551!, 3.143265!)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         Me.XrLabel5.SizeF = New System.Drawing.SizeF(80.66672!, 26.99998!)
@@ -143,11 +143,11 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrLabel7.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "VistaPedidosDetalle.Producto")})
         Me.XrLabel7.Dpi = 100!
         Me.XrLabel7.Font = New System.Drawing.Font("Times New Roman", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(12.08334!, 3.143262!)
+        Me.XrLabel7.LocationFloat = New DevExpress.Utils.PointFloat(12.08333!, 3.143265!)
         Me.XrLabel7.Multiline = true
         Me.XrLabel7.Name = "XrLabel7"
         Me.XrLabel7.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
-        Me.XrLabel7.SizeF = New System.Drawing.SizeF(210.2735!, 19.95831!)
+        Me.XrLabel7.SizeF = New System.Drawing.SizeF(221.4717!, 26.52597!)
         Me.XrLabel7.StyleName = "DataField"
         Me.XrLabel7.StylePriority.UseBackColor = false
         Me.XrLabel7.StylePriority.UseBorderDashStyle = false
@@ -222,7 +222,7 @@ Partial Public Class RpSolicitudCotizacion
         'XrLabel1
         '
         Me.XrLabel1.Dpi = 100!
-        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(222.3568!, 100.2084!)
+        Me.XrLabel1.LocationFloat = New DevExpress.Utils.PointFloat(233.5551!, 100.2084!)
         Me.XrLabel1.Name = "XrLabel1"
         Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         Me.XrLabel1.SizeF = New System.Drawing.SizeF(80.66669!, 18.00001!)
@@ -232,7 +232,7 @@ Partial Public Class RpSolicitudCotizacion
         'XrLabel2
         '
         Me.XrLabel2.Dpi = 100!
-        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(303.0235!, 100.2084!)
+        Me.XrLabel2.LocationFloat = New DevExpress.Utils.PointFloat(314.2218!, 100.2084!)
         Me.XrLabel2.Name = "XrLabel2"
         Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100!)
         Me.XrLabel2.SizeF = New System.Drawing.SizeF(247.2469!, 18!)
@@ -386,7 +386,7 @@ Partial Public Class RpSolicitudCotizacion
         Me.XrCrossBandBox1.BorderWidth = 2!
         Me.XrCrossBandBox1.Dpi = 100!
         Me.XrCrossBandBox1.EndBand = Me.Detail
-        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(10!, 32.22659!)
+        Me.XrCrossBandBox1.EndPointFloat = New DevExpress.Utils.PointFloat(10!, 34.02086!)
         Me.XrCrossBandBox1.LocationFloat = New DevExpress.Utils.PointFloat(10!, 0.5859532!)
         Me.XrCrossBandBox1.Name = "XrCrossBandBox1"
         Me.XrCrossBandBox1.StartBand = Me.Detail
@@ -397,7 +397,7 @@ Partial Public Class RpSolicitudCotizacion
         '
         Me.XrCrossBandLine1.Dpi = 100!
         Me.XrCrossBandLine1.EndBand = Me.Detail
-        Me.XrCrossBandLine1.EndPointFloat = New DevExpress.Utils.PointFloat(822.3336!, 30.14326!)
+        Me.XrCrossBandLine1.EndPointFloat = New DevExpress.Utils.PointFloat(822.3336!, 31.93753!)
         Me.XrCrossBandLine1.LocationFloat = New DevExpress.Utils.PointFloat(822.3336!, 0.5859408!)
         Me.XrCrossBandLine1.Name = "XrCrossBandLine1"
         Me.XrCrossBandLine1.StartBand = Me.Detail
@@ -408,7 +408,7 @@ Partial Public Class RpSolicitudCotizacion
         '
         Me.XrCrossBandLine2.Dpi = 100!
         Me.XrCrossBandLine2.EndBand = Me.Detail
-        Me.XrCrossBandLine2.EndPointFloat = New DevExpress.Utils.PointFloat(706.6671!, 30.26671!)
+        Me.XrCrossBandLine2.EndPointFloat = New DevExpress.Utils.PointFloat(706.6671!, 32.06098!)
         Me.XrCrossBandLine2.LocationFloat = New DevExpress.Utils.PointFloat(706.6671!, 2.669262!)
         Me.XrCrossBandLine2.Name = "XrCrossBandLine2"
         Me.XrCrossBandLine2.StartBand = Me.Detail

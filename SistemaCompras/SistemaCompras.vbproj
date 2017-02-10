@@ -454,6 +454,10 @@
       <DependentUpon>Stock.vb</DependentUpon>
     </Compile>
     <Compile Include="ORMDataModel1Code\Stock.vb" />
+    <Compile Include="ORMDataModel1Code\SubRubros.Designer.vb">
+      <DependentUpon>SubRubros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\SubRubros.vb" />
     <Compile Include="ORMDataModel1Code\SubSector.Designer.vb">
       <DependentUpon>SubSector.vb</DependentUpon>
     </Compile>
@@ -689,6 +693,7 @@
     <Compile Include="ZipArchive.vb" />
     <EmbeddedResource Include="Cotizaciones\FrNuevoItem.resx">
       <DependentUpon>FrNuevoItem.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Cotizaciones\FrPresupuestos.resx">
       <DependentUpon>FrPresupuestos.vb</DependentUpon>

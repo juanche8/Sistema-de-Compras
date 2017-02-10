@@ -702,6 +702,7 @@ Partial Class FrPedidos
         '
         'XpColProductos
         '
+        Me.XpColProductos.DisplayableProperties = "This;Id;Rubro;Subrubro;Producto;Marca;Presentacion;ObservProducto"
         Me.XpColProductos.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Productos)
         '
         'RepositoryItemGridLookUpEdit1View

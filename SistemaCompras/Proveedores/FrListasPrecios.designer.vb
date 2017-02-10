@@ -244,8 +244,6 @@
         Me.colPrecioBase.ColumnEdit = Me.RepositoryItemSpinEdit1
         Me.colPrecioBase.FieldName = "PrecioBase"
         Me.colPrecioBase.Name = "colPrecioBase"
-        Me.colPrecioBase.Visible = true
-        Me.colPrecioBase.VisibleIndex = 2
         Me.colPrecioBase.Width = 67
         '
         'RepositoryItemSpinEdit1
@@ -261,7 +259,7 @@
         Me.colPrecioUnitario.FieldName = "PrecioUnitario"
         Me.colPrecioUnitario.Name = "colPrecioUnitario"
         Me.colPrecioUnitario.Visible = true
-        Me.colPrecioUnitario.VisibleIndex = 3
+        Me.colPrecioUnitario.VisibleIndex = 2
         Me.colPrecioUnitario.Width = 86
         '
         'RepositoryItemSpinEdit2
@@ -275,8 +273,6 @@
         Me.colDescuento.ColumnEdit = Me.RepositoryItemSpinEdit3
         Me.colDescuento.FieldName = "Descuento"
         Me.colDescuento.Name = "colDescuento"
-        Me.colDescuento.Visible = true
-        Me.colDescuento.VisibleIndex = 5
         Me.colDescuento.Width = 76
         '
         'RepositoryItemSpinEdit3
@@ -292,7 +288,7 @@
         Me.colFechaModificacion.FieldName = "FechaModificacion"
         Me.colFechaModificacion.Name = "colFechaModificacion"
         Me.colFechaModificacion.Visible = true
-        Me.colFechaModificacion.VisibleIndex = 6
+        Me.colFechaModificacion.VisibleIndex = 4
         Me.colFechaModificacion.Width = 109
         '
         'RepositoryItemDateEdit1
@@ -308,7 +304,7 @@
         Me.colMoneda.FieldName = "Moneda"
         Me.colMoneda.Name = "colMoneda"
         Me.colMoneda.Visible = true
-        Me.colMoneda.VisibleIndex = 7
+        Me.colMoneda.VisibleIndex = 5
         Me.colMoneda.Width = 68
         '
         'RepositoryItemGridLookUpEdit3
@@ -340,7 +336,7 @@
         Me.colObservaciones.FieldName = "Observaciones"
         Me.colObservaciones.Name = "colObservaciones"
         Me.colObservaciones.Visible = true
-        Me.colObservaciones.VisibleIndex = 8
+        Me.colObservaciones.VisibleIndex = 6
         Me.colObservaciones.Width = 175
         '
         'GridColumn2
@@ -350,7 +346,7 @@
         Me.GridColumn2.FieldName = "Iva"
         Me.GridColumn2.Name = "GridColumn2"
         Me.GridColumn2.Visible = true
-        Me.GridColumn2.VisibleIndex = 4
+        Me.GridColumn2.VisibleIndex = 3
         '
         'RepositoryItemGridLookUpEdit4
         '

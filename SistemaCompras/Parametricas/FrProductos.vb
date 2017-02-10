@@ -8,13 +8,13 @@ Imports DevExpress.XtraGrid.Views.Grid
 
 Partial Public Class FrProductos
     Inherits XtraForm
-   
+
     Public Session1 As Session = XpoHelper.GetNewSession()
     Public Sub New()
         InitializeComponent()
 
     End Sub
-    
+
     'Sub valida_letras()
     '    Dim StrValido As String
     '    Dim Ini_Tecla As String
@@ -149,7 +149,7 @@ Partial Public Class FrProductos
 
     Private Sub FrProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Idprod = Nothing then
-
+            subru.Session = Session1
             Productos.Session = Session1
             Rubros.Session = Session1
             Productos.reload
@@ -162,6 +162,10 @@ Partial Public Class FrProductos
                 Productos.CriteriaString = "Rubro =  'SISTEMAS' or Rubro = 'FERRETERIA'"
                 '  XpColProductos.CriteriaString = "Rubro =  'FERRETERIA'"
             End If
+            If Cotiza <> 3 and Cotiza <> 1 Then   '' solo nivel 2 agrega subrubros y rubros
+               Me.colSubrubro.ColumnEdit = Me.RepositoryItemLookUpEdit1
+            End if
+
         else
             Productos.Session = Session1
             Rubros.Session = Session1
@@ -170,11 +174,12 @@ Partial Public Class FrProductos
         'Idprod = Nothing
     End Sub
 
-    Private Sub gridControl_KeyPress(sender As Object, e As KeyPressEventArgs) Handles gridControl.KeyPress
-        
-    End Sub
 
-    Private Sub gridView_EditFormShowing(sender As Object, e As DevExpress.XtraGrid.Views.Grid.EditFormShowingEventArgs) Handles gridView.EditFormShowing
-
+    Private Sub gridControl_MouseDown(sender As Object, e As MouseEventArgs) Handles gridControl.MouseDown
+        Dim view As GridView = TryCast(sender, GridView)
+        If Cotiza <> 3 AndAlso e.Clicks = 2 Then
+            
+            
+        End If
     End Sub
 End Class

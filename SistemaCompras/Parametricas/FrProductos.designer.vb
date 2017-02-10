@@ -37,6 +37,9 @@
         Me.Rubros = New DevExpress.Xpo.XPCollection(Me.components)
         Me.RepositoryItemGridLookUpEdit1View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colSubrubro = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemGridLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.subru = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.RepositoryItemGridLookUpEdit2View = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colCodigoProducto = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemTextEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.colProducto = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -44,9 +47,13 @@
         Me.colMarca = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemTextEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         Me.colPresentacion = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemMemoEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit()
+        Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.colObservaciones = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemMemoEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit()
+        Me.RepositoryItemMemoEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit()
+        Me.RepositoryItemTextEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
         Me.LayoutView1 = New DevExpress.XtraGrid.Views.Layout.LayoutView()
         Me.LayoutViewCard1 = New DevExpress.XtraGrid.Views.Layout.LayoutViewCard()
         Me.layoutControlGroup = New DevExpress.XtraLayout.LayoutControlGroup()
@@ -56,7 +63,6 @@
         Me.windowsUIButtonPanel = New DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel()
         Me.FormAssistant1 = New DevExpress.XtraBars.FormAssistant()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
-        Me.RepositoryItemTextEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemTextEdit()
         CType(Me.layoutControl,System.ComponentModel.ISupportInitialize).BeginInit
         Me.layoutControl.SuspendLayout
         CType(Me.CheckEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -66,18 +72,24 @@
         CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Rubros,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.subru,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit2View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemTextEdit3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RepositoryItemMemoEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemComboBox1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemMemoEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemMemoEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemLookUpEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemRadioGroup1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutViewCard1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.layoutControlGroup,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.itemLabel,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.itemGrid,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LayoutControlItem1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'layoutControl
@@ -126,7 +138,7 @@
         Me.gridControl.Location = New System.Drawing.Point(40, 57)
         Me.gridControl.MainView = Me.gridView
         Me.gridControl.Name = "gridControl"
-        Me.gridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemMemoEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemMemoEdit2, Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemTextEdit4})
+        Me.gridControl.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemMemoEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemTextEdit2, Me.RepositoryItemTextEdit3, Me.RepositoryItemMemoEdit2, Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemTextEdit4, Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemRadioGroup1, Me.RepositoryItemComboBox1})
         Me.gridControl.Size = New System.Drawing.Size(988, 307)
         Me.gridControl.TabIndex = 2
         Me.gridControl.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridView, Me.LayoutView1})
@@ -140,6 +152,7 @@
         Me.gridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdProducto, Me.colRubro, Me.colSubrubro, Me.colCodigoProducto, Me.colProducto, Me.colMarca, Me.colPresentacion, Me.colObservaciones})
         Me.gridView.GridControl = Me.gridControl
         Me.gridView.Name = "gridView"
+        Me.gridView.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
         Me.gridView.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
         Me.gridView.OptionsCustomization.AllowColumnMoving = false
         Me.gridView.OptionsCustomization.AllowGroup = false
@@ -191,24 +204,54 @@
         '
         'Rubros
         '
-        Me.Rubros.DisplayableProperties = "IdRubro;Rubro;Subrubro"
+        Me.Rubros.DisplayableProperties = "Rubro"
         Me.Rubros.ObjectType = GetType(SistemaCompras.MontagneAdministracion.Rubros)
+        Me.Rubros.Sorting.AddRange(New DevExpress.Xpo.SortProperty() {New DevExpress.Xpo.SortProperty("[Rubro]", DevExpress.Xpo.DB.SortingDirection.Ascending)})
         '
         'RepositoryItemGridLookUpEdit1View
         '
         Me.RepositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.RepositoryItemGridLookUpEdit1View.Name = "RepositoryItemGridLookUpEdit1View"
+        Me.RepositoryItemGridLookUpEdit1View.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
         Me.RepositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.RepositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false
         '
         'colSubrubro
         '
-        Me.colSubrubro.ColumnEdit = Me.RepositoryItemTextEdit4
+        Me.colSubrubro.ColumnEdit = Me.RepositoryItemGridLookUpEdit2
         Me.colSubrubro.FieldName = "Subrubro"
         Me.colSubrubro.Name = "colSubrubro"
+        Me.colSubrubro.OptionsEditForm.StartNewRow = true
         Me.colSubrubro.Visible = true
         Me.colSubrubro.VisibleIndex = 3
         Me.colSubrubro.Width = 117
+        '
+        'RepositoryItemGridLookUpEdit2
+        '
+        Me.RepositoryItemGridLookUpEdit2.AutoHeight = false
+        Me.RepositoryItemGridLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemGridLookUpEdit2.DataSource = Me.subru
+        Me.RepositoryItemGridLookUpEdit2.DisplayMember = "SubRubro"
+        Me.RepositoryItemGridLookUpEdit2.Name = "RepositoryItemGridLookUpEdit2"
+        Me.RepositoryItemGridLookUpEdit2.NullText = ""
+        Me.RepositoryItemGridLookUpEdit2.ValueMember = "SubRubro"
+        Me.RepositoryItemGridLookUpEdit2.View = Me.RepositoryItemGridLookUpEdit2View
+        '
+        'subru
+        '
+        Me.subru.DisplayableProperties = "SubRubro"
+        Me.subru.ObjectType = GetType(SistemaCompras.MontagneAdministracion.SubRubros)
+        '
+        'RepositoryItemGridLookUpEdit2View
+        '
+        Me.RepositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.RepositoryItemGridLookUpEdit2View.Name = "RepositoryItemGridLookUpEdit2View"
+        Me.RepositoryItemGridLookUpEdit2View.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.[True]
+        Me.RepositoryItemGridLookUpEdit2View.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm
+        Me.RepositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit2View.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
+        Me.RepositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false
         '
         'colCodigoProducto
         '
@@ -257,18 +300,20 @@
         '
         'colPresentacion
         '
-        Me.colPresentacion.ColumnEdit = Me.RepositoryItemMemoEdit2
+        Me.colPresentacion.ColumnEdit = Me.RepositoryItemComboBox1
         Me.colPresentacion.FieldName = "Presentacion"
         Me.colPresentacion.Name = "colPresentacion"
         Me.colPresentacion.Visible = true
         Me.colPresentacion.VisibleIndex = 5
         Me.colPresentacion.Width = 151
         '
-        'RepositoryItemMemoEdit2
+        'RepositoryItemComboBox1
         '
-        Me.RepositoryItemMemoEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RepositoryItemMemoEdit2.MaxLength = 250
-        Me.RepositoryItemMemoEdit2.Name = "RepositoryItemMemoEdit2"
+        Me.RepositoryItemComboBox1.AutoHeight = false
+        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemComboBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"METROS", "LITROS", "CENTIMETROS", "MILILITROS", "UNIDAD", "KILOS"})
+        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
         '
         'colObservaciones
         '
@@ -284,6 +329,34 @@
         '
         Me.RepositoryItemMemoEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.RepositoryItemMemoEdit1.Name = "RepositoryItemMemoEdit1"
+        '
+        'RepositoryItemMemoEdit2
+        '
+        Me.RepositoryItemMemoEdit2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemMemoEdit2.MaxLength = 250
+        Me.RepositoryItemMemoEdit2.Name = "RepositoryItemMemoEdit2"
+        '
+        'RepositoryItemTextEdit4
+        '
+        Me.RepositoryItemTextEdit4.AutoHeight = false
+        Me.RepositoryItemTextEdit4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemTextEdit4.Name = "RepositoryItemTextEdit4"
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = false
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemLookUpEdit1.DataSource = Me.subru
+        Me.RepositoryItemLookUpEdit1.DisplayMember = "SubRubro"
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        Me.RepositoryItemLookUpEdit1.NullText = ""
+        Me.RepositoryItemLookUpEdit1.ValueMember = "SubRubro"
+        '
+        'RepositoryItemRadioGroup1
+        '
+        Me.RepositoryItemRadioGroup1.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "1"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "2"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "3"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "4"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "5")})
+        Me.RepositoryItemRadioGroup1.Name = "RepositoryItemRadioGroup1"
         '
         'LayoutView1
         '
@@ -373,12 +446,6 @@
         '
         Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
-        'RepositoryItemTextEdit4
-        '
-        Me.RepositoryItemTextEdit4.AutoHeight = false
-        Me.RepositoryItemTextEdit4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RepositoryItemTextEdit4.Name = "RepositoryItemTextEdit4"
-        '
         'FrProductos
         '
         Me.Appearance.BackColor = System.Drawing.Color.White
@@ -399,18 +466,24 @@
         CType(Me.RepositoryItemGridLookUpEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Rubros,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit1View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.subru,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit2View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemTextEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemTextEdit2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemTextEdit3,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RepositoryItemMemoEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemComboBox1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemMemoEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemMemoEdit2,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemLookUpEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemRadioGroup1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutView1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutViewCard1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.layoutControlGroup,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.itemLabel,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.itemGrid,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LayoutControlItem1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RepositoryItemTextEdit4,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
 
 End Sub
@@ -449,4 +522,10 @@ End Sub
     Friend WithEvents CheckEdit1 As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents RepositoryItemTextEdit4 As DevExpress.XtraEditors.Repository.RepositoryItemTextEdit
+    Friend WithEvents subru As DevExpress.Xpo.XPCollection
+    Friend WithEvents RepositoryItemGridLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
+    Friend WithEvents RepositoryItemGridLookUpEdit2View As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RepositoryItemRadioGroup1 As DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup
+    Friend WithEvents RepositoryItemComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
 End Class

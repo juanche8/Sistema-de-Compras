@@ -364,5 +364,13 @@
         <elementListCompartment Id="0b027574-fe70-41d0-866f-2df191d6ec04" absoluteBounds="10.14, 22.347985026041666, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </xpObjectShape>
+    <xpObjectShape Id="bbccef25-7dc3-43d0-855c-e8c6a280004b" absoluteBounds="16.125, 20.75, 1.5, 1.5627718098958354">
+      <xpObjectMoniker Id="29ef49e4-e576-4757-b3d5-1f18958b53f4" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d4e6a34-8833-4f60-9fa9-d1c34cb8db53" absoluteBounds="16.14, 21.06, 1.4700000000000002, 0.63399251302083326" name="Fields" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="de99081c-203b-467a-836d-83955164d1e5" absoluteBounds="16.14, 21.703992513020832, 1.4700000000000002, 0.2493896484375" name="Indexes" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60c61c72-fba7-4013-939e-85ef30f71e52" absoluteBounds="16.14, 21.963382161458334, 1.4700000000000002, 0.2493896484375" name="Collections" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </xpObjectShape>
   </nestedChildShapes>
 </visualDesignerDiagram>
