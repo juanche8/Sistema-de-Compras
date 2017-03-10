@@ -40,6 +40,7 @@ Partial Class LoginForm1
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
         Me.AlertControl1 = New DevExpress.XtraBars.Alerter.AlertControl(Me.components)
+        Me.count = New DevExpress.XtraEditors.LabelControl()
         CType(Me.LogoPictureBox,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Username.Properties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Password.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -116,6 +117,15 @@ Partial Class LoginForm1
         '
         Me.DefaultLookAndFeel1.LookAndFeel.SkinName = "Money Twins"
         '
+        'count
+        '
+        Me.count.Location = New System.Drawing.Point(88, 4)
+        Me.count.Name = "count"
+        Me.count.Size = New System.Drawing.Size(6, 13)
+        Me.count.TabIndex = 6
+        Me.count.Text = "0"
+        Me.count.Visible = false
+        '
         'LoginForm1
         '
         Me.AcceptButton = Me.OK
@@ -123,6 +133,7 @@ Partial Class LoginForm1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
         Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.Controls.Add(Me.count)
         Me.Controls.Add(Me.SimpleButton1)
         Me.Controls.Add(Me.Password)
         Me.Controls.Add(Me.Username)
@@ -143,6 +154,7 @@ Partial Class LoginForm1
         CType(Me.Username.Properties,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.Password.Properties,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
+        Me.PerformLayout
 
 End Sub
 
@@ -151,4 +163,5 @@ End Sub
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents DefaultLookAndFeel1 As DevExpress.LookAndFeel.DefaultLookAndFeel
     Friend WithEvents AlertControl1 As DevExpress.XtraBars.Alerter.AlertControl
+    Friend WithEvents count As DevExpress.XtraEditors.LabelControl
 End Class

@@ -24,7 +24,8 @@ Module Module1
     Public Idprod As integer
     Public IdPedido As integer
     Public Moneda As integer  
-    Public Function Sendmail(logfile As String, subject As String, provider As String, adjunto As String, cuerpo As String) As Boolean
+    Public Google As String
+    Public Function Sendmail(logfile As String, subject As String, provider As String, adjunto As String, adjunto2 As string, cuerpo As String) As Boolean
         Dim mailer As New Smtp()
         ' Dim mail As New MailMessage()
         mailer.SmtpServers.Add("srvcorreo.montagneoutdoors.local", "sistemas", "lobito1.2016")
@@ -33,6 +34,7 @@ Module Module1
         mailer.Message.Subject = subject
         mailer.Message.BodyPlainText = cuerpo
         mailer.AddAttachment(adjunto)
+        mailer.AddAttachment(adjunto2)
         ' mailer.Message.Headers.Add("El correo ha sido leido por el proveedor!", "<juanyoris@montagne.com.ar>", recibido)
         mailer.Send()
         Return True

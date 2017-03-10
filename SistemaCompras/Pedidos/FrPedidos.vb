@@ -230,7 +230,7 @@ Public Class FrPedidos
     '        .urgente = prioridad.Text
     '        .DireccionDeEnvio = combodirecc.EditValue
     '        .AproboMartin = 0
-
+    '           '54.33
     '        If Cotiza = 1 Then
     '            .AutorizadoPor = comboautor.Text
     '            .Fechaaprobacion = Now
@@ -277,21 +277,22 @@ Public Class FrPedidos
         End If
 
     End Sub
-    Private Sub fechaentrega_Validating(sender As Object, e As CancelEventArgs) Handles fechaentrega.Validating
-        If fechaentrega.DateTime >= Today.Date.AddDays(15) Then
+    Private Sub fechaentrega_Validating(sender As Object, e As CancelEventArgs) Handles fechaentrega.Validating  ''' este sector de codigo es para hacer validaciones de la fecha
+
+        If fechaentrega.DateTime >= Today.Date.AddDays(15) Then ' compara si la fecha esta entre hoy y 15 dias, si es true:
         Else
-            MsgBox("Esta es una fecha estimada de entrega. No puede ser menor a 15 dias. Elegí una mayor a: " & Today.Date.AddDays(15), vbExclamation, "ERROR")
-            fechaentrega.EditValue = Today.Date.AddDays(15)
-            fechaentrega.Focus()
-            If fechaentrega.DateTime < Date.Today Then
-                MsgBox("No es posible esta seleccion.")
+            MsgBox("Esta es una fecha estimada de entrega. No puede ser menor a 15 dias. Elegí una mayor a: " & Today.Date.AddDays(15), vbExclamation, "ERROR") ' si no:
+            fechaentrega.EditValue = Today.Date.AddDays(15) ' me cambia el estado de la fecha seleccionada a la de hoy +15(dias)
+            fechaentrega.Focus() ' se le hace foco
+            If fechaentrega.DateTime < Date.Today Then ' compara si la fecha actual es menor que la de hoy y
+                MsgBox("No es posible esta seleccion.") '  me muestra un mensaje de que es imposible seleccionar esto.
             End If
         End If
     End Sub
     Private Sub FrPedidos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
 
 
-        If Labelnumeropedido.text = "1" Then
+        If Labelnumeropedido.text = "1" Then ' al cerrar el formulario de pedidos me cambia el labelPedido a 1 para que no tenga algo que borrar.
 
         else
 
@@ -303,7 +304,7 @@ Public Class FrPedidos
 
 
     End Sub
-    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+    Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click ' este segmento sirve para cargar una imagen, copiarla al server, obtener el patch y guardarlo en bd con el id del producto que se obtiene en el evento click del producto.
         picturebox1.image = nothing
         Using O As New OpenFileDialog With {.Filter = "(Image Files)|*.jpg;*.png;*.bmp;*.gif;*.ico|Jpg, | *.jpg|Png, | *.png|Bmp, | *.bmp|Gif, | *.gif|Ico | *.ico", .Multiselect = False, .Title = "Selecciona una imagen para cargar al Producto"}
             If O.ShowDialog = 1 Then
@@ -332,7 +333,7 @@ Public Class FrPedidos
         End Using
     End Sub
     Public Shared Function GetPhoto(filePath As String) As Byte()
-        try
+        try  ' convertir la foto a formato binario para guardarla en el servidor que se llama con la funcion publica compartida.
             Dim stream As FileStream = New FileStream( _
            filePath, FileMode.Open, FileAccess.Read)
             Dim reader As BinaryReader = New BinaryReader(stream)
@@ -344,7 +345,7 @@ Public Class FrPedidos
         End try
     End Function
     Function imgtoarr(ByVal URLimagen As String) As Byte()
-        Dim img As Image = Image.FromFile(URLimagen)
+        Dim img As Image = Image.FromFile(URLimagen) ' conversion de imagen en array
         Dim ms As New System.IO.MemoryStream
         img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
         Return ms.ToArray()
@@ -354,7 +355,7 @@ Public Class FrPedidos
     ''' pendiente de modificaciones
     ''' </summary>
     Private Sub GridControl1_Load(sender As Object, e As EventArgs) Handles GridControl1.Load   '''******* pendiente por seguir para clasificar rubros por sector******
-        If Sectorid = 1 Then
+        If Sectorid = 1 Then  ' nunca se definio que rubros puede ver que area.
             XpColProductos.CriteriaString = "Rubro = 'SISTEMAS'"
         End If
         If Sectorid = 3 Then
@@ -366,7 +367,7 @@ Public Class FrPedidos
         Me.Dispose()
     End Sub
     Private Sub CheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckEdit1.CheckedChanged
-        If CheckEdit1.CheckState = CheckState.Checked Then
+        If CheckEdit1.CheckState = CheckState.Checked Then 'aplicacion de filtros por el checkbox
             XpColProductos.CriteriaString = Nothing
             'XpColProductos.Reload()
         Else
@@ -388,19 +389,19 @@ Public Class FrPedidos
 #Enable Warning BC42025 ' Access of shared member, constant member, enum member or nested type through an instance
 
             MsgBox("Se procedera a establecer la solicitud con motivo de urgencia", vbOKCancel)
-            fechaentrega.CausesValidation = False
+            fechaentrega.CausesValidation = False  ' system validations
             fechaentrega.EditValue = Today
             imagurgente.Visible = True
             prioridad.Text = "Urgente"
             CheckEdit2.Text = "Prioridad: Urgente!"
-            If fechaentrega.DateTime < Date.Today Then
+            If fechaentrega.DateTime < Date.Today Then   ' validaciones de fecha
                 MsgBox("No es posible esta seleccion.")
             End If
         Else
-            fechaentrega.CausesValidation = True
+            fechaentrega.CausesValidation = True   '  no tocar.
             If fechaentrega.DateTime >= Today.Date.AddDays(15) Then
             Else
-                fechaentrega.EditValue = Today.Date.AddDays(15)
+                fechaentrega.EditValue = Today.Date.AddDays(15)  ' set datetime control at 15 days more from now.
                 fechaentrega.Focus()
                 If fechaentrega.DateTime < Date.Today Then
                     MsgBox("No es posible esta seleccion.")
@@ -467,18 +468,18 @@ Public Class FrPedidos
     End Sub
     Private Sub GridView1_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles GridView1.SelectionChanged
         If gridview1.GetRowCellValue(gridview1.FocusedRowHandle, colIdDetalle) is nothing Then
-            SimpleButton2.Enabled = false
+            SimpleButton2.Enabled = false  ' inhabilita el simplebutton2 si no existe coliddetalle en la fila seleccionada.
         else
             Try
-                SimpleButton2.Enabled = true
+                SimpleButton2.Enabled = true 'de caso contrario lo habilita, y dependiendo de ese iddetalle hace una busqueda en base de datos viendo si el item tiene una imagn url cargada
                 Dim leerimg = Session1.ExecuteScalar("Select ImagenUrl from PedidosDetalles Where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
-                If leerimg IsNot nothing Then
+                If leerimg IsNot nothing Then 'si leer imagen isnot nothing entonces carga la imagen al picturebox1
                     'SimpleButton3.Visible = True
                     PictureBox1.Image = Image.FromFile(leerimg)
                 Else
                     PictureBox1.Image = Nothing
                 End If
-            Catch ex As Exception
+            Catch ex As Exception  'captura excepciones si llega a pasar un error de lectura de datos en el servidor.
             End Try
         end if
     End Sub

@@ -83,31 +83,36 @@ Partial Class FrMasterDetailPedidos
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton()
         Me.dirlabel = New DevExpress.XtraEditors.LabelControl()
         Me.sbimprimir = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
-        Me.XpCollectionVistaDetalles = New DevExpress.Xpo.XPCollection(Me.components)
+        Me.pedidosdetalles = New DevExpress.Xpo.XPCollection(Me.components)
         Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.colSector2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFechaPedido2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colResponsable2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colEstado2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIdDetalle = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIdPedido2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIdProducto = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemGridLookUpEdit9 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.RepositoryItemGridLookUpEdit9View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.colCantidad = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colObservaciones2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colFechaRecepcion2 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colProducto = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colPrecioProducto = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIdProveedor = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colODCEnviada = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colImagenUrl = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colCotizado = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colIva = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colTotal = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colProdRecibido = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit6 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
         Me.RepositoryItemGridLookUpEdit6View = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.colCantidad = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.Observaciones1 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPrecioProducto = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colRazonSocial = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colNombreFantasia = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIdPedido2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemGridLookUpEdit7 = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit()
+        Me.XpCollectionVistaDetalles = New DevExpress.Xpo.XPCollection(Me.components)
         Me.RepositoryItemGridLookUpEdit7View = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit()
         Me.GridView7 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.FormAssistant1 = New DevExpress.XtraBars.FormAssistant()
         Me.DefaultLookAndFeel1 = New DevExpress.LookAndFeel.DefaultLookAndFeel(Me.components)
@@ -156,12 +161,16 @@ Partial Class FrMasterDetailPedidos
         Me.SplitContainerControl1.SuspendLayout
         CType(Me.TextEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridControl2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.XpCollectionVistaDetalles,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.pedidosdetalles,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit9,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemGridLookUpEdit9View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit6,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit6View,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit7,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.XpCollectionVistaDetalles,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.RepositoryItemGridLookUpEdit7View,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.GridView7,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -291,7 +300,7 @@ Partial Class FrMasterDetailPedidos
         Me.colEstado.FieldName = "Estado"
         Me.colEstado.Name = "colEstado"
         Me.colEstado.Visible = true
-        Me.colEstado.VisibleIndex = 3
+        Me.colEstado.VisibleIndex = 2
         Me.colEstado.Width = 104
         '
         'RepositoryItemGridLookUpEdit2
@@ -659,6 +668,7 @@ Partial Class FrMasterDetailPedidos
         Me.SplitContainerControl1.Horizontal = false
         Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton3)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.SimpleButton2)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.dirlabel)
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.sbimprimir)
@@ -673,16 +683,28 @@ Partial Class FrMasterDetailPedidos
         Me.SplitContainerControl1.TabIndex = 7
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
+        'SimpleButton3
+        '
+        Me.SimpleButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.SimpleButton3.Enabled = false
+        Me.SimpleButton3.Image = CType(resources.GetObject("SimpleButton3.Image"),System.Drawing.Image)
+        Me.SimpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
+        Me.SimpleButton3.Location = New System.Drawing.Point(574, 3)
+        Me.SimpleButton3.Name = "SimpleButton3"
+        Me.SimpleButton3.Size = New System.Drawing.Size(126, 56)
+        Me.SimpleButton3.TabIndex = 11
+        Me.SimpleButton3.Text = "Producto Recibido"
+        '
         'SimpleButton2
         '
         Me.SimpleButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.SimpleButton2.Image = CType(resources.GetObject("SimpleButton2.Image"),System.Drawing.Image)
         Me.SimpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.SimpleButton2.Location = New System.Drawing.Point(819, 3)
+        Me.SimpleButton2.Location = New System.Drawing.Point(746, 3)
         Me.SimpleButton2.Name = "SimpleButton2"
-        Me.SimpleButton2.Size = New System.Drawing.Size(66, 56)
+        Me.SimpleButton2.Size = New System.Drawing.Size(165, 56)
         Me.SimpleButton2.TabIndex = 10
-        Me.SimpleButton2.Text = "Recibido!"
+        Me.SimpleButton2.Text = "FINALIZAR CICLO DEL PEDIDO"
         Me.SimpleButton2.Visible = false
         '
         'dirlabel
@@ -700,9 +722,9 @@ Partial Class FrMasterDetailPedidos
         Me.sbimprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.sbimprimir.Image = CType(resources.GetObject("sbimprimir.Image"),System.Drawing.Image)
         Me.sbimprimir.ImageLocation = DevExpress.XtraEditors.ImageLocation.TopCenter
-        Me.sbimprimir.Location = New System.Drawing.Point(891, 3)
+        Me.sbimprimir.Location = New System.Drawing.Point(917, 3)
         Me.sbimprimir.Name = "sbimprimir"
-        Me.sbimprimir.Size = New System.Drawing.Size(66, 56)
+        Me.sbimprimir.Size = New System.Drawing.Size(49, 56)
         Me.sbimprimir.TabIndex = 8
         Me.sbimprimir.Text = "Imprimir"
         Me.sbimprimir.Visible = false
@@ -727,25 +749,25 @@ Partial Class FrMasterDetailPedidos
         '
         'GridControl2
         '
-        Me.GridControl2.DataSource = Me.XpCollectionVistaDetalles
+        Me.GridControl2.DataSource = Me.pedidosdetalles
         Me.GridControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl2.Location = New System.Drawing.Point(0, 0)
         Me.GridControl2.MainView = Me.GridView5
         Me.GridControl2.MenuManager = Me.BarManager1
         Me.GridControl2.Name = "GridControl2"
-        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit6, Me.RepositoryItemGridLookUpEdit7})
+        Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit6, Me.RepositoryItemGridLookUpEdit7, Me.RepositoryItemCheckEdit1, Me.RepositoryItemGridLookUpEdit9})
         Me.GridControl2.Size = New System.Drawing.Size(969, 57)
         Me.GridControl2.TabIndex = 0
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5, Me.GridView7})
         '
-        'XpCollectionVistaDetalles
+        'pedidosdetalles
         '
-        Me.XpCollectionVistaDetalles.CriteriaString = "[Row] = -1L"
-        Me.XpCollectionVistaDetalles.ObjectType = GetType(SistemaCompras.MontagneAdministracion.VistaPedidosDetalle)
+        Me.pedidosdetalles.CriteriaString = "[IdDetalle] = -1"
+        Me.pedidosdetalles.ObjectType = GetType(SistemaCompras.MontagneAdministracion.PedidosDetalles)
         '
         'GridView5
         '
-        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colSector2, Me.colFechaPedido2, Me.colResponsable2, Me.colEstado2, Me.colObservaciones2, Me.colFechaRecepcion2, Me.colProducto, Me.colCantidad, Me.Observaciones1, Me.colPrecioProducto, Me.colRazonSocial, Me.colNombreFantasia, Me.colIdPedido2})
+        Me.GridView5.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdDetalle, Me.colIdPedido2, Me.colIdProducto, Me.colCantidad, Me.colObservaciones2, Me.colPrecioProducto, Me.colIdProveedor, Me.colODCEnviada, Me.colImagenUrl, Me.colCotizado, Me.colIva, Me.colTotal, Me.colProdRecibido})
         Me.GridView5.GridControl = Me.GridControl2
         Me.GridView5.Name = "GridView5"
         Me.GridView5.OptionsBehavior.Editable = false
@@ -757,54 +779,112 @@ Partial Class FrMasterDetailPedidos
         Me.GridView5.OptionsView.ShowFooter = true
         Me.GridView5.OptionsView.ShowGroupPanel = false
         '
-        'colSector2
+        'colIdDetalle
         '
-        Me.colSector2.FieldName = "Sector"
-        Me.colSector2.Name = "colSector2"
+        Me.colIdDetalle.FieldName = "IdDetalle"
+        Me.colIdDetalle.Name = "colIdDetalle"
         '
-        'colFechaPedido2
+        'colIdPedido2
         '
-        Me.colFechaPedido2.FieldName = "FechaPedido"
-        Me.colFechaPedido2.Name = "colFechaPedido2"
+        Me.colIdPedido2.FieldName = "IdPedido"
+        Me.colIdPedido2.Name = "colIdPedido2"
         '
-        'colResponsable2
+        'colIdProducto
         '
-        Me.colResponsable2.FieldName = "Responsable"
-        Me.colResponsable2.Name = "colResponsable2"
+        Me.colIdProducto.Caption = "PRODUCTO"
+        Me.colIdProducto.ColumnEdit = Me.RepositoryItemGridLookUpEdit9
+        Me.colIdProducto.FieldName = "IdProducto"
+        Me.colIdProducto.Name = "colIdProducto"
+        Me.colIdProducto.Visible = true
+        Me.colIdProducto.VisibleIndex = 0
+        Me.colIdProducto.Width = 427
         '
-        'colEstado2
+        'RepositoryItemGridLookUpEdit9
         '
-        Me.colEstado2.FieldName = "Estado"
-        Me.colEstado2.Name = "colEstado2"
+        Me.RepositoryItemGridLookUpEdit9.AutoHeight = false
+        Me.RepositoryItemGridLookUpEdit9.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemGridLookUpEdit9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.RepositoryItemGridLookUpEdit9.DataSource = Me.Productos
+        Me.RepositoryItemGridLookUpEdit9.DisplayMember = "Producto"
+        Me.RepositoryItemGridLookUpEdit9.Name = "RepositoryItemGridLookUpEdit9"
+        Me.RepositoryItemGridLookUpEdit9.ValueMember = "Id"
+        Me.RepositoryItemGridLookUpEdit9.View = Me.RepositoryItemGridLookUpEdit9View
+        '
+        'RepositoryItemGridLookUpEdit9View
+        '
+        Me.RepositoryItemGridLookUpEdit9View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
+        Me.RepositoryItemGridLookUpEdit9View.Name = "RepositoryItemGridLookUpEdit9View"
+        Me.RepositoryItemGridLookUpEdit9View.OptionsSelection.EnableAppearanceFocusedCell = false
+        Me.RepositoryItemGridLookUpEdit9View.OptionsView.ShowGroupPanel = false
+        '
+        'colCantidad
+        '
+        Me.colCantidad.Caption = "CANTIDAD"
+        Me.colCantidad.FieldName = "Cantidad"
+        Me.colCantidad.Name = "colCantidad"
+        Me.colCantidad.Visible = true
+        Me.colCantidad.VisibleIndex = 1
+        Me.colCantidad.Width = 99
         '
         'colObservaciones2
         '
+        Me.colObservaciones2.Caption = "OBSERVACIONES"
         Me.colObservaciones2.FieldName = "Observaciones"
         Me.colObservaciones2.Name = "colObservaciones2"
+        Me.colObservaciones2.Visible = true
+        Me.colObservaciones2.VisibleIndex = 2
+        Me.colObservaciones2.Width = 362
         '
-        'colFechaRecepcion2
+        'colPrecioProducto
         '
-        Me.colFechaRecepcion2.FieldName = "FechaRecepcion"
-        Me.colFechaRecepcion2.Name = "colFechaRecepcion2"
+        Me.colPrecioProducto.FieldName = "PrecioProducto"
+        Me.colPrecioProducto.Name = "colPrecioProducto"
         '
-        'colProducto
+        'colIdProveedor
         '
-        Me.colProducto.ColumnEdit = Me.RepositoryItemGridLookUpEdit6
-        Me.colProducto.FieldName = "Producto"
-        Me.colProducto.Name = "colProducto"
-        Me.colProducto.Visible = true
-        Me.colProducto.VisibleIndex = 0
-        Me.colProducto.Width = 399
+        Me.colIdProveedor.FieldName = "IdProveedor"
+        Me.colIdProveedor.Name = "colIdProveedor"
+        '
+        'colODCEnviada
+        '
+        Me.colODCEnviada.FieldName = "ODCEnviada"
+        Me.colODCEnviada.Name = "colODCEnviada"
+        '
+        'colImagenUrl
+        '
+        Me.colImagenUrl.FieldName = "ImagenUrl"
+        Me.colImagenUrl.Name = "colImagenUrl"
+        '
+        'colCotizado
+        '
+        Me.colCotizado.FieldName = "Cotizado"
+        Me.colCotizado.Name = "colCotizado"
+        '
+        'colIva
+        '
+        Me.colIva.FieldName = "Iva"
+        Me.colIva.Name = "colIva"
+        '
+        'colTotal
+        '
+        Me.colTotal.FieldName = "Total"
+        Me.colTotal.Name = "colTotal"
+        '
+        'colProdRecibido
+        '
+        Me.colProdRecibido.Caption = "RECIBIDO EL DIA:"
+        Me.colProdRecibido.FieldName = "ProdRecibido"
+        Me.colProdRecibido.Name = "colProdRecibido"
+        Me.colProdRecibido.Visible = true
+        Me.colProdRecibido.VisibleIndex = 3
+        Me.colProdRecibido.Width = 183
         '
         'RepositoryItemGridLookUpEdit6
         '
         Me.RepositoryItemGridLookUpEdit6.AutoHeight = false
         Me.RepositoryItemGridLookUpEdit6.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemGridLookUpEdit6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RepositoryItemGridLookUpEdit6.DataSource = Me.Productos
-        Me.RepositoryItemGridLookUpEdit6.DisplayMember = "Producto"
         Me.RepositoryItemGridLookUpEdit6.Name = "RepositoryItemGridLookUpEdit6"
-        Me.RepositoryItemGridLookUpEdit6.ValueMember = "Producto"
         Me.RepositoryItemGridLookUpEdit6.View = Me.RepositoryItemGridLookUpEdit6View
         '
         'RepositoryItemGridLookUpEdit6View
@@ -813,46 +893,6 @@ Partial Class FrMasterDetailPedidos
         Me.RepositoryItemGridLookUpEdit6View.Name = "RepositoryItemGridLookUpEdit6View"
         Me.RepositoryItemGridLookUpEdit6View.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.RepositoryItemGridLookUpEdit6View.OptionsView.ShowGroupPanel = false
-        '
-        'colCantidad
-        '
-        Me.colCantidad.FieldName = "Cantidad"
-        Me.colCantidad.Name = "colCantidad"
-        Me.colCantidad.Visible = true
-        Me.colCantidad.VisibleIndex = 1
-        Me.colCantidad.Width = 74
-        '
-        'Observaciones1
-        '
-        Me.Observaciones1.Caption = "Observaciones del Pedido"
-        Me.Observaciones1.FieldName = "Obsb1"
-        Me.Observaciones1.Name = "Observaciones1"
-        Me.Observaciones1.OptionsColumn.AllowEdit = false
-        Me.Observaciones1.OptionsEditForm.Caption = "Observaciones del Item"
-        Me.Observaciones1.Visible = true
-        Me.Observaciones1.VisibleIndex = 2
-        Me.Observaciones1.Width = 599
-        '
-        'colPrecioProducto
-        '
-        Me.colPrecioProducto.FieldName = "PrecioProducto"
-        Me.colPrecioProducto.Name = "colPrecioProducto"
-        '
-        'colRazonSocial
-        '
-        Me.colRazonSocial.FieldName = "RazonSocial"
-        Me.colRazonSocial.Name = "colRazonSocial"
-        '
-        'colNombreFantasia
-        '
-        Me.colNombreFantasia.FieldName = "NombreFantasia"
-        Me.colNombreFantasia.Name = "colNombreFantasia"
-        '
-        'colIdPedido2
-        '
-        Me.colIdPedido2.FieldName = "IdPedido"
-        Me.colIdPedido2.Name = "colIdPedido2"
-        Me.colIdPedido2.OptionsEditForm.Caption = "Nro. Pedido"
         '
         'RepositoryItemGridLookUpEdit7
         '
@@ -864,12 +904,23 @@ Partial Class FrMasterDetailPedidos
         Me.RepositoryItemGridLookUpEdit7.ValueMember = "Obsb1"
         Me.RepositoryItemGridLookUpEdit7.View = Me.RepositoryItemGridLookUpEdit7View
         '
+        'XpCollectionVistaDetalles
+        '
+        Me.XpCollectionVistaDetalles.CriteriaString = "[Row] = -1L"
+        Me.XpCollectionVistaDetalles.ObjectType = GetType(SistemaCompras.MontagneAdministracion.VistaPedidosDetalle)
+        '
         'RepositoryItemGridLookUpEdit7View
         '
         Me.RepositoryItemGridLookUpEdit7View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.RepositoryItemGridLookUpEdit7View.Name = "RepositoryItemGridLookUpEdit7View"
         Me.RepositoryItemGridLookUpEdit7View.OptionsSelection.EnableAppearanceFocusedCell = false
         Me.RepositoryItemGridLookUpEdit7View.OptionsView.ShowGroupPanel = false
+        '
+        'RepositoryItemCheckEdit1
+        '
+        Me.RepositoryItemCheckEdit1.DisplayValueChecked = "RECIBIDO"
+        Me.RepositoryItemCheckEdit1.DisplayValueUnchecked = "SIN RECIBIR"
+        Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         '
         'GridView7
         '
@@ -940,12 +991,16 @@ Partial Class FrMasterDetailPedidos
         Me.SplitContainerControl1.ResumeLayout(false)
         CType(Me.TextEdit1.Properties,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridControl2,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.XpCollectionVistaDetalles,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.pedidosdetalles,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView5,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit9,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemGridLookUpEdit9View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit6,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit6View,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit7,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.XpCollectionVistaDetalles,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.RepositoryItemGridLookUpEdit7View,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.GridView7,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
@@ -1003,19 +1058,6 @@ End Sub
     Friend WithEvents GridView6 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents GridView7 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents XpCollectionVistaDetalles As DevExpress.Xpo.XPCollection
-    Friend WithEvents colSector2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colFechaPedido2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colResponsable2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colEstado2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colObservaciones2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colFechaRecepcion2 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colProducto As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colCantidad As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents Observaciones1 As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colPrecioProducto As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colRazonSocial As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colNombreFantasia As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colIdPedido2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents XpCollectionVistaDetalles2 As DevExpress.Xpo.XPCollection
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
@@ -1041,4 +1083,22 @@ End Sub
     Friend WithEvents RepositoryItemGridLookUpEdit8View As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents dirlabel As DevExpress.XtraEditors.LabelControl
     Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents pedidosdetalles As DevExpress.Xpo.XPCollection
+    Friend WithEvents colIdDetalle As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colIdPedido2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colIdProducto As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCantidad As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colObservaciones2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colPrecioProducto As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colIdProveedor As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colODCEnviada As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colImagenUrl As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colCotizado As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colIva As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colTotal As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colProdRecibido As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemGridLookUpEdit9 As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
+    Friend WithEvents RepositoryItemGridLookUpEdit9View As DevExpress.XtraGrid.Views.Grid.GridView
 End Class

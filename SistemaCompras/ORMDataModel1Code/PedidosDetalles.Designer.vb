@@ -136,6 +136,16 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of Decimal)("Total", fTotal, value)
             End Set
         End Property
+        Dim fProdRecibido As String
+        <Size(SizeAttribute.Unlimited)>
+        Public Property ProdRecibido() As String
+            Get
+                Return fProdRecibido
+            End Get
+            Set(ByVal value As String)
+                SetPropertyValue(Of String)("ProdRecibido", fProdRecibido, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

@@ -80,7 +80,9 @@ Partial Class FrPresupuestos
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New DevExpress.XtraEditors.ImageEdit()
+        Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton()
         Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton()
         Me.GridControl2 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -280,7 +282,7 @@ Partial Class FrPresupuestos
         Me.GridControl1.MainView = Me.GridView3
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit1, Me.RepositoryItemGridLookUpEdit4, Me.RepositoryItemGridLookUpEdit5})
-        Me.GridControl1.Size = New System.Drawing.Size(1137, 328)
+        Me.GridControl1.Size = New System.Drawing.Size(1137, 321)
         Me.GridControl1.TabIndex = 3
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView2})
         '
@@ -742,16 +744,28 @@ Partial Class FrPresupuestos
         Me.SplitContainerControl2.LookAndFeel.SkinName = "Money Twins"
         Me.SplitContainerControl2.LookAndFeel.UseDefaultLookAndFeel = false
         Me.SplitContainerControl2.Name = "SplitContainerControl2"
+        Me.SplitContainerControl2.Panel1.Controls.Add(Me.Button3)
         Me.SplitContainerControl2.Panel1.Controls.Add(Me.PictureBox1)
         Me.SplitContainerControl2.Panel1.Controls.Add(Me.GridControl1)
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
+        Me.SplitContainerControl2.Panel2.Controls.Add(Me.SimpleButton7)
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.SimpleButton6)
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.GridControl2)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
         Me.SplitContainerControl2.Size = New System.Drawing.Size(1143, 409)
-        Me.SplitContainerControl2.SplitterPosition = 328
+        Me.SplitContainerControl2.SplitterPosition = 321
         Me.SplitContainerControl2.TabIndex = 4
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(1024, 3)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(104, 23)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "ver imagen"
+        Me.Button3.UseVisualStyleBackColor = true
+        Me.Button3.Visible = false
         '
         'PictureBox1
         '
@@ -763,13 +777,25 @@ Partial Class FrPresupuestos
         Me.PictureBox1.TabIndex = 21
         Me.PictureBox1.Visible = false
         '
+        'SimpleButton7
+        '
+        Me.SimpleButton7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
+        Me.SimpleButton7.Image = CType(resources.GetObject("SimpleButton7.Image"),System.Drawing.Image)
+        Me.SimpleButton7.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
+        Me.SimpleButton7.Location = New System.Drawing.Point(143, 54)
+        Me.SimpleButton7.Name = "SimpleButton7"
+        Me.SimpleButton7.Size = New System.Drawing.Size(142, 22)
+        Me.SimpleButton7.TabIndex = 23
+        Me.SimpleButton7.Text = "Adjuntar esta imagen"
+        Me.SimpleButton7.Visible = false
+        '
         'SimpleButton6
         '
         Me.SimpleButton6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left),System.Windows.Forms.AnchorStyles)
         Me.SimpleButton6.Enabled = false
         Me.SimpleButton6.Image = CType(resources.GetObject("SimpleButton6.Image"),System.Drawing.Image)
         Me.SimpleButton6.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft
-        Me.SimpleButton6.Location = New System.Drawing.Point(3, 47)
+        Me.SimpleButton6.Location = New System.Drawing.Point(3, 54)
         Me.SimpleButton6.Name = "SimpleButton6"
         Me.SimpleButton6.Size = New System.Drawing.Size(127, 22)
         Me.SimpleButton6.TabIndex = 22
@@ -791,7 +817,7 @@ Partial Class FrPresupuestos
         Me.GridControl2.MainView = Me.GridView1
         Me.GridControl2.Name = "GridControl2"
         Me.GridControl2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemGridLookUpEdit2, Me.RepositoryItemGridLookUpEdit7})
-        Me.GridControl2.Size = New System.Drawing.Size(1137, 69)
+        Me.GridControl2.Size = New System.Drawing.Size(1137, 76)
         Me.GridControl2.TabIndex = 4
         Me.GridControl2.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.GridView5})
         '
@@ -1195,4 +1221,6 @@ End Sub
     Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
 End Class

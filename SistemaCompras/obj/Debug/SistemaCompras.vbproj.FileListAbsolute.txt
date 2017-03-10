@@ -54,3 +54,6 @@ C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.exe
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.pdb
 C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrNuevoItem.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.cambiarEstado.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.FrPedidos_IMP.resources
+C:\Users\juanyoris\Documents\Visual Studio 2015\Projects\Compras\SistemaCompras\obj\Debug\SistemaCompras.vbprojResolveAssemblyReference.cache

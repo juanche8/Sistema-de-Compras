@@ -27,10 +27,10 @@ Partial Class FrPrincipalCompras
         Dim TileItemElement3 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim SuperToolTip2 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem2 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim TileItemElement27 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement28 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim SuperToolTip21 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem21 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim TileItemElement28 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
+        Dim TileItemElement29 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim SuperToolTip22 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem22 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Dim AlertButton1 As DevExpress.XtraBars.Alerter.AlertButton = New DevExpress.XtraBars.Alerter.AlertButton()
@@ -50,6 +50,7 @@ Partial Class FrPrincipalCompras
         Dim TileItemElement26 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim SuperToolTip20 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem20 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim TileItemElement27 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim TileItemElement16 As DevExpress.XtraEditors.TileItemElement = New DevExpress.XtraEditors.TileItemElement()
         Dim SuperToolTip13 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem13 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
@@ -118,6 +119,7 @@ Partial Class FrPrincipalCompras
         Me.TileItem13 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem10 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem7 = New DevExpress.XtraEditors.TileItem()
+        Me.TileItem29 = New DevExpress.XtraEditors.TileItem()
         Me.TileGroup3 = New DevExpress.XtraEditors.TileGroup()
         Me.TileItem16 = New DevExpress.XtraEditors.TileItem()
         Me.TileItem5 = New DevExpress.XtraEditors.TileItem()
@@ -278,9 +280,9 @@ Partial Class FrPrincipalCompras
         Me.TileItem23.AppearanceItem.Normal.Options.UseBackColor = true
         Me.TileItem23.AppearanceItem.Normal.Options.UseFont = true
         Me.TileItem23.AppearanceItem.Normal.Options.UseForeColor = true
-        TileItemElement27.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement27.Text = "LISTAS DE PRECIOS"
-        Me.TileItem23.Elements.Add(TileItemElement27)
+        TileItemElement28.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement28.Text = "LISTAS DE PRECIOS"
+        Me.TileItem23.Elements.Add(TileItemElement28)
         Me.TileItem23.Id = 11
         Me.TileItem23.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem23.Name = "TileItem23"
@@ -296,9 +298,9 @@ Partial Class FrPrincipalCompras
         Me.TileItem24.AppearanceItem.Normal.Options.UseBackColor = true
         Me.TileItem24.AppearanceItem.Normal.Options.UseFont = true
         Me.TileItem24.AppearanceItem.Normal.Options.UseForeColor = true
-        TileItemElement28.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
-        TileItemElement28.Text = "LISTAS DE PRECIOS"
-        Me.TileItem24.Elements.Add(TileItemElement28)
+        TileItemElement29.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement29.Text = "LISTAS DE PRECIOS"
+        Me.TileItem24.Elements.Add(TileItemElement29)
         Me.TileItem24.Id = 11
         Me.TileItem24.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
         Me.TileItem24.Name = "TileItem24"
@@ -352,6 +354,7 @@ Partial Class FrPrincipalCompras
         Me.CONSUMOS.Items.Add(Me.TileItem13)
         Me.CONSUMOS.Items.Add(Me.TileItem10)
         Me.CONSUMOS.Items.Add(Me.TileItem7)
+        Me.CONSUMOS.Items.Add(Me.TileItem29)
         Me.CONSUMOS.Name = "CONSUMOS"
         Me.CONSUMOS.Tag = "SCcon"
         Me.CONSUMOS.Text = "Consumos"
@@ -468,6 +471,22 @@ Partial Class FrPrincipalCompras
         ToolTipItem20.Text = "Permite ingresar datos sobre baja de herramientas y maquinarias"
         SuperToolTip20.Items.Add(ToolTipItem20)
         Me.TileItem7.SuperTip = SuperToolTip20
+        '
+        'TileItem29
+        '
+        Me.TileItem29.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(192,Byte),Integer))
+        Me.TileItem29.AppearanceItem.Normal.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.TileItem29.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Black
+        Me.TileItem29.AppearanceItem.Normal.Options.UseBackColor = true
+        Me.TileItem29.AppearanceItem.Normal.Options.UseFont = true
+        Me.TileItem29.AppearanceItem.Normal.Options.UseForeColor = true
+        TileItemElement27.Image = CType(resources.GetObject("TileItemElement27.Image"),System.Drawing.Image)
+        TileItemElement27.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter
+        TileItemElement27.Text = "CAMBIAR ESTADOS A PEDIDOS"
+        Me.TileItem29.Elements.Add(TileItemElement27)
+        Me.TileItem29.Id = 34
+        Me.TileItem29.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium
+        Me.TileItem29.Name = "TileItem29"
         '
         'TileGroup3
         '
@@ -840,7 +859,7 @@ Partial Class FrPrincipalCompras
         Me.TileControl1.Groups.Add(Me.TileGroup5)
         Me.TileControl1.ItemCheckMode = DevExpress.XtraEditors.TileItemCheckMode.[Single]
         Me.TileControl1.Location = New System.Drawing.Point(0, 0)
-        Me.TileControl1.MaxId = 34
+        Me.TileControl1.MaxId = 35
         Me.TileControl1.Name = "TileControl1"
         Me.TileControl1.Size = New System.Drawing.Size(899, 491)
         Me.TileControl1.TabIndex = 0
@@ -1187,4 +1206,5 @@ End Sub
     Friend WithEvents helpbutton As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents TileItem27 As DevExpress.XtraEditors.TileItem
     Friend WithEvents TileItem28 As DevExpress.XtraEditors.TileItem
+    Friend WithEvents TileItem29 As DevExpress.XtraEditors.TileItem
 End Class
