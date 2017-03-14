@@ -406,10 +406,18 @@
       <DependentUpon>PedidosDetalles.vb</DependentUpon>
     </Compile>
     <Compile Include="ORMDataModel1Code\PedidosDetalles.vb" />
+    <Compile Include="ORMDataModel1Code\PedidosDetalles_Imp.Designer.vb">
+      <DependentUpon>PedidosDetalles_Imp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\PedidosDetalles_Imp.vb" />
     <Compile Include="ORMDataModel1Code\PedidosPedidosCollection_PedidosDetallesPedidosDetallesCollection.Designer.vb">
       <DependentUpon>PedidosPedidosCollection_PedidosDetallesPedidosDetallesCollection.vb</DependentUpon>
     </Compile>
     <Compile Include="ORMDataModel1Code\PedidosPedidosCollection_PedidosDetallesPedidosDetallesCollection.vb" />
+    <Compile Include="ORMDataModel1Code\Pedidos_Imp.Designer.vb">
+      <DependentUpon>Pedidos_Imp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModel1Code\Pedidos_Imp.vb" />
     <Compile Include="ORMDataModel1Code\Permisos.Designer.vb">
       <DependentUpon>Permisos.vb</DependentUpon>
     </Compile>
@@ -556,6 +564,12 @@
     <Compile Include="Parametricas\FrSectores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Pedidos\cambiarEstado.Designer.vb">
+      <DependentUpon>cambiarEstado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\cambiarEstado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Pedidos\DateEditCalendar.vb" />
     <Compile Include="Pedidos\FrAgregarPrecio.Designer.vb">
       <DependentUpon>FrAgregarPrecio.vb</DependentUpon>
@@ -585,6 +599,12 @@
       <DependentUpon>FrPedidosValorizados.vb</DependentUpon>
     </Compile>
     <Compile Include="Pedidos\FrPedidosValorizados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\FrPedidos_IMP.Designer.vb">
+      <DependentUpon>FrPedidos_IMP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\FrPedidos_IMP.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pedidos\RpListaAprobar.Designer.vb">
@@ -776,6 +796,9 @@
     <EmbeddedResource Include="Parametricas\FrSectores.resx">
       <DependentUpon>FrSectores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\cambiarEstado.resx">
+      <DependentUpon>cambiarEstado.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\FrAgregarPrecio.resx">
       <DependentUpon>FrAgregarPrecio.vb</DependentUpon>
     </EmbeddedResource>
@@ -790,6 +813,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\FrPedidosValorizados.resx">
       <DependentUpon>FrPedidosValorizados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\FrPedidos_IMP.resx">
+      <DependentUpon>FrPedidos_IMP.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\RpListaAprobar.resx">
       <DependentUpon>RpListaAprobar.vb</DependentUpon>

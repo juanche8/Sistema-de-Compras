@@ -13,7 +13,7 @@ Public Class FrPrincipalCompras
     Dim vencer = Session1.ExecuteScalar("SELECT count(*) from Pedidos where Estado = 2 and AutorizadoPor is not null  and FechaRecepcion <> CURRENT_TIMESTAMP and FechaRecepcion < DATEADD(day,3,CURRENT_TIMESTAMP) ")
     Dim aprobados = Session1.ExecuteScalar("SELECT count(*) from Pedidos where  Estado = 2 AND FechaAprobacion < GETDATE()-1")
 
-
+    
     Private Sub TileItem1_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem1.ItemClick
         FrMonedas.Show()
     End Sub
@@ -191,6 +191,7 @@ Public Class FrPrincipalCompras
             Scale(0.5, 0.5)
         End If
         If Responsable = "Diaz Juan J" Then
+            TileItem26.Enabled = True
             admbutton.Visible = True
             LabelControl1.Text = "Bienvenido, " & Responsable
             TileItem25.Visible = True
@@ -349,7 +350,7 @@ Public Class FrPrincipalCompras
     End Sub
 
     Private Sub TileItem26_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem26.ItemClick
-
+        FrPedidos_IMP.show
     End Sub
 
     Private Sub admbutton_Click(sender As Object, e As EventArgs) Handles admbutton.Click
@@ -410,6 +411,10 @@ Public Class FrPrincipalCompras
 
     Private Sub TileItem28_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem28.ItemClick
         FrPedidosValorizados.show
+    End Sub
+
+    Private Sub TileItem29_ItemClick(sender As Object, e As DevExpress.XtraEditors.TileItemEventArgs) Handles TileItem29.ItemClick
+        cambiarEstado.show
     End Sub
 End Class
 

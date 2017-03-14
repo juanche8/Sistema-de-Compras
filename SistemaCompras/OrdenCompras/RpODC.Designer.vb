@@ -320,7 +320,7 @@ Partial Public Class RpODC
         Me.XrLabel23.StylePriority.UseFont = false
         Me.XrLabel23.StylePriority.UseTextAlignment = false
         Me.XrLabel23.Text = "MONTAGNE OUTDOORS S.A"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"AVDA. CORDOBA 5371 - C.P.: 1414  CAPITAL FEDERAL."&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"CUIT: 3"& _ 
-    "0-52298222-5"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Tel: 4772-5165"
+    "0-52298222-5"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"Tel: 4773-0091"
         Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         Me.XrLabel23.Visible = false
         '

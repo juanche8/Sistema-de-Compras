@@ -24,142 +24,80 @@ Partial Class frimage
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.XpCollection1 = New DevExpress.Xpo.XPCollection(Me.components)
-        Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
-        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.colIdDetalle = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIdPedido = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIdProducto = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colCantidad = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colObservaciones = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colPrecioProducto = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colIdProveedor = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colODCEnviada = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colimage = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         CType(Me.XpCollection1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.RepositoryItemPictureEdit1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.TextEdit1.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.SplitContainerControl1.SuspendLayout
         Me.SuspendLayout
         '
         'XpCollection1
         '
         Me.XpCollection1.ObjectType = GetType(SistemaCompras.MontagneAdministracion.PedidosDetalles)
         '
-        'GridControl1
+        'TextEdit1
         '
-        Me.GridControl1.DataSource = Me.XpCollection1
-        Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridControl1.Location = New System.Drawing.Point(0, 0)
-        Me.GridControl1.MainView = Me.GridView1
-        Me.GridControl1.Name = "GridControl1"
-        Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemPictureEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(827, 301)
-        Me.GridControl1.TabIndex = 0
-        Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        Me.TextEdit1.Location = New System.Drawing.Point(26, 16)
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Size = New System.Drawing.Size(287, 20)
+        Me.TextEdit1.TabIndex = 0
         '
-        'GridView1
+        'Button1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIdDetalle, Me.colIdPedido, Me.colIdProducto, Me.colCantidad, Me.colObservaciones, Me.colPrecioProducto, Me.colIdProveedor, Me.colODCEnviada, Me.colimage})
-        Me.GridView1.GridControl = Me.GridControl1
-        Me.GridView1.Name = "GridView1"
+        Me.Button1.Location = New System.Drawing.Point(332, 13)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(100, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "buscar"
+        Me.Button1.UseVisualStyleBackColor = true
         '
-        'colIdDetalle
+        'SplitContainerControl1
         '
-        Me.colIdDetalle.FieldName = "IdDetalle"
-        Me.colIdDetalle.Name = "colIdDetalle"
-        Me.colIdDetalle.Visible = true
-        Me.colIdDetalle.VisibleIndex = 0
+        Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl1.Horizontal = false
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl1.Name = "SplitContainerControl1"
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.TextEdit1)
+        Me.SplitContainerControl1.Panel1.Controls.Add(Me.Button1)
+        Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.WebBrowser1)
+        Me.SplitContainerControl1.Panel2.Text = "Panel2"
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(827, 301)
+        Me.SplitContainerControl1.SplitterPosition = 43
+        Me.SplitContainerControl1.TabIndex = 2
+        Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
-        'colIdPedido
+        'WebBrowser1
         '
-        Me.colIdPedido.FieldName = "IdPedido"
-        Me.colIdPedido.Name = "colIdPedido"
-        Me.colIdPedido.Visible = true
-        Me.colIdPedido.VisibleIndex = 1
-        '
-        'colIdProducto
-        '
-        Me.colIdProducto.FieldName = "IdProducto"
-        Me.colIdProducto.Name = "colIdProducto"
-        Me.colIdProducto.Visible = true
-        Me.colIdProducto.VisibleIndex = 2
-        '
-        'colCantidad
-        '
-        Me.colCantidad.FieldName = "Cantidad"
-        Me.colCantidad.Name = "colCantidad"
-        Me.colCantidad.Visible = true
-        Me.colCantidad.VisibleIndex = 3
-        '
-        'colObservaciones
-        '
-        Me.colObservaciones.FieldName = "Observaciones"
-        Me.colObservaciones.Name = "colObservaciones"
-        Me.colObservaciones.Visible = true
-        Me.colObservaciones.VisibleIndex = 4
-        '
-        'colPrecioProducto
-        '
-        Me.colPrecioProducto.FieldName = "PrecioProducto"
-        Me.colPrecioProducto.Name = "colPrecioProducto"
-        Me.colPrecioProducto.Visible = true
-        Me.colPrecioProducto.VisibleIndex = 5
-        '
-        'colIdProveedor
-        '
-        Me.colIdProveedor.FieldName = "IdProveedor"
-        Me.colIdProveedor.Name = "colIdProveedor"
-        Me.colIdProveedor.Visible = true
-        Me.colIdProveedor.VisibleIndex = 6
-        '
-        'colODCEnviada
-        '
-        Me.colODCEnviada.FieldName = "ODCEnviada"
-        Me.colODCEnviada.Name = "colODCEnviada"
-        Me.colODCEnviada.Visible = true
-        Me.colODCEnviada.VisibleIndex = 7
-        '
-        'colimage
-        '
-        Me.colimage.Caption = "img"
-        Me.colimage.ColumnEdit = Me.RepositoryItemPictureEdit1
-        Me.colimage.Name = "colimage"
-        Me.colimage.Visible = true
-        Me.colimage.VisibleIndex = 8
-        '
-        'RepositoryItemPictureEdit1
-        '
-        Me.RepositoryItemPictureEdit1.Name = "RepositoryItemPictureEdit1"
-        Me.RepositoryItemPictureEdit1.ZoomAccelerationFactor = 1R
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(827, 252)
+        Me.WebBrowser1.TabIndex = 0
         '
         'frimage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(827, 301)
-        Me.Controls.Add(Me.GridControl1)
+        Me.Controls.Add(Me.SplitContainerControl1)
         Me.Name = "frimage"
         Me.Text = "frimage"
         CType(Me.XpCollection1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.GridControl1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.RepositoryItemPictureEdit1,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.TextEdit1.Properties,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.SplitContainerControl1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.SplitContainerControl1.ResumeLayout(false)
         Me.ResumeLayout(false)
 
 End Sub
 
     Friend WithEvents XpCollection1 As DevExpress.Xpo.XPCollection
-    Friend WithEvents GridControl1 As DevExpress.XtraGrid.GridControl
-    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-    Friend WithEvents colIdDetalle As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colIdPedido As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colIdProducto As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colCantidad As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colObservaciones As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colPrecioProducto As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colIdProveedor As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colODCEnviada As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colimage As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents RepositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents Button1 As Button
+    Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

@@ -156,6 +156,25 @@ Namespace MontagneAdministracion
                 SetPropertyValue(Of Integer)("IdDetalle", fIdDetalle, value)
             End Set
         End Property
+        Dim fProdRecibido As String
+        <Size(SizeAttribute.Unlimited)>
+        Public Property ProdRecibido() As String
+            Get
+                Return fProdRecibido
+            End Get
+            Set(ByVal value As String)
+                SetPropertyValue(Of String)("ProdRecibido", fProdRecibido, value)
+            End Set
+        End Property
+        Dim fId As Integer
+        Public Property Id() As Integer
+            Get
+                Return fId
+            End Get
+            Set(ByVal value As Integer)
+                SetPropertyValue(Of Integer)("Id", fId, value)
+            End Set
+        End Property
     End Class
 
 End Namespace

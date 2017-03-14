@@ -22,12 +22,12 @@ Public Class FrMasterDetailPedidos
         Productos.Session = Session1
         XpCollectionVistaDetalles.Session = Session1
         XpCollectionVistaDetalles2.Session = Session1
-
+        pedidosdetalles.Session = session1
         If Sectorid <> 5 Then
             XpCollectionVistaDetalles2.CriteriaString = "Sector = " & Sectorid
             'XpCollectionVistaDetalles2.CriteriaString = "Estado <= 3 "
             If Responsable = "Paulo Gregoretti" Then
-                 XpCollectionVistaDetalles2.CriteriaString = "Sector = 12 or Sector = 3 or Sector = 13" 
+                XpCollectionVistaDetalles2.CriteriaString = "Sector = 12 or Sector = 3 or Sector = 13"
             End If
             If Cotiza = 0 Then
                 XpCollectionVistaDetalles2.CriteriaString = "Responsable like '" & Responsable & "%'"
@@ -91,6 +91,7 @@ Public Class FrMasterDetailPedidos
     End Sub
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
+        SimpleButton3.Enabled= False
         Try
             Dim consulta = GridView1.GetFocusedRowCellValue(colIdPedido)
 
@@ -99,7 +100,7 @@ Public Class FrMasterDetailPedidos
 
             Else
                 try
-                    XpCollectionVistaDetalles.CriteriaString = "IdPedido = " & consulta '& " And Sector = " & Sectorid
+                    pedidosdetalles.CriteriaString = "IdPedido = " & consulta '& " And Sector = " & Sectorid
                     Dim direccion = Session1.ExecuteScalar("Select DireccionDeEnvio from Pedidos where IdPedido = " & GridView1.GetFocusedRowCellValue(colIdPedido))
                     Dim direccionfisica = Session1.ExecuteScalar("Select Direccion from DireccionesEntrega where Id = " & direccion)
                     If direccion <> 0 then
@@ -145,8 +146,9 @@ Public Class FrMasterDetailPedidos
             Dim urgente As String = view.GetRowCellDisplayText(e.RowHandle, view.Columns("Urgente"))
             If urgente = "Urgente" Then
                 e.Appearance.BackColor = Color.Red
-                e.Appearance.BackColor2= Color.salmon
+                e.Appearance.BackColor2 = Color.salmon
                 e.Appearance.ForeColor = Color.White
+                
             Else
             End If
         End If
@@ -165,6 +167,16 @@ Public Class FrMasterDetailPedidos
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
+
+        For I As Integer = 0 To GridView5.RowCount - 1
+            Dim a = GridView5.GetRowCellDisplayText(I,colProdRecibido)
+            If a = "" Then
+                MsgBox("Debes marcar como recibido todos los productos")
+                Return
+            Else
+                SimpleButton2.Visible = true
+            End If
+        Next
         If MsgBox("Confirmas que tu pedido ha llegado? ", vbYesNo) = vbYes then
             ' Session1.ExecuteNonQuery("Update Pedidos SET Estado = 6 where IdPedido =" & CInt(GridView1.GetFocusedRowCellValue(colIdPedido)))
             GridView1.SetFocusedRowCellValue(colEstado, 6)
@@ -176,5 +188,35 @@ Public Class FrMasterDetailPedidos
 
     End Sub
 
+    Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
+
+        If MsgBox("Confirmas la recepcion del producto? ", vbYesNo) = vbYes then
+            '  Session1.ExecuteNonQuery("update PedidosDetalles SET ProdRecibido = '"& DateTime.Now & "' where IdDetalle = "& GridView5.GetFocusedRowCellValue(colIdDetalle))
+            '  XpCollectionVistaDetalles.Reload()
+            GridView5.SetFocusedRowCellValue(colProdRecibido, DateTime.Now)
+            GridView5.UpdateCurrentRow()
+            ' GridControl2.Update
+            ' GridControl2.Refresh
+            'GridControl2.DataSource = XpCollectionVistaDetalles
+        Else
+            Return
+        End If
+    End Sub
   
+    Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
+        SimpleButton3.Enabled = false
+        Dim estado = Session1.ExecuteScalar("Select Estado from Pedidos where IdPedido = " & GridView1.GetFocusedRowCellValue(colIdPedido))
+        If GridView5.RowCount >= 1 and estado = 5 then
+            SimpleButton3.Enabled = true
+        End If
+        'For I As Integer = 0 To GridView5.RowCount - 1
+        '    Dim a = GridView5.GetFocusedRowCellValue(colProdRecibido)
+        '    If a = "" Then
+        '        SimpleButton2.Visible = False
+        '    Else
+        '        SimpleButton2.Visible = true
+        '    End If
+        'Next
+
+    End Sub
 End Class

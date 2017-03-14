@@ -24,7 +24,7 @@ Public Class FrPresupuestos
     Dim ids As String
     Dim vec(500) As String ''d
     Dim consulta As integer
-
+     Dim img = Nothing
     'Dim report As New RpSolicitudCotizacion()
     'Dim tool As ReportPrintTool = New ReportPrintTool(report)
 
@@ -50,16 +50,22 @@ Public Class FrPresupuestos
         Proveedores.Session = Session1
         vistadetallepedido.Session = Session1
         proyecto.Session = Session1
-
+        '' desde aca se aplican filtros dependiendo del nivel que tenga el usuario.
         If Cotiza = 1 Then
             Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null "
             PictureBox1.Visible = True
             SimpleButton6.Visible = true
             SimpleButton5.Visible = true
+            SimpleButton7.Visible=  true
         End If
+        ' detecta si entra martin para mostrar campos unicos
         If Responsable = "Martin Pais" Then
             Pedidos.CriteriaString = "Estado = 2 and AutorizadoPor is not null"
             PictureBox1.Visible = true
+        End If
+        If Responsable = "Diaz Juan J" Then
+            SimpleButton7.Visible=  true
+            Button3.Visible = true
         End If
         Proveedores.CriteriaString = "Email  Is Not null"
         Proveedores.CriteriaString = "Rubro  Is Not null"
@@ -67,12 +73,13 @@ Public Class FrPresupuestos
     End Sub
 
     Private Sub SimpleButton2_Click(sender As Object, e As EventArgs) Handles SimpleButton2.Click
-        Dim pedido = GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido)
-        Dim prov = CheckedListBoxControl1.Text
+        Dim pedido = GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido) ' asigna numero de pedido a la variable
+        Dim prov = CheckedListBoxControl1.Text  
         Dim querylinq As New XPQuery(Of Proveedores)(Session1)
         If CheckedListBoxControl1.CheckedItemsCount = Nothing Then
             MsgBox("Debes seleccionar al menos un proveedor para verificar si pose correo electronico asignado")
         Else
+           
             Dim dlg As DevExpress.Utils.WaitDialogForm
             dlg = New DevExpress.Utils.WaitDialogForm("Validando direcciones de correo...")
             'With CheckedListBoxControl1.CheckedItemsCount > 0
@@ -110,6 +117,7 @@ Public Class FrPresupuestos
     End Sub
 
     Private Sub GridControl1_Click(sender As Object, e As EventArgs) Handles GridControl1.Click
+        img = Nothing
         Try
             consulta = GridView3.GetFocusedRowCellValue(colIdPedido)
             If consulta = 0 Then
@@ -128,7 +136,7 @@ Public Class FrPresupuestos
         End Try
     End Sub
     Private Sub GridView3_RowStyle(sender As Object, e As RowStyleEventArgs) Handles GridView3.RowStyle
-        Dim view As GridView = sender
+        Dim view As GridView = sender  'cambia el aspecto visual de las filas que sean URGENTES
         If (e.RowHandle >= 0) Then
             Dim urgente As String = view.GetRowCellDisplayText(e.RowHandle, view.Columns("Urgente"))
             If urgente = "Urgente" Then
@@ -140,6 +148,9 @@ Public Class FrPresupuestos
     End Sub
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
+        If img Is Nothing Then
+            img = "\\CENTRALMONTAGNE\softMtg\compras\images\1.jpg"
+        End If
         PopupContainerEdit1.Text = ""
         Empresa = cboEmpresas.Text.ToUpper
        ' Dim telfInterno As String
@@ -176,7 +187,7 @@ Public Class FrPresupuestos
                 Dim nombrefantasia As String = Session1.ExecuteScalar("Select NombreFantasia from Proveedores where RazonSocial = '" & vec(t) & "'")
                 If nombrefantasia Is Nothing Then
                     Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
-                    Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Buenas tardes Estimado " & vec(t) & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
+                    Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls" ,img , "Buenas tardes Estimado " & vec(t) & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
                 else
                     ''' Hasta aca las modificaciones
                     ''' se deben ingresar los registros desde la base de datos en la tabla de pedidos para poder cotizar los insumos o los materiales
@@ -184,8 +195,8 @@ Public Class FrPresupuestos
                     ''' en caso de no poseer registro alguno de los detalles de pedido, este elimina el idPedido que le corresponde.
                     ''' para futuros cambios se debe eliminar la variable "nombrefantasia" y la condicion else de este segmento
                     ''' MsgBox(nombrefantasia)
-                    Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email is not null AND Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
-                    Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls", "Buenas tardes Estimado " & nombrefantasia & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
+                    Dim email1 As String = Session1.ExecuteScalar("Select Email  from Proveedores where Email Is Not null And Email <> ''  and RazonSocial like '" & CheckedListBoxControl1.GetItemText(m).ToString & "'").ToString
+                    Sendmail("logger", "Solicitud de cotizacion - " & Empresa &" - "& GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido), email1, "C:\Reportes\Pedidos\" & Empresa + " - " + GridView3.GetRowCellValue(GridView3.FocusedRowHandle, colIdPedido).ToString & ".xls" ,img , "Buenas tardes Estimado " & nombrefantasia & "," & vbCrLf & vbCrLf & "Los contactamos en representación de la firma " & Empresa & " en esta oportunidad para solicitar cotización por los artículos descriptos en el archivo adjunto. Agradeceremos, tenga a bien completar los precios dentro del mismo junto con cualquier aclaración que considere necesaria." & vbCrLf & vbCrLf & "No olvide incluir condiciones de venta, posibilidades de entrega y disponibilidad de stock." & vbCrLf & vbCrLf & "Sin mas, quedo a la disposición de sus consultas." & vbCrLf & "Saludos cordiales." & vbCrLf & vbCrLf & vbCrLf & firma) ''en pausa
                 End If
             Next
             If CheckedListBoxControl1.CheckedItemsCount = Nothing Then
@@ -199,13 +210,14 @@ Public Class FrPresupuestos
             End If
         End If
         PopupContainerEdit1.Text = ""
+        img = Nothing
     End Sub
 
     Private Sub SimpleButton3_Click(sender As Object, e As EventArgs) Handles SimpleButton3.Click
-        For t = 0 To CheckedListBoxControl1.SelectedIndices.Count - 1
+        For t = 0 To CheckedListBoxControl1.SelectedIndices.Count - 1   ' declaracion de vector t con indice 0 hasta el total de los items checkeados -1
             Dim m = CheckedListBoxControl1.SelectedIndices.Item(t)
             Dim telefono As String = Session1.ExecuteScalar("Select Telefonos from Proveedores where RazonSocial like '" & CheckedListBoxControl1.GetItemText(m) & "'")
-            If telefono Is Nothing Then
+            If telefono Is Nothing Then 'detecta si el item seleccionado tiene numero de telefono asignado para ser mostrado en el cuadro de mensaje
                 MsgBox("El proveedor " & CheckedListBoxControl1.GetItemText(m) & " no posee telefono registrado")
             Else
                 MsgBox("El numero telefonico de " & CheckedListBoxControl1.GetItemText(m) & " es " & telefono)
@@ -219,7 +231,7 @@ Public Class FrPresupuestos
     End Sub
 
     Private Sub GridControl2_Click(sender As Object, e As EventArgs) Handles GridControl2.Click
-        If GridView1.RowCount >= 1 Then
+        If GridView1.RowCount >= 1 Then  'verifica si se seleccionaron mas de una fila seleccionada
             SimpleButton6.Enabled = true
         Else
             SimpleButton6.Enabled = false
@@ -268,10 +280,7 @@ Public Class FrPresupuestos
         End If
 
     End Sub
-    Private Sub FrPresupuestos_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-
-    End Sub
-
+    
     Private Sub SimpleButton6_Click(sender As Object, e As EventArgs) Handles SimpleButton6.Click
         try
             If GridView1.RowCount = 0 Then
@@ -340,7 +349,7 @@ Public Class FrPresupuestos
     'End Sub
 
     Private Sub Button2_KeyDown(sender As Object, e As KeyEventArgs) Handles Button2.KeyDown
-        If e.KeyData = Keys.F5 Then
+        If e.KeyData = Keys.F5 Then 'cuando se presiona el f5 se actualiza la pantalla
             GridView1.UpdateCurrentRow()
             Productos.Reload
             GridView3.RefreshData
@@ -350,5 +359,24 @@ Public Class FrPresupuestos
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Google = gridview1.GetFocusedDisplayText()
+        frimage.show
+       
+    End Sub
+
+    Private Sub PictureBox1_EditValueChanged(sender As Object, e As EventArgs) Handles PictureBox1.EditValueChanged
+
+    End Sub
+
+    Private Sub SimpleButton7_Click(sender As Object, e As EventArgs) Handles SimpleButton7.Click
+      img =  Session1.ExecuteScalar("Select ImagenUrl from PedidosDetalles where IdDetalle = " & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colIdDetalle))
+        If img = "" Then
+            MsgBox("Este item no tiene imagen asignada")
+            Else
+            MsgBox("Se enviara como adjunto la imagen del producto:" & GridView1.GetRowCellValue(GridView1.FocusedRowHandle, colProducto))
+        End If
     End Sub
 End Class

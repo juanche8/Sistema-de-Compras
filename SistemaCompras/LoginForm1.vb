@@ -93,6 +93,8 @@ Public Class LoginForm1
 
     Private Sub SimpleButton1_Click(sender As Object, e As EventArgs) Handles SimpleButton1.Click
         FrCambioContrasenia.ShowDialog()
+
+
         'Dim filepath As String
         'filepath = "C:\Reportes\a\"
 
@@ -116,5 +118,25 @@ Public Class LoginForm1
 
         'AlertControl1.show(me,a)
 
+    End Sub
+
+    Private Sub LoginForm1_MouseUp(sender As Object, e As MouseEventArgs) Handles Me.MouseUp
+
+    End Sub
+
+    Private Sub LoginForm1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+
+
+    End Sub
+
+    Private Sub SimpleButton1_KeyDown(sender As Object, e As KeyEventArgs) Handles SimpleButton1.KeyDown
+      count.Visible = true
+        If e.KeyData = Keys.Delete Then
+            
+            if MsgBox("Desea eliminar el coso?", vbYesNo) = vbyes Then
+                count.Text = CInt(count.text) + 1
+            Else
+            End If
+        End If
     End Sub
 End Class
